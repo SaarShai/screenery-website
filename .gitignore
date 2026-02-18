@@ -23,6 +23,10 @@
 # misc
 .DS_Store
 *.pem
+*.ai
+
+# large files
+public/images/guests ad 4k kindergartener.mp4
 
 # debug
 npm-debug.log*
