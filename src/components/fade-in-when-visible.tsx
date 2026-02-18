@@ -15,7 +15,8 @@ export default function FadeInWhenVisible({
   margin?: string;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const isInView = useInView(ref, { once: true, margin: margin as any });
 
   return (
     <motion.div
