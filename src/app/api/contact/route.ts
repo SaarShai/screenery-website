@@ -17,9 +17,8 @@ export async function POST(request: Request) {
     }
 
     // Send notification email to Alicia
-    // Once screenery.design is verified in Resend, change from address to:
-    // "Screenery <hello@screenery.design>"
-    const fromAddress = process.env.RESEND_FROM_EMAIL || "Screenery Website <onboarding@resend.dev>";
+    // RESEND_FROM_EMAIL should be set in Vercel env vars to: Screenery <hello@screenery.design>
+    const fromAddress = process.env.RESEND_FROM_EMAIL || "Screenery <hello@screenery.design>";
 
     await resend.emails.send({
       from: fromAddress,
