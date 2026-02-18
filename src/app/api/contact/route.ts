@@ -17,8 +17,12 @@ export async function POST(request: Request) {
     }
 
     // Send notification email to Alicia
+    // Once screenery.design is verified in Resend, change from address to:
+    // "Screenery <hello@screenery.design>"
+    const fromAddress = process.env.RESEND_FROM_EMAIL || "Screenery Website <onboarding@resend.dev>";
+
     await resend.emails.send({
-      from: "Screenery Website <onboarding@resend.dev>",
+      from: fromAddress,
       to: "alicia@wanderland.london",
       replyTo: email,
       subject: `New enquiry from ${name} — ${company}`,
