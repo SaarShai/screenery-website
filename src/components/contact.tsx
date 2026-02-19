@@ -127,7 +127,7 @@ export default function Contact() {
                 disabled={sending}
                 className="group relative inline-flex items-center gap-3 text-[13px] tracking-[0.2em] uppercase text-white border border-white/30 px-10 py-4 hover:bg-white hover:text-[#1a1a1a] transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {sending ? "Sending…" : "Send Enquiry"}
+                {sending ? "Sending…" : "Request Quote"}
                 <span className="w-4 h-[1px] bg-current transition-all duration-500 group-hover:w-6" />
               </button>
             </div>

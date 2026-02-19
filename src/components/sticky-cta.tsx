@@ -20,13 +20,13 @@ export default function StickyCta() {
       {visible && (
         <motion.a
           href="#contact"
-          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          initial={{ opacity: 0, y: -10, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.9 }}
+          exit={{ opacity: 0, y: -10, scale: 0.9 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-6 right-6 z-50 bg-[#8b7355] hover:bg-[#6b5a43] text-white text-[11px] tracking-[0.2em] uppercase px-5 py-3 rounded-full shadow-lg shadow-black/20 transition-colors duration-300"
+          className="fixed top-20 right-6 md:right-8 z-40 bg-[#8b7355] hover:bg-[#6b5a43] text-white text-[11px] tracking-[0.2em] uppercase px-5 py-3 rounded-full shadow-lg shadow-black/20 transition-colors duration-300 animate-[gentle-pulse_3s_ease-in-out_infinite]"
         >
-          Get in Touch
+          Request Quote
         </motion.a>
       )}
     </AnimatePresence>
