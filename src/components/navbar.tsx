@@ -5,12 +5,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
-const navLinks = [
-  { label: "About", href: "#about" },
+const navLinks: { label: string; href: string; external?: boolean }[] = [
   { label: "Collection", href: "#collection" },
   { label: "Clients", href: "#clients" },
   { label: "Specs", href: "#specs" },
   { label: "Contact", href: "#contact" },
+  { label: "Wanderland", href: "https://www.wanderland.london", external: true },
 ];
 
 export default function Navbar() {
@@ -69,11 +69,12 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.replace("#", "");
+              const isActive = !link.external && activeSection === link.href.replace("#", "");
               return (
                 <a
                   key={link.href}
                   href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className={`relative text-[13px] tracking-[0.15em] uppercase transition-colors duration-300 hover:opacity-60 ${
                     scrolled
                       ? isActive
@@ -86,11 +87,13 @@ export default function Navbar() {
                 >
                   {link.label}
                   {/* Active underline */}
-                  <span
-                    className={`absolute -bottom-1.5 left-0 h-[1.5px] bg-[#8b7355] transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0"
-                    }`}
-                  />
+                  {!link.external && (
+                    <span
+                      className={`absolute -bottom-1.5 left-0 h-[1.5px] bg-[#8b7355] transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0"
+                      }`}
+                    />
+                  )}
                 </a>
               );
             })}
@@ -124,11 +127,12 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8"
           >
             {navLinks.map((link, i) => {
-              const isActive = activeSection === link.href.replace("#", "");
+              const isActive = !link.external && activeSection === link.href.replace("#", "");
               return (
                 <motion.a
                   key={link.href}
                   href={link.href}
+                  {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

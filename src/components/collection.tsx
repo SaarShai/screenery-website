@@ -40,6 +40,46 @@ const models: ModelItem[] = [
     },
   },
   {
+    name: "Birthday",
+    subtitle: "Celebration\u00A0Time",
+    description:
+      "The perfect way to celebrate a special day. Bringing an explosion of colour and fun to a birthday surprise. No glitter or confetti\u00A0needed!",
+    price: "From \u00A3995",
+    thumbnail: "/images/model thumbnails/model-thumbnails-birthday.jpg",
+    thumbnailWidth: 753,
+    thumbnailHeight: 552,
+    heroImage: {
+      src: "/images/best-birthday-in-room-w-boy-(large).jpg",
+      width: 2800,
+      height: 2417,
+    },
+    diagram: {
+      src: "/images/model diagrams/diagrams-birthday.jpg",
+      width: 904,
+      height: 663,
+    },
+  },
+  {
+    name: "Marine Life",
+    subtitle: "Underwater\u00A0Kingdom",
+    description:
+      "Where the wonders of the sea come to life on dry land. A vibrant underwater kingdom with spectacular starfish, graceful manta rays, and incredible coral\u00A0gardens.",
+    price: "From \u00A3995",
+    thumbnail: "/images/model thumbnails/model-thumbnails-marine-pod.jpg",
+    thumbnailWidth: 753,
+    thumbnailHeight: 552,
+    heroImage: {
+      src: "/images/better-girl-in-marine-pod-(small).jpg",
+      width: 3118,
+      height: 2334,
+    },
+    diagram: {
+      src: "/images/model diagrams/diagrams-marine.jpg",
+      width: 904,
+      height: 662,
+    },
+  },
+  {
     name: "Princess Palace",
     subtitle: "Fairytale\u00A0Magic",
     description:
@@ -80,26 +120,6 @@ const models: ModelItem[] = [
     },
   },
   {
-    name: "Birthday",
-    subtitle: "Celebration\u00A0Time",
-    description:
-      "The perfect way to celebrate a special day. Bringing an explosion of colour and fun to a birthday surprise. No glitter or confetti\u00A0needed!",
-    price: "From \u00A3995",
-    thumbnail: "/images/model thumbnails/model-thumbnails-birthday.jpg",
-    thumbnailWidth: 753,
-    thumbnailHeight: 552,
-    heroImage: {
-      src: "/images/best-birthday-in-room-w-boy-(large).jpg",
-      width: 2800,
-      height: 2417,
-    },
-    diagram: {
-      src: "/images/model diagrams/diagrams-birthday.jpg",
-      width: 904,
-      height: 663,
-    },
-  },
-  {
     name: "Reading Corner",
     subtitle: "Storybook\u00A0Retreat",
     description:
@@ -117,25 +137,6 @@ const models: ModelItem[] = [
       src: "/images/model diagrams/diagrams-reading.jpg",
       width: 904,
       height: 663,
-    },
-  },
-  {
-    name: "Marine Life",
-    subtitle: "Underwater\u00A0Kingdom",
-    description:
-      "Where the wonders of the sea come to life on dry land. A vibrant underwater kingdom with spectacular starfish, graceful manta rays, and incredible coral\u00A0gardens.",
-    thumbnail: "/images/model thumbnails/model-thumbnails-marine-pod.jpg",
-    thumbnailWidth: 753,
-    thumbnailHeight: 552,
-    heroImage: {
-      src: "/images/better-girl-in-marine-pod-(small).jpg",
-      width: 3118,
-      height: 2334,
-    },
-    diagram: {
-      src: "/images/model diagrams/diagrams-marine.jpg",
-      width: 904,
-      height: 662,
     },
   },
   {

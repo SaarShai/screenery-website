@@ -25,6 +25,10 @@ const heroImages = [
     src: "/images/better-girl-in-marine-pod-(small).jpg",
     alt: "Girl inside a Screenery marine-themed room divider",
   },
+  {
+    src: "/images/birthday-cover-(extra-large).jpg",
+    alt: "Screenery birthday-themed room divider celebration setup",
+  },
 ];
 
 export default function Hero() {
@@ -103,6 +107,23 @@ export default function Hero() {
       {/* Content — aligned to same max-w and padding as navbar */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-8 md:px-16 lg:px-24">
         <div className="w-full max-w-6xl mx-auto text-center">
+          {/* Screenery logo */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-8"
+          >
+            <Image
+              src="/images/screenery logo.svg"
+              alt="Screenery"
+              width={200}
+              height={41}
+              className="h-10 md:h-14 w-auto mx-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]"
+              priority
+            />
+          </motion.div>
+
           {/* Main title — large, spanning full width */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

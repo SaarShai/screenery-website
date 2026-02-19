@@ -4,9 +4,11 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
-const clientLogos = Array.from({ length: 16 }, (_, i) => ({
-  name: `Client ${i + 1}`,
-  logo: `/images/client logos/client-logos${String(i + 1).padStart(2, "0")}.jpg`,
+const clientLogoNumbers = [1,2,3,4,5,6,7,8,9,10,12,14,15,16,17,18,19,20,21,22,23,24];
+
+const clientLogos = clientLogoNumbers.map((n) => ({
+  name: `Client ${n}`,
+  logo: `/images/client logos/client-logos${String(n).padStart(2, "0")}.jpg`,
 }));
 
 export default function Clients() {
@@ -51,6 +53,25 @@ export default function Clients() {
             </motion.div>
           ))}
         </div>
+
+        {/* World map showing client locations */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 flex justify-center"
+        >
+          <div className="max-w-md w-full opacity-40 hover:opacity-60 transition-opacity duration-500">
+            <Image
+              src="/images/world map.png"
+              alt="World map showing Screenery client locations across the globe"
+              width={1492}
+              height={721}
+              className="w-full h-auto"
+              sizes="(max-width: 768px) 80vw, 400px"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );

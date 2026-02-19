@@ -45,10 +45,10 @@ export default function Specs() {
           </p>
         </FadeInWhenVisible>
 
-        {/* Bevel closeup images */}
+        {/* Material closeup images */}
         <FadeInWhenVisible delay={0.2}>
-          <div className="flex gap-4 md:gap-6 mb-16">
-            <div className="flex-1 max-w-[260px]">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
+            <div>
               <div className="overflow-hidden rounded-sm">
                 <Image
                   src="/images/bright bevel closeup.jpg"
@@ -56,14 +56,14 @@ export default function Specs() {
                   width={640}
                   height={370}
                   className="w-full h-auto"
-                  sizes="(max-width: 768px) 45vw, 260px"
+                  sizes="(max-width: 768px) 45vw, 220px"
                 />
               </div>
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
                 Finely grooved
               </p>
             </div>
-            <div className="flex-1 max-w-[260px]">
+            <div>
               <div className="overflow-hidden rounded-sm">
                 <Image
                   src="/images/bevel closeup.jpg"
@@ -71,11 +71,41 @@ export default function Specs() {
                   width={689}
                   height={398}
                   className="w-full h-auto"
-                  sizes="(max-width: 768px) 45vw, 260px"
+                  sizes="(max-width: 768px) 45vw, 220px"
                 />
               </div>
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
                 Intricate bevelling
+              </p>
+            </div>
+            <div>
+              <div className="overflow-hidden rounded-sm">
+                <Image
+                  src="/images/red texture closeup.jpg"
+                  alt="Soft fabric feel texture of a Screenery panel"
+                  width={640}
+                  height={370}
+                  className="w-full h-auto"
+                  sizes="(max-width: 768px) 45vw, 220px"
+                />
+              </div>
+              <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
+                Soft fabric feel
+              </p>
+            </div>
+            <div>
+              <div className="overflow-hidden rounded-sm">
+                <Image
+                  src="/images/double layer closeup.jpg"
+                  alt="Double-layer color detail of a Screenery panel"
+                  width={640}
+                  height={370}
+                  className="w-full h-auto"
+                  sizes="(max-width: 768px) 45vw, 220px"
+                />
+              </div>
+              <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
+                Double-layer colors
               </p>
             </div>
           </div>

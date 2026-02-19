@@ -7,13 +7,13 @@ import FadeInWhenVisible from "./fade-in-when-visible";
 import LazyVideo from "./lazy-video";
 
 const benefits = [
-  "A \u2018WOW\u2019 moment at room\u00A0arrival",
-  "Quick set-up within\u00A0minutes",
-  "Compact storage, durable and\u00A0reusable",
-  "Perfect for large & small\u00A0rooms",
-  "Sound dampening for adult\u00A0privacy",
-  "Safety & sustainability\u00A0compliant",
-  "Can serve as backdrops for seasonal events, kids clubs, parties, promotional\u00A0photoshoots",
+  { text: "A \u2018WOW\u2019 moment at room\u00A0arrival", icon: "\u2728" },
+  { text: "Quick set-up within\u00A0minutes", icon: "\u23F1" },
+  { text: "Compact storage, durable and\u00A0reusable", icon: "\uD83D\uDCE6" },
+  { text: "Perfect for large & small\u00A0rooms", icon: "\uD83D\uDEAA" },
+  { text: "Sound dampening for adult\u00A0privacy", icon: "\uD83D\uDD07" },
+  { text: "Safety & sustainability\u00A0compliant", icon: "\u2705" },
+  { text: "Seasonal events, kids clubs, parties, promotional\u00A0photoshoots", icon: "\uD83C\uDF89" },
 ];
 
 export default function About() {
@@ -82,30 +82,36 @@ export default function About() {
           </div>
         </FadeInWhenVisible>
 
-        {/* Benefits list + hand-made stamp */}
+        {/* Benefits grid + hand-made stamp */}
         <FadeInWhenVisible delay={0.1}>
-          <div className="mt-20 flex flex-col md:flex-row md:items-start md:justify-between gap-10 md:gap-16">
-            <div className="max-w-2xl">
+          <div className="mt-20">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 max-w-5xl">
               {benefits.map((benefit, i) => (
                 <FadeInWhenVisible key={i} delay={i * 0.06}>
-                  <div className="flex items-start gap-4 py-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#8b7355] mt-2.5 flex-shrink-0" />
-                    <p className="text-[15px] md:text-base leading-relaxed text-[#1a1a1a] font-light">
-                      {benefit}
+                  <div className="group flex items-start gap-4 p-4 rounded-lg border border-transparent hover:border-[#e5e2dc] hover:bg-[#faf9f7] transition-all duration-300">
+                    <span className="text-xl flex-shrink-0 mt-0.5 grayscale group-hover:grayscale-0 transition-all duration-300">
+                      {benefit.icon}
+                    </span>
+                    <p className="text-[14px] leading-relaxed text-[#1a1a1a] font-light">
+                      {benefit.text}
                     </p>
                   </div>
                 </FadeInWhenVisible>
               ))}
-            </div>
-
-            <div className="flex-shrink-0 self-center md:self-start md:mt-4 animate-[wiggle_3s_ease-in-out_infinite]">
-              <Image
-                src="/images/hand-made.png"
-                alt="Hand made stamp"
-                width={700}
-                height={695}
-                className="w-24 h-24 md:w-28 md:h-28 object-contain opacity-80"
-              />
+              {/* Hand-made stamp as the last grid item */}
+              <FadeInWhenVisible delay={benefits.length * 0.06}>
+                <div className="flex items-center justify-center p-4">
+                  <div className="animate-[wiggle_3s_ease-in-out_infinite]">
+                    <Image
+                      src="/images/hand-made.png"
+                      alt="Hand made stamp"
+                      width={700}
+                      height={695}
+                      className="w-20 h-20 md:w-24 md:h-24 object-contain opacity-80"
+                    />
+                  </div>
+                </div>
+              </FadeInWhenVisible>
             </div>
           </div>
         </FadeInWhenVisible>
