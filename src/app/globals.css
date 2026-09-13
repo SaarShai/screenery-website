@@ -70,3 +70,10 @@ img {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Catalogue designs A/B */
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+.font-display { font-family: var(--font-display), Georgia, serif; }

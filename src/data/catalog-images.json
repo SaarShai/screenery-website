@@ -1,0 +1,582 @@
+{
+ "standard/castle": [
+  {
+   "src": "/catalog/standard/castle/hero.jpg",
+   "w": 1800,
+   "h": 1172
+  },
+  {
+   "src": "/catalog/standard/castle/v2.jpg",
+   "w": 1800,
+   "h": 1376
+  },
+  {
+   "src": "/catalog/standard/castle/v3.jpg",
+   "w": 1637,
+   "h": 1300
+  },
+  {
+   "src": "/catalog/standard/castle/room1.jpg",
+   "w": 1800,
+   "h": 1515
+  },
+  {
+   "src": "/catalog/standard/castle/room2.jpg",
+   "w": 1800,
+   "h": 1362
+  }
+ ],
+ "standard/birthday": [
+  {
+   "src": "/catalog/standard/birthday/hero.jpg",
+   "w": 1448,
+   "h": 1086
+  },
+  {
+   "src": "/catalog/standard/birthday/v2.jpg",
+   "w": 1448,
+   "h": 1086
+  },
+  {
+   "src": "/catalog/standard/birthday/v3.jpg",
+   "w": 1448,
+   "h": 1086
+  },
+  {
+   "src": "/catalog/standard/birthday/room1.jpg",
+   "w": 1800,
+   "h": 1554
+  },
+  {
+   "src": "/catalog/standard/birthday/room2.jpg",
+   "w": 1800,
+   "h": 1707
+  }
+ ],
+ "standard/marine": [
+  {
+   "src": "/catalog/standard/marine/hero.jpg",
+   "w": 1659,
+   "h": 1800
+  },
+  {
+   "src": "/catalog/standard/marine/v2.jpg",
+   "w": 1538,
+   "h": 1800
+  },
+  {
+   "src": "/catalog/standard/marine/v3.jpg",
+   "w": 1800,
+   "h": 1211
+  },
+  {
+   "src": "/catalog/standard/marine/room1.jpg",
+   "w": 1800,
+   "h": 1347
+  }
+ ],
+ "standard/princess": [
+  {
+   "src": "/catalog/standard/princess/hero.jpg",
+   "w": 1800,
+   "h": 1184
+  },
+  {
+   "src": "/catalog/standard/princess/v2.jpg",
+   "w": 1800,
+   "h": 1741
+  },
+  {
+   "src": "/catalog/standard/princess/v3.jpg",
+   "w": 1800,
+   "h": 1562
+  },
+  {
+   "src": "/catalog/standard/princess/room1.jpg",
+   "w": 1800,
+   "h": 1518
+  }
+ ],
+ "standard/space": [
+  {
+   "src": "/catalog/standard/space/hero.jpg",
+   "w": 1800,
+   "h": 1468
+  },
+  {
+   "src": "/catalog/standard/space/v2.jpg",
+   "w": 1800,
+   "h": 1198
+  },
+  {
+   "src": "/catalog/standard/space/v3.jpg",
+   "w": 1800,
+   "h": 1262
+  },
+  {
+   "src": "/catalog/standard/space/room1.jpg",
+   "w": 1800,
+   "h": 1323
+  }
+ ],
+ "standard/reading": [
+  {
+   "src": "/catalog/standard/reading/hero.jpg",
+   "w": 1800,
+   "h": 1350
+  },
+  {
+   "src": "/catalog/standard/reading/v2.jpg",
+   "w": 1448,
+   "h": 1086
+  },
+  {
+   "src": "/catalog/standard/reading/v3.jpg",
+   "w": 1800,
+   "h": 1222
+  },
+  {
+   "src": "/catalog/standard/reading/room1.jpg",
+   "w": 1773,
+   "h": 1800
+  },
+  {
+   "src": "/catalog/standard/reading/room2.jpg",
+   "w": 1772,
+   "h": 1800
+  }
+ ],
+ "standard/arabian": [
+  {
+   "src": "/catalog/standard/arabian/hero.jpg",
+   "w": 1800,
+   "h": 1236
+  },
+  {
+   "src": "/catalog/standard/arabian/v2.jpg",
+   "w": 1800,
+   "h": 1328
+  },
+  {
+   "src": "/catalog/standard/arabian/v3.jpg",
+   "w": 1800,
+   "h": 1373
+  },
+  {
+   "src": "/catalog/standard/arabian/room1.jpg",
+   "w": 1800,
+   "h": 1351
+  },
+  {
+   "src": "/catalog/standard/arabian/room2.jpg",
+   "w": 1800,
+   "h": 1350
+  }
+ ],
+ "standard/festive": [
+  {
+   "src": "/catalog/standard/festive/hero.jpg",
+   "w": 1800,
+   "h": 1303
+  },
+  {
+   "src": "/catalog/standard/festive/v2.jpg",
+   "w": 1800,
+   "h": 1246
+  },
+  {
+   "src": "/catalog/standard/festive/v3.jpg",
+   "w": 1705,
+   "h": 1800
+  },
+  {
+   "src": "/catalog/standard/festive/room1.jpg",
+   "w": 1705,
+   "h": 1800
+  }
+ ],
+ "standard/cafe": [
+  {
+   "src": "/catalog/standard/cafe/hero.jpg",
+   "w": 1800,
+   "h": 1196
+  },
+  {
+   "src": "/catalog/standard/cafe/v2.jpg",
+   "w": 1800,
+   "h": 1208
+  },
+  {
+   "src": "/catalog/standard/cafe/v3.jpg",
+   "w": 753,
+   "h": 552
+  },
+  {
+   "src": "/catalog/standard/cafe/room1.jpg",
+   "w": 1800,
+   "h": 1208
+  }
+ ],
+ "cities/london": [
+  {
+   "src": "/catalog/cities/london/hero.jpg",
+   "w": 1448,
+   "h": 1086
+  },
+  {
+   "src": "/catalog/cities/london/v2.jpg",
+   "w": 1448,
+   "h": 1086
+  },
+  {
+   "src": "/catalog/cities/london/v3.jpg",
+   "w": 1800,
+   "h": 735
+  },
+  {
+   "src": "/catalog/cities/london/room1.jpg",
+   "w": 1800,
+   "h": 735
+  }
+ ],
+ "cities/paris": [
+  {
+   "src": "/catalog/cities/paris/hero.jpg",
+   "w": 1800,
+   "h": 1018
+  },
+  {
+   "src": "/catalog/cities/paris/v2.jpg",
+   "w": 1800,
+   "h": 1018
+  },
+  {
+   "src": "/catalog/cities/paris/v3.jpg",
+   "w": 1800,
+   "h": 1018
+  },
+  {
+   "src": "/catalog/cities/paris/room1.jpg",
+   "w": 1466,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/cities/paris/room2.jpg",
+   "w": 1536,
+   "h": 1024
+  }
+ ],
+ "cities/new-york": [
+  {
+   "src": "/catalog/cities/new-york/hero.jpg",
+   "w": 1800,
+   "h": 1156
+  },
+  {
+   "src": "/catalog/cities/new-york/v2.jpg",
+   "w": 1800,
+   "h": 1350
+  },
+  {
+   "src": "/catalog/cities/new-york/v3.jpg",
+   "w": 1448,
+   "h": 1086
+  },
+  {
+   "src": "/catalog/cities/new-york/room1.jpg",
+   "w": 1800,
+   "h": 1208
+  }
+ ],
+ "cities/san-francisco": [
+  {
+   "src": "/catalog/cities/san-francisco/hero.jpg",
+   "w": 1800,
+   "h": 1129
+  },
+  {
+   "src": "/catalog/cities/san-francisco/v2.jpg",
+   "w": 1248,
+   "h": 832
+  },
+  {
+   "src": "/catalog/cities/san-francisco/v3.jpg",
+   "w": 1800,
+   "h": 1587
+  },
+  {
+   "src": "/catalog/cities/san-francisco/room1.jpg",
+   "w": 1800,
+   "h": 1587
+  }
+ ],
+ "cities/berlin": [
+  {
+   "src": "/catalog/cities/berlin/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/cities/berlin/v2.jpg",
+   "w": 1152,
+   "h": 768
+  },
+  {
+   "src": "/catalog/cities/berlin/v3.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/cities/berlin/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  }
+ ],
+ "bedwrappers/chinese-dragon": [
+  {
+   "src": "/catalog/bedwrappers/chinese-dragon/hero.jpg",
+   "w": 1800,
+   "h": 1133
+  },
+  {
+   "src": "/catalog/bedwrappers/chinese-dragon/v2.jpg",
+   "w": 1800,
+   "h": 1133
+  },
+  {
+   "src": "/catalog/bedwrappers/chinese-dragon/v3.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/bedwrappers/chinese-dragon/room1.jpg",
+   "w": 1800,
+   "h": 1208
+  }
+ ],
+ "bedwrappers/petit-prince": [
+  {
+   "src": "/catalog/bedwrappers/petit-prince/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/bedwrappers/petit-prince/v2.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/bedwrappers/petit-prince/v3.jpg",
+   "w": 1800,
+   "h": 982
+  },
+  {
+   "src": "/catalog/bedwrappers/petit-prince/room1.jpg",
+   "w": 1800,
+   "h": 982
+  }
+ ],
+ "bedwrappers/arabian-nights": [
+  {
+   "src": "/catalog/bedwrappers/arabian-nights/hero.jpg",
+   "w": 1800,
+   "h": 1208
+  },
+  {
+   "src": "/catalog/bedwrappers/arabian-nights/v2.jpg",
+   "w": 1800,
+   "h": 1307
+  },
+  {
+   "src": "/catalog/bedwrappers/arabian-nights/v3.jpg",
+   "w": 1800,
+   "h": 1307
+  },
+  {
+   "src": "/catalog/bedwrappers/arabian-nights/room1.jpg",
+   "w": 1800,
+   "h": 1307
+  }
+ ],
+ "bedwrappers/marine": [
+  {
+   "src": "/catalog/bedwrappers/marine/hero.jpg",
+   "w": 1800,
+   "h": 1211
+  },
+  {
+   "src": "/catalog/bedwrappers/marine/v2.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/bedwrappers/marine/v3.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/bedwrappers/marine/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  }
+ ],
+ "bedwrappers/san-francisco": [
+  {
+   "src": "/catalog/bedwrappers/san-francisco/hero.jpg",
+   "w": 1800,
+   "h": 1079
+  },
+  {
+   "src": "/catalog/bedwrappers/san-francisco/v2.jpg",
+   "w": 1800,
+   "h": 1208
+  },
+  {
+   "src": "/catalog/bedwrappers/san-francisco/v3.jpg",
+   "w": 1800,
+   "h": 1132
+  },
+  {
+   "src": "/catalog/bedwrappers/san-francisco/room1.jpg",
+   "w": 1800,
+   "h": 1079
+  }
+ ],
+ "bespoke/forte": [
+  {
+   "src": "/catalog/bespoke/forte/hero.jpg",
+   "w": 1280,
+   "h": 960
+  },
+  {
+   "src": "/catalog/bespoke/forte/v2.jpg",
+   "w": 1280,
+   "h": 960
+  },
+  {
+   "src": "/catalog/bespoke/forte/v3.jpg",
+   "w": 1280,
+   "h": 960
+  },
+  {
+   "src": "/catalog/bespoke/forte/room1.jpg",
+   "w": 1280,
+   "h": 960
+  }
+ ],
+ "bespoke/mallorca": [
+  {
+   "src": "/catalog/bespoke/mallorca/hero.jpg",
+   "w": 1491,
+   "h": 954
+  },
+  {
+   "src": "/catalog/bespoke/mallorca/v2.jpg",
+   "w": 972,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/bespoke/mallorca/v3.jpg",
+   "w": 1800,
+   "h": 1524
+  },
+  {
+   "src": "/catalog/bespoke/mallorca/room1.jpg",
+   "w": 1074,
+   "h": 878
+  },
+  {
+   "src": "/catalog/bespoke/mallorca/room2.jpg",
+   "w": 1244,
+   "h": 1024
+  }
+ ],
+ "bespoke/orlando": [
+  {
+   "src": "/catalog/bespoke/orlando/hero.jpg",
+   "w": 1800,
+   "h": 1208
+  },
+  {
+   "src": "/catalog/bespoke/orlando/v2.jpg",
+   "w": 1800,
+   "h": 1208
+  },
+  {
+   "src": "/catalog/bespoke/orlando/v3.jpg",
+   "w": 1800,
+   "h": 1208
+  },
+  {
+   "src": "/catalog/bespoke/orlando/room1.jpg",
+   "w": 1800,
+   "h": 1208
+  }
+ ],
+ "bespoke/zurich": [
+  {
+   "src": "/catalog/bespoke/zurich/hero.jpg",
+   "w": 1800,
+   "h": 1202
+  },
+  {
+   "src": "/catalog/bespoke/zurich/v2.jpg",
+   "w": 1800,
+   "h": 1202
+  },
+  {
+   "src": "/catalog/bespoke/zurich/v3.jpg",
+   "w": 1800,
+   "h": 1202
+  },
+  {
+   "src": "/catalog/bespoke/zurich/room1.jpg",
+   "w": 1800,
+   "h": 1202
+  }
+ ],
+ "bespoke/chinese-new-year": [
+  {
+   "src": "/catalog/bespoke/chinese-new-year/hero.jpg",
+   "w": 1800,
+   "h": 1207
+  },
+  {
+   "src": "/catalog/bespoke/chinese-new-year/v2.jpg",
+   "w": 1800,
+   "h": 1338
+  },
+  {
+   "src": "/catalog/bespoke/chinese-new-year/v3.jpg",
+   "w": 1800,
+   "h": 1207
+  },
+  {
+   "src": "/catalog/bespoke/chinese-new-year/room1.jpg",
+   "w": 1800,
+   "h": 1338
+  }
+ ],
+ "bespoke/football": [
+  {
+   "src": "/catalog/bespoke/football/hero.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/bespoke/football/v2.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/bespoke/football/v3.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/bespoke/football/room1.jpg",
+   "w": 1800,
+   "h": 1200
+  }
+ ]
+}
