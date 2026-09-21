@@ -67,7 +67,7 @@ const items: Item[] = [
           <span className="text-[#7a7468] text-[0.92em]">
             (Gingerbread House + Sleigh &amp; Reindeer + Christmas Tree, Polar Bear and Snowman)
           </span>{" "}
-          <P gbp="£2,150" usd="$2,695" eur="€2,475" />
+          <P gbp="£1,895" usd="$2,375" eur="€2,175" />
         </p>
       </>
     ),
@@ -111,7 +111,7 @@ const items: Item[] = [
     dims: <>Sold as a set of sleigh + 3 pairs</>,
     price: (
       <p>
-        <b>Price</b> <P gbp="£650" usd="$795" eur="€750" />
+        <b>Price</b> <P gbp="£495" usd="$595" eur="€575" />
       </p>
     ),
   },
@@ -127,7 +127,7 @@ const items: Item[] = [
     dims: <>Sold as a set of 3</>,
     price: (
       <p>
-        <b>Price</b> <P gbp="£650" usd="$795" eur="€750" />
+        <b>Price</b> <P gbp="£495" usd="$595" eur="€575" />
       </p>
     ),
   },
