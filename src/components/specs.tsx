@@ -34,7 +34,7 @@ export default function Specs() {
           </p>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.1}>
-          <h2 className="text-3xl md:text-5xl font-extralight leading-tight max-w-3xl mb-6">
+          <h2 className="font-display text-3xl md:text-5xl leading-tight max-w-3xl mb-6">
             Engineered for&nbsp;hospitality
           </h2>
         </FadeInWhenVisible>

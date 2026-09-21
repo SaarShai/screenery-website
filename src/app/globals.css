@@ -5,15 +5,15 @@
 /* For now we use a fallback stack that looks close. */
 
 @theme inline {
-  --color-background: #fafaf8;
-  --color-foreground: #1a1a1a;
+  --color-background: #f6f1e8;
+  --color-foreground: #17150f;
   --color-accent: #8b7355;
   --color-accent-light: #c4a97d;
   --color-muted: #6b6b6b;
   --color-border: #e5e2dc;
   --color-card: #ffffff;
   --color-hero-overlay: rgba(0, 0, 0, 0.3);
-  --font-sans: "Neue Haas Grotesk Display Pro", "Neue Haas Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-sans: var(--font-body), "Neue Haas Grotesk Display Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html {
@@ -70,3 +70,10 @@ img {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* Catalogue designs A/B */
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+.font-display { font-family: var(--font-display), Georgia, serif; }
