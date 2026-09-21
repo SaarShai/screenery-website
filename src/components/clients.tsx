@@ -4,12 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 
-const clientLogoNumbers = [1,2,3,4,5,6,7,8,9,10,12,14,15,16,17,18,19,20,21,22,23,24];
-
-const clientLogos = clientLogoNumbers.map((n) => ({
-  name: `Client ${n}`,
-  logo: `/images/client logos/client-logos${String(n).padStart(2, "0")}.jpg`,
-}));
+import clientLogos from "@/data/hotel-logos.json";
 
 export default function Clients() {
   const ref = useRef(null);
@@ -32,24 +27,18 @@ export default function Clients() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 md:gap-10 items-center">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-6 gap-y-4 items-center">
           {clientLogos.map((client, i) => (
             <motion.div
-              key={client.name}
+              key={client.src}
               initial={{ opacity: 0, y: 20 }}
               animate={
                 isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="flex items-center justify-center grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+              className="relative aspect-[520/180] opacity-50 hover:opacity-90 transition-opacity duration-500"
             >
-              <Image
-                src={client.logo}
-                alt={client.name}
-                width={160}
-                height={100}
-                className="w-full h-auto max-h-16 object-contain"
-              />
+              <Image src={client.src} alt={client.alt} fill sizes="180px" className="object-contain scale-[0.8]" />
             </motion.div>
           ))}
         </div>

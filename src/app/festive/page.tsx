@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Bitter, Poppins } from "next/font/google";
 import Footer from "@/components/footer";
-import logos from "./logos.json";
+import logos from "@/data/hotel-logos.json";
 
 const bitter = Bitter({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-bitter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--font-poppins" });
