@@ -242,21 +242,20 @@ export default function FestivePage() {
 
       {/* Hero */}
       <section className="mx-auto max-w-6xl px-6 md:px-10 pt-10 md:pt-16 pb-12 md:pb-20">
-        <div className="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-12 items-start">
-          <div className="relative aspect-[390/333] overflow-hidden rounded-[10px]">
+        <div className="grid gap-8 lg:grid-cols-[1fr_300px] lg:grid-rows-[auto_auto] lg:gap-x-12 lg:gap-y-8">
+          <div className="relative aspect-[390/333] overflow-hidden rounded-[10px] lg:col-start-1 lg:row-start-1 xl:row-span-2 xl:aspect-auto xl:h-full xl:min-h-[560px]">
             <Image src="/festive/hero.jpg" alt="Gingerbread House and Biscuit Bed Wrapper in a hotel room" fill priority sizes="(min-width:1024px) 800px, 100vw" className="object-cover object-[12%_50%]" />
           </div>
-          <div className="flex flex-col gap-8 [&_figure]:max-w-[300px]">
-            <div>
-              <p className={kicker}>Festive Collection 2026</p>
-              <h1 className="font-[family-name:var(--font-bitter)] font-normal text-[34px] md:text-[40px] leading-[1.1] mt-3">
-                A Festive Wonderland, set up within minutes.
-              </h1>
-              <p className="mt-5 text-[15px] leading-[1.65] text-[#3f3b35]">
-                Turn any hotel room, lobby or restaurant into a candy-house Christmas for your youngest guests. A gingerbread play house, a biscuit bed wrapper and a family of festive friends — printed recycled felt, delivered flat, standing in minutes and packed away after the season.
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-8">
+          <div className="lg:col-start-2 lg:row-start-1">
+            <p className={kicker}>Festive Collection 2026</p>
+            <h1 className="font-[family-name:var(--font-bitter)] font-normal text-[34px] md:text-[40px] leading-[1.1] mt-3">
+              A Festive Wonderland, set up within minutes.
+            </h1>
+            <p className="mt-5 text-[15px] leading-[1.65] text-[#3f3b35]">
+              Turn any hotel room, lobby or restaurant into a candy-house Christmas for your youngest guests. A gingerbread play house, a biscuit bed wrapper and a family of festive friends — printed recycled felt, delivered flat, standing in minutes and packed away after the season.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-6 lg:col-start-1 lg:row-start-2 xl:col-start-2 xl:row-start-2 xl:grid-cols-1 xl:self-end [&_figure]:max-w-[300px] xl:[&_figure]:max-w-[230px]">
             <figure>
               <div className="relative aspect-[4/3] overflow-hidden rounded-[6px]">
                 <Image src="/festive/lobby.jpg" alt="Gingerbread House in a hotel lobby" fill sizes="640px" quality={90} className="object-cover" />
@@ -269,7 +268,6 @@ export default function FestivePage() {
               </div>
               <figcaption className="mt-2 text-[10px] tracking-[0.26em] uppercase text-[#7a7468]">Restaurant &amp; events</figcaption>
             </figure>
-            </div>
           </div>
         </div>
       </section>
