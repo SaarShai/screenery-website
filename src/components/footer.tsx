@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -15,24 +16,24 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center gap-8">
-          <a
-            href="#about"
+          <Link
+            href="/#about"
             className="text-white/40 text-xs tracking-[0.1em] uppercase hover:text-white/70 transition-colors"
           >
             About
-          </a>
-          <a
-            href="#collection"
+          </Link>
+          <Link
+            href="/#collection"
             className="text-white/40 text-xs tracking-[0.1em] uppercase hover:text-white/70 transition-colors"
           >
             Collection
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            href="/#contact"
             className="text-white/40 text-xs tracking-[0.1em] uppercase hover:text-white/70 transition-colors"
           >
             Contact
-          </a>
+          </Link>
           <a
             href="https://www.linkedin.com/company/wanderland-london/"
             target="_blank"
