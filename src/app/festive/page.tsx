@@ -246,7 +246,7 @@ export default function FestivePage() {
           <div className="relative aspect-[390/333] overflow-hidden rounded-[10px]">
             <Image src="/festive/hero.jpg" alt="Gingerbread House and Biscuit Bed Wrapper in a hotel room" fill priority sizes="(min-width:1024px) 800px, 100vw" className="object-cover object-[12%_50%]" />
           </div>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-8 [&_figure]:max-w-[300px]">
             <div>
               <p className={kicker}>Festive Collection 2026</p>
               <h1 className="font-[family-name:var(--font-bitter)] font-normal text-[34px] md:text-[40px] leading-[1.1] mt-3">
@@ -256,18 +256,20 @@ export default function FestivePage() {
                 Turn any hotel room, lobby or restaurant into a candy-house Christmas for your youngest guests. A gingerbread play house, a biscuit bed wrapper and a family of festive friends — printed recycled felt, delivered flat, standing in minutes and packed away after the season.
               </p>
             </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-8">
             <figure>
               <div className="relative aspect-[4/3] overflow-hidden rounded-[6px]">
-                <Image src="/festive/lobby.jpg" alt="Gingerbread House in a hotel lobby" fill sizes="300px" className="object-cover" />
+                <Image src="/festive/lobby.jpg" alt="Gingerbread House in a hotel lobby" fill sizes="640px" quality={90} className="object-cover" />
               </div>
               <figcaption className="mt-2 text-[10px] tracking-[0.26em] uppercase text-[#7a7468]">Hotel lobby &amp; reception area</figcaption>
             </figure>
             <figure>
-              <div className="relative aspect-[3/2] overflow-hidden rounded-[6px]">
-                <Image src="/festive/dining.jpg" alt="Festive figures in a hotel restaurant" fill sizes="300px" className="object-cover" />
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[6px]">
+                <Image src="/festive/dining.jpg" alt="Festive figures in a hotel restaurant" fill sizes="640px" quality={90} className="object-cover" />
               </div>
               <figcaption className="mt-2 text-[10px] tracking-[0.26em] uppercase text-[#7a7468]">Restaurant &amp; events</figcaption>
             </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -296,10 +298,10 @@ export default function FestivePage() {
       {/* Trusted by */}
       <section className="mx-auto max-w-6xl px-6 md:px-10 pb-16 md:pb-24">
         <p className={`${kicker} mb-6`}>Trusted by</p>
-        <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-6 gap-x-6 gap-y-4 opacity-75">
+        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-x-8 gap-y-6 opacity-60">
           {logos.map((l) => (
             <div key={l.src} className="relative aspect-[520/180]">
-              <Image src={l.src} alt={l.alt} fill sizes="200px" className="object-contain" />
+              <Image src={l.src} alt={l.alt} fill sizes="160px" className="object-contain scale-[0.8]" />
             </div>
           ))}
         </div>
