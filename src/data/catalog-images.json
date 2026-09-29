@@ -173,28 +173,6 @@
    "h": 1350
   }
  ],
- "standard/festive": [
-  {
-   "src": "/catalog/standard/festive/hero.jpg",
-   "w": 1800,
-   "h": 1303
-  },
-  {
-   "src": "/catalog/standard/festive/v2.jpg",
-   "w": 1800,
-   "h": 1246
-  },
-  {
-   "src": "/catalog/standard/festive/v3.jpg",
-   "w": 1705,
-   "h": 1800
-  },
-  {
-   "src": "/catalog/standard/festive/room1.jpg",
-   "w": 1705,
-   "h": 1800
-  }
- ],
  "standard/cafe": [
   {
    "src": "/catalog/standard/cafe/hero.jpg",
@@ -332,72 +310,6 @@
    "h": 1024
   }
  ],
- "bedwrappers/chinese-dragon": [
-  {
-   "src": "/catalog/bedwrappers/chinese-dragon/hero.jpg",
-   "w": 1800,
-   "h": 1133
-  },
-  {
-   "src": "/catalog/bedwrappers/chinese-dragon/v2.jpg",
-   "w": 1800,
-   "h": 1133
-  },
-  {
-   "src": "/catalog/bedwrappers/chinese-dragon/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/bedwrappers/chinese-dragon/room1.jpg",
-   "w": 1800,
-   "h": 1208
-  }
- ],
- "bedwrappers/petit-prince": [
-  {
-   "src": "/catalog/bedwrappers/petit-prince/hero.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/bedwrappers/petit-prince/v2.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/bedwrappers/petit-prince/v3.jpg",
-   "w": 1800,
-   "h": 982
-  },
-  {
-   "src": "/catalog/bedwrappers/petit-prince/room1.jpg",
-   "w": 1800,
-   "h": 982
-  }
- ],
- "bedwrappers/arabian-nights": [
-  {
-   "src": "/catalog/bedwrappers/arabian-nights/hero.jpg",
-   "w": 1800,
-   "h": 1208
-  },
-  {
-   "src": "/catalog/bedwrappers/arabian-nights/v2.jpg",
-   "w": 1800,
-   "h": 1307
-  },
-  {
-   "src": "/catalog/bedwrappers/arabian-nights/v3.jpg",
-   "w": 1800,
-   "h": 1307
-  },
-  {
-   "src": "/catalog/bedwrappers/arabian-nights/room1.jpg",
-   "w": 1800,
-   "h": 1307
-  }
- ],
  "bedwrappers/marine": [
   {
    "src": "/catalog/bedwrappers/marine/hero.jpg",
@@ -418,28 +330,6 @@
    "src": "/catalog/bedwrappers/marine/room1.jpg",
    "w": 1536,
    "h": 1024
-  }
- ],
- "bedwrappers/san-francisco": [
-  {
-   "src": "/catalog/bedwrappers/san-francisco/hero.jpg",
-   "w": 1800,
-   "h": 1079
-  },
-  {
-   "src": "/catalog/bedwrappers/san-francisco/v2.jpg",
-   "w": 1800,
-   "h": 1208
-  },
-  {
-   "src": "/catalog/bedwrappers/san-francisco/v3.jpg",
-   "w": 1800,
-   "h": 1132
-  },
-  {
-   "src": "/catalog/bedwrappers/san-francisco/room1.jpg",
-   "w": 1800,
-   "h": 1079
   }
  ],
  "bespoke/forte": [
@@ -491,94 +381,6 @@
    "h": 1024
   }
  ],
- "bespoke/orlando": [
-  {
-   "src": "/catalog/bespoke/orlando/hero.jpg",
-   "w": 1800,
-   "h": 1208
-  },
-  {
-   "src": "/catalog/bespoke/orlando/v2.jpg",
-   "w": 1800,
-   "h": 1208
-  },
-  {
-   "src": "/catalog/bespoke/orlando/v3.jpg",
-   "w": 1800,
-   "h": 1208
-  },
-  {
-   "src": "/catalog/bespoke/orlando/room1.jpg",
-   "w": 1800,
-   "h": 1208
-  }
- ],
- "bespoke/zurich": [
-  {
-   "src": "/catalog/bespoke/zurich/hero.jpg",
-   "w": 1800,
-   "h": 1202
-  },
-  {
-   "src": "/catalog/bespoke/zurich/v2.jpg",
-   "w": 1800,
-   "h": 1202
-  },
-  {
-   "src": "/catalog/bespoke/zurich/v3.jpg",
-   "w": 1800,
-   "h": 1202
-  },
-  {
-   "src": "/catalog/bespoke/zurich/room1.jpg",
-   "w": 1800,
-   "h": 1202
-  }
- ],
- "bespoke/chinese-new-year": [
-  {
-   "src": "/catalog/bespoke/chinese-new-year/hero.jpg",
-   "w": 1800,
-   "h": 1207
-  },
-  {
-   "src": "/catalog/bespoke/chinese-new-year/v2.jpg",
-   "w": 1800,
-   "h": 1338
-  },
-  {
-   "src": "/catalog/bespoke/chinese-new-year/v3.jpg",
-   "w": 1800,
-   "h": 1207
-  },
-  {
-   "src": "/catalog/bespoke/chinese-new-year/room1.jpg",
-   "w": 1800,
-   "h": 1338
-  }
- ],
- "bespoke/football": [
-  {
-   "src": "/catalog/bespoke/football/hero.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/bespoke/football/v2.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/bespoke/football/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/bespoke/football/room1.jpg",
-   "w": 1800,
-   "h": 1200
-  }
- ],
  "standard/police": [
   {
    "src": "/catalog/standard/police/hero.jpg",
@@ -621,6 +423,67 @@
    "src": "/catalog/standard/fire-station/room1.jpg",
    "w": 1536,
    "h": 1024
+  }
+ ],
+ "standard/castle-xl": [
+  {
+   "src": "/catalog/standard/castle-xl/hero.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/standard/castle-xl/v2.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  {
+   "src": "/catalog/standard/castle-xl/v3.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  {
+   "src": "/catalog/standard/castle-xl/room1.jpg",
+   "w": 1800,
+   "h": 1200
+  }
+ ],
+ "standard/hospital": [
+  {
+   "src": "/catalog/standard/hospital/hero.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  {
+   "src": "/catalog/standard/hospital/v2.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  {
+   "src": "/catalog/standard/hospital/v3.jpg",
+   "w": 1800,
+   "h": 1440
+  }
+ ],
+ "bespoke/great-wall": [
+  {
+   "src": "/catalog/bespoke/great-wall/hero.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  {
+   "src": "/catalog/bespoke/great-wall/v2.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  {
+   "src": "/catalog/bespoke/great-wall/v3.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  {
+   "src": "/catalog/bespoke/great-wall/room1.jpg",
+   "w": 1800,
+   "h": 1200
   }
  ]
 }

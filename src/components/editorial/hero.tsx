@@ -35,7 +35,7 @@ export default function Hero() {
                     <span className="mr-4 text-[11px] tracking-[0.2em] text-[#8b7355]">0{i + 1}</span>
                     {s.name}
                   </span>
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-[#5b574f]">{s.items.length} designs</span>
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-[#5b574f]">{s.items.length} {s.items.length === 1 ? "design" : "designs"}</span>
                 </a>
               </li>
             ))}

@@ -57,18 +57,19 @@ export const sections: Section[] = [
     name: "The Collection",
     kicker: "Standard models",
     intro:
-      "Eleven themed worlds, ready to ship. Each one unfolds into a play area in minutes and packs flat when the guests check out.",
+      "Twelve themed worlds, ready to ship. Each one unfolds into a play area in minutes and packs flat when the guests check out.",
     items: [
-      design("standard", "castle", "Castle", "Standard & XL editions", "A fortress of imagination stands tall. Perfect for kids who believe every room should come with a throne.", ["Standard", "Front", "Back"], "From £1,150"),
+      design("standard", "castle", "Castle", "Standard edition", "A fortress of imagination stands tall. Perfect for kids who believe every room should come with a throne.", ["Standard", "Front", "Back"], "From £1,150"),
+      design("standard", "castle-xl", "Castle XL", "Grand edition", "The castle, scaled up for lobbies, kids clubs and events. Room inside for a whole group of little knights.", ["Studio", "Three-quarter", "Wide"]),
       design("standard", "birthday", "Birthday", "Celebration time", "An explosion of colour and fun for a birthday surprise. No glitter or confetti needed.", ST, "From £995"),
       design("standard", "marine", "Marine Life", "Underwater kingdom", "Starfish, manta rays and coral gardens: the wonders of the sea on dry land.", ["Front", "Back", "Bali edition"], "From £995"),
       design("standard", "princess", "Princess Palace", "Fairytale magic", "For children who dream of glass slippers and enchanted forests.", ["Front", "Back", "In a suite"], "From £995"),
       design("standard", "space", "Spaceship", "Mission control", "For children who dream of touching the stars. Sends space adventurers zooming into orbit.", ["Studio", "Girl in space", "Angled"], "From £995"),
       design("standard", "police", "Police Station", "On patrol", "Blue lights, a patrol car and a lookout tower. Little officers keep the suite safe and sound.", ["Studio", "On duty", "With a cadet"]),
       design("standard", "fire-station", "Fire Station", "To the rescue", "A red fire engine, a bell tower and big arched doors. Ready for the next call-out, siren optional.", ["Studio", "Two firefighters", "Wide"]),
+      design("standard", "hospital", "Hospital", "Little doctors", "An emergency bay with its ambulance, a rooftop helipad and a park bench for recovering teddies.", ["Front", "Folded", "Wide"]),
       design("standard", "reading", "Reading Corner", "Storybook retreat", "After a long day of travel, the young ones need a cosy moment to relax.", ["Front", "Back", "In a line"], "From £1,250"),
       design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Folded", "Tall", "Ramadan edition"], "From £1,350"),
-      design("standard", "festive", "Gingerbread House", "Festive edition", "The most delicious way to celebrate the season, with no sticky fingers.", ["House", "Evening", "With kids"], "From £1,150"),
       design("standard", "cafe", "Kids Cafe", "Sweet delights", "Every day is opening day at the sweetest spot in town.", ["Studio", "With girl", "Thumbnail"], "From £1,250"),
     ],
   },
@@ -93,11 +94,7 @@ export const sections: Section[] = [
     intro:
       "A themed wrap for the bed itself. The room stays as it is; the bed becomes a dragon, a planet or a night sky.",
     items: [
-      design("bedwrappers", "chinese-dragon", "Chinese Dragon", "Lunar New Year", "A red and gold dragon that coils around the whole bed.", ["Wrap", "On bed", "In room"], "From £850"),
-      design("bedwrappers", "petit-prince", "Le Petit Prince", "Storybook", "The little prince, his rose and his planet.", ["Wrap 1", "Wrap 2", "Wrap 3"], "From £850"),
-      design("bedwrappers", "arabian-nights", "Arabian Nights", "Ramadan edition", "Lanterns and crescent moons for the holy month.", ["On bed", "In room", "Alternate"], "From £850"),
       design("bedwrappers", "marine", "Marine Life", "Twin beds", "Coral and clownfish for a twin room.", ["Bali", "Twin beds", "Twin room"], "From £850"),
-      design("bedwrappers", "san-francisco", "San Francisco", "City edition", "The Golden Gate at the foot of the bed.", ["With girl", "Alebrijes", "Alternate"], "From £850"),
     ],
   },
   {
@@ -108,11 +105,8 @@ export const sections: Section[] = [
       "Your building, your mascot, your colour palette. Our creative team designs a set that exists nowhere else.",
     items: [
       design("bespoke", "forte", "Forte Village", "Sardinia", "The resort's own skyline, front and back.", ["Front", "Back", "Front"]),
+      design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["Front", "Folded", "Wide"]),
       design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["Cathedral", "Detail", "Angled"]),
-      design("bespoke", "orlando", "Orlando", "Theme park city", "Rockets and castles for the theme park capital.", ["Set", "In room", "Set"]),
-      design("bespoke", "zurich", "Zurich", "Swans and the Alps", "Lake swans and a yellow tram.", ["Yellow", "Yellow", "Yellow"]),
-      design("bespoke", "chinese-new-year", "Chinese New Year", "Seasonal", "Lanterns and lions for the festival.", ["With kids", "In room", "With kids"]),
-      design("bespoke", "football", "Football Stadium", "Club edition", "The home ground, in the club colours.", ["Render", "Render", "Render"]),
     ],
   },
 ];
