@@ -49,7 +49,7 @@ function design(
   };
 }
 
-const ST = ["Front", "Back", "Folded"] as [string, string, string];
+const ST = ["Front", "Back", "In a room"] as [string, string, string];
 
 export const sections: Section[] = [
   {
@@ -59,18 +59,18 @@ export const sections: Section[] = [
     intro:
       "Twelve themed worlds, ready to ship. Each one unfolds into a play area in minutes and packs flat when the guests check out.",
     items: [
-      design("standard", "castle", "Castle", "Standard edition", "A fortress of imagination stands tall. Perfect for kids who believe every room should come with a throne.", ["Standard", "Front", "Back"], "From £1,150"),
+      design("standard", "castle", "Castle", "Standard edition", "A fortress of imagination stands tall. Perfect for kids who believe every room should come with a throne.", ["Front", "Back", "In a room"], "From £1,150"),
       design("standard", "castle-xl", "Castle XL", "Grand edition", "The castle, scaled up for lobbies, kids clubs and events. Room inside for a whole group of little knights.", ["Studio", "Three-quarter", "Wide"]),
       design("standard", "birthday", "Birthday", "Celebration time", "An explosion of colour and fun for a birthday surprise. No glitter or confetti needed.", ST, "From £995"),
       design("standard", "marine", "Marine Life", "Underwater kingdom", "Starfish, manta rays and coral gardens: the wonders of the sea on dry land.", ["Front", "Back", "Bali edition"], "From £995"),
       design("standard", "princess", "Princess Palace", "Fairytale magic", "For children who dream of glass slippers and enchanted forests.", ["Front", "Back", "In a suite"], "From £995"),
-      design("standard", "space", "Spaceship", "Mission control", "For children who dream of touching the stars. Sends space adventurers zooming into orbit.", ["Studio", "Girl in space", "Angled"], "From £995"),
+      design("standard", "space", "Spaceship", "Mission control", "For children who dream of touching the stars. Sends space adventurers zooming into orbit.", ["Front", "Back", "In a room"], "From £995"),
       design("standard", "police", "Police Station", "On patrol", "Blue lights, a patrol car and a lookout tower. Little officers keep the suite safe and sound.", ["Studio", "On duty", "With a cadet"]),
       design("standard", "fire-station", "Fire Station", "To the rescue", "A red fire engine, a bell tower and big arched doors. Ready for the next call-out, siren optional.", ["Studio", "Two firefighters", "Wide"]),
-      design("standard", "hospital", "Hospital", "Little doctors", "An emergency bay with its ambulance, a rooftop helipad and a park bench for recovering teddies.", ["Front", "Folded", "Wide"]),
-      design("standard", "reading", "Reading Corner", "Storybook retreat", "After a long day of travel, the young ones need a cosy moment to relax.", ["Front", "Back", "In a line"], "From £1,250"),
-      design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Folded", "Tall", "Ramadan edition"], "From £1,350"),
-      design("standard", "cafe", "Kids Cafe", "Sweet delights", "Every day is opening day at the sweetest spot in town.", ["Studio", "With girl", "Thumbnail"], "From £1,250"),
+      design("standard", "hospital", "Hospital", "Little doctors", "An emergency bay with its ambulance, a rooftop helipad and a park bench for recovering teddies.", ["Front", "Back", "In a room"]),
+      design("standard", "reading", "Reading Corner", "Storybook retreat", "After a long day of travel, the young ones need a cosy moment to relax.", ["Front", "Back", "In a room"], "From £1,250"),
+      design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Front", "Back", "In a room"], "From £1,350"),
+      design("standard", "cafe", "Kids Cafe", "Sweet delights", "Every day is opening day at the sweetest spot in town.", ["Front", "Back", "In a room"], "From £1,250"),
     ],
   },
   {

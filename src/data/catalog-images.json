@@ -3,54 +3,44 @@
   {
    "src": "/catalog/standard/castle/hero.jpg",
    "w": 1800,
-   "h": 1172
+   "h": 1200
   },
   {
    "src": "/catalog/standard/castle/v2.jpg",
    "w": 1800,
-   "h": 1376
+   "h": 1200
   },
   {
    "src": "/catalog/standard/castle/v3.jpg",
-   "w": 1637,
-   "h": 1300
+   "w": 1800,
+   "h": 1200
   },
   {
    "src": "/catalog/standard/castle/room1.jpg",
    "w": 1800,
-   "h": 1515
-  },
-  {
-   "src": "/catalog/standard/castle/room2.jpg",
-   "w": 1800,
-   "h": 1362
+   "h": 1200
   }
  ],
  "standard/birthday": [
   {
    "src": "/catalog/standard/birthday/hero.jpg",
-   "w": 1448,
-   "h": 1086
+   "w": 1800,
+   "h": 1200
   },
   {
    "src": "/catalog/standard/birthday/v2.jpg",
-   "w": 1448,
-   "h": 1086
+   "w": 1800,
+   "h": 1200
   },
   {
    "src": "/catalog/standard/birthday/v3.jpg",
-   "w": 1448,
-   "h": 1086
+   "w": 1800,
+   "h": 1440
   },
   {
    "src": "/catalog/standard/birthday/room1.jpg",
    "w": 1800,
-   "h": 1554
-  },
-  {
-   "src": "/catalog/standard/birthday/room2.jpg",
-   "w": 1800,
-   "h": 1707
+   "h": 1440
   }
  ],
  "standard/marine": [
@@ -101,98 +91,88 @@
   {
    "src": "/catalog/standard/space/hero.jpg",
    "w": 1800,
-   "h": 1468
+   "h": 1200
   },
   {
    "src": "/catalog/standard/space/v2.jpg",
    "w": 1800,
-   "h": 1198
+   "h": 1200
   },
   {
    "src": "/catalog/standard/space/v3.jpg",
    "w": 1800,
-   "h": 1262
+   "h": 1200
   },
   {
    "src": "/catalog/standard/space/room1.jpg",
    "w": 1800,
-   "h": 1323
+   "h": 1200
   }
  ],
  "standard/reading": [
   {
    "src": "/catalog/standard/reading/hero.jpg",
    "w": 1800,
-   "h": 1350
+   "h": 1200
   },
   {
    "src": "/catalog/standard/reading/v2.jpg",
-   "w": 1448,
-   "h": 1086
+   "w": 1800,
+   "h": 1200
   },
   {
    "src": "/catalog/standard/reading/v3.jpg",
    "w": 1800,
-   "h": 1222
+   "h": 1200
   },
   {
    "src": "/catalog/standard/reading/room1.jpg",
-   "w": 1773,
-   "h": 1800
-  },
-  {
-   "src": "/catalog/standard/reading/room2.jpg",
-   "w": 1772,
-   "h": 1800
+   "w": 1800,
+   "h": 1200
   }
  ],
  "standard/arabian": [
   {
    "src": "/catalog/standard/arabian/hero.jpg",
    "w": 1800,
-   "h": 1236
+   "h": 1200
   },
   {
    "src": "/catalog/standard/arabian/v2.jpg",
    "w": 1800,
-   "h": 1328
+   "h": 1200
   },
   {
    "src": "/catalog/standard/arabian/v3.jpg",
    "w": 1800,
-   "h": 1373
+   "h": 1200
   },
   {
    "src": "/catalog/standard/arabian/room1.jpg",
    "w": 1800,
-   "h": 1351
-  },
-  {
-   "src": "/catalog/standard/arabian/room2.jpg",
-   "w": 1800,
-   "h": 1350
+   "h": 1200
   }
  ],
  "standard/cafe": [
   {
    "src": "/catalog/standard/cafe/hero.jpg",
    "w": 1800,
-   "h": 1196
+   "h": 1200
   },
   {
    "src": "/catalog/standard/cafe/v2.jpg",
    "w": 1800,
-   "h": 1208
+   "h": 1200
   },
   {
    "src": "/catalog/standard/cafe/v3.jpg",
-   "w": 753,
-   "h": 552
+   "w": 1800,
+   "h": 1200
   },
   {
    "src": "/catalog/standard/cafe/room1.jpg",
    "w": 1800,
-   "h": 1208
+   "h": 1200
   }
  ],
  "cities/london": [
@@ -451,17 +431,22 @@
   {
    "src": "/catalog/standard/hospital/hero.jpg",
    "w": 1800,
-   "h": 1440
+   "h": 1200
   },
   {
    "src": "/catalog/standard/hospital/v2.jpg",
    "w": 1800,
-   "h": 1440
+   "h": 1200
   },
   {
    "src": "/catalog/standard/hospital/v3.jpg",
    "w": 1800,
-   "h": 1440
+   "h": 1200
+  },
+  {
+   "src": "/catalog/standard/hospital/room1.jpg",
+   "w": 1800,
+   "h": 1200
   }
  ],
  "bespoke/great-wall": [
