@@ -4,11 +4,9 @@ import Image from "next/image";
 import FadeInWhenVisible from "./fade-in-when-visible";
 
 const specs = [
-  { label: "Setup Time", value: "10\u201320 minutes", detail: "No tools\u00A0required" },
-  { label: "Unit Weight", value: "12\u201315 kg", detail: "Below tipping risk\u00A0thresholds" },
+  { label: "Setup Time", value: "5\u201315 minutes", detail: "No tools\u00A0required" },
   { label: "Storage", value: "155 \u00D7 105 cm", detail: "Compact, flat-pack\u00A0box" },
   { label: "Material", value: "100% Recycled PET", detail: "Over 80% from recycled\u00A0bottles" },
-  { label: "Fire Safety", value: "B-s1, d0", detail: "Certified to EN\u00A013501" },
   { label: "VOC Emissions", value: "Extremely low", detail: "Certified to ASTM\u00A0D5116" },
   { label: "Heat Stability", value: "Up to 50\u00B0C", detail: "95% relative\u00A0humidity" },
   { label: "Sustainability", value: "100% Recyclable", detail: "Cradle to Cradle\u00A0Bronze" },

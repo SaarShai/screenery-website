@@ -1,8 +1,6 @@
 const stats = [
-  ["10–20 min", "Set-up, no tools"],
-  ["12–15 kg", "Per unit"],
+  ["5–15 min", "Set-up, no tools"],
   ["100%", "Recycled PET"],
-  ["B-s1, d0", "Fire rated"],
 ];
 
 export default function Stats() {
@@ -10,7 +8,7 @@ export default function Stats() {
     <>
       {/* Stats ribbon */}
       <section className="border-y border-[#17150f]/10 bg-[#efe9df]">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-[#17150f]/10 md:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-[#17150f]/10 md:grid-cols-2">
           {stats.map(([v, l]) => (
             <div key={l} className="px-6 py-6 md:py-8">
               <p className="font-display text-2xl md:text-3xl">{v}</p>
