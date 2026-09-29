@@ -62,7 +62,7 @@ export const sections: Section[] = [
       design("standard", "castle", "Castle", "Standard & XL editions", "A fortress of imagination stands tall. Perfect for kids who believe every room should come with a throne.", ["Standard", "Front", "Back"], "From £1,150"),
       design("standard", "birthday", "Birthday", "Celebration time", "An explosion of colour and fun for a birthday surprise. No glitter or confetti needed.", ST, "From £995"),
       design("standard", "marine", "Marine Life", "Underwater kingdom", "Starfish, manta rays and coral gardens: the wonders of the sea on dry land.", ["Front", "Back", "Bali edition"], "From £995"),
-      design("standard", "princess", "Princess Palace", "Fairytale magic", "For children who dream of glass slippers and enchanted forests.", ["Palace", "Den, lit", "Den, flipped"], "From £995"),
+      design("standard", "princess", "Princess Palace", "Fairytale magic", "For children who dream of glass slippers and enchanted forests.", ["Front", "Back", "In a suite"], "From £995"),
       design("standard", "space", "Spaceship", "Mission control", "For children who dream of touching the stars. Sends space adventurers zooming into orbit.", ["Studio", "Girl in space", "Angled"], "From £995"),
       design("standard", "reading", "Reading Corner", "Storybook retreat", "After a long day of travel, the young ones need a cosy moment to relax.", ["Front", "Back", "In a line"], "From £1,250"),
       design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Folded", "Tall", "Ramadan edition"], "From £1,350"),

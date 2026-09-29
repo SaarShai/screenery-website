@@ -79,22 +79,22 @@
   {
    "src": "/catalog/standard/princess/hero.jpg",
    "w": 1800,
-   "h": 1184
+   "h": 1200
   },
   {
    "src": "/catalog/standard/princess/v2.jpg",
    "w": 1800,
-   "h": 1741
+   "h": 1200
   },
   {
    "src": "/catalog/standard/princess/v3.jpg",
    "w": 1800,
-   "h": 1562
+   "h": 1200
   },
   {
    "src": "/catalog/standard/princess/room1.jpg",
    "w": 1800,
-   "h": 1518
+   "h": 1200
   }
  ],
  "standard/space": [
