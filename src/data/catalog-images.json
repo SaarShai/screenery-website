@@ -578,5 +578,49 @@
    "w": 1800,
    "h": 1200
   }
+ ],
+ "standard/police": [
+  {
+   "src": "/catalog/standard/police/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/police/v2.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/police/v3.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/police/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  }
+ ],
+ "standard/fire-station": [
+  {
+   "src": "/catalog/standard/fire-station/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/fire-station/v2.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/fire-station/v3.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/fire-station/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  }
  ]
 }
