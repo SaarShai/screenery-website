@@ -58,7 +58,7 @@ export default function Contact() {
           <p className="text-[13px] tracking-[0.3em] uppercase text-[#c4a97d] mb-6">
             Get in Touch
           </p>
-          <h2 className="text-3xl md:text-5xl font-extralight text-white leading-tight mb-6">
+          <h2 className="font-display text-3xl md:text-5xl text-white leading-tight mb-6">
             Bring Screenery to
             <br />
             your hotel
