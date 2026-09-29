@@ -7,7 +7,7 @@ export default function Hero() {
       {/* Hero: split, image left, type right */}
       <section className="relative grid min-h-[100svh] grid-cols-1 lg:grid-cols-12">
         <div className="relative order-2 lg:order-1 lg:col-span-7 min-h-[55svh] lg:min-h-0 overflow-hidden">
-          <Image src="/images/best-princess-in-room-w-girl-(large).jpg" alt="Princess Palace in a hotel suite" fill priority sizes="(max-width:1024px) 100vw, 58vw" className="object-cover animate-[kenburns_24s_ease-in-out_infinite_alternate]" />
+          <Image src="/images/princess-v33-hero.jpg" alt="Princess Palace in a hotel suite" fill priority sizes="(max-width:1024px) 100vw, 58vw" className="object-cover animate-[kenburns_24s_ease-in-out_infinite_alternate]" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f6f1e8] to-transparent lg:hidden" />
         </div>
         <div className="order-1 lg:order-2 lg:col-span-5 flex flex-col justify-between px-6 pt-28 pb-10 md:px-12 lg:pt-36">
