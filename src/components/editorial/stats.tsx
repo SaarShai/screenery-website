@@ -1,6 +1,6 @@
 const stats = [
   ["5–15 min", "Set-up, no tools"],
-  ["100%", "Recycled PET"],
+  ["100%", "Recyclable felt"],
 ];
 
 export default function Stats() {

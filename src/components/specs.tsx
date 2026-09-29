@@ -6,7 +6,7 @@ import FadeInWhenVisible from "./fade-in-when-visible";
 const specs = [
   { label: "Setup Time", value: "5\u201315 minutes", detail: "No tools\u00A0required" },
   { label: "Storage", value: "155 \u00D7 105 cm", detail: "Compact, flat-pack\u00A0box" },
-  { label: "Material", value: "100% Recycled PET", detail: "Over 80% from recycled\u00A0bottles" },
+  { label: "Material", value: "100% Recyclable felt", detail: "Over 80% from recycled\u00A0bottles" },
   { label: "VOC Emissions", value: "Extremely low", detail: "Certified to ASTM\u00A0D5116" },
   { label: "Heat Stability", value: "Up to 50\u00B0C", detail: "95% relative\u00A0humidity" },
   { label: "Sustainability", value: "100% Recyclable", detail: "Cradle to Cradle\u00A0Bronze" },
@@ -38,7 +38,7 @@ export default function Specs() {
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.15}>
           <p className="text-[#6b6b6b] text-lg max-w-2xl leading-relaxed font-light mb-16" style={{ textWrap: "balance" }}>
-            High-performance luxury room dividers, made from 100% PET recycled panels.
+            High-performance luxury room dividers, made from 100% recyclable felt panels.
             Used in nurseries, hospitals, and swimming&nbsp;pools.
           </p>
         </FadeInWhenVisible>
