@@ -18,6 +18,11 @@
 
 html {
   scroll-behavior: smooth;
+  --nav-h: 72px;
+  scroll-padding-top: var(--nav-h);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 body {
@@ -44,7 +49,7 @@ body {
 /* Selection color */
 ::selection {
   background: var(--color-accent-light);
-  color: white;
+  color: var(--color-foreground);
 }
 
 /* Smooth image loading */

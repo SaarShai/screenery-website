@@ -186,21 +186,8 @@
    "w": 1800,
    "h": 1156
   },
-  {
-   "src": "/catalog/cities/new-york/v2.jpg",
-   "w": 1800,
-   "h": 1350
-  },
-  {
-   "src": "/catalog/cities/new-york/v3.jpg",
-   "w": 1448,
-   "h": 1086
-  },
-  {
-   "src": "/catalog/cities/new-york/room1.jpg",
-   "w": 1800,
-   "h": 1208
-  }
+  null,
+  null
  ],
  "cities/san-francisco": [
   {
@@ -287,11 +274,7 @@
    "w": 1536,
    "h": 1024
   },
-  {
-   "src": "/catalog/standard/police/v3.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null
  ],
  "standard/fire-station": [
   {
@@ -304,11 +287,7 @@
    "w": 1536,
    "h": 1024
   },
-  {
-   "src": "/catalog/standard/fire-station/v3.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null
  ],
  "standard/castle-xl": [
   {

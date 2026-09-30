@@ -23,8 +23,8 @@ const badges = [
 
 export default function Specs() {
   return (
-    <section id="specs" className="py-24 md:py-32 px-8 md:px-16 lg:px-24">
-      <div className="max-w-6xl mx-auto">
+    <section id="specs" className="py-24 md:py-32 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <FadeInWhenVisible>
           <p className="text-[13px] tracking-[0.3em] uppercase text-[#6f5a41] mb-6">

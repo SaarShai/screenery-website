@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 px-8 md:px-16 lg:px-24 bg-[#1a1a1a]"
+      className="py-24 md:py-32 px-6 md:px-12 bg-[#1a1a1a]"
       ref={ref}
     >
       <div className="max-w-3xl mx-auto text-center">
@@ -64,7 +64,7 @@ export default function Contact() {
             <br />
             your hotel
           </h2>
-          <p className="text-white/50 text-base font-light mb-10 max-w-lg mx-auto">
+          <p className="text-white/75 text-base mb-10 max-w-lg mx-auto">
             Interested in learning more? Our team will be in touch
             within 24&nbsp;hours.
           </p>
@@ -89,7 +89,7 @@ export default function Contact() {
                   id="contact-name"
                   autoComplete="name"
                   required
-                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/40"
+                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/50"
                   placeholder="Your name"
                 />
               </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                   id="contact-company"
                   autoComplete="organization"
                   required
-                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/40"
+                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/50"
                   placeholder="Your hotel or company"
                 />
               </div>
@@ -119,7 +119,7 @@ export default function Contact() {
                   id="contact-email"
                   autoComplete="email"
                 required
-                className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/40"
+                className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/50"
                 placeholder="your@email.com"
               />
             </div>
@@ -151,7 +151,7 @@ export default function Contact() {
             <p className="text-white text-2xl font-extralight mb-4">
               Thank you for your enquiry.
             </p>
-            <p className="text-white/50 font-light">
+            <p className="text-white/75">
               We&apos;ll be in touch within 24 hours.
             </p>
           </motion.div>

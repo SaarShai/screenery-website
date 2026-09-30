@@ -17,7 +17,7 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
   const [room, setRoom] = useState(0);
   const shown = view === "room" ? design.rooms[room] : design.variants[active].image;
   // Frame is 3:2 like most shots; show odd-shaped shots whole instead of cropping the product.
-  const fit = Math.abs(shown.w / shown.h - 1.5) > 0.1 ? "object-contain bg-white" : "object-cover";
+  const fit = Math.abs(shown.w / shown.h - 1.5) > 0.1 ? "object-contain" : "object-cover";
   const editorial = skin === "editorial";
 
   return (
@@ -57,7 +57,7 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
             ))}
           </div>
         )}
-        {design.price && (
+        {design.price && !editorial && (
           <span className={`absolute right-3 top-3 text-[11px] tracking-[0.15em] uppercase ${editorial ? "bg-[#f6f1e8]/90 text-[#17150f] px-2 py-1" : "rounded-full bg-black text-white px-3 py-1 font-semibold"}`}>
             {design.price}
           </span>
@@ -66,7 +66,7 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
 
       {/* Variant thumbnails */}
       <div className={`mt-3 flex items-center gap-2 ${editorial ? "" : "justify-center"}`}>
-        {design.variants.map((v, i) => {
+        {design.variants.length > 1 && design.variants.map((v, i) => {
           const on = i === active && view === "studio";
           return (
             <button
@@ -95,7 +95,7 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
               setRoom(0);
               setView(view === "room" ? "studio" : "room");
             }}
-            className={`ml-auto text-[11px] uppercase tracking-[0.18em] underline-offset-4 hover:underline ${view === "room" ? "underline" : ""}`}
+            className={`ml-auto py-3 pl-3 text-[12px] uppercase tracking-[0.14em] underline-offset-4 hover:underline ${view === "room" ? "underline" : ""}`}
           >
             {view === "room" ? "Studio" : "In the room"}
           </button>
@@ -104,11 +104,21 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
 
       {/* Copy */}
       <div className={`mt-4 ${editorial ? "" : "text-center"}`}>
-        <div className={editorial ? "flex items-baseline justify-between gap-4" : ""}>
-          <h3 className={editorial ? "font-display text-2xl leading-none" : "text-xl font-bold tracking-tight"}>{design.name}</h3>
-          <p className={`text-[11px] uppercase tracking-[0.2em] ${editorial ? "text-[#6f5a41]" : "mt-0.5 text-black/50"}`}>{design.tagline}</p>
-        </div>
-        <p className={`mt-2 text-[14px] leading-relaxed ${editorial ? "text-[#5b574f] font-light" : "text-black/65 mx-auto max-w-[32ch]"}`}>{design.description}</p>
+        {editorial ? (
+          <>
+            <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{design.tagline}</p>
+            <div className="mt-1.5 flex items-baseline justify-between gap-4">
+              <h3 className="font-display text-2xl leading-tight">{design.name}</h3>
+              {design.price && <p className="shrink-0 text-[13px] font-medium text-[#17150f]">{design.price}</p>}
+            </div>
+          </>
+        ) : (
+          <div>
+            <h3 className="text-xl font-bold tracking-tight">{design.name}</h3>
+            <p className="mt-0.5 text-[11px] uppercase tracking-[0.2em] text-black/50">{design.tagline}</p>
+          </div>
+        )}
+        <p className={`mt-2 ${editorial ? "text-[16px] leading-[25px] text-[#5b574f]" : "text-[14px] leading-relaxed text-black/65 mx-auto max-w-[32ch]"}`}>{design.description}</p>
       </div>
 
       {/* Room shots (editorial: thin strip) */}

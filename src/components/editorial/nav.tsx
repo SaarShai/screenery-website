@@ -13,14 +13,14 @@ export default function NavA() {
     return () => removeEventListener("scroll", f);
   }, []);
   return (
-    <nav className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "bg-[#f6f1e8]/90 backdrop-blur border-b border-[#17150f]/10" : ""}`}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-12">
-        <a href="#"><Image src="/images/screenery-logo-dark.svg" alt="Screenery" width={200} height={41} className="h-6 w-auto md:h-7" priority /></a>
-        <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.22em]">
+    <nav className={`fixed inset-x-0 top-0 z-50 border-b bg-[#f6f1e8] transition-shadow duration-500 ${scrolled ? "border-[#d8d0c4] shadow-[0_1px_12px_rgba(23,21,15,0.06)]" : "border-transparent"}`}>
+      <div className="mx-auto flex h-[var(--nav-h)] max-w-7xl items-center justify-between px-6 md:px-12">
+        <a href="#"><Image src="/images/screenery-logo-dark.svg" alt="Screenery" width={200} height={41} className="h-7 w-auto md:h-8" priority /></a>
+        <div className="flex items-center gap-8 text-[12px] uppercase tracking-[0.14em]">
           {sections.map((s) => (
             <a key={s.slug} href={`#${s.slug}`} className="hidden md:inline hover:text-[#8b7355] transition-colors">{s.name}</a>
           ))}
-          <a href="#contact" className="border border-[#17150f] px-4 py-2 hover:bg-[#17150f] hover:text-[#f6f1e8] transition-colors">Quote</a>
+          <a href="#contact" className="bg-[#17150f] px-5 py-3 text-[#f6f1e8] hover:bg-[#70593f] transition-colors">Quote</a>
         </div>
       </div>
     </nav>

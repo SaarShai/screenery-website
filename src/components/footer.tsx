@@ -3,28 +3,34 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#141414] py-12 px-8 md:px-16 lg:px-24">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="bg-[#141414] py-12 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
           <Image
             src="/images/screenery logo.svg"
             alt="Screenery"
             width={140}
             height={29}
-            className="h-5 w-auto opacity-60"
+            className="h-6 w-auto"
           />
         </div>
 
-        <div className="flex items-center gap-8">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           <Link
             href="/#standard"
-            className="text-white/40 text-xs tracking-[0.1em] uppercase hover:text-white/70 transition-colors"
+            className="text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
           >
             Collection
           </Link>
           <Link
+            href="/#specs"
+            className="text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
+          >
+            Specifications
+          </Link>
+          <Link
             href="/#contact"
-            className="text-white/40 text-xs tracking-[0.1em] uppercase hover:text-white/70 transition-colors"
+            className="text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
           >
             Contact
           </Link>
@@ -32,7 +38,7 @@ export default function Footer() {
             href="https://www.linkedin.com/company/wanderland-london/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/40 hover:text-white/70 transition-colors"
+            className="text-white/75 hover:text-white transition-colors"
             aria-label="LinkedIn"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -42,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-white/30 text-xs font-light">
+          <p className="text-white/60 text-[13px]">
             &copy; {new Date().getFullYear()} Screenery. All rights reserved.
           </p>
         </div>

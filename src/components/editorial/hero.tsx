@@ -5,15 +5,15 @@ export default function Hero() {
   return (
     <>
       {/* Hero: split, image left, type right */}
-      <section className="relative grid min-h-[100svh] grid-cols-1 lg:grid-cols-12">
+      <section className="relative grid min-h-[100svh] grid-cols-1 pt-[var(--nav-h)] lg:grid-cols-12">
         <div className="relative lg:order-1 lg:col-span-7 min-h-[45svh] lg:min-h-0 overflow-hidden">
-          <Image src="/images/princess-v33-hero.jpg" alt="Princess Palace in a hotel suite" fill priority sizes="(max-width:1024px) 100vw, 58vw" className="object-cover animate-[kenburns_24s_ease-in-out_infinite_alternate] motion-reduce:animate-none" />
+          <Image src="/images/princess-v33-hero.jpg" alt="Princess Palace in a hotel suite" fill priority sizes="(max-width:1024px) 100vw, 58vw" className="object-cover" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f6f1e8] to-transparent lg:hidden" />
         </div>
-        <div className="lg:order-2 lg:col-span-5 flex flex-col justify-between px-6 pt-4 pb-10 md:px-12 lg:pt-36">
+        <div className="lg:order-2 lg:col-span-5 flex flex-col justify-between px-6 pt-4 pb-10 md:px-12 lg:pt-16">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.35em] text-[#6f5a41]">Screenery™ — 2026 catalogue</p>
-            <h1 className="font-display mt-6 text-[clamp(2.8rem,6.5vw,6rem)] leading-[0.95] tracking-[-0.02em]">
+            <p className="text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">Screenery™ — 2026 catalogue</p>
+            <h1 className="font-display mt-6 text-[clamp(2.75rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.02em]">
               Themed rooms,<br />
               <em className="font-light italic text-[#8b7355]">within minutes.</em>
             </h1>
@@ -21,7 +21,7 @@ export default function Hero() {
               Felt play-screens for hotels: a children&rsquo;s play area in minutes. Illustrated, hand-finished in Britain, flat-packed when the guests check out.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <a href="#standard" className="bg-[#17150f] px-6 py-3 text-[12px] uppercase tracking-[0.2em] text-[#f6f1e8] hover:bg-[#8b7355] transition-colors">See the collection</a>
+              <a href="#standard" className="bg-[#17150f] px-6 py-3 text-[12px] uppercase tracking-[0.2em] text-[#f6f1e8] hover:bg-[#70593f] transition-colors">See the collection</a>
               <a href="#contact" className="border border-[#17150f]/30 px-6 py-3 text-[12px] uppercase tracking-[0.2em] hover:border-[#17150f] transition-colors">Request a quote</a>
             </div>
           </div>

@@ -11,8 +11,8 @@ export default function Clients() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="clients" className="py-24 md:py-32 px-8 md:px-16 lg:px-24 bg-[#efe9df]" ref={ref}>
-      <div className="max-w-6xl mx-auto">
+    <section id="clients" className="py-24 md:py-32 px-6 md:px-12 bg-[#efe9df]" ref={ref}>
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
