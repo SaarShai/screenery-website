@@ -108,6 +108,7 @@ export const sections: Section[] = [
       design("bespoke", "forte", "Forte Village", "Sardinia", "The resort's own skyline, front and back.", ["Front", "Back", "Front"]),
       design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["Front", "Folded", "Wide"]),
       design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["Cathedral", "Detail", "Angled"]),
+      design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["Studio", "Boarding", ""]),
     ],
   },
 ];

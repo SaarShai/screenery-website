@@ -445,5 +445,18 @@
    "w": 1800,
    "h": 1200
   }
+ ],
+ "bespoke/munich-airport": [
+  {
+   "src": "/catalog/bespoke/munich-airport/hero.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/bespoke/munich-airport/v2.jpg",
+   "w": 1800,
+   "h": 1440
+  },
+  null
  ]
 }
