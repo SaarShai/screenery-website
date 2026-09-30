@@ -21,6 +21,7 @@ export default function Contact() {
       name: formData.get("name") as string,
       company: formData.get("company") as string,
       email: formData.get("email") as string,
+      website: formData.get("website") as string,
     };
 
     try {
@@ -31,8 +32,8 @@ export default function Contact() {
       });
 
       if (!res.ok) {
-        const json = await res.json();
-        throw new Error(json.error || "Something went wrong.");
+        const json = await res.json().catch(() => ({}));
+        throw new Error(json.error || "We could not send your enquiry. Please email alicia@wanderland.london.");
       }
 
       setSubmitted(true);
@@ -79,47 +80,54 @@ export default function Contact() {
           >
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="text-white/40 text-xs tracking-[0.15em] uppercase block mb-2">
+                <label htmlFor="contact-name" className="text-white/70 text-xs tracking-[0.15em] uppercase block mb-2">
                   Name
                 </label>
                 <input
                   type="text"
                   name="name"
+                  id="contact-name"
+                  autoComplete="name"
                   required
-                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/20"
+                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/40"
                   placeholder="Your name"
                 />
               </div>
               <div>
-                <label className="text-white/40 text-xs tracking-[0.15em] uppercase block mb-2">
+                <label htmlFor="contact-company" className="text-white/70 text-xs tracking-[0.15em] uppercase block mb-2">
                   Hotel / Company
                 </label>
                 <input
                   type="text"
                   name="company"
+                  id="contact-company"
+                  autoComplete="organization"
                   required
-                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/20"
+                  className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/40"
                   placeholder="Your hotel or company"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-white/40 text-xs tracking-[0.15em] uppercase block mb-2">
+              <label htmlFor="contact-email" className="text-white/70 text-xs tracking-[0.15em] uppercase block mb-2">
                 Email
               </label>
               <input
                 type="email"
                 name="email"
+                  id="contact-email"
+                  autoComplete="email"
                 required
-                className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/20"
+                className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/40"
                 placeholder="your@email.com"
               />
             </div>
 
-            {error && (
-              <p className="text-red-400 text-sm font-light">{error}</p>
-            )}
+            {/* Honeypot for bots; hidden from people and screen readers */}
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
+            <p role="alert" className="text-red-400 text-sm font-light">{error}</p>
 
             <div className="pt-6">
               <button
@@ -138,6 +146,7 @@ export default function Contact() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="py-16"
+            role="status"
           >
             <p className="text-white text-2xl font-extralight mb-4">
               Thank you for your enquiry.

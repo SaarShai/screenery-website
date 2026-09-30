@@ -38,7 +38,7 @@ function design(
     name,
     tagline,
     description,
-    price,
+    price: price ?? "Price on enquiry",
     hero: hero as Img,
     // null entries in catalog-images.json mark a slot with no approved image yet
     variants: [
@@ -85,7 +85,7 @@ export const sections: Section[] = [
       design("cities", "paris", "Paris", "Skyline", "Notre-Dame, the Arc de Triomphe and the Eiffel Tower in watercolour.", ["Skyline", "Alternate", "Detail"], "From £1,250"),
       design("cities", "new-york", "New York", "Skyline", "The Manhattan skyline, from the Empire State to Lady Liberty.", ["Skyline", "Photoshoot", "Alternate"], "From £1,250"),
       design("cities", "san-francisco", "San Francisco", "Skyline", "Cable cars, painted ladies and the Golden Gate.", ["Cable car", "Skyline", "In room"], "From £1,250"),
-      design("cities", "berlin", "Berlin", "Skyline", "The Brandenburg Gate, the TV tower and the Reichstag dome.", ["With kids", "Texture", "Layers"], "From £1,250"),
+      design("cities", "berlin", "Berlin", "Skyline", "The Brandenburg Gate, the TV tower and the Reichstag dome.", ["Skyline", "Angled", "Layers"], "From £1,250"),
     ],
   },
   {
@@ -93,9 +93,9 @@ export const sections: Section[] = [
     name: "Bedwrappers",
     kicker: "Bed collection",
     intro:
-      "A themed wrap for the bed itself. The room stays as it is; the bed becomes a dragon, a planet or a night sky.",
+      "A themed wrap for the bed itself. The room stays as it is; the bed becomes part of the story.",
     items: [
-      design("bedwrappers", "marine", "Marine Life", "Twin beds", "Coral and clownfish for a twin room.", ["Bali", "Twin beds", "Twin room"], "From £850"),
+      design("bedwrappers", "marine", "Marine Life", "Twin beds", "Coral and clownfish for a twin room.", ["In a suite", "Twin beds", "Twin room"], "From £850"),
     ],
   },
   {
@@ -105,9 +105,9 @@ export const sections: Section[] = [
     intro:
       "Your building, your mascot, your colour palette. Our creative team designs a set that exists nowhere else.",
     items: [
-      design("bespoke", "forte", "Forte Village", "Sardinia", "The resort's own skyline, front and back.", ["Front", "Back", "Front"]),
+      design("bespoke", "forte", "Forte Village", "Sardinia", "Pine woods, peacocks and zebras, front and back.", ["In a suite", "Front", "Back"]),
       design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["Front", "Folded", "Wide"]),
-      design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["Cathedral", "Detail", "Angled"]),
+      design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["In a suite", "Front", "With a guest"]),
       design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["Studio", "Boarding", "In the terminal"]),
     ],
   },

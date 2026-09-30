@@ -19,7 +19,7 @@ export default function Clients() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-[13px] tracking-[0.3em] uppercase text-[#8b7355] mb-4">
+          <p className="text-[13px] tracking-[0.3em] uppercase text-[#6f5a41] mb-4">
             Trusted By
           </p>
           <p className="text-[#6b6b6b] text-base font-light">

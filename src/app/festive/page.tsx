@@ -10,6 +10,7 @@ const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600
 
 export const metadata: Metadata = {
   title: "Festive Collection 2026 — Screenery™",
+  alternates: { canonical: "/festive" },
   description:
     "A festive wonderland, set up within minutes. Gingerbread play houses, a biscuit bed wrapper and a family of festive friends in printed recycled felt, for hotel rooms, lobbies and restaurants.",
 };

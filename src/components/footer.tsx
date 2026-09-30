@@ -17,13 +17,7 @@ export default function Footer() {
 
         <div className="flex items-center gap-8">
           <Link
-            href="/#about"
-            className="text-white/40 text-xs tracking-[0.1em] uppercase hover:text-white/70 transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/#collection"
+            href="/#standard"
             className="text-white/40 text-xs tracking-[0.1em] uppercase hover:text-white/70 transition-colors"
           >
             Collection

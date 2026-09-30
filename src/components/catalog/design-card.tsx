@@ -14,13 +14,16 @@ export type Skin = "editorial" | "bold";
 export default function DesignCard({ design, skin, accent }: { design: Design; skin: Skin; accent?: string }) {
   const [active, setActive] = useState(0);
   const [view, setView] = useState<"studio" | "room">("studio");
-  const shown = view === "room" ? design.rooms[0] : design.variants[active].image;
+  const [room, setRoom] = useState(0);
+  const shown = view === "room" ? design.rooms[room] : design.variants[active].image;
+  // Frame is 3:2 like most shots; show odd-shaped shots whole instead of cropping the product.
+  const fit = Math.abs(shown.w / shown.h - 1.5) > 0.1 ? "object-contain bg-white" : "object-cover";
   const editorial = skin === "editorial";
 
   return (
     <article className={editorial ? "group" : "group rounded-[28px] p-4 md:p-5 transition-colors"} style={editorial ? undefined : { background: accent ?? "#f4f1ea" }}>
       {/* Hero */}
-      <div className={`relative overflow-hidden ${editorial ? "bg-[#efe9df] aspect-[4/3]" : "bg-white rounded-[20px] aspect-[4/3]"}`}>
+      <div className={`relative overflow-hidden ${editorial ? "bg-[#efe9df] aspect-[3/2]" : "bg-white rounded-[20px] aspect-[3/2]"}`}>
         <AnimatePresence mode="sync" initial={false}>
           <motion.div
             key={shown.src}
@@ -34,8 +37,8 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
               src={shown.src}
               alt={`${design.name}, ${view === "room" ? "in a hotel room" : design.variants[active].label}`}
               fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 40vw"
-              className={view === "room" ? "object-cover" : "object-cover"}
+              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 405px"
+              className={fit}
             />
           </motion.div>
         </AnimatePresence>
@@ -88,7 +91,10 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
         })}
         {editorial && design.rooms.length > 0 && (
           <button
-            onClick={() => setView(view === "room" ? "studio" : "room")}
+            onClick={() => {
+              setRoom(0);
+              setView(view === "room" ? "studio" : "room");
+            }}
             className={`ml-auto text-[11px] uppercase tracking-[0.18em] underline-offset-4 hover:underline ${view === "room" ? "underline" : ""}`}
           >
             {view === "room" ? "Studio" : "In the room"}
@@ -100,7 +106,7 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
       <div className={`mt-4 ${editorial ? "" : "text-center"}`}>
         <div className={editorial ? "flex items-baseline justify-between gap-4" : ""}>
           <h3 className={editorial ? "font-display text-2xl leading-none" : "text-xl font-bold tracking-tight"}>{design.name}</h3>
-          <p className={`text-[11px] uppercase tracking-[0.2em] ${editorial ? "text-[#8b7355]" : "mt-0.5 text-black/50"}`}>{design.tagline}</p>
+          <p className={`text-[11px] uppercase tracking-[0.2em] ${editorial ? "text-[#6f5a41]" : "mt-0.5 text-black/50"}`}>{design.tagline}</p>
         </div>
         <p className={`mt-2 text-[14px] leading-relaxed ${editorial ? "text-[#5b574f] font-light" : "text-black/65 mx-auto max-w-[32ch]"}`}>{design.description}</p>
       </div>
@@ -109,8 +115,15 @@ export default function DesignCard({ design, skin, accent }: { design: Design; s
       {editorial && design.rooms.length > 0 && (
         <div className="mt-4 grid grid-cols-2 gap-2">
           {design.rooms.slice(0, 2).map((r, i) => (
-            <button key={i} onClick={() => setView("room")} className={`relative aspect-[3/2] overflow-hidden bg-[#efe9df] ${design.rooms.length === 1 ? "col-span-2 aspect-[3/1]" : ""}`}>
-              <Image src={r.src} alt={`${design.name} in a hotel room`} fill sizes="200px" className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+            <button
+              key={i}
+              onClick={() => {
+                setRoom(i);
+                setView("room");
+              }}
+              aria-label={`${design.name}: room view ${i + 1}`}
+              className={`relative aspect-[3/2] overflow-hidden bg-[#efe9df] ${design.rooms.length === 1 ? "col-span-2 aspect-[3/1]" : ""}`}>
+              <Image src={r.src} alt="" fill sizes={design.rooms.length === 1 ? "(max-width: 640px) 100vw, 405px" : "(max-width: 640px) 50vw, 200px"} className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             </button>
           ))}
         </div>

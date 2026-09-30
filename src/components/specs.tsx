@@ -27,7 +27,7 @@ export default function Specs() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <FadeInWhenVisible>
-          <p className="text-[13px] tracking-[0.3em] uppercase text-[#8b7355] mb-6">
+          <p className="text-[13px] tracking-[0.3em] uppercase text-[#6f5a41] mb-6">
             Technical Details
           </p>
         </FadeInWhenVisible>
@@ -57,7 +57,7 @@ export default function Specs() {
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
               </div>
-              <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
+              <p className="text-[11px] tracking-[0.15em] uppercase text-[#6f5a41] mt-2.5 font-light">
                 Finely grooved
               </p>
             </div>
@@ -72,7 +72,7 @@ export default function Specs() {
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
               </div>
-              <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
+              <p className="text-[11px] tracking-[0.15em] uppercase text-[#6f5a41] mt-2.5 font-light">
                 Intricate bevelling
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Specs() {
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
               </div>
-              <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
+              <p className="text-[11px] tracking-[0.15em] uppercase text-[#6f5a41] mt-2.5 font-light">
                 Soft fabric feel
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function Specs() {
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
               </div>
-              <p className="text-[11px] tracking-[0.15em] uppercase text-[#8b7355] mt-2.5 font-light">
+              <p className="text-[11px] tracking-[0.15em] uppercase text-[#6f5a41] mt-2.5 font-light">
                 Double-layer colors
               </p>
             </div>
