@@ -413,7 +413,16 @@
    "w": 1800,
    "h": 1200
   },
-  null
+  {
+   "src": "/catalog/standard/hospital/v3.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/standard/hospital/room1.jpg",
+   "w": 1800,
+   "h": 1200
+  }
  ],
  "bespoke/great-wall": [
   {
