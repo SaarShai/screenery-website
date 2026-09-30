@@ -90,7 +90,16 @@
    "w": 1800,
    "h": 1200
   },
-  null
+  {
+   "src": "/catalog/standard/space/v3.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/standard/space/room1.jpg",
+   "w": 1800,
+   "h": 1200
+  }
  ],
  "standard/reading": [
   {
