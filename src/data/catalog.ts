@@ -20,7 +20,7 @@ export type Section = {
   items: Design[];
 };
 
-const shots = images as Record<string, Img[]>;
+const shots = images as Record<string, (Img | null)[]>;
 
 /** Placeholder images: hero, v2, v3, then room shots. The owner replaces these later. */
 function design(
@@ -39,13 +39,14 @@ function design(
     tagline,
     description,
     price,
-    hero,
+    hero: hero as Img,
+    // null entries in catalog-images.json mark a slot with no approved image yet
     variants: [
       { label: labels[0], image: hero },
       { label: labels[1], image: v2 },
       { label: labels[2], image: v3 },
-    ],
-    rooms,
+    ].filter((v): v is Variant => v.image !== null),
+    rooms: rooms.filter((r): r is Img => r !== null),
   };
 }
 

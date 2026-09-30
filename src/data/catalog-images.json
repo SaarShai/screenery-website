@@ -5,21 +5,8 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/castle/v2.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/standard/castle/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/standard/castle/room1.jpg",
-   "w": 1800,
-   "h": 1200
-  }
+  null,
+  null
  ],
  "standard/birthday": [
   {
@@ -27,11 +14,7 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/birthday/v2.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   {
    "src": "/catalog/standard/birthday/v3.jpg",
    "w": 1800,
@@ -98,16 +81,7 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/space/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/standard/space/room1.jpg",
-   "w": 1800,
-   "h": 1200
-  }
+  null
  ],
  "standard/reading": [
   {
@@ -159,21 +133,8 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/cafe/v2.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/standard/cafe/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/standard/cafe/room1.jpg",
-   "w": 1800,
-   "h": 1200
-  }
+  null,
+  null
  ],
  "cities/london": [
   {
@@ -411,11 +372,7 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/castle-xl/v2.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   {
    "src": "/catalog/standard/castle-xl/v3.jpg",
    "w": 1800,
@@ -438,16 +395,7 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/hospital/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/standard/hospital/room1.jpg",
-   "w": 1800,
-   "h": 1200
-  }
+  null
  ],
  "bespoke/great-wall": [
   {
