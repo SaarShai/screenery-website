@@ -143,7 +143,16 @@
    "h": 1200
   },
   null,
-  null
+  {
+   "src": "/catalog/standard/cafe/v3.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/standard/cafe/room1.jpg",
+   "w": 1800,
+   "h": 1200
+  }
  ],
  "cities/london": [
   {
@@ -307,8 +316,8 @@
  "bespoke/mallorca": [
   {
    "src": "/catalog/bespoke/mallorca/hero.jpg",
-   "w": 1491,
-   "h": 954
+   "w": 1800,
+   "h": 1200
   },
   {
    "src": "/catalog/bespoke/mallorca/v2.jpg",
