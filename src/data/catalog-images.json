@@ -6,7 +6,16 @@
    "h": 1200
   },
   null,
-  null
+  {
+   "src": "/catalog/standard/castle/v3.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  {
+   "src": "/catalog/standard/castle/room1.jpg",
+   "w": 1800,
+   "h": 1200
+  }
  ],
  "standard/birthday": [
   {
