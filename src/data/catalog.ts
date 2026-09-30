@@ -70,7 +70,7 @@ export const sections: Section[] = [
       design("standard", "fire-station", "Fire Station", "To the rescue", "A red fire engine, a bell tower and big arched doors. Ready for the next call-out, siren optional.", ["Studio", "Two firefighters", "Wide"]),
       design("standard", "hospital", "Hospital", "Little doctors", "An emergency bay with its ambulance, a rooftop helipad and a park bench for recovering teddies.", ["Front", "Back", "In a room"]),
       design("standard", "reading", "Reading Corner", "Storybook retreat", "After a long day of travel, the young ones need a cosy moment to relax.", ["Front", "Back", "In a room"], "From £1,250"),
-      design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Front", "Back", "In a room"], "From £1,350"),
+      design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Front", "Angled", "In a room"], "From £1,350"),
       design("standard", "cafe", "Kids Cafe", "Sweet delights", "Every day is opening day at the sweetest spot in town.", ["Front", "Back", "In a hotel restaurant"], "From £1,250"),
     ],
   },
