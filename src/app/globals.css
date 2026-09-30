@@ -77,6 +77,10 @@ img {
 }
 
 /* Catalogue designs A/B */
+@keyframes fade {
+  from { opacity: 0; }
+}
+
 @keyframes kenburns {
   from { transform: scale(1); }
   to { transform: scale(1.08); }

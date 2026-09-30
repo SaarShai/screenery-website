@@ -1,3 +1,6 @@
+import Image from "next/image";
+import clientLogos from "@/data/hotel-logos.json";
+
 const stats = [
   ["5–15 min", "Set-up, no tools"],
   ["100%", "Recyclable felt"],
@@ -17,6 +20,20 @@ export default function Stats() {
               <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#5b574f]">{l}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Trust row: the first eight hotel brands, before the catalogue */}
+      <section aria-label="Hotel clients" className="px-6 py-10 md:px-12">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 md:flex-row md:items-center md:gap-12">
+          <p className="shrink-0 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">Trusted by</p>
+          <ul className="grid flex-1 grid-cols-4 items-center gap-x-6 gap-y-4 md:grid-cols-8">
+            {clientLogos.slice(0, 8).map((c) => (
+              <li key={c.src} className="relative aspect-[520/180]">
+                <Image src={c.src} alt={c.alt} fill sizes="140px" className="object-contain opacity-75 grayscale" />
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function Contact() {
@@ -9,6 +9,18 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
+  const [designs, setDesigns] = useState<string[]>([]);
+
+  // "Enquire about …" on a design card adds that design here.
+  useEffect(() => {
+    const add = (e: Event) => {
+      const name = (e as CustomEvent<string>).detail;
+      setDesigns((d) => (d.includes(name) ? d : [...d, name]));
+      setSubmitted(false);
+    };
+    addEventListener("enquire", add);
+    return () => removeEventListener("enquire", add);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,6 +34,7 @@ export default function Contact() {
       company: formData.get("company") as string,
       email: formData.get("email") as string,
       website: formData.get("website") as string,
+      designs,
     };
 
     try {
@@ -123,6 +136,20 @@ export default function Contact() {
                 placeholder="your@email.com"
               />
             </div>
+
+            {designs.length > 0 && (
+              <div>
+                <p className="text-white/70 text-xs tracking-[0.15em] uppercase mb-3">Interested in</p>
+                <ul className="flex flex-wrap gap-2">
+                  {designs.map((d) => (
+                    <li key={d} className="flex items-center gap-2 border border-white/30 pl-3 text-[13px] text-white">
+                      {d}
+                      <button type="button" onClick={() => setDesigns(designs.filter((x) => x !== d))} aria-label={`Remove ${d}`} className="px-2 py-1 text-white/70 hover:text-white">✕</button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Honeypot for bots; hidden from people and screen readers */}
             <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />

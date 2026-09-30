@@ -1,143 +1,114 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import type { Design } from "@/data/catalog";
 
-export type Skin = "editorial" | "bold";
-
-/**
- * One design: hero (switchable by the three variant thumbnails) plus room shots.
- * Two skins share the behaviour; only the classes differ.
- */
-export default function DesignCard({ design, skin, accent }: { design: Design; skin: Skin; accent?: string }) {
-  const [active, setActive] = useState(0);
-  const [view, setView] = useState<"studio" | "room">("studio");
-  const [room, setRoom] = useState(0);
-  const shown = view === "room" ? design.rooms[room] : design.variants[active].image;
+/** One design: a single 3:2 frame with every view (studio and room) as labelled thumbnails, plus a lightbox. */
+export default function DesignCard({ design, sizes }: { design: Design; sizes: string }) {
+  const views = [
+    ...design.variants,
+    ...design.rooms.map((image, i) => ({ label: design.rooms.length > 1 ? `In the room ${i + 1}` : "In the room", image })),
+  ];
+  const [i, setI] = useState(0);
+  const dialog = useRef<HTMLDialogElement>(null);
+  const { image: shown, label } = views[i];
   // Frame is 3:2 like most shots; show odd-shaped shots whole instead of cropping the product.
   const fit = Math.abs(shown.w / shown.h - 1.5) > 0.1 ? "object-contain" : "object-cover";
-  const editorial = skin === "editorial";
+  const step = (d: number) => setI((i + d + views.length) % views.length);
+
+  const enquire = () => {
+    window.dispatchEvent(new CustomEvent("enquire", { detail: design.name }));
+    document.getElementById("contact")?.scrollIntoView();
+  };
 
   return (
-    <article className={editorial ? "group" : "group rounded-[28px] p-4 md:p-5 transition-colors"} style={editorial ? undefined : { background: accent ?? "#f4f1ea" }}>
-      {/* Hero */}
-      <div className={`relative overflow-hidden ${editorial ? "bg-[#efe9df] aspect-[3/2]" : "bg-white rounded-[20px] aspect-[3/2]"}`}>
-        <AnimatePresence mode="sync" initial={false}>
-          <motion.div
-            key={shown.src}
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={shown.src}
-              alt={`${design.name}, ${view === "room" ? "in a hotel room" : design.variants[active].label}`}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 405px"
-              className={fit}
-            />
-          </motion.div>
-        </AnimatePresence>
+    <article>
+      <button
+        type="button"
+        onClick={() => dialog.current?.showModal()}
+        aria-label={`Enlarge ${design.name}: ${label}`}
+        className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden bg-[#efe9df]"
+      >
+        <Image
+          key={shown.src}
+          src={shown.src}
+          alt={`${design.name}: ${label}`}
+          fill
+          sizes={sizes}
+          className={`${fit} animate-[fade_220ms_ease-out] transition-transform duration-700 group-hover:scale-[1.02] motion-reduce:animate-none motion-reduce:transition-none`}
+        />
+      </button>
 
-        {/* Studio / room toggle (bold skin) */}
-        {!editorial && design.rooms.length > 0 && (
-          <div className="absolute left-3 top-3 flex rounded-full bg-white/85 p-1 text-[11px] font-semibold uppercase tracking-wider backdrop-blur">
-            {(["studio", "room"] as const).map((v) => (
-              <button
-                key={v}
-                onClick={() => setView(v)}
-                className={`rounded-full px-3 py-1 transition ${view === v ? "bg-black text-white" : "text-black/70 hover:text-black"}`}
-              >
-                {v === "studio" ? "Studio" : "In room"}
-              </button>
-            ))}
-          </div>
-        )}
-        {design.price && !editorial && (
-          <span className={`absolute right-3 top-3 text-[11px] tracking-[0.15em] uppercase ${editorial ? "bg-[#f6f1e8]/90 text-[#17150f] px-2 py-1" : "rounded-full bg-black text-white px-3 py-1 font-semibold"}`}>
-            {design.price}
-          </span>
-        )}
-      </div>
-
-      {/* Variant thumbnails */}
-      <div className={`mt-3 flex items-center gap-2 ${editorial ? "" : "justify-center"}`}>
-        {design.variants.length > 1 && design.variants.map((v, i) => {
-          const on = i === active && view === "studio";
-          return (
+      {/* Views; the row keeps its height even with one view so cards line up */}
+      <div className="mt-3 flex h-12 gap-2 overflow-x-auto [scrollbar-width:none]">
+        {views.length > 1 &&
+          views.map((v, k) => (
             <button
-              key={i}
-              onClick={() => {
-                setActive(i);
-                setView("studio");
-              }}
+              key={k}
+              type="button"
+              onClick={() => setI(k)}
               aria-label={`${design.name}: ${v.label}`}
-              aria-pressed={on}
+              aria-pressed={k === i}
               title={v.label}
-              className={
-                editorial
-                  ? `relative h-14 w-[4.5rem] overflow-hidden bg-[#efe9df] transition-opacity ${on ? "opacity-100 ring-1 ring-[#17150f]" : "opacity-60 hover:opacity-100"}`
-                  : `relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-offset-2 transition ${on ? "ring-black" : "ring-transparent hover:ring-black/30"}`
-              }
-              style={editorial ? undefined : { ["--tw-ring-offset-color" as string]: accent ?? "#f4f1ea" }}
+              className={`relative h-12 w-[4.5rem] shrink-0 overflow-hidden bg-[#efe9df] transition-shadow ${k === i ? "ring-2 ring-inset ring-[#17150f]" : "hover:ring-1 hover:ring-inset hover:ring-[#17150f]/40"}`}
             >
-              <Image src={v.image.src} alt="" fill sizes="80px" className="object-cover" />
-            </button>
-          );
-        })}
-        {editorial && design.rooms.length > 0 && (
-          <button
-            onClick={() => {
-              setRoom(0);
-              setView(view === "room" ? "studio" : "room");
-            }}
-            className={`ml-auto py-3 pl-3 text-[12px] uppercase tracking-[0.14em] underline-offset-4 hover:underline ${view === "room" ? "underline" : ""}`}
-          >
-            {view === "room" ? "Studio" : "In the room"}
-          </button>
-        )}
-      </div>
-
-      {/* Copy */}
-      <div className={`mt-4 ${editorial ? "" : "text-center"}`}>
-        {editorial ? (
-          <>
-            <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{design.tagline}</p>
-            <div className="mt-1.5 flex items-baseline justify-between gap-4">
-              <h3 className="font-display text-2xl leading-tight">{design.name}</h3>
-              {design.price && <p className="shrink-0 text-[13px] font-medium text-[#17150f]">{design.price}</p>}
-            </div>
-          </>
-        ) : (
-          <div>
-            <h3 className="text-xl font-bold tracking-tight">{design.name}</h3>
-            <p className="mt-0.5 text-[11px] uppercase tracking-[0.2em] text-black/50">{design.tagline}</p>
-          </div>
-        )}
-        <p className={`mt-2 ${editorial ? "text-[16px] leading-[25px] text-[#5b574f]" : "text-[14px] leading-relaxed text-black/65 mx-auto max-w-[32ch]"}`}>{design.description}</p>
-      </div>
-
-      {/* Room shots (editorial: thin strip) */}
-      {editorial && design.rooms.length > 0 && (
-        <div className="mt-4 grid grid-cols-2 gap-2">
-          {design.rooms.slice(0, 2).map((r, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setRoom(i);
-                setView("room");
-              }}
-              aria-label={`${design.name}: room view ${i + 1}`}
-              className={`relative aspect-[3/2] overflow-hidden bg-[#efe9df] ${design.rooms.length === 1 ? "col-span-2 aspect-[3/1]" : ""}`}>
-              <Image src={r.src} alt="" fill sizes={design.rooms.length === 1 ? "(max-width: 640px) 100vw, 405px" : "(max-width: 640px) 50vw, 200px"} className="object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <Image src={v.image.src} alt="" fill sizes="72px" className="object-cover" />
             </button>
           ))}
+      </div>
+
+      <div className="mt-4">
+        <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{design.tagline}</p>
+        <div className="mt-1.5 flex items-baseline justify-between gap-4">
+          <h3 className="font-display text-2xl leading-tight">{design.name}</h3>
+          {design.price && <p className="shrink-0 text-[13px] font-medium">{design.price}</p>}
         </div>
-      )}
+        <p className="mt-2 text-[16px] leading-[25px] text-[#5b574f]">{design.description}</p>
+        <button
+          type="button"
+          onClick={enquire}
+          className="group/e mt-3 inline-flex items-center gap-2 py-2 text-[12px] uppercase tracking-[0.14em] underline decoration-[#17150f]/25 underline-offset-4 transition-colors hover:decoration-[#17150f]"
+        >
+          Enquire about {design.name}
+          <span aria-hidden className="transition-transform duration-200 group-hover/e:translate-x-1">→</span>
+        </button>
+      </div>
+
+      <dialog
+        ref={dialog}
+        onClick={(e) => e.target === dialog.current && dialog.current.close()}
+        onKeyDown={(e) => {
+          if (e.key === "ArrowRight") step(1);
+          if (e.key === "ArrowLeft") step(-1);
+        }}
+        className="m-auto max-w-[94vw] bg-transparent p-0 text-[#f6f1e8] backdrop:bg-[#17150f]/90"
+      >
+        <Image
+          src={shown.src}
+          alt={`${design.name}: ${label}`}
+          width={shown.w}
+          height={shown.h}
+          sizes="94vw"
+          className="h-auto max-h-[82vh] w-auto max-w-[94vw] object-contain"
+        />
+        <div className="mt-3 flex items-center justify-between gap-6 text-[13px]">
+          <p>
+            <span className="font-display text-lg">{design.name}</span>
+            <span className="ml-3 uppercase tracking-[0.14em] text-white/70">{label}</span>
+          </p>
+          <div className="flex items-center gap-1">
+            {views.length > 1 && (
+              <>
+                <button type="button" onClick={() => step(-1)} aria-label="Previous view" className="px-3 py-2 hover:text-white">←</button>
+                <span className="tabular-nums text-white/70">{i + 1} / {views.length}</span>
+                <button type="button" onClick={() => step(1)} aria-label="Next view" className="px-3 py-2 hover:text-white">→</button>
+              </>
+            )}
+            <button type="button" onClick={() => dialog.current?.close()} aria-label="Close" className="ml-2 px-3 py-2 uppercase tracking-[0.14em] hover:text-white">Close ✕</button>
+          </div>
+        </div>
+      </dialog>
     </article>
   );
 }

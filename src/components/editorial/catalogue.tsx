@@ -16,9 +16,15 @@ export default function Catalogue() {
               <p className="md:col-span-5 max-w-md text-[16px] leading-relaxed font-light text-[#5b574f]">{s.intro}</p>
             </div>
 
-            <div className="mt-14 grid gap-x-8 gap-y-16 sm:grid-cols-2 xl:grid-cols-3">
+            {/* One design: a two-thirds feature. Four: a 2×2 grid. Otherwise three across. */}
+            <div className={`mt-14 grid gap-x-8 gap-y-16 sm:grid-cols-2 ${s.items.length === 4 ? "" : "xl:grid-cols-3"}`}>
               {s.items.map((d) => (
-                <DesignCard key={d.slug} design={d} skin="editorial" />
+                <div key={d.slug} className={s.items.length === 1 ? "sm:col-span-2" : ""}>
+                  <DesignCard
+                    design={d}
+                    sizes={s.items.length === 1 ? "(max-width: 640px) 100vw, 850px" : s.items.length === 4 ? "(max-width: 640px) 100vw, 610px" : "(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 405px"}
+                  />
+                </div>
               ))}
             </div>
           </div>
