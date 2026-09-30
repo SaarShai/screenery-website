@@ -60,7 +60,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 md:py-32 px-6 md:px-12 bg-[#1a1a1a]"
+      className="py-24 md:py-32 px-6 md:px-12 bg-[#221c16]"
       ref={ref}
     >
       <div className="max-w-3xl mx-auto text-center">
@@ -160,7 +160,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={sending}
-                className="group relative inline-flex items-center gap-3 text-[13px] tracking-[0.2em] uppercase text-white border border-white/30 px-10 py-4 hover:bg-white hover:text-[#1a1a1a] transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group relative inline-flex items-center gap-3 text-[13px] tracking-[0.2em] uppercase bg-[#c4a97d] text-[#17150f] px-10 py-4 hover:bg-[#f6f1e8] transition-all duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {sending ? "Sending…" : "Request Quote"}
                 <span className="w-4 h-[1px] bg-current transition-all duration-500 group-hover:w-6" />

@@ -23,12 +23,12 @@ export default function Clients() {
             Trusted By
           </p>
           <p className="text-[#6b6b6b] text-base font-light">
-            Leading hotel brands around the world
+            And more leading hotel brands around the world
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-6 gap-y-4 items-center">
-          {clientLogos.map((client, i) => (
+        <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-x-8 gap-y-6 items-center">
+          {clientLogos.slice(8, 20).map((client, i) => (
             <motion.div
               key={client.src}
               initial={{ opacity: 0, y: 20 }}
@@ -36,31 +36,13 @@ export default function Clients() {
                 isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
               }
               transition={{ duration: 0.6, delay: i * 0.05 }}
-              className="relative aspect-[520/180] opacity-50 hover:opacity-90 transition-opacity duration-500"
+              className="relative aspect-[520/180]"
             >
-              <Image src={client.src} alt={client.alt} fill sizes="180px" className="object-contain scale-[0.8]" />
+              <Image src={client.src} alt={client.alt} fill sizes="180px" className="object-contain scale-[0.8] opacity-75 grayscale" />
             </motion.div>
           ))}
         </div>
 
-        {/* World map showing client locations */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 flex justify-center"
-        >
-          <div className="max-w-md w-full opacity-40 hover:opacity-60 transition-opacity duration-500">
-            <Image
-              src="/images/world map.png"
-              alt="World map showing Screenery client locations across the globe"
-              width={1492}
-              height={721}
-              className="w-full h-auto"
-              sizes="(max-width: 768px) 80vw, 400px"
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
