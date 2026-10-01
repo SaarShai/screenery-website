@@ -52,8 +52,8 @@
  "standard/princess": [
   {
    "src": "/catalog/standard/princess/hero.jpg",
-   "w": 1800,
-   "h": 1200
+   "w": 1536,
+   "h": 1024
   },
   {
    "src": "/catalog/standard/princess/v2.jpg",
