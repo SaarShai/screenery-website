@@ -1,5 +1,4 @@
-import Image from "next/image";
-import clientLogos from "@/data/hotel-logos.json";
+import LogoWall from "./logo-wall";
 
 const stats = [
   ["5–15 min", "Set-up, no tools"],
@@ -27,13 +26,7 @@ export default function Stats() {
       <section aria-label="Hotel clients" className="px-6 py-14 md:px-12 md:py-20">
         <div className="mx-auto max-w-5xl">
           <p className="text-center text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">Trusted by</p>
-          <ul className="mt-10 grid grid-cols-3 items-center gap-x-10 gap-y-9 sm:grid-cols-5 sm:gap-x-14 md:gap-y-12 lg:grid-cols-6">
-            {clientLogos.map((c) => (
-              <li key={c.src} className="relative mx-auto aspect-[520/180] w-full max-w-[110px]">
-                <Image src={c.src} alt={c.alt} fill sizes="110px" className="object-contain opacity-60 grayscale" />
-              </li>
-            ))}
-          </ul>
+          <LogoWall />
         </div>
       </section>
 

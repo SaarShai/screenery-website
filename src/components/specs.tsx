@@ -2,24 +2,8 @@
 
 import Image from "next/image";
 import FadeInWhenVisible from "./fade-in-when-visible";
-
-const specs = [
-  { label: "Setup Time", value: "5\u201315 minutes", detail: "No tools\u00A0required" },
-  { label: "Storage", value: "155 \u00D7 105 cm", detail: "Compact, flat-pack\u00A0box" },
-  { label: "Material", value: "100% Recyclable felt", detail: "Over 80% from recycled\u00A0bottles" },
-  { label: "VOC Emissions", value: "Extremely low", detail: "Certified to ASTM\u00A0D5116" },
-  { label: "Heat Stability", value: "Up to 50\u00B0C", detail: "95% relative\u00A0humidity" },
-  { label: "Sustainability", value: "100% Recyclable", detail: "Cradle to Cradle\u00A0Bronze" },
-  { label: "Cleaning", value: "Easy care", detail: "Spray disinfectant, vacuum, sparkling\u00A0water" },
-  { label: "Suitable For", value: "Versatile", detail: "Rooms, public spaces,\u00A0outdoors" },
-];
-
-const badges = [
-  { src: "/images/hand-made.png", alt: "Hand Made with Love — Est. 2022", width: 700, height: 695 },
-  { src: "/images/made-in-britain.png", alt: "Made in Britain", width: 245, height: 315 },
-  { src: "/images/patented.png", alt: "Patented Design", width: 325, height: 315 },
-  { src: "/images/sustainable.png", alt: "Sustainable Materials", width: 290, height: 315 },
-];
+import BoxDiagram from "./box-diagram";
+import { details, certs } from "@/data/details";
 
 export default function Specs() {
   return (
@@ -37,9 +21,12 @@ export default function Specs() {
           </h2>
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.15}>
-          <p className="text-[#6b6b6b] text-lg max-w-2xl leading-relaxed font-light mb-16" style={{ textWrap: "balance" }}>
-            High-performance luxury room dividers, made from 100% recyclable felt panels.
-            Used in nurseries, hospitals, and swimming&nbsp;pools.
+          <p
+            className="text-[#6b6b6b] text-lg max-w-2xl leading-relaxed font-light mb-16"
+            style={{ textWrap: "balance" }}
+          >
+            High-performance luxury room dividers, made from 100% recyclable
+            felt panels. Used in nurseries, hospitals, and swimming&nbsp;pools.
           </p>
         </FadeInWhenVisible>
 
@@ -109,78 +96,58 @@ export default function Specs() {
           </div>
         </FadeInWhenVisible>
 
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24">
-          {/* Left: diagram + box */}
-          <FadeInWhenVisible delay={0.25}>
-            <div>
-              <div className="relative rounded-sm overflow-hidden">
-                <Image
-                  src="/images/model diagrams/diagrams-box.png"
-                  alt="Screenery storage box dimensions: 155cm × 105cm — compact flat-pack design"
-                  width={904}
-                  height={662}
-                  className="w-full h-auto"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </div>
-          </FadeInWhenVisible>
-
-          {/* Right: specs table */}
-          <div className="flex flex-col justify-center">
-            <div className="space-y-0">
-              {specs.map((spec, i) => (
-                <FadeInWhenVisible key={spec.label} delay={i * 0.05}>
-                  <div className="flex items-baseline justify-between py-4 border-b border-[#e5e2dc]">
-                    <span className="text-[14px] tracking-wide flex-shrink-0">
-                      {spec.label}
-                    </span>
-                    <div className="text-right ml-4">
-                      <span className="text-[14px] font-light">
-                        {spec.value}
-                      </span>
-                      <span className="text-[#6b6b6b] text-xs ml-2 font-light hidden sm:inline">
-                        {spec.detail}
-                      </span>
-                    </div>
+        <div className="grid gap-16 md:grid-cols-12 md:gap-16">
+          {/* Left: the two shipping boxes, to scale */}
+          <div className="md:col-span-6">
+            <div className="md:sticky md:top-[calc(var(--nav-h)+3rem)]">
+              <FadeInWhenVisible delay={0.25}>
+                <div>
+                  <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
+                    Delivered flat
+                  </p>
+                  <div className="mt-6">
+                    <BoxDiagram />
                   </div>
-                </FadeInWhenVisible>
-              ))}
+                </div>
+              </FadeInWhenVisible>
             </div>
+          </div>
+
+          {/* Right: details, as on the festive page */}
+          <div className="md:col-span-6 md:col-start-7">
+            {details.map((s, i) => (
+              <FadeInWhenVisible key={s.h} delay={i * 0.04} y={20}>
+                <div className="border-b border-[#e5e2dc] py-5 first:pt-0">
+                  <h3 className="text-[14px] font-medium tracking-wide">
+                    {s.h}
+                  </h3>
+                  {s.p.map((t, k) => (
+                    <p
+                      key={k}
+                      className={`text-[15px] leading-[1.7] font-light text-[#5b574f] ${k ? "mt-3" : "mt-1.5"}`}
+                    >
+                      {t}
+                    </p>
+                  ))}
+                </div>
+              </FadeInWhenVisible>
+            ))}
           </div>
         </div>
 
-        {/* Badges row */}
-        <FadeInWhenVisible delay={0.3}>
-          <div className="mt-20 flex flex-wrap items-center justify-center gap-8 md:gap-12">
-            {badges.map((badge) => (
-              <div key={badge.alt} className="relative h-16 md:h-20 w-auto opacity-80 hover:opacity-100 transition-opacity">
-                <Image
-                  src={badge.src}
-                  alt={badge.alt}
-                  width={badge.width}
-                  height={badge.height}
-                  className="h-full w-auto object-contain"
-                  sizes="80px"
-                />
-              </div>
-            ))}
-          </div>
-        </FadeInWhenVisible>
-
-        {/* Certifications strip */}
-        <FadeInWhenVisible delay={0.4}>
-          <div className="mt-10 flex justify-center">
-            <div className="relative w-full max-w-lg opacity-80 hover:opacity-100 transition-opacity">
+        {/* Certifications */}
+        <FadeInWhenVisible delay={0.2}>
+          <div className="mt-20 flex flex-wrap items-center justify-center gap-6 md:gap-10">
+            {certs.map(([f, alt]) => (
               <Image
-                src="/images/certifications.png"
-                alt="Fire Classification BS EN 13501-1, Cradle to Cradle Certified, ecobau eco-1, M1 Emission Class"
-                width={1100}
-                height={185}
-                className="w-full h-auto"
-                sizes="(max-width: 768px) 90vw, 500px"
+                key={f}
+                src={`/festive/${f}.png`}
+                alt={alt}
+                width={140}
+                height={140}
+                className="h-14 w-auto opacity-85 md:h-16"
               />
-            </div>
+            ))}
           </div>
         </FadeInWhenVisible>
       </div>
