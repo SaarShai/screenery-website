@@ -66,12 +66,25 @@ export const sections: Section[] = [
       design("standard", "marine", "Marine Life", "Underwater kingdom", "Starfish, manta rays and coral gardens: the wonders of the sea on dry land.", ["Front", "Back", "Bali edition"], "From £995"),
       design("standard", "princess", "Princess Palace", "Fairytale magic", "For children who dream of glass slippers and enchanted forests.", ["Front", "Back", "In a suite"], "From £995"),
       design("standard", "space", "Spaceship", "Mission control", "For children who dream of touching the stars. Sends space adventurers zooming into orbit.", ["Front", "Back", "In a room"], "From £995"),
-      design("standard", "police", "Police Station", "On patrol", "Blue lights, a patrol car and a lookout tower. Little officers keep the suite safe and sound.", ["Studio", "On duty", "With a cadet"]),
-      design("standard", "fire-station", "Fire Station", "To the rescue", "A red fire engine, a bell tower and big arched doors. Ready for the next call-out, siren optional.", ["Studio", "Two firefighters", "Wide"]),
+      design("standard", "police", "Police Station", "On patrol", "Blue lights, a patrol car and a lookout tower. Little officers keep the suite safe and sound.", ["With a cadet", "Studio", "On duty"]),
+      design("standard", "fire-station", "Fire Station", "To the rescue", "A red fire engine, a bell tower and big arched doors. Ready for the next call-out, siren optional.", ["Two firefighters", "Studio", "Wide"]),
       design("standard", "hospital", "Hospital", "Little doctors", "An emergency bay with its ambulance, a rooftop helipad and a park bench for recovering teddies.", ["Front", "Back", "In a room"]),
       design("standard", "reading", "Reading Corner", "Storybook retreat", "After a long day of travel, the young ones need a cosy moment to relax.", ["Front", "Back", "In a room"], "From £1,250"),
       design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Front", "Angled", "In a room"], "From £1,350"),
       design("standard", "cafe", "Kids Cafe", "Sweet delights", "Every day is opening day at the sweetest spot in town.", ["Front", "Back", "In a hotel restaurant"], "From £1,250"),
+    ],
+  },
+  {
+    slug: "bespoke",
+    name: "Bespoke",
+    kicker: "Made for one hotel",
+    intro:
+      "Your building, your mascot, your colour palette. A selection of sets our creative team designed for one hotel each, and that exist nowhere else.",
+    items: [
+      design("bespoke", "forte", "Forte Village", "Sardinia", "Pine woods, peacocks and zebras, front and back.", ["In a suite", "Front", "Back"]),
+      design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["Front", "Folded", "Wide"]),
+      design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["In a suite", "Front", "With a guest"]),
+      design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["Studio", "Boarding", "In the terminal"]),
     ],
   },
   {
@@ -96,19 +109,6 @@ export const sections: Section[] = [
       "A themed wrap for the bed itself. The room stays as it is; the bed becomes part of the story.",
     items: [
       design("bedwrappers", "marine", "Marine Life", "Twin beds", "Coral and clownfish for a twin room.", ["In a suite", "Twin beds", "Twin room"], "From £850"),
-    ],
-  },
-  {
-    slug: "bespoke",
-    name: "Bespoke",
-    kicker: "Made for one hotel",
-    intro:
-      "Your building, your mascot, your colour palette. Our creative team designs a set that exists nowhere else.",
-    items: [
-      design("bespoke", "forte", "Forte Village", "Sardinia", "Pine woods, peacocks and zebras, front and back.", ["In a suite", "Front", "Back"]),
-      design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["Front", "Folded", "Wide"]),
-      design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["In a suite", "Front", "With a guest"]),
-      design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["Studio", "Boarding", "In the terminal"]),
     ],
   },
 ];

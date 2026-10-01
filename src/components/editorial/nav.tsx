@@ -16,7 +16,7 @@ export default function NavA() {
         const el = document.getElementById(s.slug);
         if (el && el.getBoundingClientRect().top < 120) cur = s.slug;
       }
-      const after = document.getElementById("clients");
+      const after = document.getElementById("specs");
       if (after && after.getBoundingClientRect().top < 120) cur = null;
       setActive(cur);
     };

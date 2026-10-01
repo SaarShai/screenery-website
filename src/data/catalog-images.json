@@ -265,12 +265,12 @@
  ],
  "standard/police": [
   {
-   "src": "/catalog/standard/police/hero.jpg",
+   "src": "/catalog/standard/police/v2.jpg",
    "w": 1536,
    "h": 1024
   },
   {
-   "src": "/catalog/standard/police/v2.jpg",
+   "src": "/catalog/standard/police/hero.jpg",
    "w": 1536,
    "h": 1024
   },
@@ -278,12 +278,12 @@
  ],
  "standard/fire-station": [
   {
-   "src": "/catalog/standard/fire-station/hero.jpg",
+   "src": "/catalog/standard/fire-station/v2.jpg",
    "w": 1536,
    "h": 1024
   },
   {
-   "src": "/catalog/standard/fire-station/v2.jpg",
+   "src": "/catalog/standard/fire-station/hero.jpg",
    "w": 1536,
    "h": 1024
   },
