@@ -28,7 +28,7 @@ export default function DesignCard({ design, sizes }: { design: Design; sizes: s
         type="button"
         onClick={() => dialog.current?.showModal()}
         aria-label={`Enlarge ${design.name}: ${label}`}
-        className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden bg-[#efe9df]"
+        className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-[6px] bg-[#efe9df] shadow-[0_12px_30px_-10px_rgba(60,45,25,0.22)] transition-shadow duration-500 hover:shadow-[0_18px_40px_-12px_rgba(60,45,25,0.3)]"
       >
         <Image
           key={shown.src}
@@ -51,7 +51,7 @@ export default function DesignCard({ design, sizes }: { design: Design; sizes: s
               aria-label={`${design.name}: ${v.label}`}
               aria-pressed={k === i}
               title={v.label}
-              className={`relative h-12 w-[4.5rem] shrink-0 overflow-hidden bg-[#efe9df] transition-shadow ${k === i ? "ring-2 ring-inset ring-[#17150f]" : "hover:ring-1 hover:ring-inset hover:ring-[#17150f]/40"}`}
+              className={`relative h-12 w-[4.5rem] shrink-0 overflow-hidden rounded-[3px] bg-[#efe9df] transition-shadow ${k === i ? "ring-2 ring-inset ring-[#17150f]" : "hover:ring-1 hover:ring-inset hover:ring-[#17150f]/40"}`}
             >
               <Image src={v.image.src} alt="" fill sizes="72px" className="object-cover" />
             </button>
