@@ -25,36 +25,23 @@ export default function Showcase({ items }: { items: Design[] }) {
 
   return (
     <>
-      {/* Projects: each commission's lead photo large, its other views as a strip */}
-      <div className="mt-14 grid gap-x-8 gap-y-14 sm:grid-cols-2">
-        {items.map((d) => {
-          const first = shots.findIndex((s) => s.d === d);
-          const own = shots.filter((s) => s.d === d);
-          return (
-            <figure key={d.slug}>
-              <button
-                type="button"
-                onClick={() => open(first)}
-                aria-label={`Enlarge ${d.name}`}
-                className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden bg-[#e4dccf]"
-              >
-                <Image src={own[0].image.src} alt={`${d.name}: ${own[0].label}`} fill sizes="(max-width: 640px) 100vw, 610px" className="object-cover transition-transform duration-700 group-hover:scale-[1.02] motion-reduce:transition-none" />
-              </button>
-              <div className="mt-2 grid grid-cols-4 gap-2">
-                {own.slice(1, 5).map((s, k) => (
-                  <button key={s.image.src} type="button" onClick={() => open(first + k + 1)} aria-label={`Enlarge ${d.name}: ${s.label}`} className="relative aspect-[3/2] cursor-zoom-in overflow-hidden bg-[#e4dccf]">
-                    <Image src={s.image.src} alt="" fill sizes="150px" className="object-cover transition-opacity hover:opacity-85" />
-                  </button>
-                ))}
-              </div>
-              <figcaption className="mt-4">
-                <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{d.tagline}</p>
-                <h3 className="font-display mt-1.5 text-2xl leading-tight">{d.name}</h3>
-                <p className="mt-2 text-[16px] leading-[25px] text-[#5b574f]">{d.description}</p>
-              </figcaption>
-            </figure>
-          );
-        })}
+      {/* Gallery: every commission photo at its own shape, in a mosaic; caption on hover */}
+      <div className="mt-14 columns-1 gap-4 sm:columns-2 lg:columns-3">
+        {shots.map((s, k) => (
+          <button
+            key={s.image.src}
+            type="button"
+            onClick={() => open(k)}
+            aria-label={`Enlarge ${s.d.name}: ${s.label}`}
+            className="group relative mb-4 block w-full cursor-zoom-in break-inside-avoid overflow-hidden bg-[#e4dccf]"
+          >
+            <Image src={s.image.src} alt={`${s.d.name}: ${s.label}`} width={s.image.w} height={s.image.h} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 405px" className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
+            <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#17150f]/70 to-transparent px-4 pb-3 pt-10 text-left text-[#f6f1e8] opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-visible:opacity-100">
+              <span className="font-display block text-lg leading-tight">{s.d.name}</span>
+              <span className="block text-[11px] uppercase tracking-[0.14em] text-white/75">{s.d.tagline}</span>
+            </span>
+          </button>
+        ))}
       </div>
 
       <div className="mt-16 flex flex-col items-start gap-5 border-t border-[#17150f]/10 pt-10 md:flex-row md:items-center md:justify-between">

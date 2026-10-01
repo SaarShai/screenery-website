@@ -87,15 +87,11 @@
  ],
  "standard/reading": [
   {
-   "src": "/catalog/standard/reading/hero.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
    "src": "/catalog/standard/reading/v2.jpg",
    "w": 1800,
    "h": 1200
   },
+  null,
   null,
   {
    "src": "/catalog/standard/reading/room1.jpg",
@@ -109,11 +105,7 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/arabian/v2.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   null,
   {
    "src": "/catalog/standard/arabian/room1.jpg",
@@ -305,15 +297,11 @@
  ],
  "standard/hospital": [
   {
-   "src": "/catalog/standard/hospital/hero.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
    "src": "/catalog/standard/hospital/v2.jpg",
    "w": 1800,
    "h": 1200
   },
+  null,
   null,
   {
    "src": "/catalog/standard/hospital/room1.jpg",
