@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { Award, Hand, MapPin, Recycle } from "lucide-react";
 import FadeInWhenVisible from "./fade-in-when-visible";
 import BoxDiagram from "./box-diagram";
 import { certs } from "@/data/details";
@@ -9,10 +10,18 @@ import { certs } from "@/data/details";
 const brief = [
   { h: "Installation", p: ["5 to 15 minutes to set up or take apart. No tools needed. Modular, so it stores easily."] },
   { h: "Product properties", p: ["Lightweight, below tipping-risk thresholds, soft to the touch and safe for children."] },
-  { h: "Material properties", p: ["Robust and shockproof, as used in nurseries, hospitals and pools. Flame proof B-s1,d0 (EN 13501), extremely low VOC (ASTM D5116)."] },
+  { h: "Material properties", p: ["Robust and shockproof, as used in nurseries, hospitals and pools. Flame proof B-s1,d0 (EN 13501)."] },
   { h: "Environment", p: ["100% recyclable PET, over 80% recycled content. eco-1 rated and Cradle to Cradle Bronze certified."] },
   { h: "Cleaning & care", p: ["Damp cloth, spray disinfectant or vacuum. Isopropyl alcohol lifts stains without harming the print; an iron at about 160 °C smooths dents."] },
   { h: "Durability & re-usability", p: ["Lasts for years, unlike cardboard or foam. Weatherproof and waterproof; the print does not fade."] },
+];
+
+const OFFICIAL = ["cert-fire-bs-en-13501", "cert-m1", "cert-cradle-to-cradle", "cert-eco-1"];
+const PROMISES = [
+  { Icon: Hand, label: "Hand-made" },
+  { Icon: MapPin, label: "Made in Britain" },
+  { Icon: Award, label: "Patented" },
+  { Icon: Recycle, label: "Sustainable" },
 ];
 
 export default function Specs() {
@@ -145,19 +154,27 @@ export default function Specs() {
           </div>
         </div>
 
-        {/* Certifications */}
+        {/* Certified: the official marks as issued. Ours: four promises in the site's own line icons. */}
         <FadeInWhenVisible delay={0.2}>
-          <div className="mt-20 flex flex-wrap items-center justify-center gap-6 md:gap-10">
-            {certs.map(([f, alt]) => (
-              <Image
-                key={f}
-                src={`/festive/${f}.png`}
-                alt={alt}
-                width={140}
-                height={140}
-                className="h-14 w-auto opacity-85 md:h-16"
-              />
-            ))}
+          <div className="mt-20 grid gap-px border border-[#e5e2dc] bg-[#e5e2dc] md:grid-cols-12">
+            <div className="bg-[#f6f1e8] p-6 md:col-span-7 md:p-8">
+              <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">Certified</p>
+              <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-5">
+                {certs
+                  .filter(([f]) => OFFICIAL.includes(f))
+                  .map(([f, alt]) => (
+                    <Image key={f} src={`/festive/${f}.png`} alt={alt} width={140} height={140} className="h-12 w-auto md:h-14" />
+                  ))}
+              </div>
+            </div>
+            <ul className="grid grid-cols-2 gap-px bg-[#e5e2dc] md:col-span-5">
+              {PROMISES.map(({ Icon, label }) => (
+                <li key={label} className="flex items-center gap-3 bg-[#f6f1e8] p-5 md:p-6">
+                  <Icon aria-hidden className="h-6 w-6 shrink-0 text-[#6f5a41]" strokeWidth={1.25} />
+                  <span className="text-[13px] font-medium">{label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </FadeInWhenVisible>
       </div>
