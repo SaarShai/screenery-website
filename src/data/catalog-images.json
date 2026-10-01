@@ -155,12 +155,17 @@
  ],
  "cities/new-york": [
   {
-   "src": "/catalog/cities/new-york/hero.jpg",
-   "w": 1800,
-   "h": 1156
+   "src": "/catalog/cities/new-york/studio.jpg",
+   "w": 1536,
+   "h": 1024
   },
   null,
-  null
+  null,
+  {
+   "src": "/catalog/cities/new-york/lobby.jpg",
+   "w": 1536,
+   "h": 1024
+  }
  ],
  "cities/san-francisco": [
   {
