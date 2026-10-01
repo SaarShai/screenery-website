@@ -104,11 +104,18 @@ function Box3D({ w, h, d, k, rx, ry }: { w: number; h: number; d: number; k: num
 
 export default function BoxDiagram() {
   const stage = useRef<HTMLDivElement>(null);
-  const [k, setK] = useState(1.6);
+  const [k, setK] = useState(1.4);
+  const [stack, setStack] = useState(false);
   useEffect(() => {
     const el = stage.current;
     if (!el) return;
-    const ro = new ResizeObserver(([e]) => setK(Math.min(1.9, e.contentRect.width / (e.contentRect.width < 520 ? 230 : 400))));
+    // Side by side when both boxes fit with room for their labels; otherwise one above the other.
+    const ro = new ResizeObserver(([e]) => {
+      const w = e.contentRect.width;
+      const side = (w - 2 * 95 - 24) / (112 + 150);
+      setStack(side < 1.1);
+      setK(0.88 * Math.min(1.9, side < 1.1 ? (w - 95) / 150 : side)); // headroom for the turn
+    });
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
@@ -126,6 +133,7 @@ export default function BoxDiagram() {
     <div
       ref={stage}
       data-boxes
+      className="w-full min-w-0"
       onPointerMove={(e) => {
         if (e.pointerType !== "mouse" || reduce) return;
         const r = e.currentTarget.getBoundingClientRect();
@@ -137,9 +145,9 @@ export default function BoxDiagram() {
         my.set(0.15);
       }}
     >
-      <div className="flex flex-col gap-10 sm:flex-row sm:justify-between sm:gap-6">
+      <div className={`flex gap-6 ${stack ? "flex-col gap-10" : "justify-between"}`}>
         {BOXES.map((b) => (
-          <div key={b.name} style={{ width: b.w * k + 60 }}>
+          <div key={b.name} style={{ width: b.w * k + 95 }}>
             <div className="flex items-center justify-center [perspective:1100px]" style={{ height: b.h * k + 110 }}>
               <Box3D {...b} k={k} rx={rx} ry={ry} />
             </div>

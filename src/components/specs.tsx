@@ -117,7 +117,7 @@ export default function Specs() {
 
         <div className="grid gap-16 md:grid-cols-12 md:gap-16">
           {/* Left: the two shipping boxes, to scale */}
-          <div className="md:col-span-6">
+          <div className="min-w-0 md:col-span-6">
             <div className="md:sticky md:top-[calc(var(--nav-h)+3rem)]">
               <FadeInWhenVisible delay={0.25}>
                 <div>
