@@ -73,7 +73,7 @@ export default function Showcase({ items }: { items: Design[] }) {
       ) : (
         <div
           ref={stage}
-          className="relative mt-10 [perspective:1400px]"
+          className="relative mt-10 overflow-x-clip py-6 [perspective:1400px]"
           style={{ height: narrow ? undefined : "min(70vw, 980px)" }}
           onPointerMove={(e) => {
             if (e.pointerType !== "mouse") return;

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Award, Hand, MapPin, Recycle } from "lucide-react";
+import { Award, Hand, Recycle } from "lucide-react";
 import FadeInWhenVisible from "./fade-in-when-visible";
 import BoxDiagram from "./box-diagram";
 import { certs } from "@/data/details";
@@ -16,10 +16,31 @@ const brief = [
   { h: "Durability & re-usability", p: ["Lasts for years, unlike cardboard or foam. Weatherproof and waterproof; the print does not fade."] },
 ];
 
+/** The Union flag, small, in its own colours. */
+function UnionJack({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 60 30" className={`${className} !h-auto !w-8 rounded-[2px]`} aria-hidden>
+      <clipPath id="uj-s">
+        <path d="M0,0 v30 h60 v-30 z" />
+      </clipPath>
+      <clipPath id="uj-t">
+        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z" />
+      </clipPath>
+      <g clipPath="url(#uj-s)">
+        <path d="M0,0 v30 h60 v-30 z" fill="#012169" />
+        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+        <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#uj-t)" stroke="#C8102E" strokeWidth="4" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#fff" strokeWidth="10" />
+        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" strokeWidth="6" />
+      </g>
+    </svg>
+  );
+}
+
 const OFFICIAL = ["cert-fire-bs-en-13501", "cert-m1", "cert-cradle-to-cradle", "cert-eco-1"];
 const PROMISES = [
   { Icon: Hand, label: "Hand-made" },
-  { Icon: MapPin, label: "Made in Britain" },
+  { Icon: UnionJack, label: "Made in Britain" },
   { Icon: Award, label: "Patented" },
   { Icon: Recycle, label: "Sustainable" },
 ];
@@ -158,12 +179,20 @@ export default function Specs() {
         <FadeInWhenVisible delay={0.2}>
           <div className="mt-20 grid gap-px border border-[#e5e2dc] bg-[#e5e2dc] md:grid-cols-12">
             <div className="bg-[#f6f1e8] p-6 md:col-span-7 md:p-8">
-              <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">Certified</p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-8 gap-y-5">
+              <p className="text-center text-[12px] uppercase tracking-[0.14em] text-[#6f5a41] lg:text-left">Certified</p>
+              {/* Narrow: the wide fire mark centred on its own row, the three round marks centred below. Wide: one row. */}
+              <div className="mt-6 grid grid-cols-3 place-items-center gap-x-6 gap-y-6 lg:flex lg:items-center lg:gap-x-8">
                 {certs
                   .filter(([f]) => OFFICIAL.includes(f))
-                  .map(([f, alt]) => (
-                    <Image key={f} src={`/festive/${f}.png`} alt={alt} width={140} height={140} className="h-12 w-auto md:h-14" />
+                  .map(([f, alt], i) => (
+                    <Image
+                      key={f}
+                      src={`/festive/${f}.png`}
+                      alt={alt}
+                      width={140}
+                      height={140}
+                      className={i === 0 ? "col-span-3 h-12 w-auto md:h-14" : "h-14 w-auto md:h-16 lg:h-14"}
+                    />
                   ))}
               </div>
             </div>

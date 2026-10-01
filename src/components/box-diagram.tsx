@@ -133,7 +133,7 @@ export default function BoxDiagram() {
     <div
       ref={stage}
       data-boxes
-      className="w-full min-w-0"
+      className="w-full min-w-0 overflow-x-clip"
       onPointerMove={(e) => {
         if (e.pointerType !== "mouse" || reduce) return;
         const r = e.currentTarget.getBoundingClientRect();
