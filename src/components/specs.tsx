@@ -3,7 +3,17 @@
 import Image from "next/image";
 import FadeInWhenVisible from "./fade-in-when-visible";
 import BoxDiagram from "./box-diagram";
-import { details, certs } from "@/data/details";
+import { certs } from "@/data/details";
+
+/** The festive page's details, cut to three lines each for the home page. */
+const brief = [
+  { h: "Installation", p: ["5 to 15 minutes to set up or take apart. No tools needed. Modular, so it stores easily."] },
+  { h: "Product properties", p: ["Lightweight, below tipping-risk thresholds, soft to the touch and safe for children."] },
+  { h: "Material properties", p: ["Robust and shockproof, as used in nurseries, hospitals and pools. Flame proof B-s1,d0 (EN 13501), extremely low VOC (ASTM D5116)."] },
+  { h: "Environment", p: ["100% recyclable PET, over 80% recycled content. eco-1 rated and Cradle to Cradle Bronze certified."] },
+  { h: "Cleaning & care", p: ["Damp cloth, spray disinfectant or vacuum. Isopropyl alcohol lifts stains without harming the print; an iron at about 160 °C smooths dents."] },
+  { h: "Durability & re-usability", p: ["Lasts for years, unlike cardboard or foam. Weatherproof and waterproof; the print does not fade."] },
+];
 
 export default function Specs() {
   return (
@@ -103,7 +113,7 @@ export default function Specs() {
               <FadeInWhenVisible delay={0.25}>
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
-                    Delivered flat
+                    Carry box
                   </p>
                   <div className="mt-6">
                     <BoxDiagram />
@@ -115,7 +125,7 @@ export default function Specs() {
 
           {/* Right: details, as on the festive page */}
           <div className="md:col-span-6 md:col-start-7">
-            {details.map((s, i) => (
+            {brief.map((s, i) => (
               <FadeInWhenVisible key={s.h} delay={i * 0.04} y={20}>
                 <div className="border-b border-[#e5e2dc] py-5 first:pt-0">
                   <h3 className="text-[14px] font-medium tracking-wide">
