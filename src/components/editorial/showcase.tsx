@@ -74,7 +74,7 @@ export default function Showcase({ items }: { items: Design[] }) {
         <div
           ref={stage}
           className="relative mt-10 overflow-x-clip py-6 [perspective:1400px]"
-          style={{ height: narrow ? undefined : "min(70vw, 980px)" }}
+          style={{ height: narrow ? undefined : "min(92vw, 1280px)" }}
           onPointerMove={(e) => {
             if (e.pointerType !== "mouse") return;
             const r = e.currentTarget.getBoundingClientRect();
@@ -133,11 +133,12 @@ export default function Showcase({ items }: { items: Design[] }) {
 /** Where each photo floats: left/top/width as % of the stage, depth in px, tilt in degrees. */
 type Spot = { x: number; y: number; w: number; z: number; r: number };
 const SPOTS: Spot[] = [
-  { x: 2, y: 1, w: 40, z: 40, r: -3 },
-  { x: 58, y: 4, w: 33, z: -160, r: 4 },
-  { x: 30, y: 40, w: 37, z: 140, r: -1.5 },
-  { x: 0, y: 69, w: 29, z: -90, r: 3 },
-  { x: 66, y: 62, w: 32, z: 70, r: -4 },
+  { x: 2, y: 0, w: 40, z: 40, r: -3 },
+  { x: 56, y: 5, w: 40, z: -120, r: 3 },
+  { x: 9, y: 35, w: 38, z: 110, r: 2 },
+  { x: 55, y: 38, w: 40, z: -40, r: -2.5 },
+  { x: 2, y: 69, w: 38, z: -80, r: -2 },
+  { x: 57, y: 71, w: 38, z: 60, r: 3.5 },
 ];
 /** Phones: one column, alternating sides, still at different depths. */
 const SPOTS_NARROW: Spot[] = [
@@ -146,11 +147,12 @@ const SPOTS_NARROW: Spot[] = [
   { x: 0, y: 0, w: 86, z: 70, r: -1.5 },
   { x: 14, y: 0, w: 86, z: -30, r: 2 },
   { x: 0, y: 0, w: 86, z: 40, r: -2.5 },
+  { x: 14, y: 0, w: 86, z: -50, r: 2 },
 ];
 
 /** One floating photo: nearer photos drift faster with scroll and lift toward the viewer on hover. */
 function Card({ shot, spot, p, narrow, onOpen }: { shot: Shot; spot: Spot; p: MotionValue<number>; narrow: boolean; onOpen: () => void }) {
-  const drift = (spot.z + 200) * (narrow ? 0.25 : 0.45);
+  const drift = (spot.z + 200) * (narrow ? 0.25 : 0.3);
   const y = useTransform(p, [0, 1], [drift, -drift]);
   return (
     <motion.figure
