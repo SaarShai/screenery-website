@@ -1,124 +1,156 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
+
 /**
- * The two carry boxes to one scale, in the line style of the original box drawing
- * (public/images/model diagrams/diagrams-box.png). Each box is drawn from its own
- * width, height and depth, so proportions are true; the logo and icons are cut from
- * the original drawing and never stretched. Sizes are outer, from ground truth/box-framework.md.
+ * The two carry boxes as live CSS 3D models, to one scale, in the style of the original box
+ * drawing (public/images/model diagrams/diagrams-box.png): white board, ink edges, confetti,
+ * the outlined Wanderland Screenery logo cut from that drawing, and a carry handle. Scrolling swings them round; the cursor turns them.
+ * Sizes are outer, from ground truth/box-framework.md.
  */
 const BOXES = [
   { name: "Primary box", note: "Most designs", w: 112, h: 71, d: 27 },
   { name: "Large box", note: "Designs with longer panels", w: 150, h: 106, d: 16 },
 ];
 
-const K = 2.0; // px per cm
 const ink = "#17150f";
-const font = "Helvetica Neue, Helvetica, Arial, sans-serif";
+const edge = `1px solid ${ink}`;
 
-type P = [number, number];
-
-// Confetti from the original box: kind and position as a fraction of the face.
-const CONFETTI: [string, number, number][] = [
-  ["n", 0.07, 0.12], ["t", 0.22, 0.1], ["o", 0.33, 0.16], ["t", 0.48, 0.18], ["t", 0.7, 0.15],
-  ["d", 0.12, 0.33], ["n", 0.22, 0.33], ["m", 0.55, 0.36], ["n", 0.75, 0.38], ["t", 0.88, 0.34],
-  ["t", 0.08, 0.5], ["d", 0.84, 0.6], ["n", 0.92, 0.63], ["o", 0.06, 0.7], ["n", 0.28, 0.82],
-  ["t", 0.11, 0.86], ["d", 0.38, 0.78], ["t", 0.52, 0.8], ["n", 0.66, 0.9], ["o", 0.58, 0.95], ["d", 0.88, 0.85],
+// Confetti from the original box: kind, position as a fraction of the face, turn.
+const CONFETTI: [string, number, number, number][] = [
+  ["n", 0.07, 0.12, 10], ["t", 0.22, 0.1, -15], ["o", 0.33, 0.18, 0], ["t", 0.48, 0.15, 20], ["t", 0.72, 0.14, -30],
+  ["d", 0.12, 0.36, 0], ["n", 0.24, 0.32, 15], ["m", 0.6, 0.3, 0], ["n", 0.8, 0.36, -20], ["t", 0.9, 0.24, 90],
+  ["t", 0.06, 0.55, 30], ["d", 0.86, 0.58, 0], ["n", 0.93, 0.7, 10], ["o", 0.06, 0.74, 0], ["n", 0.3, 0.84, -10],
+  ["t", 0.14, 0.88, 0], ["d", 0.42, 0.76, 20], ["t", 0.55, 0.82, -20], ["n", 0.68, 0.9, 0], ["o", 0.6, 0.66, 0], ["d", 0.9, 0.88, 0],
 ];
+const GLYPH: Record<string, string> = {
+  t: "M2,18 L10,2 L18,18 Z",
+  o: "M10,2 C16,8 15,18 10,18 C5,18 4,8 10,2 Z",
+  d: "M4,2 V18 C20,18 20,2 4,2 Z",
+  m: "M2,18 L6,3 L10,10 L14,3 L18,18 Z",
+  n: "M2,6 h5 v8 h4 V3 h5 v15 H2 Z",
+};
 
-function glyph(kind: string, [x, y]: P, s: number) {
-  switch (kind) {
-    case "t":
-      return <path d={`M${x - s},${y + s} L${x},${y - s} L${x + s},${y + s} Z`} />;
-    case "o":
-      return <path d={`M${x},${y - s} C${x + s},${y} ${x + s * 0.6},${y + s} ${x},${y + s} C${x - s * 0.6},${y + s} ${x - s},${y} ${x},${y - s} Z`} />;
-    case "d":
-      return <path d={`M${x - s * 0.7},${y - s} V${y + s} C${x + s * 1.2},${y + s} ${x + s * 1.2},${y - s} ${x - s * 0.7},${y - s} Z`} />;
-    case "m":
-      return <path d={`M${x - s},${y + s} L${x - s * 0.5},${y - s} L${x},${y} L${x + s * 0.5},${y - s} L${x + s},${y + s} Z`} />;
-    default:
-      return <path d={`M${x - s},${y - s * 0.6} h${s * 0.7} v${s * 1.2} h${s * 0.6} v${-s * 1.6} h${s * 0.7} v${s * 2} h${-s * 2} Z`} />;
-  }
+/** The printed face: confetti and logo, as on the original carton. */
+function Print() {
+  return (
+    <>
+      {CONFETTI.map(([k, u, v, r], i) => (
+        <svg key={i} viewBox="0 0 20 20" className="absolute h-[7px] w-[7px]" style={{ left: `${u * 100}%`, top: `${v * 100}%`, transform: `rotate(${r}deg)` }} aria-hidden>
+          <path d={GLYPH[k]} fill="none" stroke={ink} strokeWidth={2} />
+        </svg>
+      ))}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/images/model diagrams/box-logo.png" alt="" className="absolute left-1/2 top-1/2 w-[50%] -translate-x-1/2 -translate-y-1/2" />
+    </>
+  );
 }
 
-function Box({ x, base, w, h, d }: { x: number; base: number; w: number; h: number; d: number }) {
-  const W = w * K;
-  const H = h * K;
-  // Gentle perspective, as in the original: the right end is nearer, so taller.
-  const TL: P = [x, base - H - 0.08 * W];
-  const TR: P = [x + W, TL[1] + 0.03 * W];
-  const BL: P = [x + 0.025 * W, TL[1] + H];
-  const BR: P = [x + 0.975 * W, base];
-  const o: P = [d * K * 0.75, -d * K * 0.32]; // depth runs back and up
-  const add = (a: P, b: P): P => [a[0] + b[0], a[1] + b[1]];
-  const pt = (u: number, v: number): P => [
-    (1 - v) * ((1 - u) * TL[0] + u * TR[0]) + v * ((1 - u) * BL[0] + u * BR[0]),
-    (1 - v) * ((1 - u) * TL[1] + u * TR[1]) + v * ((1 - u) * BL[1] + u * BR[1]),
-  ];
-  const poly = (ps: P[]) => ps.map((p) => p.join(",")).join(" ");
-  const ux: P = [TR[0] - TL[0], TR[1] - TL[1]];
-  const vy: P = [BL[0] - TL[0], BL[1] - TL[1]];
-  // Place a cut-out image on the face without stretching it: width as a fraction of the face width.
-  const place = (u: number, v: number, du: number, iw: number) => {
-    const [px, py] = pt(u, v);
-    const sx = (du * Math.hypot(...ux)) / iw;
-    const a = ux[0] / Math.hypot(...ux);
-    const b = ux[1] / Math.hypot(...ux);
-    return `matrix(${a * sx},${b * sx},${(vy[0] / Math.hypot(...vy)) * sx},${(vy[1] / Math.hypot(...vy)) * sx},${px},${py})`;
-  };
-  const handleAt = add(pt(0.5, 0), [o[0] / 2, o[1] / 2]);
-  const top = Math.min(TL[1] + o[1], TR[1] + o[1]);
-
+function Face({ w, h, transform, shade, children }: { w: number; h: number; transform: string; shade: string; children?: React.ReactNode }) {
   return (
-    <g>
-      <g fill="#fff" stroke={ink} strokeWidth={1.1} strokeLinejoin="round">
-        <polygon points={poly([TL, add(TL, o), add(TR, o), TR])} />
-        <polygon points={poly([TR, add(TR, o), add(BR, o), BR])} />
-        <polygon points={poly([TL, TR, BR, BL])} />
-      </g>
-      {/* handle */}
-      <path d={`M${handleAt[0] - 18},${handleAt[1]} C${handleAt[0] - 16},${handleAt[1] - 20} ${handleAt[0] + 16},${handleAt[1] - 20} ${handleAt[0] + 18},${handleAt[1]}`} fill="none" stroke={ink} strokeWidth={4} strokeLinecap="round" />
-      <path d={`M${handleAt[0] - 18},${handleAt[1]} C${handleAt[0] - 16},${handleAt[1] - 20} ${handleAt[0] + 16},${handleAt[1] - 20} ${handleAt[0] + 18},${handleAt[1]}`} fill="none" stroke="#fff" strokeWidth={1.6} strokeLinecap="round" />
-      {/* slots along the side */}
-      {[0.25, 0.5, 0.75].map((v) => {
-        const [sx, sy] = add(pt(1, v), [o[0] / 2, o[1] / 2]);
-        return <ellipse key={v} cx={sx} cy={sy} rx={0.9} ry={3} fill="none" stroke={ink} strokeWidth={0.8} />;
-      })}
-      <g fill="none" stroke={ink} strokeWidth={0.8} strokeLinejoin="round">
-        {CONFETTI.map(([k, u, v], i) => (
-          <g key={i}>{glyph(k, pt(u, v), Math.max(2.4, W / 150))}</g>
-        ))}
-      </g>
-      <image href="/images/model diagrams/box-logo.png" width={342} height={103} transform={place(0.24, 0.42, 0.5, 342)} />
-      <image href="/images/model diagrams/box-icons.png" width={62} height={35} transform={place(0.06, 0.8, 0.09, 62)} />
+    <div
+      className="absolute left-1/2 top-1/2 overflow-hidden [backface-visibility:hidden]"
+      style={{ width: w, height: h, marginLeft: -w / 2, marginTop: -h / 2, transform, background: shade, border: edge }}
+    >
+      {children}
+    </div>
+  );
+}
 
-      {/* measurements, as on the original */}
-      <g stroke={ink} strokeWidth={0.9}>
-        <line x1={TL[0]} y1={top - 16} x2={TR[0] + o[0]} y2={top - 16} markerStart="url(#bd-a)" markerEnd="url(#bd-a)" />
-        <line x1={BR[0] + o[0] + 16} y1={TR[1] + o[1]} x2={BR[0] + o[0] + 16} y2={BR[1]} markerStart="url(#bd-a)" markerEnd="url(#bd-a)" />
-      </g>
-      <text x={(TL[0] + TR[0] + o[0]) / 2} y={top - 24} textAnchor="middle" fill={ink} fontSize={15} fontFamily={font}>{w}cm</text>
-      <text x={BR[0] + o[0] + 24} y={(TR[1] + BR[1]) / 2 + 5} fill={ink} fontSize={15} fontFamily={font}>{h}cm</text>
-    </g>
+function Box3D({ w, h, d, k, rx, ry }: { w: number; h: number; d: number; k: number; rx: MotionValue<number>; ry: MotionValue<number> }) {
+  const W = w * k;
+  const H = h * k;
+  const D = d * k;
+  return (
+    <motion.div className="relative" style={{ width: W, height: H, transformStyle: "preserve-3d", rotateX: rx, rotateY: ry }}>
+      <Face w={W} h={H} shade="#fffdf9" transform={`translateZ(${D / 2}px)`}>
+        <Print />
+      </Face>
+      <Face w={W} h={H} shade="#f3eee6" transform={`rotateY(180deg) translateZ(${D / 2}px)`}>
+        <Print />
+      </Face>
+      <Face w={D} h={H} shade="#e9e3d8" transform={`rotateY(90deg) translateZ(${W / 2}px)`}>
+        {[0.25, 0.5, 0.75].map((v) => (
+          <span key={v} className="absolute left-1/2 h-2 w-[3px] -translate-x-1/2 rounded-full border border-[#17150f]" style={{ top: `${v * 100}%` }} />
+        ))}
+      </Face>
+      <Face w={D} h={H} shade="#e9e3d8" transform={`rotateY(-90deg) translateZ(${W / 2}px)`} />
+      <Face w={W} h={D} shade="#f7f3ec" transform={`rotateX(90deg) translateZ(${H / 2}px)`} />
+      <Face w={W} h={D} shade="#ddd5c8" transform={`rotateX(-90deg) translateZ(${H / 2}px)`} />
+      {/* Carry handle, standing up from the top */}
+      <div
+        className="absolute left-1/2 top-1/2 rounded-t-full border-[3px] border-b-0 border-[#17150f]"
+        style={{ width: 34, height: 16, marginLeft: -17, marginTop: -H / 2 - 16 }}
+      />
+      {/* Dimension lines, fixed to the front face */}
+      <div className="pointer-events-none absolute left-0 top-0" style={{ width: W, transform: `translateZ(${D / 2}px) translateY(-30px)` }}>
+        <div className="relative h-px bg-[#17150f]">
+          <span className="absolute -left-px -top-[3px] h-[7px] w-px bg-[#17150f]" />
+          <span className="absolute -right-px -top-[3px] h-[7px] w-px bg-[#17150f]" />
+        </div>
+        <p className="absolute -top-6 left-1/2 -translate-x-1/2 text-[13px] tabular-nums">{w}cm</p>
+      </div>
+      <div className="pointer-events-none absolute top-0" style={{ left: W + 14, height: H, transform: `translateZ(${D / 2}px)` }}>
+        <div className="relative h-full w-px bg-[#17150f]">
+          <span className="absolute -left-[3px] -top-px h-px w-[7px] bg-[#17150f]" />
+          <span className="absolute -bottom-px -left-[3px] h-px w-[7px] bg-[#17150f]" />
+        </div>
+        <p className="absolute left-3 top-1/2 -translate-y-1/2 text-[13px] tabular-nums">{h}cm</p>
+      </div>
+    </motion.div>
   );
 }
 
 export default function BoxDiagram() {
-  const base = 330;
-  const xs = [8, 356];
+  const stage = useRef<HTMLDivElement>(null);
+  const [k, setK] = useState(1.6);
+  useEffect(() => {
+    const el = stage.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([e]) => setK(Math.min(1.9, e.contentRect.width / (e.contentRect.width < 520 ? 230 : 400))));
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({ target: stage, offset: ["start end", "end start"] });
+  const swing = useTransform(scrollYProgress, [0, 1], reduce ? [-24, -24] : [-62, 28]);
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0.15);
+  const turn = useTransform(() => swing.get() + mx.get() * 30);
+  const ry = useSpring(turn, { stiffness: 90, damping: 18 });
+  const rx = useSpring(useTransform(my, [-0.5, 0.5], [-4, -24]), { stiffness: 90, damping: 18 });
+
   return (
-    <svg viewBox="0 0 760 400" className="h-auto w-full" role="img" aria-label="Carry boxes to scale: Primary 112 × 71 × 27 cm and Large 150 × 106 × 16 cm">
-      <defs>
-        <marker id="bd-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M0,1 L10,5 L0,9" fill="none" stroke={ink} strokeWidth={1.2} />
-        </marker>
-      </defs>
-      {BOXES.map((b, i) => (
-        <g key={b.name}>
-          <Box x={xs[i]} base={base} {...b} />
-          <text x={xs[i]} y={base + 34} fill={ink} fontSize={15} fontFamily="var(--font-display, serif)">
-            {b.name} <tspan fill="#5b574f" fontFamily={font} fontSize={12}>· {b.w} × {b.h} × {b.d} cm</tspan>
-          </text>
-          <text x={xs[i]} y={base + 52} fill="#6f5a41" fontSize={10} letterSpacing="0.14em" fontFamily={font}>{b.note.toUpperCase()}</text>
-        </g>
-      ))}
-    </svg>
+    <div
+      ref={stage}
+      data-boxes
+      onPointerMove={(e) => {
+        if (e.pointerType !== "mouse" || reduce) return;
+        const r = e.currentTarget.getBoundingClientRect();
+        mx.set((e.clientX - r.left) / r.width - 0.5);
+        my.set((e.clientY - r.top) / r.height - 0.5);
+      }}
+      onPointerLeave={() => {
+        mx.set(0);
+        my.set(0.15);
+      }}
+    >
+      <div className="flex flex-col gap-10 sm:flex-row sm:justify-between sm:gap-6">
+        {BOXES.map((b) => (
+          <div key={b.name} style={{ width: b.w * k + 60 }}>
+            <div className="flex items-center justify-center [perspective:1100px]" style={{ height: b.h * k + 110 }}>
+              <Box3D {...b} k={k} rx={rx} ry={ry} />
+            </div>
+            <p className="font-display mt-2 text-[17px] leading-tight">{b.name}</p>
+            <p className="mt-1 text-[13px] font-light tabular-nums text-[#5b574f]">
+              {b.w} × {b.h} × {b.d} cm
+            </p>
+            <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-[#6f5a41]">{b.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
