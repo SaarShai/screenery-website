@@ -94,10 +94,10 @@ export const sections: Section[] = [
     intro:
       "Your city, at child height. Landmark skylines illustrated for the hotel that wants guests to know exactly where they woke up.",
     items: [
-      design("cities", "london", "London", "Skyline", "Big Ben, the Shard and Tower Bridge, with a window to peek through.", ["Skyline", "Alternate", "In room"], "From £1,250"),
-      design("cities", "paris", "Paris", "Skyline", "Notre-Dame, the Arc de Triomphe and the Eiffel Tower in watercolour.", ["Skyline", "Alternate", "Detail"], "From £1,250"),
+      design("cities", "london", "London", "Skyline", "Big Ben, the Shard and Tower Bridge, with a window to peek through.", ["In a suite", "With the bus", ""], "From £1,250"),
+      design("cities", "paris", "Paris", "Skyline", "Notre-Dame, the Arc de Triomphe and the Eiffel Tower in watercolour.", ["In a suite", "Studio", ""], "From £1,250"),
       design("cities", "new-york", "New York", "Skyline", "The Manhattan skyline, from the Empire State to Lady Liberty.", ["Skyline", "Photoshoot", "Alternate"], "From £1,250"),
-      design("cities", "san-francisco", "San Francisco", "Skyline", "Cable cars, painted ladies and the Golden Gate.", ["Cable car", "Skyline", "In room"], "From £1,250"),
+      design("cities", "san-francisco", "San Francisco", "Skyline", "Cable cars, painted ladies and the Golden Gate.", ["Cable car", "", ""], "From £1,250"),
       design("cities", "berlin", "Berlin", "Skyline", "The Brandenburg Gate, the TV tower and the Reichstag dome.", ["Skyline", "Angled", "Layers"], "From £1,250"),
     ],
   },

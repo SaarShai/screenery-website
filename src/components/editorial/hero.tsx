@@ -20,9 +20,13 @@ export default function Hero() {
             <p className="mt-8 max-w-md text-[17px] leading-relaxed font-light text-[#5b574f]">
               Felt play-screens for hotels: a children&rsquo;s play area in minutes. Illustrated, hand-made in Britain, flat-packed when the guests check out.
             </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <a href="#standard" className="bg-[#17150f] px-6 py-3 text-[12px] uppercase tracking-[0.2em] text-[#f6f1e8] hover:bg-[#70593f] transition-colors">See the collection</a>
-              <a href="#contact" className="border border-[#17150f]/30 px-6 py-3 text-[12px] uppercase tracking-[0.2em] hover:border-[#17150f] transition-colors">Request a quote</a>
+            <div className="mt-10 flex flex-wrap gap-2">
+              <a href="#standard" className="bg-[#17150f] px-3.5 py-3 text-[11px] uppercase tracking-[0.12em] text-[#f6f1e8] hover:bg-[#70593f] transition-colors">See the collection</a>
+              <a href="#contact" className="border border-[#17150f]/30 px-3.5 py-3 text-[11px] uppercase tracking-[0.12em] hover:border-[#17150f] transition-colors">Request a quote</a>
+              <a href="/festive" className="group inline-flex items-center gap-1.5 bg-[#b23a3a] px-3.5 py-3 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[inset_0_0_0_2px_#1f6b3a,inset_0_0_0_4px_#fff] transition-colors hover:bg-[#9a2f2f]">
+                <span aria-hidden className="text-[13px] transition-transform duration-500 group-hover:rotate-180">❄</span>
+                Festive special
+              </a>
             </div>
           </div>
 

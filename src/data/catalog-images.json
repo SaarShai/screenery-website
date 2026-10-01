@@ -56,9 +56,9 @@
    "h": 1024
   },
   {
-   "src": "/catalog/standard/princess/v2.jpg",
-   "w": 1800,
-   "h": 1200
+   "src": "/catalog/standard/princess/v2-2.jpg",
+   "w": 1536,
+   "h": 1024
   },
   null,
   {
@@ -129,48 +129,29 @@
  ],
  "cities/london": [
   {
-   "src": "/catalog/cities/london/hero.jpg",
-   "w": 1448,
-   "h": 1086
+   "src": "/catalog/cities/london/room1.jpg",
+   "w": 1800,
+   "h": 735
   },
   {
    "src": "/catalog/cities/london/v2.jpg",
    "w": 1448,
    "h": 1086
   },
-  null,
-  {
-   "src": "/catalog/cities/london/room1.jpg",
-   "w": 1800,
-   "h": 735
-  }
+  null
  ],
  "cities/paris": [
   {
-   "src": "/catalog/cities/paris/hero.jpg",
-   "w": 1800,
-   "h": 1018
-  },
-  {
-   "src": "/catalog/cities/paris/v2.jpg",
-   "w": 1800,
-   "h": 1018
+   "src": "/catalog/cities/paris/room2.jpg",
+   "w": 1536,
+   "h": 1024
   },
   {
    "src": "/catalog/cities/paris/v3.jpg",
    "w": 1800,
    "h": 1018
   },
-  {
-   "src": "/catalog/cities/paris/room1.jpg",
-   "w": 1466,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/cities/paris/room2.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null
  ],
  "cities/new-york": [
   {
@@ -187,11 +168,7 @@
    "w": 1800,
    "h": 1129
   },
-  {
-   "src": "/catalog/cities/san-francisco/v2.jpg",
-   "w": 1248,
-   "h": 832
-  },
+  null,
   null,
   {
    "src": "/catalog/cities/san-francisco/room1.jpg",
