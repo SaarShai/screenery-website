@@ -129,9 +129,9 @@
  ],
  "cities/london": [
   {
-   "src": "/catalog/cities/london/room1.jpg",
-   "w": 1800,
-   "h": 735
+   "src": "/catalog/cities/london/suite-close.jpg",
+   "w": 1100,
+   "h": 733
   },
   {
    "src": "/catalog/cities/london/v2.jpg",
@@ -172,17 +172,16 @@
  ],
  "cities/san-francisco": [
   {
+   "src": "/catalog/cities/san-francisco/room-2.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
    "src": "/catalog/cities/san-francisco/hero.jpg",
    "w": 1800,
    "h": 1129
   },
-  null,
-  null,
-  {
-   "src": "/catalog/cities/san-francisco/room-2.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null
  ],
  "cities/berlin": [
   {

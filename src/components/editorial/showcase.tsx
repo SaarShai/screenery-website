@@ -73,7 +73,7 @@ export default function Showcase({ items }: { items: Design[] }) {
       ) : (
         <div
           ref={stage}
-          className="relative mt-10 overflow-x-clip py-6 [perspective:1400px]"
+          className={`relative overflow-x-clip [perspective:1400px] ${narrow ? "mt-6 pt-2" : "mt-10 py-6"}`}
           style={{ height: narrow ? undefined : "min(92vw, 1280px)" }}
           onPointerMove={(e) => {
             if (e.pointerType !== "mouse") return;
@@ -86,7 +86,7 @@ export default function Showcase({ items }: { items: Design[] }) {
             my.set(0);
           }}
         >
-          <motion.div className={narrow ? "relative" : "absolute inset-0"} style={{ transformStyle: "preserve-3d", rotateX: tipX }}>
+          <motion.div className={narrow ? "relative" : "absolute inset-0"} style={{ transformStyle: "preserve-3d", rotateX: narrow ? 0 : tipX }}>
             <motion.div className={narrow ? "relative" : "absolute inset-0"} style={{ transformStyle: "preserve-3d", rotateX: turnX, rotateY: turnY }}>
               {shots.map((s, k) => (
                 <Card key={s.image.src} shot={s} spot={spots[k % spots.length]} p={p} narrow={narrow} onOpen={() => open(k)} />
@@ -152,12 +152,12 @@ const SPOTS_NARROW: Spot[] = [
 
 /** One floating photo: nearer photos drift faster with scroll and lift toward the viewer on hover. */
 function Card({ shot, spot, p, narrow, onOpen }: { shot: Shot; spot: Spot; p: MotionValue<number>; narrow: boolean; onOpen: () => void }) {
-  const drift = (spot.z + 200) * (narrow ? 0.25 : 0.3);
+  const drift = narrow ? 0 : (spot.z + 200) * 0.3; // phones: no drift or depth, so the gaps stay even
   const y = useTransform(p, [0, 1], [drift, -drift]);
   return (
     <motion.figure
-      className={narrow ? "relative mb-12" : "absolute"}
-      style={{ ...(narrow ? { marginLeft: `${spot.x}%` } : { left: `${spot.x}%`, top: `${spot.y}%` }), width: `${spot.w}%`, y, z: spot.z, rotateZ: spot.r, transformStyle: "preserve-3d" }}
+      className={narrow ? "relative mb-10 last:mb-0" : "absolute"}
+      style={{ ...(narrow ? { marginLeft: `${spot.x}%` } : { left: `${spot.x}%`, top: `${spot.y}%` }), width: `${spot.w}%`, y, z: narrow ? 0 : spot.z, rotateZ: spot.r, transformStyle: "preserve-3d" }}
     >
       <motion.button
         type="button"

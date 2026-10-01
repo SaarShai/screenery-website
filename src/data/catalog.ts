@@ -98,7 +98,7 @@ export const sections: Section[] = [
       design("cities", "london", "London", "Skyline", "Big Ben, the Shard and Tower Bridge, with a window to peek through.", ["In a suite", "With the bus", "Raffles London edition"], "From £1,250"),
       design("cities", "paris", "Paris", "Skyline", "Notre-Dame, the Arc de Triomphe and the Eiffel Tower in watercolour.", ["In a suite", "Studio", ""], "From £1,250"),
       design("cities", "new-york", "New York", "Skyline", "The Manhattan skyline, from the Empire State to Lady Liberty.", ["Studio", "", "In a hotel lobby"], "From £1,250"),
-      design("cities", "san-francisco", "San Francisco", "Skyline", "Cable cars, painted ladies and the Golden Gate.", ["Cable car", "", ""], "From £1,250"),
+      design("cities", "san-francisco", "San Francisco", "Skyline", "Cable cars, painted ladies and the Golden Gate.", ["In a suite", "Cable car", ""], "From £1,250"),
       design("cities", "berlin", "Berlin", "Skyline", "The Brandenburg Gate, the TV tower and the Reichstag dome.", ["Skyline", "Angled", "Layers"], "From £1,250"),
     ],
   },
