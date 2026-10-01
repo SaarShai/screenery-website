@@ -37,7 +37,7 @@ export default function Catalogue() {
                 {s.items.map((d) => (
                   <div
                     key={d.slug}
-                    className={s.items.length === 1 ? "sm:col-span-2" : ""}
+                    className={s.items.length === 1 ? "min-w-0 sm:col-span-2" : "min-w-0"}
                   >
                     <DesignCard
                       design={d}

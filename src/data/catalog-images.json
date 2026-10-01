@@ -227,16 +227,8 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/bespoke/forte/v2.jpg",
-   "w": 1280,
-   "h": 960
-  },
-  {
-   "src": "/catalog/bespoke/forte/v3.jpg",
-   "w": 1280,
-   "h": 960
-  }
+  null,
+  null
  ],
  "bespoke/mallorca": [
   {
@@ -244,16 +236,8 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/bespoke/mallorca/v2.jpg",
-   "w": 972,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/bespoke/mallorca/v3.jpg",
-   "w": 1800,
-   "h": 1524
-  }
+  null,
+  null
  ],
  "standard/police": [
   {
@@ -311,25 +295,12 @@
  ],
  "bespoke/great-wall": [
   {
-   "src": "/catalog/bespoke/great-wall/hero.jpg",
-   "w": 1800,
-   "h": 1440
-  },
-  {
-   "src": "/catalog/bespoke/great-wall/v2.jpg",
-   "w": 1800,
-   "h": 1440
-  },
-  {
-   "src": "/catalog/bespoke/great-wall/v3.jpg",
-   "w": 1800,
-   "h": 1440
-  },
-  {
    "src": "/catalog/bespoke/great-wall/room1.jpg",
    "w": 1800,
    "h": 1200
-  }
+  },
+  null,
+  null
  ],
  "bespoke/munich-airport": [
   {
@@ -337,11 +308,7 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/bespoke/munich-airport/v2.jpg",
-   "w": 1800,
-   "h": 1440
-  },
+  null,
   {
    "src": "/catalog/bespoke/munich-airport/v3.jpg",
    "w": 1800,

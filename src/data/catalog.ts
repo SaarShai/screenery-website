@@ -82,9 +82,9 @@ export const sections: Section[] = [
       "Your building, your mascot, your colour palette. A selection of sets our creative team designed for one hotel each, and that exist nowhere else.",
     items: [
       design("bespoke", "forte", "Forte Village", "Sardinia", "Pine woods, peacocks and zebras, front and back.", ["In a suite", "Front", "Back"]),
-      design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["Front", "Folded", "Wide"]),
+      design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["In a suite", "", ""]),
       design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["In a suite", "Front", "With a guest"]),
-      design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["Studio", "Boarding", "In the terminal"]),
+      design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["Boarding", "", "In the terminal"]),
     ],
   },
   {
