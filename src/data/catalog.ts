@@ -84,6 +84,7 @@ export const sections: Section[] = [
       design("bespoke", "forte", "Forte Village", "Sardinia", "Pine woods, peacocks and zebras, front and back.", ["In a suite", "Front", "Back"]),
       design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["In a suite", "", ""]),
       design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["In a suite", "Front", "With a guest"]),
+      design("bespoke", "sandcastle", "Sand Castle", "Surf Club", "Sandcastle towers with shells and starfish, made for a beach club garden.", ["In the garden", "", ""]),
       design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["Boarding", "", "In the terminal"]),
     ],
   },
@@ -94,7 +95,7 @@ export const sections: Section[] = [
     intro:
       "Your city, at child height. Landmark skylines illustrated for the hotel that wants guests to know exactly where they woke up.",
     items: [
-      design("cities", "london", "London", "Skyline", "Big Ben, the Shard and Tower Bridge, with a window to peek through.", ["In a suite", "With the bus", ""], "From £1,250"),
+      design("cities", "london", "London", "Skyline", "Big Ben, the Shard and Tower Bridge, with a window to peek through.", ["In a suite", "With the bus", "Raffles London edition"], "From £1,250"),
       design("cities", "paris", "Paris", "Skyline", "Notre-Dame, the Arc de Triomphe and the Eiffel Tower in watercolour.", ["In a suite", "Studio", ""], "From £1,250"),
       design("cities", "new-york", "New York", "Skyline", "The Manhattan skyline, from the Empire State to Lady Liberty.", ["Studio", "", "In a hotel lobby"], "From £1,250"),
       design("cities", "san-francisco", "San Francisco", "Skyline", "Cable cars, painted ladies and the Golden Gate.", ["Cable car", "", ""], "From £1,250"),
