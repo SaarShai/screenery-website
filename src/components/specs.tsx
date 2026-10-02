@@ -47,7 +47,7 @@ const PROMISES = [
 
 export default function Specs() {
   return (
-    <section id="specs" className="py-24 md:py-32 px-6 md:px-12">
+    <section id="specs" className="py-16 md:py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <FadeInWhenVisible>
@@ -62,7 +62,7 @@ export default function Specs() {
         </FadeInWhenVisible>
         <FadeInWhenVisible delay={0.15}>
           <p
-            className="text-[#6b6b6b] text-lg max-w-2xl leading-relaxed font-light mb-16"
+            className="text-[#6b6b6b] text-lg max-w-2xl leading-relaxed font-light mb-10 md:mb-12"
             style={{ textWrap: "balance" }}
           >
             High-performance luxury room dividers, made from 100% recyclable
@@ -72,7 +72,7 @@ export default function Specs() {
 
         {/* Material closeup images */}
         <FadeInWhenVisible delay={0.2}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
             <div>
               <div className="overflow-hidden rounded-sm">
                 <Image
@@ -177,7 +177,7 @@ export default function Specs() {
 
         {/* Certified: the official marks as issued. Ours: four promises in the site's own line icons. */}
         <FadeInWhenVisible delay={0.2}>
-          <div className="mt-20 grid gap-px border border-[#e5e2dc] bg-[#e5e2dc] md:grid-cols-12">
+          <div className="mt-12 md:mt-16 grid gap-px border border-[#e5e2dc] bg-[#e5e2dc] md:grid-cols-12">
             <div className="bg-[#f6f1e8] p-6 md:col-span-7 md:p-8">
               <p className="text-center text-[12px] uppercase tracking-[0.14em] text-[#6f5a41] lg:text-left">Certified</p>
               {/* Narrow: the wide fire mark centred on its own row, the three round marks centred below. Wide: one row. */}

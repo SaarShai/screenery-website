@@ -149,7 +149,8 @@ export default function BoxDiagram() {
       <div className={`flex gap-6 ${stack ? "flex-col gap-10" : "justify-between"}`}>
         {BOXES.map((b) => (
           <div key={b.name} style={{ width: b.w * k + 95 }}>
-            <div className="flex items-end justify-start pb-6 pl-3 [perspective:1100px]" style={{ height: 106 * k + 110 }}>
+            {/* Side by side the boxes share a baseline (the taller box's height); stacked, each takes its own */}
+            <div className="flex items-end justify-start pb-6 pl-3 [perspective:1100px]" style={{ height: (stack ? b.h : 106) * k + 110 }}>
               <Box3D {...b} k={k} rx={rx} ry={ry} />
             </div>
             <p className="font-display mt-2 text-[17px] leading-tight">{b.name}</p>

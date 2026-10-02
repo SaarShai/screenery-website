@@ -275,7 +275,7 @@ export default function FestivePage() {
       </section>
 
       {/* Trusted by */}
-      <section className="mx-auto max-w-6xl px-6 md:px-10 pb-16 md:pb-24">
+      <section className="mx-auto max-w-6xl px-6 md:px-10 pb-14 md:pb-16">
         <p className={`${kicker} mb-6`}>Trusted by</p>
         <div className="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 gap-x-6 sm:gap-x-8 gap-y-6 opacity-60">
           {logos.map((l) => (

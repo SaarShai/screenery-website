@@ -47,7 +47,7 @@ export default function WorldStrip({ places }: { places: Place[] }) {
   const step = size.card + 32;
 
   return (
-    <div className="mt-24">
+    <div className="mt-14 md:mt-16">
       <div className="flex items-end justify-between gap-6 border-t border-[#17150f]/10 pt-10">
         <div>
           <p className="text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">More skylines</p>

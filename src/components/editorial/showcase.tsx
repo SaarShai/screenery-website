@@ -53,7 +53,7 @@ export default function Showcase({ items }: { items: Design[] }) {
     addEventListener("resize", f);
     return () => removeEventListener("resize", f);
   }, []);
-  const rows = Math.ceil(n / 2) + 0.3; // the extra 0.3 row keeps the last photo's caption clear of the enquiry line
+  const rows = Math.ceil(n / 2);
   // Two staggered columns, one row per pair; a lone last photo sits in the middle.
   const spotAt = (k: number): Spot => {
     if (narrow) return SPOTS_NARROW[k % SPOTS_NARROW.length];
