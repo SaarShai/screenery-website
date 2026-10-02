@@ -56,7 +56,7 @@
    "h": 1024
   },
   {
-   "src": "/catalog/standard/princess/v2-2.jpg",
+   "src": "/catalog/standard/princess/v2-soft.jpg",
    "w": 1536,
    "h": 1024
   },
@@ -238,7 +238,7 @@
  ],
  "standard/castle-xl": [
   {
-   "src": "/catalog/standard/castle-xl/hero.jpg",
+   "src": "/catalog/standard/castle-xl/hero-zoom.jpg",
    "w": 1800,
    "h": 1200
   },
