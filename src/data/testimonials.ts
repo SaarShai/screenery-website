@@ -7,7 +7,7 @@ export type Testimonial = {
   quote: string;
   name: string;
   role: string;
-  org: string;
+  org: string; // the hotel; its logo shows it, so the card prints only the role
   logo: { src: string; w: number; h: number; alt: string; scale?: number }; // trimmed to the ink; scale evens out visual weight
 };
 

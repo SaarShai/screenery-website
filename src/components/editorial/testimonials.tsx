@@ -57,7 +57,7 @@ export default function Testimonials() {
               <div className="mt-auto pt-5">
                 <p className="text-[14px] font-medium">{t.name}</p>
                 <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
-                  {t.role}, {t.org}
+                  {t.role}
                 </p>
               </div>
             </li>
