@@ -29,19 +29,23 @@ export default function Testimonials() {
       <div className="-mx-6 mt-6 overflow-hidden border-y border-[#17150f]/10 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] md:-mx-12 motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]">
         <ul
           className="flex w-max animate-[marquee_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none"
-          style={{ animationDuration: `${n * 14}s`, animationPlayState: paused ? "paused" : undefined }}
+          style={{ animationDuration: `${n * 12}s`, animationPlayState: paused ? "paused" : undefined }}
         >
           {/* The list runs twice so the loop has no seam; the copy is hidden from screen readers */}
           {[...testimonials, ...testimonials].map((t, k) => (
             <li
               key={k}
               aria-hidden={k >= n || undefined}
-              className={`w-[min(82vw,460px)] shrink-0 border-r border-[#17150f]/10 px-8 py-8 md:px-10 ${k >= n ? "motion-reduce:hidden" : ""}`}
+              className={`flex w-[min(82vw,480px)] shrink-0 flex-col border-r border-[#17150f]/10 px-8 py-8 md:px-10 ${k >= n ? "motion-reduce:hidden" : ""}`}
             >
-              <blockquote className="font-display text-[19px] italic leading-snug md:text-[21px]">&ldquo;{t.quote}&rdquo;</blockquote>
-              <p className="mt-4 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
-                {t.name} <span className="text-[#17150f]/30">·</span> {t.role}
-              </p>
+              <blockquote className="font-display text-[17px] italic leading-snug md:text-[19px]">&ldquo;{t.quote}&rdquo;</blockquote>
+              {/* Attribution sits on a shared baseline at the foot of each quote */}
+              <div className="mt-auto pt-5">
+                <p className="text-[14px] font-medium">{t.name}</p>
+                <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
+                  {t.role}, {t.org}
+                </p>
+              </div>
             </li>
           ))}
         </ul>
