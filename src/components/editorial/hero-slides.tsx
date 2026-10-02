@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { usePrefersStill } from "@/lib/use-prefers-still";
 
 const SLIDES = [
@@ -14,34 +15,62 @@ const SLIDES = [
   { src: "/catalog/standard/reading/room1.jpg", alt: "Reading Corner in a hotel lobby" },
   { src: "/catalog/standard/hospital/room1.jpg", alt: "Hospital in a hotel room" },
 ];
-const HOLD = 5000; // ms each design stays on screen
+const HOLD = 5500; // ms each design stays on screen
+const STRIPS = 4; // the next picture unfolds in four panels, like a play-screen
+const STAGGER = 0.14; // share of the reveal between one strip and the next
 
-/** The hero picture: a slow cross-fade through the designs. Reduced motion keeps the first one. */
+const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
+
+/** Each strip drops from the top, left to right; together they make one staircase-shaped clip. */
+function staircase(p: number) {
+  const pts = ["0% 0%"];
+  for (let s = 0; s < STRIPS; s++) {
+    const local = Math.min(1, Math.max(0, (p - s * STAGGER) / (1 - (STRIPS - 1) * STAGGER)));
+    const h = (ease(local) * 100).toFixed(2);
+    pts.push(`${(s / STRIPS) * 100}% ${h}%`, `${((s + 1) / STRIPS) * 100}% ${h}%`);
+  }
+  pts.push("100% 0%");
+  return `polygon(${pts.join(", ")})`;
+}
+
+/** The hero picture: the designs in turn, each unfolding over the last. Reduced motion keeps the first one. */
 export default function HeroSlides() {
   const still = usePrefersStill();
-  const [i, setI] = useState(0);
+  const [[cur, prev], setPair] = useState<[number, number | null]>([0, null]);
+  const reveal = useMotionValue(1);
+  const clip = useTransform(reveal, staircase);
+  const zoom = useMotionValue(1); // the new picture settles slowly after it lands
+
   useEffect(() => {
     if (still) return;
-    const t = setInterval(() => setI((k) => (k + 1) % SLIDES.length), HOLD);
-    return () => clearInterval(t);
-  }, [still]);
+    const t = setTimeout(() => {
+      reveal.set(0);
+      zoom.set(1.06);
+      setPair(([c]) => [(c + 1) % SLIDES.length, c]);
+      animate(reveal, 1, { duration: 1.7, ease: "linear" });
+      animate(zoom, 1, { duration: 6, ease: [0.22, 1, 0.36, 1] });
+    }, HOLD);
+    return () => clearTimeout(t);
+  }, [cur, still, reveal, zoom]);
 
-  return SLIDES.map((s, k) => (
-    <Image
-      key={s.src}
-      src={s.src}
-      alt={k === i ? s.alt : ""}
-      aria-hidden={k !== i || undefined}
-      fill
-      priority={k === 0}
-      sizes="(max-width:1024px) 100vw, 58vw"
-      className={`object-cover ease-out ${k === i ? "z-[1] scale-100 opacity-100" : "scale-[1.04] opacity-0"}`}
-      // the new picture fades in on top and settles slowly; the old one drops out once it is covered
-      style={{
-        transitionProperty: "opacity, transform",
-        transitionDuration: k === i ? "1400ms, 6000ms" : "0ms",
-        transitionDelay: k === i ? "0ms" : "1400ms",
-      }}
-    />
-  ));
+  return SLIDES.map((s, k) => {
+    const on = k === cur;
+    const under = k === prev;
+    return (
+      <motion.div
+        key={s.src}
+        aria-hidden={!on || undefined}
+        className="absolute inset-0 overflow-hidden"
+        style={{
+          zIndex: on ? 2 : under ? 1 : 0,
+          visibility: on || under ? "visible" : "hidden",
+          clipPath: on && prev !== null ? clip : "none",
+        }}
+      >
+        <motion.div className="absolute inset-0" style={{ scale: on && prev !== null ? zoom : 1 }}>
+          <Image src={s.src} alt={on ? s.alt : ""} fill priority={k === 0} sizes="(max-width:1024px) 100vw, 58vw" className="object-cover" />
+        </motion.div>
+      </motion.div>
+    );
+  });
 }
