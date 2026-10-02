@@ -8,6 +8,8 @@ export default function Hero() {
       <section className="relative grid min-h-[100svh] grid-cols-1 pt-[var(--nav-h)] lg:grid-cols-12">
         <div className="relative lg:order-1 lg:col-span-7 min-h-[38svh] sm:min-h-[45svh] lg:min-h-0 overflow-hidden">
           <HeroSlides />
+          {/* A soft shadow at the foot of the picture, as if the page below lies over it */}
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 z-[2] h-8 bg-gradient-to-t from-[#17150f]/25 to-transparent" />
         </div>
         <div className="lg:order-2 lg:col-span-5 flex flex-col justify-between px-6 pt-4 pb-10 md:px-12 lg:pl-12 lg:pr-8 lg:pt-16">
           <div>
