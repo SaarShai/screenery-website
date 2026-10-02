@@ -1,7 +1,20 @@
 "use client";
 
 import { useState } from "react";
-import { testimonials } from "@/data/testimonials";
+import Image from "next/image";
+import { testimonials, type Testimonial } from "@/data/testimonials";
+
+/** Logos at a similar visual weight: equal ink area, capped in height and width. */
+function Logo({ logo }: { logo: Testimonial["logo"] }) {
+  const aspect = logo.w / logo.h;
+  const h = Math.min(48, Math.max(14, Math.sqrt(4200 / aspect)) * (logo.scale ?? 1));
+  const w = Math.min(180, h * aspect);
+  return (
+    <div className="flex h-12 items-center">
+      <Image src={logo.src} alt={logo.alt} width={Math.round(w)} height={Math.round(w / aspect)} className="opacity-60 grayscale" />
+    </div>
+  );
+}
 
 /**
  * What hotels say: quotes drifting sideways in an endless bar under the logos. Hover or the
@@ -38,7 +51,8 @@ export default function Testimonials() {
               aria-hidden={k >= n || undefined}
               className={`flex w-[min(82vw,480px)] shrink-0 flex-col border-r border-[#17150f]/10 px-8 py-8 md:px-10 ${k >= n ? "motion-reduce:hidden" : ""}`}
             >
-              <blockquote className="font-display text-[17px] italic leading-snug md:text-[19px]">&ldquo;{t.quote}&rdquo;</blockquote>
+              <Logo logo={t.logo} />
+              <blockquote className="mt-5 font-display text-[17px] italic leading-snug md:text-[19px]">&ldquo;{t.quote}&rdquo;</blockquote>
               {/* Attribution sits on a shared baseline at the foot of each quote */}
               <div className="mt-auto pt-5">
                 <p className="text-[14px] font-medium">{t.name}</p>

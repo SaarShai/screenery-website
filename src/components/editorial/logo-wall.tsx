@@ -3,7 +3,11 @@
 import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { usePrefersStill } from "@/lib/use-prefers-still";
-import clientLogos from "@/data/hotel-logos.json";
+import allLogos from "@/data/hotel-logos.json";
+
+// Brands with a testimonial show their logo there instead.
+const quoted = new Set(["Kempinski", "Hilton", "Langham Hospitality Group", "St. Regis", "Mandarin Oriental"]);
+const clientLogos = allLogos.filter((l) => !quoted.has(l.alt));
 
 const COLS = 6;
 
@@ -28,11 +32,14 @@ export default function LogoWall() {
       initial={reduce ? false : "hidden"}
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
-      className="mt-10 grid grid-cols-3 items-center gap-x-10 gap-y-9 sm:grid-cols-5 sm:gap-x-14 md:gap-y-12 lg:grid-cols-6"
+      className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-9 sm:gap-x-14 md:gap-y-12"
     >
       {clientLogos.map((c, i) => (
-        <motion.li key={c.src} custom={i} variants={item} className="relative mx-auto aspect-[520/180] w-full max-w-[110px]">
-          <Image src={c.src} alt={c.alt} fill sizes="110px" className="object-contain opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0" />
+        // Rows of 3, 5 and 6; a short last row sits centred
+        <motion.li key={c.src} custom={i} variants={item} className="flex basis-[calc((100%-5rem)/3)] justify-center sm:basis-[calc((100%-14rem)/5)] lg:basis-[calc((100%-17.5rem)/6)]">
+          <div className="relative aspect-[520/180] w-full max-w-[110px]">
+            <Image src={c.src} alt={c.alt} fill sizes="110px" className="object-contain opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0" />
+          </div>
         </motion.li>
       ))}
     </motion.ul>
