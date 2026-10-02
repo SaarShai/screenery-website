@@ -44,3 +44,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .claude/
+
+# configurator: local secrets, Vercel link and runtime test data (personal data); exporter deps
+/configurator/local/
+/data/
+/configurator/export/node_modules/

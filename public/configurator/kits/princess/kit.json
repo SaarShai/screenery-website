@@ -1,0 +1,3505 @@
+{
+ "schema": "screenery.kit/v1",
+ "id": "princess",
+ "name": "Princess Palace",
+ "units": "mm",
+ "up": "y",
+ "source": {
+  "catalog_all": "output/catalog-all/princess-opened.json",
+  "pins": {
+   "output/catalog-all/princess-opened.json": "e90451b49d778aef8207cc7c05064b7703e3ab5767534f703cd46ad66185fe22",
+   "output/catalog-all/princess-fold-check.json": "d8704f83a76221f51df26aac9dafcdcc735c8b238a188d00df27662cba6da4fc",
+   "output/catalog-all/princess-opening-check.json": "0449c403eb8ca19a2b91a459d6e0d5fe7eee92bb5cb6dc2050d04a4e3a2e8f10",
+   "output/catalog-all/princess-view-openings.json": "ef4f0f296c1ba055ab3a1f7562cde92dc4cea88fcc33a741d96f08b1768c4d96",
+   "ground truth/rules.json": "11b374a223a6b19737dae479c5b968393a49d129ea928e45a98842496ec19d55",
+   "configurator/export/export_kit.mjs": "f0d0531dc304e8d8994ed2e457fa7d7a6e891e723cc2d9defb37a7db320bd618",
+   "configurator/export/joints.mjs": "133d1974f16dd082ed4b49848fc01b23c7166a7c607a9c91ee5f8903fc1a76b6",
+   "configurator/export/prepare_joint_meshes.py": "3f71b4ee0c833ad9284e9f8d26d825440e167e48a3d238cab7c0cf1fd306cba2"
+  },
+  "normalization_translate_mm": [
+   1134.5742950752376,
+   0.04687595140933354,
+   -250.92245343008642
+  ]
+ },
+ "palette": {
+  "front": "#F5BDCE",
+  "middle": "#AA8695",
+  "back": "#C3B39C"
+ },
+ "rear_artwork_policy": "mirrored",
+ "bounds_mm": {
+  "min": [
+   -1134.5736949294803,
+   0,
+   -441.31705767878896
+  ],
+  "max": [
+   1134.5736949294806,
+   1689.1117506714659,
+   441.31705767878896
+  ]
+ },
+ "parts": [
+  {
+   "id": "p001",
+   "label": "PRINCESS-9MM-V27-P001",
+   "kind": "wall",
+   "glb": "parts/p001.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P001/front",
+     "role": "front"
+    },
+    {
+     "id": "P001/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P001/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -532.7818494960668,
+     891.8234259012937,
+     -277.9224534300864
+    ],
+    "max": [
+     532.7583822160958,
+     1542.958235581577,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 697288
+  },
+  {
+   "id": "p002",
+   "label": "narrow panel 02 > bottom subpanel",
+   "kind": "wall",
+   "glb": "parts/p002.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P002/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P002/back/body",
+     "role": "back"
+    },
+    {
+     "id": "P002/front/fixed-body",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     554.5344795584678,
+     0.04922673103214947,
+     -277.9224534300864
+    ],
+    "max": [
+     1134.5736949294806,
+     925.1356610804498,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 1093252
+  },
+  {
+   "id": "p002-flap",
+   "label": "narrow panel 02 > bottom subpanel",
+   "kind": "flap",
+   "glb": "parts/p002-flap.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P002/back/flap",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     442.83316761255253,
+     153.76440235224368,
+     -277.9224534300864
+    ],
+    "max": [
+     554.5717556913618,
+     773.8476594611705,
+     -268.9224534300864
+    ]
+   },
+   "bytes": 16628
+  },
+  {
+   "id": "p003",
+   "label": "narrow panel 01 > bottom subpanel",
+   "kind": "wall",
+   "glb": "parts/p003.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P003/front",
+     "role": "front"
+    },
+    {
+     "id": "P003/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P003/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1134.5736949294803,
+     0.04922673103214947,
+     -277.9224534300864
+    ],
+    "max": [
+     -554.5551698282363,
+     925.1623689159453,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 1386272
+  },
+  {
+   "id": "p004",
+   "label": "door panel > bottom right subpanel",
+   "kind": "wall",
+   "glb": "parts/p004.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P004/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P004/back/body",
+     "role": "back"
+    },
+    {
+     "id": "P004/front/fixed-body",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -532.8030368313196,
+     0.048318322718159834,
+     -277.9224534300864
+    ],
+    "max": [
+     -143.69146072119497,
+     924.5885001830459,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 686188
+  },
+  {
+   "id": "p004-flap",
+   "label": "door panel > bottom right subpanel",
+   "kind": "flap",
+   "glb": "parts/p004-flap.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P004/back/flap",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -644.5353503525259,
+     5.090298912650012,
+     -277.9224534300864
+    ],
+    "max": [
+     -532.8030368279119,
+     773.8476594648957,
+     -268.9224534300864
+    ]
+   },
+   "bytes": 16440
+  },
+  {
+   "id": "p005",
+   "label": "door panel > bottom left subpanel",
+   "kind": "wall",
+   "glb": "parts/p005.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P005/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P005/back",
+     "role": "back"
+    },
+    {
+     "id": "P005/front/fixed-body",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     143.69637615978706,
+     0.0060223824978038465,
+     -277.9224534300864
+    ],
+    "max": [
+     532.8160711005329,
+     924.5884992368221,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 668564
+  },
+  {
+   "id": "p006",
+   "label": "PRINCESS-9MM-V27-P006",
+   "kind": "support",
+   "glb": "parts/p006.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P006/front",
+     "role": "front"
+    },
+    {
+     "id": "P006/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -370.87570492476243,
+     0,
+     -441.2545135778488
+    ],
+    "max": [
+     -352.87570492476243,
+     1095.0495879426599,
+     -87.52635811391485
+    ]
+   },
+   "bytes": 134080
+  },
+  {
+   "id": "p007",
+   "label": "stabilizer 04",
+   "kind": "support",
+   "glb": "parts/p007.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P007/front",
+     "role": "front"
+    },
+    {
+     "id": "P007/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -853.552863261104,
+     0.04096341797716718,
+     -441.31705767878896
+    ],
+    "max": [
+     -835.552863261104,
+     1095.0727792374191,
+     -87.59012837180501
+    ]
+   },
+   "bytes": 134100
+  },
+  {
+   "id": "p008",
+   "label": "stabilizer 02",
+   "kind": "support",
+   "glb": "parts/p008.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P008/front",
+     "role": "front"
+    },
+    {
+     "id": "P008/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     352.8442950752376,
+     0.004353658735752219,
+     -441.25508175584685
+    ],
+    "max": [
+     370.8442950752376,
+     1095.0496453656556,
+     -87.54517802390467
+    ]
+   },
+   "bytes": 137800
+  },
+  {
+   "id": "p009",
+   "label": "PRINCESS-9MM-V27-P009",
+   "kind": "support",
+   "glb": "parts/p009.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P009/front",
+     "role": "front"
+    },
+    {
+     "id": "P009/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     835.5387253609969,
+     0.010514065891584323,
+     -441.2551880811751
+    ],
+    "max": [
+     853.5387253609969,
+     1095.0230123328865,
+     -87.54688869020345
+    ]
+   },
+   "bytes": 131640
+  },
+  {
+   "id": "p010",
+   "label": "PRINCESS-9MM-V27-P010",
+   "kind": "wall",
+   "glb": "parts/p010.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P010/front",
+     "role": "front"
+    },
+    {
+     "id": "P010/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P010/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     554.537015800245,
+     886.4692423343361,
+     -277.9224534300864
+    ],
+    "max": [
+     1134.539472979374,
+     1414.507614120811,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 588168
+  },
+  {
+   "id": "p011",
+   "label": "PRINCESS-9MM-V27-P011",
+   "kind": "wall",
+   "glb": "parts/p011.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P011/front",
+     "role": "front"
+    },
+    {
+     "id": "P011/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P011/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1134.557130552828,
+     886.4692276045382,
+     -277.9224534300864
+    ],
+    "max": [
+     -554.555155836046,
+     1377.6831435858903,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 645376
+  },
+  {
+   "id": "p012",
+   "label": "horse extra",
+   "kind": "extra",
+   "glb": "parts/p012.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": "horse",
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P012/front",
+     "role": "front"
+    },
+    {
+     "id": "P012/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -316.6183334776572,
+     0.04843421863972708,
+     331.0775465699136
+    ],
+    "max": [
+     304.10567518210496,
+     641.6468435840703,
+     349.0775465699136
+    ]
+   },
+   "bytes": 448432
+  },
+  {
+   "id": "p015",
+   "label": "extra stabilizer 01",
+   "kind": "support",
+   "glb": "parts/p015.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P015/front",
+     "role": "front"
+    },
+    {
+     "id": "P015/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     101.76129507523751,
+     0.0464186614767641,
+     238.83755861601264
+    ],
+    "max": [
+     119.76129507523763,
+     447.8145611232535,
+     441.31698479136855
+    ]
+   },
+   "bytes": 378688
+  },
+  {
+   "id": "p016",
+   "label": "extra stabilizer 02",
+   "kind": "support",
+   "glb": "parts/p016.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P016/front",
+     "role": "front"
+    },
+    {
+     "id": "P016/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     183.36729507523762,
+     0.04641866117719928,
+     238.83794413724547
+    ],
+    "max": [
+     201.36729507523762,
+     447.8361652287841,
+     441.31705767878896
+    ]
+   },
+   "bytes": 380504
+  },
+  {
+   "id": "p017",
+   "label": "PRINCESS-9MM-V27-P017",
+   "kind": "topper",
+   "glb": "parts/p017.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": "topper",
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P017/front",
+     "role": "front"
+    },
+    {
+     "id": "P017/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     365.0972568016142,
+     1482.7699685709672,
+     -369.19177858096725
+    ],
+    "max": [
+     383.0972568016142,
+     1689.1117506714659,
+     -159.65506905627615
+    ]
+   },
+   "bytes": 213468
+  },
+  {
+   "id": "p002-window-leaf",
+   "label": "P002-window",
+   "kind": "leaf",
+   "glb": "parts/p002-window-leaf.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": "p002",
+   "hinge": {
+    "origin": [
+     897.6156547039747,
+     0.019850994020771395,
+     -250.92245343008642
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "open_deg": -35
+   },
+   "plies": [
+    {
+     "id": "P002/front/P002-window",
+     "role": "front"
+    },
+    {
+     "id": "P018/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     897.6154669595433,
+     530.9798319884837,
+     -268.9224534300864
+    ],
+    "max": [
+     1086.697623759277,
+     771.3318824940623,
+     -250.9224534300864
+    ]
+   },
+   "bytes": 685960
+  },
+  {
+   "id": "p004-door-leaf",
+   "label": "P004-door",
+   "kind": "leaf",
+   "glb": "parts/p004-door-leaf.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": "p004",
+   "hinge": {
+    "origin": [
+     -256.3257049247625,
+     0.04687595140933354,
+     -250.92245343008642
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "open_deg": -35
+   },
+   "plies": [
+    {
+     "id": "P004/front/P004-door",
+     "role": "front"
+    },
+    {
+     "id": "P013/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -256.34962699562334,
+     6.22180453461408,
+     -268.92245343008676
+    ],
+    "max": [
+     -4.511876583099593,
+     920.082238648057,
+     -250.9224534300863
+    ]
+   },
+   "bytes": 562872
+  },
+  {
+   "id": "p005-door-leaf",
+   "label": "P005-door",
+   "kind": "leaf",
+   "glb": "parts/p005-door-leaf.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": "p005",
+   "hinge": {
+    "origin": [
+     256.3242950752376,
+     0.04687595140933354,
+     -250.92245343008642
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "open_deg": 35
+   },
+   "plies": [
+    {
+     "id": "P005/front/P005-door",
+     "role": "front"
+    },
+    {
+     "id": "P014/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     4.4884093105790726,
+     0.05029666793348042,
+     -268.92245343008665
+    ],
+    "max": [
+     263.3242950752377,
+     920.082238648057,
+     -250.92245343008625
+    ]
+   },
+   "bytes": 541340
+  },
+  {
+   "id": "p003-linked",
+   "label": "narrow panel 01 > bottom subpanel",
+   "kind": "wall",
+   "glb": "parts/p003-linked.glb",
+   "quantity": 1,
+   "variant_of": "p003",
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "P003/front",
+     "role": "front"
+    },
+    {
+     "id": "P003/middle",
+     "role": "middle"
+    },
+    {
+     "id": "P003/back-linked",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1134.5736949294803,
+     0.04922673103214947,
+     -277.9224534300864
+    ],
+    "max": [
+     -554.5551698282363,
+     925.1623689159453,
+     -250.92245343008642
+    ]
+   },
+   "bytes": 1386236
+  }
+ ],
+ "faces": [
+  {
+   "id": "p001:front",
+   "part_id": "p001",
+   "ply_id": "P001/front",
+   "role": "front",
+   "texture": "textures/p001-front.webp",
+   "texture_px": [
+    2053,
+    1255
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1667.3561445713044,
+    891.7765499498844,
+    -601.8159128591419,
+    1542.9113596301675
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p001:back",
+   "part_id": "p001",
+   "ply_id": "P001/back",
+   "role": "back",
+   "texture": "textures/p001-back.webp",
+   "texture_px": [
+    2053,
+    1255
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1667.3561445713044,
+    891.7765499498844,
+    -601.8159128591419,
+    1542.9113596301675
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p002:back",
+   "part_id": "p002",
+   "ply_id": "P002/back/body",
+   "role": "back",
+   "texture": "textures/p002-back.webp",
+   "texture_px": [
+    1536,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -691.7055577484443,
+    0.030445677637999324,
+    0.03496956848357513,
+    925.1158100864291
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p002:front",
+   "part_id": "p002",
+   "ply_id": "P002/front/fixed-body",
+   "role": "front",
+   "texture": "textures/p002-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -580.0042458025291,
+    0.029375737011378078,
+    -0.0023065654113452183,
+    925.1147401458024
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p003:front",
+   "part_id": "p003",
+   "ply_id": "P003/front",
+   "role": "front",
+   "texture": "textures/p003-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -2269.17424580425,
+    0.029375737011378078,
+    -1689.1723065671324,
+    925.1147401458024
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p003:back",
+   "part_id": "p003",
+   "ply_id": "P003/back",
+   "role": "back",
+   "texture": "textures/p003-back.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -2269.1908316683766,
+    0.030445677637999324,
+    -1689.188892431259,
+    925.1158100864291
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p004:back",
+   "part_id": "p004",
+   "ply_id": "P004/back/body",
+   "role": "back",
+   "texture": "textures/p004-back.webp",
+   "texture_px": [
+    1113,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1779.1096454277636,
+    0.003420716524146883,
+    -1278.2941385149957,
+    924.5416242316365
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p004:front",
+   "part_id": "p004",
+   "ply_id": "P004/front/fixed-body",
+   "role": "front",
+   "texture": "textures/p004-front.webp",
+   "texture_px": [
+    1174,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1667.3773319065572,
+    0.003420716524146883,
+    -1139.0861716583372,
+    924.5416242316365
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p005:back",
+   "part_id": "p005",
+   "ply_id": "P005/back",
+   "role": "back",
+   "texture": "textures/p005-back.webp",
+   "texture_px": [
+    864,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -990.8607261940837,
+    0.003420716524146883,
+    -601.7775328025222,
+    924.5416232854128
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p005:front",
+   "part_id": "p005",
+   "ply_id": "P005/front/fixed-body",
+   "role": "front",
+   "texture": "textures/p005-front.webp",
+   "texture_px": [
+    1174,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1130.0858857646585,
+    0.003420716524146883,
+    -601.794725523889,
+    924.5416232854128
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p006:front",
+   "part_id": "p006",
+   "ply_id": "P006/front",
+   "role": "front",
+   "texture": "textures/p006-front.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.00013515126704533031,
+    -190.33206014776238,
+    1095.0027119912506,
+    163.34711630201332
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p006:back",
+   "part_id": "p006",
+   "ply_id": "P006/back",
+   "role": "back",
+   "texture": "textures/p006-back.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.04687595140933354,
+    -190.28308113360413,
+    1094.9559711911083,
+    163.39609531617157
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p007:front",
+   "part_id": "p007",
+   "ply_id": "P007/front",
+   "role": "front",
+   "texture": "textures/p007-front.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.05008110088110129,
+    -190.34685139149428,
+    1095.0529282433986,
+    163.3323250582814
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p007:back",
+   "part_id": "p007",
+   "ply_id": "P007/back",
+   "role": "back",
+   "texture": "textures/p007-back.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.021112423956395787,
+    -190.39460424870254,
+    1095.0239595664739,
+    163.2838946005702
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p008:front",
+   "part_id": "p008",
+   "ply_id": "P008/front",
+   "role": "front",
+   "texture": "textures/p008-front.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.00007772827147789485,
+    -190.33262832576042,
+    1095.0027694142461,
+    163.34654812401527
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p008:back",
+   "part_id": "p008",
+   "ply_id": "P008/back",
+   "role": "back",
+   "texture": "textures/p008-back.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.04252229267358132,
+    -190.30190104359394,
+    1094.960324849844,
+    163.37727540618175
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p009:front",
+   "part_id": "p009",
+   "ply_id": "P009/front",
+   "role": "front",
+   "texture": "textures/p009-front.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.00031419634819940256,
+    -190.33273465108869,
+    1095.0031613388658,
+    163.346441798687
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p009:back",
+   "part_id": "p009",
+   "ply_id": "P009/back",
+   "role": "back",
+   "texture": "textures/p009-back.webp",
+   "texture_px": [
+    2053,
+    664
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.009336928129187072,
+    -190.30460733842847,
+    1094.9935102143884,
+    163.37556473988298
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p010:front",
+   "part_id": "p010",
+   "ply_id": "P010/front",
+   "role": "front",
+   "texture": "textures/p010-front.webp",
+   "texture_px": [
+    2053,
+    1869
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -580.0009427246451,
+    886.4494115909933,
+    0.0007476183772041622,
+    1414.4877585074305
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p010:back",
+   "part_id": "p010",
+   "ply_id": "P010/back",
+   "role": "back",
+   "texture": "textures/p010-back.webp",
+   "texture_px": [
+    2053,
+    1869
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -580.0009427246451,
+    886.4493913403153,
+    0.0007476183772041622,
+    1414.4877585074305
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p011:front",
+   "part_id": "p011",
+   "ply_id": "P011/front",
+   "role": "front",
+   "texture": "textures/p011-front.webp",
+   "texture_px": [
+    2053,
+    1739
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -2269.1742597964403,
+    886.4494115909933,
+    -1689.172292574942,
+    1377.6632925918698
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p011:back",
+   "part_id": "p011",
+   "ply_id": "P011/back",
+   "role": "back",
+   "texture": "textures/p011-back.webp",
+   "texture_px": [
+    2053,
+    1739
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -2269.1742672917244,
+    886.4493766105174,
+    -1689.1723000776767,
+    1377.6632879948615
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p012:front",
+   "part_id": "p012",
+   "ply_id": "P012/front",
+   "role": "front",
+   "texture": "textures/p012-front.webp",
+   "texture_px": [
+    1986,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1451.1789968467947,
+    0.0016954900672772055,
+    -830.4714861536884,
+    641.5878015061085
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p012:back",
+   "part_id": "p012",
+   "ply_id": "P012/back",
+   "role": "back",
+   "texture": "textures/p012-back.webp",
+   "texture_px": [
+    1986,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1451.1926285528948,
+    0.0015582672303935396,
+    -830.4686198931327,
+    641.599967632661
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "p015:front",
+   "part_id": "p015",
+   "ply_id": "P015/front",
+   "role": "front",
+   "texture": "textures/p015-front.webp",
+   "texture_px": [
+    2053,
+    929
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.00045728993256943795,
+    489.76039756894147,
+    447.76768371153037,
+    692.239438221455
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p015:back",
+   "part_id": "p015",
+   "ply_id": "P015/back",
+   "role": "back",
+   "texture": "textures/p015-back.webp",
+   "texture_px": [
+    2053,
+    929
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.00041000854810135934,
+    489.76001204609906,
+    447.76768517184416,
+    692.2390527060631
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p016:front",
+   "part_id": "p016",
+   "ply_id": "P016/front",
+   "role": "front",
+   "texture": "textures/p016-front.webp",
+   "texture_px": [
+    2053,
+    929
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.00045729023213425535,
+    489.7603975673319,
+    447.7676837186814,
+    692.2394382198454
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p016:back",
+   "part_id": "p016",
+   "ply_id": "P016/back",
+   "role": "back",
+   "texture": "textures/p016-back.webp",
+   "texture_px": [
+    2053,
+    929
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.021194089531945792,
+    489.7604704563619,
+    447.7892892773748,
+    692.2395111088754
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p017:front",
+   "part_id": "p017",
+   "ply_id": "P017/front",
+   "role": "front",
+   "texture": "textures/p017-front.webp",
+   "texture_px": [
+    2022,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    1482.723092619558,
+    -118.26932515088083,
+    1689.0648747200567,
+    91.26738437381027
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p017:back",
+   "part_id": "p017",
+   "ply_id": "P017/back",
+   "role": "back",
+   "texture": "textures/p017-back.webp",
+   "texture_px": [
+    2022,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    1482.723092619558,
+    -118.26932515088083,
+    1689.0648747200567,
+    91.26738437381027
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "p002-window-leaf:front",
+   "part_id": "p002-window-leaf",
+   "ply_id": "P002/front/P002-window",
+   "role": "front",
+   "texture": "textures/p002-window-leaf-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -580.0042458025291,
+    0.029375737011378078,
+    -0.0023065654113452183,
+    925.1147401458024
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    -0.5735764363510462,
+    0,
+    0.819152044288992
+   ]
+  },
+  {
+   "id": "p002-window-leaf:back",
+   "part_id": "p002-window-leaf",
+   "ply_id": "P018/back",
+   "role": "back",
+   "texture": "textures/p002-window-leaf-back.webp",
+   "texture_px": [
+    1616,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -223.031716696687,
+    548.5718980139495,
+    -61.65808604634549,
+    753.7022163948418
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0.5735764363510462,
+    0,
+    -0.819152044288992
+   ]
+  },
+  {
+   "id": "p004-door-leaf:front",
+   "part_id": "p004-door-leaf",
+   "ply_id": "P004/front/P004-door",
+   "role": "front",
+   "texture": "textures/p004-door-leaf-front.webp",
+   "texture_px": [
+    1174,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1667.3773319065572,
+    0.003420716524146883,
+    -1139.0861716583372,
+    924.5416242316365
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    -0.573576436351046,
+    0,
+    0.8191520442889918
+   ]
+  },
+  {
+   "id": "p004-door-leaf:back",
+   "part_id": "p004-door-leaf",
+   "ply_id": "P013/back",
+   "role": "back",
+   "texture": "textures/p004-door-leaf-back.webp",
+   "texture_px": [
+    466,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1335.926162754953,
+    17.691400831937813,
+    -1145.169835990131,
+    858.6058722347021
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0.5735764363510462,
+    0,
+    -0.819152044288992
+   ]
+  },
+  {
+   "id": "p005-door-leaf:front",
+   "part_id": "p005-door-leaf",
+   "ply_id": "P005/front/P005-door",
+   "role": "front",
+   "texture": "textures/p005-door-leaf-front.webp",
+   "texture_px": [
+    1174,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1130.0858857646585,
+    0.003420716524146883,
+    -601.794725523889,
+    924.5416232854128
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0.573576436351046,
+    0,
+    0.8191520442889918
+   ]
+  },
+  {
+   "id": "p005-door-leaf:back",
+   "part_id": "p005-door-leaf",
+   "ply_id": "P014/back",
+   "role": "back",
+   "texture": "textures/p005-door-leaf-back.webp",
+   "texture_px": [
+    466,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1124.0028359901307,
+    17.691400831937813,
+    -933.2465092327593,
+    858.6058722347021
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    -0.5735764363510462,
+    0,
+    -0.819152044288992
+   ]
+  },
+  {
+   "id": "p003-linked:front",
+   "part_id": "p003-linked",
+   "ply_id": "P003/front",
+   "role": "front",
+   "texture": "textures/p003-linked-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -2269.17424580425,
+    0.029375737011378078,
+    -1689.1723065671324,
+    925.1147401458024
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "p003-linked:back",
+   "part_id": "p003-linked",
+   "ply_id": "P003/back-linked",
+   "role": "back",
+   "texture": "textures/p003-linked-back.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -2269.1908316683766,
+    0.030445677637999324,
+    -1689.188892431259,
+    925.1158100864291
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  }
+ ],
+ "layouts": [
+  {
+   "id": "straight",
+   "label": "Straight",
+   "catalog_id": "straight",
+   "transforms": {
+    "p001": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p004": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p004-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p005": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p006": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p007": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p008": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p009": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p010": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p011": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p012": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p015": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p016": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p017": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002-window-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p004-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p005-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003-linked": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "convex",
+   "label": "Convex",
+   "catalog_id": "135-backward",
+   "transforms": {
+    "p001": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p002-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -346.9183936650336,
+     0,
+     297.6901841626401,
+     1
+    ],
+    "p004": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p004-flap": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -346.9183936650336,
+     0,
+     297.6901841626401,
+     1
+    ],
+    "p005": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p006": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p007": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -346.9183936650336,
+     0,
+     297.6901841626401,
+     1
+    ],
+    "p008": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p009": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p010": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p011": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -346.9183936650336,
+     0,
+     297.6901841626401,
+     1
+    ],
+    "p012": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p015": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p016": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p017": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002-window-leaf": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p004-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p005-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003-linked": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -346.9183936650336,
+     0,
+     297.6901841626401,
+     1
+    ]
+   }
+  },
+  {
+   "id": "concave",
+   "label": "Concave",
+   "catalog_id": "135-forward",
+   "transforms": {
+    "p001": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -28.433690627453643,
+     0,
+     -471.19990531905347,
+     1
+    ],
+    "p002-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p004": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p004-flap": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p005": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p006": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p007": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p008": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p009": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -28.433690627453643,
+     0,
+     -471.19990531905347,
+     1
+    ],
+    "p010": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -28.433690627453643,
+     0,
+     -471.19990531905347,
+     1
+    ],
+    "p011": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p012": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p015": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p016": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p017": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002-window-leaf": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -28.433690627453643,
+     0,
+     -471.19990531905347,
+     1
+    ],
+    "p004-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p005-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003-linked": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ]
+   }
+  },
+  {
+   "id": "concertina",
+   "label": "Concertina",
+   "catalog_id": "concertina",
+   "transforms": {
+    "p001": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p002-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p004": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p004-flap": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p005": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p006": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p007": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p008": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p009": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p010": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p011": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ],
+    "p012": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p015": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p016": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p017": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p002-window-leaf": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     353.29430380239455,
+     0,
+     313.0829928887291,
+     1
+    ],
+    "p004-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p005-door-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "p003-linked": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     34.809600764814604,
+     0,
+     -455.8070965929645,
+     1
+    ]
+   }
+  }
+ ],
+ "extras": [
+  {
+   "id": "topper",
+   "label": "Topper",
+   "default_on": true,
+   "part_ids": [
+    "p017"
+   ]
+  },
+  {
+   "id": "horse",
+   "label": "Horse",
+   "default_on": true,
+   "part_ids": [
+    "p012"
+   ]
+  }
+ ],
+ "chain": {
+  "max_extra": 2,
+  "sides": {
+   "left": {
+    "part_ids": [
+     "p003",
+     "p011",
+     "p007",
+     "p004-flap"
+    ],
+    "inner_part_ids": [],
+    "linked_parts": {
+     "p003": "p003-linked"
+    },
+    "step_x_mm": -601.7706581015684,
+    "step_mm": 601.7706581015684,
+    "hinge_mm": [
+     -532.8030368279119,
+     0.04687595140933354,
+     -269.9224534300864
+    ],
+    "joints": {
+     "straight": {
+      "angle_deg": 0,
+      "alternate": false
+     },
+     "convex": {
+      "angle_deg": -45,
+      "alternate": false
+     },
+     "concave": {
+      "angle_deg": 45,
+      "alternate": false
+     },
+     "concertina": {
+      "angle_deg": 45,
+      "alternate": true
+     }
+    }
+   }
+  }
+ },
+ "joints": [
+  {
+   "donor": "p004",
+   "receiver": "p003",
+   "flap": "p004-flap",
+   "hinge_mm": [
+    -532.8030368279119,
+    0.04687595140933354,
+    -269.9224534300864
+   ],
+   "seating": {
+    "flap": "P004/back/flap",
+    "receiver": "P003/back",
+    "vertical_refinement_mm": 0,
+    "overlap_before_mm2": 0.000002923927966776615,
+    "overlap_after_mm2": 0.000002923927966776615
+   }
+  },
+  {
+   "donor": "p002",
+   "receiver": "p005",
+   "flap": "p002-flap",
+   "hinge_mm": [
+    554.5717556913618,
+    0.04687595140933354,
+    -269.9224534300864
+   ],
+   "seating": {
+    "flap": "P002/back/flap",
+    "receiver": "P005/back",
+    "vertical_refinement_mm": 0,
+    "overlap_before_mm2": 3.9431468815587905e-7,
+    "overlap_after_mm2": 3.9431468815587905e-7
+   }
+  }
+ ],
+ "geometry_repairs": [],
+ "cameras": {
+  "front": {
+   "azimuth_deg": 0,
+   "elevation_deg": 2
+  },
+  "oblique": {
+   "azimuth_deg": 25,
+   "elevation_deg": 7
+  },
+  "wide": {
+   "azimuth_deg": 45,
+   "elevation_deg": 8
+  },
+  "rear": {
+   "azimuth_deg": 180,
+   "elevation_deg": 4
+  }
+ },
+ "logo_slots": []
+}

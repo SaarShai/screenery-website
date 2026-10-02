@@ -1,0 +1,266 @@
+{
+  "schema": "screenery.kit/v1",
+  "id": "sample",
+  "name": "Sample set",
+  "units": "mm",
+  "up": "y",
+  "source": {
+    "catalog_all": "(placeholder, not exported from catalog-all)",
+    "pins": {}
+  },
+  "palette": {
+    "front": "#d9d2c5",
+    "middle": "#8b7355",
+    "back": "#d9d2c5"
+  },
+  "rear_artwork_policy": "mirrored",
+  "bounds_mm": {
+    "min": [
+      -924,
+      0,
+      -312
+    ],
+    "max": [
+      924,
+      1200,
+      224
+    ]
+  },
+  "parts": [
+    {
+      "id": "wall-left",
+      "label": "Left wall",
+      "kind": "wall",
+      "glb": "parts/wall-left.glb",
+      "quantity": 1,
+      "extra_id": null,
+      "leaf_of": null,
+      "hinge": null,
+      "plies": [
+        {
+          "id": "wall-left:front",
+          "role": "front"
+        },
+        {
+          "id": "wall-left:middle",
+          "role": "middle"
+        },
+        {
+          "id": "wall-left:back",
+          "role": "back"
+        }
+      ]
+    },
+    {
+      "id": "wall-middle",
+      "label": "Middle wall",
+      "kind": "wall",
+      "glb": "parts/wall-middle.glb",
+      "quantity": 1,
+      "extra_id": null,
+      "leaf_of": null,
+      "hinge": null,
+      "plies": [
+        {
+          "id": "wall-middle:front",
+          "role": "front"
+        },
+        {
+          "id": "wall-middle:middle",
+          "role": "middle"
+        },
+        {
+          "id": "wall-middle:back",
+          "role": "back"
+        }
+      ]
+    },
+    {
+      "id": "wall-right",
+      "label": "Right wall",
+      "kind": "wall",
+      "glb": "parts/wall-right.glb",
+      "quantity": 1,
+      "extra_id": null,
+      "leaf_of": null,
+      "hinge": null,
+      "plies": [
+        {
+          "id": "wall-right:front",
+          "role": "front"
+        },
+        {
+          "id": "wall-right:middle",
+          "role": "middle"
+        },
+        {
+          "id": "wall-right:back",
+          "role": "back"
+        }
+      ]
+    },
+    {
+      "id": "support-left",
+      "label": "Left stabiliser",
+      "kind": "support",
+      "glb": "parts/support-left.glb",
+      "quantity": 1,
+      "extra_id": null,
+      "leaf_of": null,
+      "hinge": null,
+      "plies": [
+        {
+          "id": "support-left:middle",
+          "role": "middle"
+        }
+      ]
+    },
+    {
+      "id": "support-right",
+      "label": "Right stabiliser",
+      "kind": "support",
+      "glb": "parts/support-right.glb",
+      "quantity": 1,
+      "extra_id": null,
+      "leaf_of": null,
+      "hinge": null,
+      "plies": [
+        {
+          "id": "support-right:middle",
+          "role": "middle"
+        }
+      ]
+    },
+    {
+      "id": "figure",
+      "label": "Figure",
+      "kind": "extra",
+      "glb": "parts/figure.glb",
+      "quantity": 1,
+      "extra_id": "figure",
+      "leaf_of": null,
+      "hinge": null,
+      "plies": [
+        {
+          "id": "figure:middle",
+          "role": "middle"
+        }
+      ]
+    }
+  ],
+  "faces": [],
+  "layouts": [
+    {
+      "id": "straight",
+      "label": "Straight",
+      "transforms": {}
+    },
+    {
+      "id": "concave",
+      "label": "Concave",
+      "transforms": {
+        "wall-left": [
+          0.707107,
+          0,
+          -0.707107,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0.707107,
+          0,
+          0.707107,
+          0,
+          -94.897403,
+          0,
+          -229.102597,
+          1
+        ],
+        "support-left": [
+          0.707107,
+          0,
+          -0.707107,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0.707107,
+          0,
+          0.707107,
+          0,
+          -94.897403,
+          0,
+          -229.102597,
+          1
+        ],
+        "wall-right": [
+          0.707107,
+          0,
+          0.707107,
+          0,
+          0,
+          1,
+          0,
+          0,
+          -0.707107,
+          0,
+          0.707107,
+          0,
+          94.897403,
+          0,
+          -229.102597,
+          1
+        ],
+        "support-right": [
+          0.707107,
+          0,
+          0.707107,
+          0,
+          0,
+          1,
+          0,
+          0,
+          -0.707107,
+          0,
+          0.707107,
+          0,
+          94.897403,
+          0,
+          -229.102597,
+          1
+        ]
+      }
+    }
+  ],
+  "extras": [
+    {
+      "id": "figure",
+      "label": "Figure",
+      "part_ids": [
+        "figure"
+      ],
+      "default_on": true
+    }
+  ],
+  "cameras": {
+    "front": {
+      "azimuth_deg": 0,
+      "elevation_deg": 0
+    },
+    "oblique": {
+      "azimuth_deg": 25,
+      "elevation_deg": 7
+    },
+    "low_hero": {
+      "azimuth_deg": 15,
+      "elevation_deg": 0
+    },
+    "rear": {
+      "azimuth_deg": 180,
+      "elevation_deg": 4
+    }
+  },
+  "logo_slots": []
+}

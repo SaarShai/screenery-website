@@ -13,6 +13,12 @@
   --color-border: #e5e2dc;
   --color-card: #ffffff;
   --color-hero-overlay: rgba(0, 0, 0, 0.3);
+  /* configurator (temporary section) */
+  --color-surface: #f5f3ef;
+  --color-ink: #1a1a1a;
+  --color-line: #e5e2dc;
+  --color-accent-hover: #c4a97d;
+  --breakpoint-wide: 900px;
   --font-sans: var(--font-body), "Neue Haas Grotesk Display Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
