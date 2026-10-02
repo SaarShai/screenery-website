@@ -294,5 +294,14 @@
   },
   null,
   null
+ ],
+ "bespoke/radisson": [
+  {
+   "src": "/catalog/bespoke/radisson/suite.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  null
  ]
 }

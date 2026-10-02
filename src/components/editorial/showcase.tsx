@@ -53,7 +53,14 @@ export default function Showcase({ items }: { items: Design[] }) {
     addEventListener("resize", f);
     return () => removeEventListener("resize", f);
   }, []);
-  const spots = narrow ? SPOTS_NARROW : SPOTS;
+  const rows = Math.ceil(n / 2) + 0.3; // the extra 0.3 row keeps the last photo's caption clear of the enquiry line
+  // Two staggered columns, one row per pair; a lone last photo sits in the middle.
+  const spotAt = (k: number): Spot => {
+    if (narrow) return SPOTS_NARROW[k % SPOTS_NARROW.length];
+    const s = SPOTS[k % SPOTS.length];
+    const y = ((Math.floor(k / 2) + s.dy) / rows) * 100;
+    return { ...s, x: k === n - 1 && n % 2 ? 30 : s.x, y };
+  };
 
   const reduce = usePrefersStill();
   const shown = shots[i];
@@ -72,7 +79,7 @@ export default function Showcase({ items }: { items: Design[] }) {
         <div
           ref={stage}
           className={`relative overflow-x-clip [perspective:1400px] ${narrow ? "mt-6 pt-2" : "mt-10 py-6"}`}
-          style={{ height: narrow ? undefined : "min(92vw, 1280px)" }}
+          style={{ height: narrow ? undefined : `calc(min(92vw, 1280px) * ${rows} / 3)` }}
           onPointerMove={(e) => {
             if (e.pointerType !== "mouse") return;
             const r = e.currentTarget.getBoundingClientRect();
@@ -87,7 +94,7 @@ export default function Showcase({ items }: { items: Design[] }) {
           <motion.div className={narrow ? "relative" : "absolute inset-0"} style={{ transformStyle: "preserve-3d", rotateX: narrow ? 0 : tipX }}>
             <motion.div className={narrow ? "relative" : "absolute inset-0"} style={{ transformStyle: "preserve-3d", rotateX: turnX, rotateY: turnY }}>
               {shots.map((s, k) => (
-                <Card key={s.image.src} shot={s} spot={spots[k % spots.length]} p={p} narrow={narrow} onOpen={() => open(k)} />
+                <Card key={s.image.src} shot={s} spot={spotAt(k)} p={p} narrow={narrow} onOpen={() => open(k)} />
               ))}
             </motion.div>
           </motion.div>
@@ -131,13 +138,14 @@ export default function Showcase({ items }: { items: Design[] }) {
 
 /** Where each photo floats: left/top/width as % of the stage, depth in px, tilt in degrees. */
 type Spot = { x: number; y: number; w: number; z: number; r: number };
-const SPOTS: Spot[] = [
-  { x: 2, y: 0, w: 40, z: 40, r: -3 },
-  { x: 56, y: 5, w: 40, z: -120, r: 3 },
-  { x: 9, y: 35, w: 38, z: 110, r: 2 },
-  { x: 55, y: 38, w: 40, z: -40, r: -2.5 },
-  { x: 2, y: 69, w: 38, z: -80, r: -2 },
-  { x: 57, y: 71, w: 38, z: 60, r: 3.5 },
+/** Desktop pattern, repeated every three rows; dy is the offset within the photo's row. */
+const SPOTS: (Spot & { dy: number })[] = [
+  { x: 2, y: 0, dy: 0, w: 40, z: 40, r: -3 },
+  { x: 56, y: 0, dy: 0.15, w: 40, z: -120, r: 3 },
+  { x: 9, y: 0, dy: 0.05, w: 38, z: 110, r: 2 },
+  { x: 55, y: 0, dy: 0.14, w: 40, z: -40, r: -2.5 },
+  { x: 2, y: 0, dy: 0.07, w: 38, z: -80, r: -2 },
+  { x: 57, y: 0, dy: 0.13, w: 38, z: 60, r: 3.5 },
 ];
 /** Phones: one column, alternating sides, still at different depths. */
 const SPOTS_NARROW: Spot[] = [
