@@ -169,11 +169,11 @@ function Card({ shot, spot, p, narrow, onOpen }: { shot: Shot; spot: Spot; p: Mo
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress: q } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const side = spot.x === 0 ? -1 : 1;
-  const swingY = useTransform(q, [0, 0.42, 1], [side * 38, 0, -side * 14]);
-  const swingX = useTransform(q, [0, 0.42], [`${side * 28}%`, "0%"]);
-  const swingZ = useTransform(q, [0, 0.42, 1], [spot.r * 5, spot.r, -spot.r * 2]);
-  const scale = useTransform(q, [0, 0.42], [0.82, 1]);
-  const fade = useTransform(q, [0, 0.3], [0.15, 1]);
+  const swingY = useTransform(q, [0, 0.42, 1], [side * 14, 0, -side * 5]);
+  const swingX = useTransform(q, [0, 0.42], [`${side * 10}%`, "0%"]);
+  const swingZ = useTransform(q, [0, 0.42, 1], [spot.r * 2, spot.r, 0]);
+  const scale = useTransform(q, [0, 0.42], [0.93, 1]);
+  const fade = useTransform(q, [0, 0.3], [0.3, 1]);
   return (
     <motion.figure
       ref={ref}

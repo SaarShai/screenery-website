@@ -2,49 +2,49 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion, useInView, type Variants } from "framer-motion";
+import { motion, useAnimationFrame, useInView, useMotionValue, useTransform, type MotionValue } from "framer-motion";
 import type { Section } from "@/data/catalog";
 import { usePrefersStill } from "@/lib/use-prefers-still";
 
 type Place = NonNullable<Section["world"]>[number];
 
-// Cards swing in from the right like turned pages and swing out to the left.
-const card: Variants = {
-  hidden: { opacity: 0, rotateY: 80, x: 140 },
-  show: (k: number) => ({ opacity: 1, rotateY: 0, x: 0, transition: { type: "spring", stiffness: 70, damping: 16, delay: k * 0.18 } }),
-  gone: { opacity: 0, rotateY: -80, x: -80, transition: { duration: 0.5, ease: [0.4, 0, 1, 1], opacity: { duration: 0.25 } } },
-};
+const COPIES = 3; // the cities repeat round the loop so the conveyor never runs empty
+const SPEED = 38; // px per second, left to right
 
 /**
- * "Around the world": cities made for other hotels. When the row comes into view the cards flip in
- * from the right one by one; then every few seconds the first card flips away and the next city
- * flips in at the right end. Hover or Pause holds it; reduced motion gets a still row.
+ * "Around the world": an endless conveyor of cities moving left to right. Each card swings on a
+ * shallow curve as it travels: it comes in turned and smaller at the left, faces the viewer and
+ * grows at the centre, then turns away and fades at the right. Hover or Pause holds it; reduced
+ * motion gets a still row to scroll by hand.
  */
 export default function WorldStrip({ places }: { places: Place[] }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const stage = useRef<HTMLDivElement>(null);
-  const inView = useInView(stage, { amount: 0.3 });
+  const inView = useInView(stage);
   const still = usePrefersStill();
   const title = useId();
-  const n = places.length;
   const [i, setI] = useState(0);
-  const [start, setStart] = useState(0); // keeps counting, so a city that comes round again is a new card
-  const [hold, setHold] = useState(false);
   const [paused, setPaused] = useState(false);
-  const [slots, setSlots] = useState(3);
+  const hold = useRef(false);
+  const [size, setSize] = useState({ view: 1200, card: 380 });
   useEffect(() => {
-    const f = () => setSlots(innerWidth < 640 ? 1 : innerWidth < 1024 ? 2 : 3);
-    f();
-    addEventListener("resize", f);
-    return () => removeEventListener("resize", f);
+    const el = stage.current;
+    if (!el) return;
+    const ro = new ResizeObserver(([e]) => {
+      const view = e.contentRect.width;
+      setSize({ view, card: view < 640 ? Math.round(view * 0.72) : view < 1024 ? 340 : 380 });
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
-  useEffect(() => {
-    if (still || paused || hold || !inView) return;
-    const t = setInterval(() => setStart((v) => v + 1), 4200);
-    return () => clearInterval(t);
-  }, [still, paused, hold, inView]);
+  const offset = useMotionValue(0);
+  useAnimationFrame((_, dt) => {
+    if (still || paused || hold.current || !inView) return;
+    offset.set(offset.get() + (SPEED * Math.min(dt, 64)) / 1000);
+  });
   const shown = places[i];
-  const visible = Array.from({ length: Math.min(slots, n) }, (_, j) => start + j);
+  const cards = Array.from({ length: COPIES }, () => places).flat();
+  const step = size.card + 32;
 
   return (
     <div className="mt-24">
@@ -65,50 +65,31 @@ export default function WorldStrip({ places }: { places: Place[] }) {
         )}
       </div>
 
-      <div
-        ref={stage}
-        className="mt-8 [perspective:1600px]"
-        onPointerEnter={() => setHold(true)}
-        onPointerLeave={() => setHold(false)}
-        onFocus={() => setHold(true)}
-        onBlur={() => setHold(false)}
-      >
-        <ul className="grid gap-6 pb-6 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout" initial={false}>
-            {visible.map((abs, j) => {
-              const k = abs % n;
-              const p = places[k];
-              return (
-                <motion.li
-                  key={abs}
-                  layout
-                  custom={j}
-                  variants={card}
-                  initial={still ? false : "hidden"}
-                  animate={still || inView ? "show" : "hidden"}
-                  exit="gone"
-                  style={{ transformOrigin: "left center" }}
-                  className="min-w-0"
-                >
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setI(k);
-                      dialog.current?.showModal();
-                    }}
-                    aria-label={`Enlarge ${p.city}`}
-                    className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-[6px] bg-[#e4dccf] shadow-[0_12px_30px_-10px_rgba(60,45,25,0.22)]"
-                  >
-                    <Image src={p.image.src} alt={`${p.city} play-screen`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px" className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
-                  </button>
-                  <p className="font-display mt-4 text-xl leading-tight">{p.city}</p>
-                  <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{p.note}</p>
-                </motion.li>
-              );
-            })}
-          </AnimatePresence>
+      {still ? (
+        <ul className="-mx-6 mt-8 flex gap-6 overflow-x-auto px-6 pb-6 md:-mx-12 md:px-12">
+          {places.map((p, k) => (
+            <li key={p.city} className="w-[78vw] shrink-0 sm:w-[340px]">
+              <CardBody p={p} onOpen={() => { setI(k); dialog.current?.showModal(); }} />
+            </li>
+          ))}
         </ul>
-      </div>
+      ) : (
+        <div
+          ref={stage}
+          className="relative -mx-6 mt-8 overflow-hidden [perspective:1200px] md:-mx-12"
+          style={{ height: size.card / 1.5 + 110 }}
+          onPointerEnter={() => (hold.current = true)}
+          onPointerLeave={() => (hold.current = false)}
+          onFocus={() => (hold.current = true)}
+          onBlur={() => (hold.current = false)}
+        >
+          {cards.map((p, k) => (
+            <Travel key={k} index={k} total={cards.length} step={step} size={size} offset={offset} hidden={k >= places.length}>
+              <CardBody p={p} hidden={k >= places.length} onOpen={() => { setI(k % places.length); dialog.current?.showModal(); }} />
+            </Travel>
+          ))}
+        </div>
+      )}
 
       <dialog
         ref={dialog}
@@ -126,5 +107,41 @@ export default function WorldStrip({ places }: { places: Place[] }) {
         </div>
       </dialog>
     </div>
+  );
+}
+
+/** One card's place on the conveyor: its curve, turn, size and fade come from where it is. */
+function Travel({ index, total, step, size, offset, hidden, children }: { index: number; total: number; step: number; size: { view: number; card: number }; offset: MotionValue<number>; hidden: boolean; children: React.ReactNode }) {
+  const loop = total * step;
+  const x = useTransform(offset, (o) => ((((index * step + o) % loop) + loop) % loop) - step);
+  // u: -1 at the left edge, 0 at the centre, +1 at the right edge
+  const u = useTransform(x, (v) => (v + size.card / 2 - size.view / 2) / (size.view / 2));
+  const rotateY = useTransform(u, (v) => Math.max(-1.4, Math.min(1.4, v)) * -26);
+  const scale = useTransform(u, (v) => 1.06 - Math.min(Math.abs(v), 1.3) * 0.16);
+  const y = useTransform(u, (v) => Math.min(v * v, 1.6) * 26);
+  const opacity = useTransform(u, (v) => 1 - Math.max(0, Math.min(1, (Math.abs(v) - 0.85) / 0.4)));
+  const zIndex = useTransform(u, (v) => 100 - Math.round(Math.abs(v) * 50));
+  return (
+    <motion.div aria-hidden={hidden || undefined} className="absolute left-0 top-2" style={{ width: size.card, x, y, rotateY, scale, opacity, zIndex }}>
+      {children}
+    </motion.div>
+  );
+}
+
+function CardBody({ p, onOpen, hidden }: { p: Place; onOpen: () => void; hidden?: boolean }) {
+  return (
+    <>
+      <button
+        type="button"
+        tabIndex={hidden ? -1 : undefined}
+        onClick={onOpen}
+        aria-label={`Enlarge ${p.city}`}
+        className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-[6px] bg-[#e4dccf] shadow-[0_18px_40px_-14px_rgba(60,45,25,0.35)]"
+      >
+        <Image src={p.image.src} alt={`${p.city} play-screen`} fill sizes="(max-width: 640px) 72vw, 380px" className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
+      </button>
+      <p className="font-display mt-4 text-xl leading-tight">{p.city}</p>
+      <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{p.note}</p>
+    </>
   );
 }
