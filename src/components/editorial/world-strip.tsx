@@ -14,7 +14,7 @@ const SPEED = 38; // px per second, left to right
 /**
  * "Around the world": an endless conveyor of cities moving left to right. Each card swings on a
  * shallow curve as it travels: it comes in turned and smaller at the left, faces the viewer and
- * grows at the centre, then turns away and fades at the right. Hover or Pause holds it; reduced
+ * grows at the centre, then turns away at the right. Hover or Pause holds it; reduced
  * motion gets a still row to scroll by hand.
  */
 export default function WorldStrip({ places }: { places: Place[] }) {
@@ -119,10 +119,9 @@ function Travel({ index, total, step, size, offset, hidden, children }: { index:
   const rotateY = useTransform(u, (v) => Math.max(-1.4, Math.min(1.4, v)) * -26);
   const scale = useTransform(u, (v) => 1.06 - Math.min(Math.abs(v), 1.3) * 0.16);
   const y = useTransform(u, (v) => Math.min(v * v, 1.6) * 26);
-  const opacity = useTransform(u, (v) => 1 - Math.max(0, Math.min(1, (Math.abs(v) - 0.85) / 0.4)));
   const zIndex = useTransform(u, (v) => 100 - Math.round(Math.abs(v) * 50));
   return (
-    <motion.div aria-hidden={hidden || undefined} className="absolute left-0 top-2" style={{ width: size.card, x, y, rotateY, scale, opacity, zIndex }}>
+    <motion.div aria-hidden={hidden || undefined} className="absolute left-0 top-2" style={{ width: size.card, x, y, rotateY, scale, zIndex }}>
       {children}
     </motion.div>
   );
