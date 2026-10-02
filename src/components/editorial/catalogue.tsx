@@ -1,5 +1,6 @@
 import DesignCard from "@/components/catalog/design-card";
 import Showcase from "@/components/editorial/showcase";
+import WorldStrip from "@/components/editorial/world-strip";
 import { sections } from "@/data/catalog";
 
 export default function Catalogue() {
@@ -53,6 +54,7 @@ export default function Catalogue() {
                 ))}
               </div>
             )}
+            {s.world && <WorldStrip places={s.world} />}
           </div>
         </section>
       ))}

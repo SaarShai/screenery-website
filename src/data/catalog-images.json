@@ -129,6 +129,11 @@
  ],
  "cities/london": [
   {
+   "src": "/catalog/cities/london/raffles.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
    "src": "/catalog/cities/london/suite-close.jpg",
    "w": 1100,
    "h": 733
@@ -137,11 +142,6 @@
    "src": "/catalog/cities/london/v2.jpg",
    "w": 1448,
    "h": 1086
-  },
-  {
-   "src": "/catalog/cities/london/raffles.jpg",
-   "w": 1536,
-   "h": 1024
   }
  ],
  "cities/paris": [
@@ -180,19 +180,6 @@
    "src": "/catalog/cities/san-francisco/hero.jpg",
    "w": 1800,
    "h": 1129
-  },
-  null
- ],
- "cities/berlin": [
-  {
-   "src": "/catalog/cities/berlin/hero.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/cities/berlin/v2.jpg",
-   "w": 1152,
-   "h": 768
   },
   null
  ],
