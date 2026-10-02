@@ -275,16 +275,12 @@
  ],
  "bespoke/munich-airport": [
   {
-   "src": "/catalog/bespoke/munich-airport/hero.jpg",
+   "src": "/catalog/bespoke/munich-airport/v3.jpg",
    "w": 1800,
    "h": 1200
   },
   null,
-  {
-   "src": "/catalog/bespoke/munich-airport/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  }
+  null
  ],
  "bespoke/sandcastle": [
   {

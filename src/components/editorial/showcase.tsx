@@ -91,8 +91,9 @@ export default function Showcase({ items }: { items: Design[] }) {
             my.set(0);
           }}
         >
-          <motion.div className={narrow ? "relative" : "absolute inset-0"} style={{ transformStyle: "preserve-3d", rotateX: narrow ? 0 : tipX }}>
-            <motion.div className={narrow ? "relative" : "absolute inset-0"} style={{ transformStyle: "preserve-3d", rotateX: turnX, rotateY: turnY }}>
+          {/* The layers let the pointer through, so photos set further back still answer the cursor */}
+          <motion.div className={`pointer-events-none ${narrow ? "relative" : "absolute inset-0"}`} style={{ transformStyle: "preserve-3d", rotateX: narrow ? 0 : tipX }}>
+            <motion.div className={`pointer-events-none ${narrow ? "relative" : "absolute inset-0"}`} style={{ transformStyle: "preserve-3d", rotateX: narrow ? 0 : turnX, rotateY: narrow ? 0 : turnY }}>
               {shots.map((s, k) => (
                 <Card key={s.image.src} shot={s} spot={spotAt(k)} p={p} narrow={narrow} onOpen={() => open(k)} />
               ))}
@@ -147,7 +148,7 @@ const SPOTS: (Spot & { dy: number })[] = [
   { x: 2, y: 0, dy: 0.07, w: 38, z: -80, r: -2 },
   { x: 57, y: 0, dy: 0.13, w: 38, z: 60, r: 3.5 },
 ];
-/** Phones: one column, alternating sides, still at different depths. */
+/** Phones: one column, alternating sides; x also sets the side each photo swings in from. */
 const SPOTS_NARROW: Spot[] = [
   { x: 0, y: 0, w: 86, z: 30, r: -2 },
   { x: 14, y: 0, w: 86, z: -60, r: 2.5 },
@@ -157,26 +158,43 @@ const SPOTS_NARROW: Spot[] = [
   { x: 14, y: 0, w: 86, z: -50, r: 2 },
 ];
 
-/** One floating photo: nearer photos drift faster with scroll and lift toward the viewer on hover. */
+/**
+ * One floating photo. Desktop: nearer photos drift faster with scroll and lift toward the viewer on
+ * hover. Phones: each photo swings in from its own side as it scrolls up, settles at the centre of
+ * the screen, then turns slightly away as it leaves.
+ */
 function Card({ shot, spot, p, narrow, onOpen }: { shot: Shot; spot: Spot; p: MotionValue<number>; narrow: boolean; onOpen: () => void }) {
-  const drift = narrow ? 0 : (spot.z + 200) * 0.3; // phones: no drift or depth, so the gaps stay even
+  const drift = narrow ? 0 : (spot.z + 200) * 0.3;
   const y = useTransform(p, [0, 1], [drift, -drift]);
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress: q } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const side = spot.x === 0 ? -1 : 1;
+  const swingY = useTransform(q, [0, 0.42, 1], [side * 38, 0, -side * 14]);
+  const swingX = useTransform(q, [0, 0.42], [`${side * 28}%`, "0%"]);
+  const swingZ = useTransform(q, [0, 0.42, 1], [spot.r * 5, spot.r, -spot.r * 2]);
+  const scale = useTransform(q, [0, 0.42], [0.82, 1]);
+  const fade = useTransform(q, [0, 0.3], [0.15, 1]);
   return (
     <motion.figure
+      ref={ref}
       className={narrow ? "relative mb-10 last:mb-0" : "absolute"}
-      style={{ ...(narrow ? { marginLeft: `${spot.x}%` } : { left: `${spot.x}%`, top: `${spot.y}%` }), width: `${spot.w}%`, y, z: narrow ? 0 : spot.z, rotateZ: spot.r, transformStyle: "preserve-3d" }}
+      style={
+        narrow
+          ? { marginLeft: `${spot.x}%`, width: `${spot.w}%`, x: swingX, rotateY: swingY, rotateZ: swingZ, scale, opacity: fade, transformPerspective: 900 }
+          : { left: `${spot.x}%`, top: `${spot.y}%`, width: `${spot.w}%`, y, z: spot.z, rotateZ: spot.r, transformStyle: "preserve-3d" }
+      }
     >
       <motion.button
         type="button"
         onClick={onOpen}
         aria-label={`Enlarge ${shot.d.name}`}
-        whileHover={{ z: 60, rotateZ: -spot.r, scale: 1.02 }}
+        whileHover={narrow ? undefined : { z: 60, rotateZ: -spot.r, scale: 1.02 }}
         transition={{ type: "spring", stiffness: 200, damping: 22 }}
-        className="relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden bg-[#e4dccf] shadow-[0_40px_70px_-30px_rgba(23,21,15,0.55)]"
+        className="pointer-events-auto relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden bg-[#e4dccf] shadow-[0_40px_70px_-30px_rgba(23,21,15,0.55)]"
       >
         <Image src={shot.image.src} alt={`${shot.d.name}: ${shot.label}`} fill sizes="(max-width: 768px) 75vw, 520px" className="object-cover" />
       </motion.button>
-      <figcaption className="mt-3 flex flex-wrap items-baseline gap-x-3">
+      <figcaption className="pointer-events-auto mt-3 flex flex-wrap items-baseline gap-x-3">
         <span className="font-display text-lg leading-tight">{shot.d.name}</span>
         <span className="text-[11px] uppercase tracking-[0.14em] text-[#6f5a41]">{shot.d.tagline}</span>
       </figcaption>
