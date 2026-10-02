@@ -83,7 +83,6 @@ export const sections: Section[] = [
       design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["In a suite", "", ""]),
       design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["In a suite", "Front", "With a guest"]),
       design("bespoke", "sandcastle", "Sand Castle", "Surf Club", "Sandcastle towers with shells and starfish, made for a beach club garden.", ["In the garden", "", ""]),
-      design("bespoke", "radisson", "Radisson", "Rad Family", "A submarine and a treehouse, each wrapping an extra bed in one family suite.", ["In a suite", "", ""]),
       design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["In the terminal", "", ""]),
     ],
   },
