@@ -6,20 +6,11 @@ import s from "./animated-logo.module.css";
 type Phase = "enter" | "idle" | "tick";
 
 /**
- * The Wanderland Screenery logo with motion. Variant "a": the screen unfolds, the letters drop in
- * and bounce, and every so often they ripple in a wave. Variant "b": the screen stands up, the
- * letters pop, and every so often two panels swing open like doors. Hover plays the periodic move;
- * remount (change its key) to replay the entrance.
+ * The Wanderland Screenery logo with motion (owner's pick, variant A): the screen unfolds and the
+ * letters drop in and bounce, once per visit; afterwards, near the top of the page, the letters
+ * ripple in a small wave every few seconds, and on hover. Reduced motion shows the still logo.
  */
-export default function AnimatedLogo({
-  variant,
-  every = 12000,
-  className,
-}: {
-  variant: "a" | "b";
-  every?: number; // ms between periodic moves; 0 turns them off
-  className?: string;
-}) {
+export default function AnimatedLogo({ every = 13000, className }: { every?: number; className?: string }) {
   const [phase, setPhase] = useState<Phase>("enter");
   const tick = () => {
     setPhase("tick");
@@ -27,12 +18,16 @@ export default function AnimatedLogo({
   };
   // The entrance runs from the first paint (CSS); afterwards the logo rests.
   useEffect(() => {
+    try {
+      sessionStorage.setItem("logo-seen", "1");
+    } catch {}
     const t = setTimeout(() => setPhase("idle"), 2000);
     return () => clearTimeout(t);
   }, []);
   useEffect(() => {
     if (!every) return;
-    const t = setInterval(() => document.visibilityState === "visible" && tick(), every);
+    // Only near the top of the page, so nothing moves while someone reads.
+    const t = setInterval(() => document.visibilityState === "visible" && scrollY < 200 && tick(), every);
     return () => clearInterval(t);
   }, [every]);
 
@@ -41,7 +36,6 @@ export default function AnimatedLogo({
       viewBox="0 0 2560 529.08"
       role="img"
       aria-label="Wanderland Screenery"
-      data-v={variant}
       className={`${s.logo} ${phase === "enter" ? s.enter : phase === "tick" ? s.tick : ""} ${className ?? ""}`}
       onMouseEnter={() => phase === "idle" && tick()}
     >

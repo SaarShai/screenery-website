@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import AnimatedLogo from "@/components/animated-logo";
 import { sections } from "@/data/catalog";
 
 export default function NavA() {
@@ -39,7 +39,7 @@ export default function NavA() {
   return (
     <nav className={`fixed inset-x-0 top-0 z-50 border-b bg-[#f6f1e8] transition-shadow duration-500 ${scrolled ? "border-[#d8d0c4] shadow-[0_1px_12px_rgba(23,21,15,0.06)]" : "border-transparent"}`}>
       <div className="mx-auto flex h-[var(--nav-h)] max-w-7xl items-center justify-between px-6 md:px-12">
-        <a href="#"><Image src="/images/screenery-logo-dark.svg" alt="Screenery" width={200} height={41} className="h-7 w-auto md:h-8" priority /></a>
+        <a href="#"><AnimatedLogo className="h-7 w-auto md:h-8" /></a>
         <div className="flex items-center gap-8 whitespace-nowrap text-[12px] uppercase tracking-[0.14em] md:max-lg:gap-5 md:max-lg:text-[11px] md:max-lg:tracking-[0.1em]">
           {sections.map((s) => (
             <a

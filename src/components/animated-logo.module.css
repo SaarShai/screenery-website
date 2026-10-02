@@ -1,45 +1,26 @@
 .logo { overflow: visible; }
 .p, .l, .s { transform-box: fill-box; }
 
-/* Variant a: unfold, drop and bounce; periodic letter wave */
-.logo[data-v="a"].enter .p {
+/* Entrance: the screen unfolds, the letters drop in and bounce, SCREENERY slides together */
+.logo.enter .p {
   transform-origin: left center;
   animation: unfold 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   animation-delay: calc(var(--i) * 90ms);
 }
-.logo[data-v="a"].enter .l {
+.logo.enter .l {
   transform-origin: center bottom;
   animation: drop 0.75s both;
   animation-delay: calc(380ms + var(--i) * 60ms);
 }
-.logo[data-v="a"].tick .l {
-  transform-origin: center bottom;
-  animation: hop 0.5s ease-in-out;
-  animation-delay: calc(var(--i) * 55ms);
-}
-
-/* Variant b: stand up, pop; periodic door swings */
-.logo[data-v="b"].enter .p {
-  transform-origin: center bottom;
-  animation: rise 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  animation-delay: calc(var(--i) * 100ms);
-}
-.logo[data-v="b"].enter .l {
-  transform-origin: center;
-  animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-  animation-delay: calc(420ms + var(--i) * 55ms);
-}
-.logo[data-v="b"].tick [data-panel="1"],
-.logo[data-v="b"].tick [data-panel="3"] {
-  transform-origin: left center;
-  animation: peek 1s ease-in-out;
-}
-.logo[data-v="b"].tick [data-panel="3"] { animation-delay: 0.3s; }
-
-/* Both: SCREENERY slides together letter by letter */
 .logo.enter .s {
   animation: settle 0.6s ease-out both;
   animation-delay: calc(1000ms + var(--i) * 45ms);
+}
+/* Periodic: a small letter wave */
+.logo.tick .l {
+  transform-origin: center bottom;
+  animation: hop 0.5s ease-in-out;
+  animation-delay: calc(var(--i) * 55ms);
 }
 
 @keyframes unfold {
@@ -59,23 +40,15 @@
   40% { transform: translateY(-10%); }
   70% { transform: translateY(1%) scaleY(0.96); }
 }
-@keyframes rise {
-  from { transform: scaleY(0); }
-  to { transform: none; }
-}
-@keyframes pop {
-  from { transform: scale(0) rotate(-14deg); opacity: 0; }
-  to { transform: none; opacity: 1; }
-}
-@keyframes peek {
-  0%, 100% { transform: none; }
-  35%, 55% { transform: scaleX(0.25) skewY(-8deg); }
-}
 @keyframes settle {
   from { transform: translateX(60%); opacity: 0; }
   to { transform: none; opacity: 1; }
 }
 
+/* Seen this session (set before paint), or reduced motion: no entrance */
+:global(:root[data-logo-seen]) .logo.enter .p,
+:global(:root[data-logo-seen]) .logo.enter .l,
+:global(:root[data-logo-seen]) .logo.enter .s { animation: none; }
 @media (prefers-reduced-motion: reduce) {
   .logo .p, .logo .l, .logo .s { animation: none !important; }
 }
