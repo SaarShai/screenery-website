@@ -7,7 +7,8 @@ import { usePrefersStill } from "@/lib/use-prefers-still";
 const SLIDES = [
   { src: "/images/princess-v33-hero.jpg", alt: "Princess Palace in a hotel suite" },
   { src: "/catalog/standard/space/room1.jpg", alt: "Spaceship in a hotel suite" },
-  { src: "/catalog/standard/arabian/room1.jpg", alt: "Arabian Nights in a hotel room" },
+  { src: "/festive/hero.jpg", alt: "Gingerbread House and Biscuit Bed Wrapper in a hotel room" },
+  { src: "/catalog/standard/arabian/hero.jpg", alt: "Arabian Nights in the studio" },
   { src: "/catalog/standard/cafe/room1.jpg", alt: "Kids Cafe in a hotel restaurant" },
   { src: "/catalog/standard/birthday/room1.jpg", alt: "Birthday in a hotel room" },
   { src: "/catalog/standard/reading/room1.jpg", alt: "Reading Corner in a hotel lobby" },
