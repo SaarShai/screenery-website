@@ -3,15 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { Bitter, Poppins } from "next/font/google";
 import Footer from "@/components/footer";
+import FestiveEnquire from "@/components/festive-enquire";
 import logos from "@/data/hotel-logos.json";
+import { details, certs } from "@/data/details";
 
 const bitter = Bitter({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-bitter" });
 const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--font-poppins" });
 
+const title = "Festive Collection 2026 — Screenery™";
+const description =
+  "A festive wonderland, set up within minutes. Gingerbread play houses, a biscuit bed wrapper and a family of festive friends in printed recyclable felt, for hotel rooms, lobbies and restaurants.";
+const shareImage = { url: "/festive/hero.jpg", width: 2000, height: 1333, alt: "Gingerbread House and Biscuit Bed Wrapper in a hotel room" };
+
 export const metadata: Metadata = {
-  title: "Festive Collection 2026 — Screenery™",
-  description:
-    "A festive wonderland, set up within minutes. Gingerbread play houses, a biscuit bed wrapper and a family of festive friends in printed recycled felt, for hotel rooms, lobbies and restaurants.",
+  title,
+  alternates: { canonical: "/festive" },
+  description,
+  // Own share preview; without these, /festive links show the home page's title and picture.
+  openGraph: { type: "website", siteName: "Screenery", url: "/festive", title, description, images: [shareImage] },
+  twitter: { card: "summary_large_image", title, description, images: [shareImage.url] },
 };
 
 type Item = {
@@ -24,6 +34,7 @@ type Item = {
   copy: string;
   dims: React.ReactNode;
   price: React.ReactNode;
+  bundle?: string; // a bundle that has its own quote link
 };
 
 const Sep = () => <span className="mx-2 text-[#b9b3a6]">|</span>;
@@ -59,18 +70,19 @@ const items: Item[] = [
         <p>
           <b>Price</b> <P gbp="£1,150" usd="$1,450" eur="€1,325" />
         </p>
-        <p className="text-[#7a7468] text-[0.92em]">
+        <p className="text-[#6f695e] text-[0.92em]">
           Additional panel: <P gbp="£350" usd="$450" eur="€395" /> (each)
         </p>
         <p className="mt-3">
           <b>Full Gingerbread Bundle</b>{" "}
-          <span className="text-[#7a7468] text-[0.92em]">
+          <span className="text-[#6f695e] text-[0.92em]">
             (Gingerbread House + Sleigh &amp; Reindeer + Christmas Tree, Polar Bear and Snowman)
           </span>{" "}
           <P gbp="£1,895" usd="$2,375" eur="€2,175" />
         </p>
       </>
     ),
+    bundle: "Full Gingerbread Bundle",
   },
   {
     n: "02",
@@ -173,47 +185,9 @@ const items: Item[] = [
   },
 ];
 
-const info: { h: string; p: string[] }[] = [
-  { h: "Installation", p: ["5 to 15 minutes to set up or take apart. No tools necessary. Designed to be modular for easy storage."] },
-  {
-    h: "Product properties",
-    p: ["Lightweight – below tipping risk thresholds. No risk of injury with suitable use. Soft-touch and safe for children."],
-  },
-  {
-    h: "Material properties",
-    p: [
-      "Extremely robust and shockproof. Material used in nurseries, hospitals and swimming pool environments. Very high colour fastness of the all-round textile surface.",
-      "Flame proof B-s1,d0 (certified to EN 13501). Extremely low volatile organic compounds (certified to ASTM D5116).",
-    ],
-  },
-  {
-    h: "Environment",
-    p: ["100% recyclable PET with a content of over 80% recycled material. eco-1 rating within eco-bau & Minergie-Eco requirements. Cradle to Cradle Bronze certified."],
-  },
-  {
-    h: "Cleaning & care",
-    p: [
-      "Screenery can be cleaned with a damp cloth, spray disinfectants and a vacuum cleaner as required. For heavier cleaning, marks and stains can be removed with isopropyl alcohol spray, which is commonly available; this will not affect the colour of the material or printing. Any dents in the panels can easily be ironed out with a standard iron heated to approx 160 °C, moved gently over the dent for a few moments.",
-    ],
-  },
-  {
-    h: "Durability & re-usability",
-    p: [
-      "Screenery is designed for multiple uses, unlike materials such as cardboard or foam. The material does not wear and tear, nor does the colour or print fade over time. Screenery is weatherproof and waterproof and needs no special storage conditions; suitable for rooms as well as public and outdoor spaces. Used with due care, it should last for many years.",
-    ],
-  },
-  { h: "Ordering", p: ["Prices as listed; bespoke themes, colours and artwork on request. Lead times and delivery on enquiry."] },
-];
-
-const certs = [
-  ["cert-fire-bs-en-13501", "Fire rated BS EN 13501"],
-  ["cert-m1", "M1 emission class"],
-  ["cert-cradle-to-cradle", "Cradle to Cradle certified"],
-  ["cert-eco-1", "eco-1"],
-  ["cert-sustainable", "Sustainable"],
-  ["cert-made-in-britain", "Made in Britain"],
-  ["cert-patented", "Patented"],
-  ["cert-hand-made", "Hand made"],
+const info = [
+  ...details,
+  { h: "Ordering", p: ["Prices as listed; bespoke themes, colours and artwork on request. Christmas lead time 4–6 weeks; delivery on enquiry."] },
 ];
 
 const kicker = "font-[family-name:var(--font-poppins)] text-[11px] tracking-[0.28em] uppercase text-[#b23a3a] font-medium";
@@ -229,7 +203,7 @@ export default function FestivePage() {
             <Image src="/images/screenery-logo-dark.svg" alt="Screenery" width={200} height={41} className="h-6 md:h-7 w-auto" priority />
           </Link>
           <div className="flex items-center gap-6">
-            <span className="hidden sm:inline text-[11px] tracking-[0.28em] uppercase text-[#7a7468]">Festive Collection 2026</span>
+            <span className="hidden sm:inline text-[11px] tracking-[0.28em] uppercase text-[#6f695e]">Festive Collection 2026</span>
             <Link
               href="/#contact"
               className="text-[11px] tracking-[0.2em] uppercase font-medium bg-[#1f1d1a] text-white px-4 py-2.5 rounded-full hover:bg-[#b23a3a] transition-colors"
@@ -252,21 +226,24 @@ export default function FestivePage() {
               A Festive Wonderland, set up within minutes.
             </h1>
             <p className="mt-5 text-[15px] leading-[1.65] text-[#3f3b35]">
-              Turn any hotel room, lobby or restaurant into a candy-house Christmas for your youngest guests. A gingerbread play house, a biscuit bed wrapper and a family of festive friends — printed recycled felt, delivered flat, standing in minutes and packed away after the season.
+              Turn any hotel room, lobby or restaurant into a candy-house Christmas for your youngest guests. A gingerbread play house, a biscuit bed wrapper and a family of festive friends — printed recyclable felt, delivered flat, standing in minutes and packed away after the season.
+            </p>
+            <p className="mt-4 text-[13px] text-[#3f3b35]">
+              <b className="font-medium text-[#b23a3a]">Christmas lead time:</b> 4–6 weeks.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6 lg:col-start-1 lg:row-start-2 xl:col-start-2 xl:row-start-2 xl:grid-cols-1 xl:self-end [&_figure]:max-w-[300px] xl:[&_figure]:max-w-[230px]">
             <figure>
               <div className="relative aspect-[4/3] overflow-hidden rounded-[6px]">
-                <Image src="/festive/lobby.jpg" alt="Gingerbread House in a hotel lobby" fill sizes="640px" quality={90} className="object-cover" />
+                <Image src="/festive/lobby.jpg" alt="Gingerbread House in a hotel lobby" fill sizes="(min-width:1280px) 230px, (min-width:640px) 300px, 50vw" quality={90} className="object-cover" />
               </div>
-              <figcaption className="mt-2 text-[10px] tracking-[0.26em] uppercase text-[#7a7468]">Hotel lobby &amp; reception area</figcaption>
+              <figcaption className="mt-2 text-[10px] tracking-[0.26em] uppercase text-[#6f695e]">Hotel lobby &amp; reception area</figcaption>
             </figure>
             <figure>
               <div className="relative aspect-[4/3] overflow-hidden rounded-[6px]">
-                <Image src="/festive/dining.jpg" alt="Festive figures in a hotel restaurant" fill sizes="640px" quality={90} className="object-cover" />
+                <Image src="/festive/dining.jpg" alt="Festive figures in a hotel restaurant" fill sizes="(min-width:1280px) 230px, (min-width:640px) 300px, 50vw" quality={90} className="object-cover" />
               </div>
-              <figcaption className="mt-2 text-[10px] tracking-[0.26em] uppercase text-[#7a7468]">Restaurant &amp; events</figcaption>
+              <figcaption className="mt-2 text-[10px] tracking-[0.26em] uppercase text-[#6f695e]">Restaurant &amp; events</figcaption>
             </figure>
           </div>
         </div>
@@ -286,20 +263,24 @@ export default function FestivePage() {
               </p>
               <h2 className="font-[family-name:var(--font-bitter)] font-normal text-[26px] md:text-[28px] leading-tight mt-1">{it.title}</h2>
               <p className="mt-3 text-[14px] leading-[1.65] text-[#3f3b35]">{it.copy}</p>
-              <div className={`${rule} mt-5 pt-3 text-[12px] leading-[1.7] text-[#7a7468] [&_b]:font-medium [&_b]:text-[#1f1d1a]`}>{it.dims}</div>
+              <div className={`${rule} mt-5 pt-3 text-[12px] leading-[1.7] text-[#6f695e] [&_b]:font-medium [&_b]:text-[#1f1d1a]`}>{it.dims}</div>
               <div className={`${rule} mt-auto pt-3 text-[13px] leading-[1.7] [&_b]:font-medium`}>{it.price}</div>
+              <div className="mt-3 flex flex-wrap gap-x-6">
+                <FestiveEnquire name={it.title}>Enquire about {it.title}</FestiveEnquire>
+                {it.bundle && <FestiveEnquire name={it.bundle}>Enquire about the bundle</FestiveEnquire>}
+              </div>
             </article>
           ))}
         </div>
       </section>
 
       {/* Trusted by */}
-      <section className="mx-auto max-w-6xl px-6 md:px-10 pb-16 md:pb-24">
+      <section className="mx-auto max-w-6xl px-6 md:px-10 pb-14 md:pb-16">
         <p className={`${kicker} mb-6`}>Trusted by</p>
-        <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-x-8 gap-y-6 opacity-60">
+        <div className="grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 gap-x-6 sm:gap-x-8 gap-y-6 opacity-60">
           {logos.map((l) => (
             <div key={l.src} className="relative aspect-[520/180]">
-              <Image src={l.src} alt={l.alt} fill sizes="160px" className="object-contain scale-[0.8]" />
+              <Image src={l.src} alt={l.alt} fill sizes="160px" className="object-contain" />
             </div>
           ))}
         </div>
@@ -310,7 +291,7 @@ export default function FestivePage() {
         <div className="mx-auto max-w-6xl px-6 md:px-10 py-16 md:py-24">
           <p className={kicker}>General information</p>
           <h2 className="font-[family-name:var(--font-bitter)] font-normal text-[28px] md:text-[32px] leading-tight mt-2">Durability, material &amp; care.</h2>
-          <p className="mt-3 text-[15px] text-[#3f3b35]">High-performance luxury room divider, made from 100% PET recycled panels.</p>
+          <p className="mt-3 text-[15px] text-[#3f3b35]">High-performance luxury room divider, made from 100% recyclable PET panels.</p>
           <div className="grid grid-cols-2 gap-4 mt-8 max-w-2xl">
             <div className="relative aspect-[1082/367] overflow-hidden rounded-[6px]">
               <Image src="/festive/felt-orange.jpg" alt="Orange felt close-up" fill sizes="340px" className="object-cover" />

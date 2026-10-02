@@ -1,0 +1,2664 @@
+{
+ "schema": "screenery.kit/v1",
+ "id": "fire-station",
+ "name": "Fire Station",
+ "units": "mm",
+ "up": "y",
+ "source": {
+  "catalog_all": "output/catalog-all/fire-station-opened.json",
+  "pins": {
+   "output/catalog-all/fire-station-opened.json": "792a2c6f2be10f3a4786b0438ad6231dd58817a4f0b35d2906483e59804a1111",
+   "output/catalog-all/fire-station-fold-check.json": "4fbfdeb6929ed6a7e776293bbb77d82d3e5b9729f1cfeaea6669aa6ea844fac7",
+   "output/catalog-all/fire-station-opening-check.json": "22c5b00544ad11f357b95537e504942f1150efe3f89040b5274b96c905811c0d",
+   "output/catalog-all/fire-station-view-openings.json": "1c8701f006cd9caf9135b8b1e1ffe97e9e56f4b797a482e3073b0ea326cb05c8",
+   "ground truth/rules.json": "11b374a223a6b19737dae479c5b968393a49d129ea928e45a98842496ec19d55",
+   "configurator/export/export_kit.mjs": "d12a9029e24d84f454565e7dee825dfddcf3592158417de9f086b55b1cbefa91",
+   "configurator/export/joints.mjs": "133d1974f16dd082ed4b49848fc01b23c7166a7c607a9c91ee5f8903fc1a76b6",
+   "configurator/export/prepare_joint_meshes.py": "bdada81e978cd4d7f1b97692e851d1a80dbae231cc6b31c6e1645f7d30155140"
+  },
+  "normalization_translate_mm": [
+   -3807.3916015625,
+   2057.0455667087917,
+   -14.487585945198134
+  ]
+ },
+ "palette": {
+  "front": "#D6B98A",
+  "middle": "#865244",
+  "back": "#B88765"
+ },
+ "rear_artwork_policy": "mirrored",
+ "bounds_mm": {
+  "min": [
+   -1430.087890625,
+   0,
+   -177.83448282266954
+  ],
+  "max": [
+   1430.087890625,
+   1457.078830868948,
+   177.83448282266954
+  ]
+ },
+ "parts": [
+  {
+   "id": "bottom-stabilizer-01",
+   "label": "bottom stabilizer 01",
+   "kind": "support",
+   "glb": "parts/bottom-stabilizer-01.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "bottom stabilizer 01||back||",
+     "role": "back"
+    },
+    {
+     "id": "bottom stabilizer 01||front||",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1149.019941891906,
+     0.49473120399488835,
+     -128.07151401985584
+    ],
+    "max": [
+     -1131.019941891906,
+     330.7801315946199,
+     124.19484340201916
+    ]
+   },
+   "bytes": 76892
+  },
+  {
+   "id": "bottom-stabilizer-02",
+   "label": "bottom stabilizer 02",
+   "kind": "support",
+   "glb": "parts/bottom-stabilizer-02.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "bottom stabilizer 02||back||",
+     "role": "back"
+    },
+    {
+     "id": "bottom stabilizer 02||front||",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     1131.0826376180557,
+     0.3596577490166055,
+     -126.174927436507
+    ],
+    "max": [
+     1149.0826376180557,
+     330.6489643896416,
+     126.406615532243
+    ]
+   },
+   "bytes": 80680
+  },
+  {
+   "id": "connector-stabilizer-01",
+   "label": "connector stabilizer 01",
+   "kind": "support",
+   "glb": "parts/connector-stabilizer-01.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "connector stabilizer 01||front||",
+     "role": "front"
+    },
+    {
+     "id": "connector stabilizer 01||front||copy 02",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -668.3153820832313,
+     0,
+     -177.82713827108046
+    ],
+    "max": [
+     -650.3153820832313,
+     1095.451416015625,
+     177.83448282266954
+    ]
+   },
+   "bytes": 59660
+  },
+  {
+   "id": "connector-stabilizer-02",
+   "label": "connector stabilizer 02",
+   "kind": "support",
+   "glb": "parts/connector-stabilizer-02.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "connector stabilizer 02||front||",
+     "role": "front"
+    },
+    {
+     "id": "connector stabilizer 02||front||copy 02",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     54.21970331782131,
+     0.4483824610197189,
+     -177.83448282266954
+    ],
+    "max": [
+     72.21970331782131,
+     1095.4515562891447,
+     175.85204061483046
+    ]
+   },
+   "bytes": 61108
+  },
+  {
+   "id": "connector-stabilizer-03",
+   "label": "connector stabilizer 03",
+   "kind": "support",
+   "glb": "parts/connector-stabilizer-03.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "connector stabilizer 03||front||",
+     "role": "front"
+    },
+    {
+     "id": "connector stabilizer 03||front||copy 02",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     532.6838122113095,
+     0.4950915367999187,
+     -177.82701662099453
+    ],
+    "max": [
+     550.6838122113095,
+     1095.5578356774247,
+     175.85315916025547
+    ]
+   },
+   "bytes": 65116
+  },
+  {
+   "id": "door-panel-bottom-left-subpanel",
+   "label": "door panel > bottom left subpanel",
+   "kind": "wall",
+   "glb": "parts/door-panel-bottom-left-subpanel.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door panel > bottom left subpanel||back||",
+     "role": "back"
+    },
+    {
+     "id": "door panel > bottom left subpanel||middle||",
+     "role": "middle"
+    },
+    {
+     "id": "door panel > bottom left subpanel||front||/fixed-body",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -831.396728515625,
+     0.6407815525417391,
+     -14.487585945198134
+    ],
+    "max": [
+     -442.1484375,
+     925.5675393650417,
+     12.512414054801866
+    ]
+   },
+   "bytes": 122184
+  },
+  {
+   "id": "door-panel-bottom-right-subpanel",
+   "label": "door panel > bottom right subpanel",
+   "kind": "wall",
+   "glb": "parts/door-panel-bottom-right-subpanel.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door panel > bottom right subpanel||back||",
+     "role": "back"
+    },
+    {
+     "id": "door panel > bottom right subpanel||middle||",
+     "role": "middle"
+    },
+    {
+     "id": "door panel > bottom right subpanel||front||/fixed-body",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -155.603271484375,
+     0.6407815525417391,
+     -14.487585945198134
+    ],
+    "max": [
+     234.17333984375,
+     925.5609475681667,
+     12.512414054801866
+    ]
+   },
+   "bytes": 96204
+  },
+  {
+   "id": "door-panel-top-subpanel",
+   "label": "door panel > top subpanel",
+   "kind": "wall",
+   "glb": "parts/door-panel-top-subpanel.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door panel > top subpanel||back||",
+     "role": "back"
+    },
+    {
+     "id": "door panel > top subpanel||front||",
+     "role": "front"
+    },
+    {
+     "id": "door panel > top subpanel||middle||",
+     "role": "middle"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -831.396728515625,
+     925.4416848728542,
+     -14.487585945198134
+    ],
+    "max": [
+     234.173583984375,
+     1457.078830868948,
+     12.512414054801866
+    ]
+   },
+   "bytes": 104052
+  },
+  {
+   "id": "extra-topper-02",
+   "label": "extra topper 02",
+   "kind": "topper",
+   "glb": "parts/extra-topper-02.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": "toppers",
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "extra topper 01||back||",
+     "role": "back"
+    },
+    {
+     "id": "extra topper 02||front||",
+     "role": "front"
+    },
+    {
+     "id": "extra topper 02||middle||",
+     "role": "middle"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1247.5775578964717,
+     1014.4546831230346,
+     -109.47727961405462
+    ],
+    "max": [
+     -1220.5775578964717,
+     1291.8555009941283,
+     105.34498601094538
+    ]
+   },
+   "bytes": 99324
+  },
+  {
+   "id": "extra-topper-03",
+   "label": "extra topper 03",
+   "kind": "topper",
+   "glb": "parts/extra-topper-03.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": "toppers",
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "extra topper 03||back||",
+     "role": "back"
+    },
+    {
+     "id": "extra topper 03||front||",
+     "role": "front"
+    },
+    {
+     "id": "extra topper 03||middle||",
+     "role": "middle"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     1245.2658063169156,
+     968.654276759542,
+     -109.47532962564901
+    ],
+    "max": [
+     1272.2658063169156,
+     1246.0554608415732,
+     105.34498287435099
+    ]
+   },
+   "bytes": 96716
+  },
+  {
+   "id": "narrow-panel-body",
+   "label": "narrow panel > body",
+   "kind": "wall",
+   "glb": "parts/narrow-panel-body.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow panel > body||back||",
+     "role": "back"
+    },
+    {
+     "id": "narrow panel > body||front||",
+     "role": "front"
+    },
+    {
+     "id": "narrow panel > body||middle||",
+     "role": "middle"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     251.68947630375624,
+     0.49502956160722533,
+     -14.487585945198134
+    ],
+    "max": [
+     831.6923828125,
+     926.030918233482,
+     12.512414054801866
+    ]
+   },
+   "bytes": 262864
+  },
+  {
+   "id": "narrow-panel-gable",
+   "label": "narrow panel > gable",
+   "kind": "wall",
+   "glb": "parts/narrow-panel-gable.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow panel > gable||back||",
+     "role": "back"
+    },
+    {
+     "id": "narrow panel > gable||front||",
+     "role": "front"
+    },
+    {
+     "id": "narrow panel > gable||middle||",
+     "role": "middle"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     251.420166015625,
+     892.3730813194195,
+     -14.487585945198134
+    ],
+    "max": [
+     831.96142578125,
+     1343.2336770225445,
+     12.512414054801866
+    ]
+   },
+   "bytes": 158028
+  },
+  {
+   "id": "panel-a",
+   "label": "panel A",
+   "kind": "wall",
+   "glb": "parts/panel-a.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "panel A||back||",
+     "role": "back"
+    },
+    {
+     "id": "panel A||front||",
+     "role": "front"
+    },
+    {
+     "id": "panel A||middle||",
+     "role": "middle"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1430.087890625,
+     0.9042093079870028,
+     -14.487585945198134
+    ],
+    "max": [
+     -849.644775390625,
+     1090.4985086243933,
+     12.512414054801866
+    ]
+   },
+   "bytes": 219808
+  },
+  {
+   "id": "panel-d",
+   "label": "panel D",
+   "kind": "wall",
+   "glb": "parts/panel-d.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "panel D||back||",
+     "role": "back"
+    },
+    {
+     "id": "panel D||front||",
+     "role": "front"
+    },
+    {
+     "id": "panel D||middle||",
+     "role": "middle"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     850.07763671875,
+     0.4951516486589753,
+     -14.487585945198134
+    ],
+    "max": [
+     1430.087890625,
+     1091.817417273659,
+     12.512414054801866
+    ]
+   },
+   "bytes": 176320
+  },
+  {
+   "id": "door-panel-bottom-right-subpanel-flap",
+   "label": "door panel > bottom right subpanel",
+   "kind": "flap",
+   "glb": "parts/door-panel-bottom-right-subpanel-flap.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door panel > bottom right subpanel||back||flap",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     233.44287109375,
+     5.807351627746357,
+     -14.487585945198134
+    ],
+    "max": [
+     341.6533203125,
+     751.8849221775417,
+     -5.487585945198134
+    ]
+   },
+   "bytes": 12220
+  },
+  {
+   "id": "narrow-panel-body-flap",
+   "label": "narrow panel > body",
+   "kind": "flap",
+   "glb": "parts/narrow-panel-body-flap.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow panel > body||back||flap",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     831.6923828125,
+     10.469258077232098,
+     -14.487585945198134
+    ],
+    "max": [
+     939.9033203125,
+     751.608799092857,
+     -5.487585945198134
+    ]
+   },
+   "bytes": 11792
+  },
+  {
+   "id": "panel-a-flap",
+   "label": "panel A",
+   "kind": "flap",
+   "glb": "parts/panel-a-flap.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "panel A||back||flap",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -849.6447753906245,
+     131.951328448612,
+     -14.487585945198134
+    ],
+    "max": [
+     -741.433837890625,
+     752.017490557987,
+     -5.487585945198134
+    ]
+   },
+   "bytes": 12256
+  },
+  {
+   "id": "door-left-leaf",
+   "label": "door-left",
+   "kind": "leaf",
+   "glb": "parts/door-left-leaf.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": "door-panel-bottom-left-subpanel",
+   "hinge": {
+    "origin": [
+     -554.9432475077638,
+     2057.0455667087917,
+     12.512414054801866
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "open_deg": -35
+   },
+   "plies": [
+    {
+     "id": "door panel > bottom left subpanel||front||/door-left",
+     "role": "front"
+    },
+    {
+     "id": "door panel > right leaf > back-door piece||None||",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -555.0190429687505,
+     7.075107724416739,
+     -5.487585945198589
+    ],
+    "max": [
+     -303.10546875,
+     920.9355813572292,
+     12.512414054802093
+    ]
+   },
+   "bytes": 80212
+  },
+  {
+   "id": "door-right-leaf",
+   "label": "door-right",
+   "kind": "leaf",
+   "glb": "parts/door-right-leaf.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": "door-panel-bottom-right-subpanel",
+   "hinge": {
+    "origin": [
+     -42.28003737551717,
+     2057.0455667087917,
+     12.512414054801866
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "open_deg": 35
+   },
+   "plies": [
+    {
+     "id": "door panel > bottom right subpanel||front||/door-right",
+     "role": "front"
+    },
+    {
+     "id": "door panel > left leaf > back-door piece||None||",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -294.11767578125045,
+     6.76632422427474,
+     -5.487585945198589
+    ],
+    "max": [
+     -42.27978515625,
+     920.9355813572292,
+     12.51241405480232
+    ]
+   },
+   "bytes": 77152
+  }
+ ],
+ "faces": [
+  {
+   "id": "bottom-stabilizer-01:back",
+   "part_id": "bottom-stabilizer-01",
+   "ply_id": "bottom stabilizer 01||back||",
+   "role": "back",
+   "texture": "textures/bottom-stabilizer-01-back.webp",
+   "texture_px": [
+    631,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "bottom-stabilizer-01:front",
+   "part_id": "bottom-stabilizer-01",
+   "ply_id": "bottom stabilizer 01||front||",
+   "role": "front",
+   "texture": "textures/bottom-stabilizer-01-front.webp",
+   "texture_px": [
+    621,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "bottom-stabilizer-02:back",
+   "part_id": "bottom-stabilizer-02",
+   "ply_id": "bottom stabilizer 02||back||",
+   "role": "back",
+   "texture": "textures/bottom-stabilizer-02-back.webp",
+   "texture_px": [
+    631,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "bottom-stabilizer-02:front",
+   "part_id": "bottom-stabilizer-02",
+   "ply_id": "bottom stabilizer 02||front||",
+   "role": "front",
+   "texture": "textures/bottom-stabilizer-02-front.webp",
+   "texture_px": [
+    822,
+    631
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "connector-stabilizer-01:front",
+   "part_id": "connector-stabilizer-01",
+   "ply_id": "connector stabilizer 01||front||",
+   "role": "front",
+   "texture": "textures/connector-stabilizer-01-front.webp",
+   "texture_px": [
+    268,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "connector-stabilizer-01:back",
+   "part_id": "connector-stabilizer-01",
+   "ply_id": "connector stabilizer 01||front||copy 02",
+   "role": "back",
+   "texture": "textures/connector-stabilizer-01-back.webp",
+   "texture_px": [
+    822,
+    268
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "connector-stabilizer-02:front",
+   "part_id": "connector-stabilizer-02",
+   "ply_id": "connector stabilizer 02||front||",
+   "role": "front",
+   "texture": "textures/connector-stabilizer-02-front.webp",
+   "texture_px": [
+    822,
+    268
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "connector-stabilizer-02:back",
+   "part_id": "connector-stabilizer-02",
+   "ply_id": "connector stabilizer 02||front||copy 02",
+   "role": "back",
+   "texture": "textures/connector-stabilizer-02-back.webp",
+   "texture_px": [
+    822,
+    268
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "connector-stabilizer-03:front",
+   "part_id": "connector-stabilizer-03",
+   "ply_id": "connector stabilizer 03||front||",
+   "role": "front",
+   "texture": "textures/connector-stabilizer-03-front.webp",
+   "texture_px": [
+    265,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "connector-stabilizer-03:back",
+   "part_id": "connector-stabilizer-03",
+   "ply_id": "connector stabilizer 03||front||copy 02",
+   "role": "back",
+   "texture": "textures/connector-stabilizer-03-back.webp",
+   "texture_px": [
+    321,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-panel-bottom-left-subpanel:back",
+   "part_id": "door-panel-bottom-left-subpanel",
+   "ply_id": "door panel > bottom left subpanel||back||",
+   "role": "back",
+   "texture": "textures/door-panel-bottom-left-subpanel-back.webp",
+   "texture_px": [
+    348,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-panel-bottom-left-subpanel:front",
+   "part_id": "door-panel-bottom-left-subpanel",
+   "ply_id": "door panel > bottom left subpanel||front||/fixed-body",
+   "role": "front",
+   "texture": "textures/door-panel-bottom-left-subpanel-front.webp",
+   "texture_px": [
+    471,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-panel-bottom-right-subpanel:back",
+   "part_id": "door-panel-bottom-right-subpanel",
+   "ply_id": "door panel > bottom right subpanel||back||",
+   "role": "back",
+   "texture": "textures/door-panel-bottom-right-subpanel-back.webp",
+   "texture_px": [
+    348,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-panel-bottom-right-subpanel:front",
+   "part_id": "door-panel-bottom-right-subpanel",
+   "ply_id": "door panel > bottom right subpanel||front||/fixed-body",
+   "role": "front",
+   "texture": "textures/door-panel-bottom-right-subpanel-front.webp",
+   "texture_px": [
+    471,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-panel-top-subpanel:back",
+   "part_id": "door-panel-top-subpanel",
+   "ply_id": "door panel > top subpanel||back||",
+   "role": "back",
+   "texture": "textures/door-panel-top-subpanel-back.webp",
+   "texture_px": [
+    822,
+    411
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-panel-top-subpanel:front",
+   "part_id": "door-panel-top-subpanel",
+   "ply_id": "door panel > top subpanel||front||",
+   "role": "front",
+   "texture": "textures/door-panel-top-subpanel-front.webp",
+   "texture_px": [
+    822,
+    411
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "extra-topper-02:back",
+   "part_id": "extra-topper-02",
+   "ply_id": "extra topper 01||back||",
+   "role": "back",
+   "texture": "textures/extra-topper-02-back.webp",
+   "texture_px": [
+    624,
+    801
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "extra-topper-02:front",
+   "part_id": "extra-topper-02",
+   "ply_id": "extra topper 02||front||",
+   "role": "front",
+   "texture": "textures/extra-topper-02-front.webp",
+   "texture_px": [
+    624,
+    801
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "extra-topper-02:middle",
+   "part_id": "extra-topper-02",
+   "ply_id": "extra topper 02||middle||",
+   "role": "middle",
+   "texture": "textures/extra-topper-02-middle.webp",
+   "texture_px": [
+    624,
+    801
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "extra-topper-03:back",
+   "part_id": "extra-topper-03",
+   "ply_id": "extra topper 03||back||",
+   "role": "back",
+   "texture": "textures/extra-topper-03-back.webp",
+   "texture_px": [
+    623,
+    802
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "extra-topper-03:front",
+   "part_id": "extra-topper-03",
+   "ply_id": "extra topper 03||front||",
+   "role": "front",
+   "texture": "textures/extra-topper-03-front.webp",
+   "texture_px": [
+    624,
+    802
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "extra-topper-03:middle",
+   "part_id": "extra-topper-03",
+   "ply_id": "extra topper 03||middle||",
+   "role": "middle",
+   "texture": "textures/extra-topper-03-middle.webp",
+   "texture_px": [
+    624,
+    802
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "narrow-panel-body:back",
+   "part_id": "narrow-panel-body",
+   "ply_id": "narrow panel > body||back||",
+   "role": "back",
+   "texture": "textures/narrow-panel-body-back.webp",
+   "texture_px": [
+    521,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "narrow-panel-body:front",
+   "part_id": "narrow-panel-body",
+   "ply_id": "narrow panel > body||front||",
+   "role": "front",
+   "texture": "textures/narrow-panel-body-front.webp",
+   "texture_px": [
+    517,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "narrow-panel-body:middle",
+   "part_id": "narrow-panel-body",
+   "ply_id": "narrow panel > body||middle||",
+   "role": "middle",
+   "texture": "textures/narrow-panel-body-middle.webp",
+   "texture_px": [
+    517,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "narrow-panel-gable:back",
+   "part_id": "narrow-panel-gable",
+   "ply_id": "narrow panel > gable||back||",
+   "role": "back",
+   "texture": "textures/narrow-panel-gable-back.webp",
+   "texture_px": [
+    822,
+    640
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "narrow-panel-gable:front",
+   "part_id": "narrow-panel-gable",
+   "ply_id": "narrow panel > gable||front||",
+   "role": "front",
+   "texture": "textures/narrow-panel-gable-front.webp",
+   "texture_px": [
+    822,
+    640
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "narrow-panel-gable:middle",
+   "part_id": "narrow-panel-gable",
+   "ply_id": "narrow panel > gable||middle||",
+   "role": "middle",
+   "texture": "textures/narrow-panel-gable-middle.webp",
+   "texture_px": [
+    822,
+    640
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "panel-a:back",
+   "part_id": "panel-a",
+   "ply_id": "panel A||back||",
+   "role": "back",
+   "texture": "textures/panel-a-back.webp",
+   "texture_px": [
+    439,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "panel-a:front",
+   "part_id": "panel-a",
+   "ply_id": "panel A||front||",
+   "role": "front",
+   "texture": "textures/panel-a-front.webp",
+   "texture_px": [
+    439,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "panel-d:back",
+   "part_id": "panel-d",
+   "ply_id": "panel D||back||",
+   "role": "back",
+   "texture": "textures/panel-d-back.webp",
+   "texture_px": [
+    438,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "panel-d:front",
+   "part_id": "panel-d",
+   "ply_id": "panel D||front||",
+   "role": "front",
+   "texture": "textures/panel-d-front.webp",
+   "texture_px": [
+    438,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-left-leaf:front",
+   "part_id": "door-left-leaf",
+   "ply_id": "door panel > bottom left subpanel||front||/door-left",
+   "role": "front",
+   "texture": "textures/door-left-leaf-front.webp",
+   "texture_px": [
+    471,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-left-leaf:back",
+   "part_id": "door-left-leaf",
+   "ply_id": "door panel > right leaf > back-door piece||None||",
+   "role": "back",
+   "texture": "textures/door-left-leaf-back.webp",
+   "texture_px": [
+    189,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-right-leaf:front",
+   "part_id": "door-right-leaf",
+   "ply_id": "door panel > bottom right subpanel||front||/door-right",
+   "role": "front",
+   "texture": "textures/door-right-leaf-front.webp",
+   "texture_px": [
+    471,
+    822
+   ],
+   "two_sided": false
+  },
+  {
+   "id": "door-right-leaf:back",
+   "part_id": "door-right-leaf",
+   "ply_id": "door panel > left leaf > back-door piece||None||",
+   "role": "back",
+   "texture": "textures/door-right-leaf-back.webp",
+   "texture_px": [
+    189,
+    822
+   ],
+   "two_sided": false
+  }
+ ],
+ "layouts": [
+  {
+   "id": "straight",
+   "label": "Straight",
+   "catalog_id": "straight",
+   "transforms": {
+    "bottom-stabilizer-01": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "bottom-stabilizer-02": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-01": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-02": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-03": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-bottom-left-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-bottom-right-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-top-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "extra-topper-02": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "extra-topper-03": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-panel-body": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-panel-gable": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "panel-a": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "panel-d": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-bottom-right-subpanel-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-panel-body-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "panel-a-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "convex",
+   "label": "Convex",
+   "catalog_id": "135-backward",
+   "transforms": {
+    "bottom-stabilizer-01": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -253.44260912757318,
+     0,
+     598.8894123486139,
+     1
+    ],
+    "bottom-stabilizer-02": [
+     2.220446049250313e-16,
+     0,
+     -1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     2.220446049250313e-16,
+     0,
+     662.9567436168172,
+     0,
+     402.1785102894323,
+     1
+    ],
+    "connector-stabilizer-01": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-02": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-03": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "door-panel-bottom-left-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-bottom-right-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-top-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "extra-topper-02": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -253.44260912757318,
+     0,
+     598.8894123486139,
+     1
+    ],
+    "extra-topper-03": [
+     2.220446049250313e-16,
+     0,
+     -1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     2.220446049250313e-16,
+     0,
+     662.9567436168172,
+     0,
+     402.1785102894323,
+     1
+    ],
+    "narrow-panel-body": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "narrow-panel-gable": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "panel-a": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -253.44260912757318,
+     0,
+     598.8894123486139,
+     1
+    ],
+    "panel-d": [
+     2.220446049250313e-16,
+     0,
+     -1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     2.220446049250313e-16,
+     0,
+     662.9567436168172,
+     0,
+     402.1785102894323,
+     1
+    ],
+    "door-panel-bottom-right-subpanel-flap": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "narrow-panel-body-flap": [
+     2.220446049250313e-16,
+     0,
+     -1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     2.220446049250313e-16,
+     0,
+     662.9567436168172,
+     0,
+     402.1785102894323,
+     1
+    ],
+    "panel-a-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "concave",
+   "label": "Concave",
+   "catalog_id": "135-forward",
+   "transforms": {
+    "bottom-stabilizer-01": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -244.26777709681255,
+     0,
+     -602.6897522082495,
+     1
+    ],
+    "bottom-stabilizer-02": [
+     2.220446049250313e-16,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     2.220446049250313e-16,
+     0,
+     649.981571726421,
+     0,
+     -415.1536821798286,
+     1
+    ],
+    "connector-stabilizer-01": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-02": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-03": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     63.786417908322164,
+     0,
+     -166.96920709986534,
+     1
+    ],
+    "door-panel-bottom-left-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-bottom-right-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-top-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "extra-topper-02": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -244.26777709681255,
+     0,
+     -602.6897522082495,
+     1
+    ],
+    "extra-topper-03": [
+     2.220446049250313e-16,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     2.220446049250313e-16,
+     0,
+     649.981571726421,
+     0,
+     -415.1536821798286,
+     1
+    ],
+    "narrow-panel-body": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     63.786417908322164,
+     0,
+     -166.96920709986534,
+     1
+    ],
+    "narrow-panel-gable": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     63.786417908322164,
+     0,
+     -166.96920709986534,
+     1
+    ],
+    "panel-a": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -244.26777709681255,
+     0,
+     -602.6897522082495,
+     1
+    ],
+    "panel-d": [
+     2.220446049250313e-16,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     2.220446049250313e-16,
+     0,
+     649.981571726421,
+     0,
+     -415.1536821798286,
+     1
+    ],
+    "door-panel-bottom-right-subpanel-flap": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     63.786417908322164,
+     0,
+     -166.96920709986534,
+     1
+    ],
+    "narrow-panel-body-flap": [
+     2.220446049250313e-16,
+     0,
+     1,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -1,
+     0,
+     2.220446049250313e-16,
+     0,
+     649.981571726421,
+     0,
+     -415.1536821798286,
+     1
+    ],
+    "panel-a-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "concertina",
+   "label": "Concertina",
+   "catalog_id": "concertina",
+   "transforms": {
+    "bottom-stabilizer-01": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -244.26777709681255,
+     0,
+     -602.6897522082495,
+     1
+    ],
+    "bottom-stabilizer-02": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     -175.22322514088046,
+     0,
+     -423.02628657786954,
+     1
+    ],
+    "connector-stabilizer-01": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-02": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-stabilizer-03": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "door-panel-bottom-left-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-bottom-right-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-panel-top-subpanel": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "extra-topper-02": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -244.26777709681255,
+     0,
+     -602.6897522082495,
+     1
+    ],
+    "extra-topper-03": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     -175.22322514088046,
+     0,
+     -423.02628657786954,
+     1
+    ],
+    "narrow-panel-body": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "narrow-panel-gable": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "panel-a": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -244.26777709681255,
+     0,
+     -602.6897522082495,
+     1
+    ],
+    "panel-d": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     -175.22322514088046,
+     0,
+     -423.02628657786954,
+     1
+    ],
+    "door-panel-bottom-right-subpanel-flap": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     72.96124993908279,
+     0,
+     163.1688672402297,
+     1
+    ],
+    "narrow-panel-body-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     -175.22322514088046,
+     0,
+     -423.02628657786954,
+     1
+    ],
+    "panel-a-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  }
+ ],
+ "extras": [
+  {
+   "id": "toppers",
+   "label": "Toppers",
+   "default_on": true,
+   "part_ids": [
+    "extra-topper-02",
+    "extra-topper-03"
+   ]
+  }
+ ],
+ "chain": null,
+ "joints": [
+  {
+   "donor": "panel-a",
+   "receiver": "door-panel-bottom-left-subpanel",
+   "flap": "panel-a-flap",
+   "hinge_mm": [
+    -849.644775390625,
+    2057.0455667087917,
+    -6.487585945198134
+   ],
+   "seating": {
+    "flap": "panel A||back||flap",
+    "receiver": "door panel > bottom left subpanel||back||",
+    "vertical_refinement_mm": 0.213684103101478,
+    "overlap_before_mm2": 46.823269693172946,
+    "overlap_after_mm2": 0.824480253425223
+   }
+  },
+  {
+   "donor": "door-panel-bottom-right-subpanel",
+   "receiver": "narrow-panel-body",
+   "flap": "door-panel-bottom-right-subpanel-flap",
+   "hinge_mm": [
+    233.44287109375,
+    2057.0455667087917,
+    -6.487585945198134
+   ],
+   "seating": {
+    "flap": "door panel > bottom right subpanel||back||flap",
+    "receiver": "narrow panel > body||back||",
+    "vertical_refinement_mm": 0.21350101437222105,
+    "overlap_before_mm2": 46.79857270979575,
+    "overlap_after_mm2": 0.8429815850358563
+   }
+  },
+  {
+   "donor": "narrow-panel-body",
+   "receiver": "panel-d",
+   "flap": "narrow-panel-body-flap",
+   "hinge_mm": [
+    831.6923828125,
+    2057.0455667087917,
+    -6.487585945198134
+   ],
+   "seating": {
+    "flap": "narrow panel > body||back||flap",
+    "receiver": "panel D||back||",
+    "vertical_refinement_mm": 0.213684103101478,
+    "overlap_before_mm2": 46.8814666549825,
+    "overlap_after_mm2": 0.019525570706116498
+   }
+  }
+ ],
+ "geometry_repairs": [
+  {
+   "row": "door panel > bottom right subpanel||middle||",
+   "operation": "trim middle-ply overhang to native flap root",
+   "maximum_trim_mm": 0.730712890625,
+   "removed_volume_mm3": 5804.282962499419,
+   "scope": "configurator kit only"
+  }
+ ],
+ "cameras": {
+  "front": {
+   "azimuth_deg": 0,
+   "elevation_deg": 2
+  },
+  "oblique": {
+   "azimuth_deg": 25,
+   "elevation_deg": 7
+  },
+  "wide": {
+   "azimuth_deg": 45,
+   "elevation_deg": 8
+  },
+  "rear": {
+   "azimuth_deg": 180,
+   "elevation_deg": 4
+  }
+ },
+ "logo_slots": []
+}

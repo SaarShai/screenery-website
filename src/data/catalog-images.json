@@ -6,11 +6,7 @@
    "h": 1200
   },
   null,
-  {
-   "src": "/catalog/standard/castle/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   {
    "src": "/catalog/standard/castle/room1.jpg",
    "w": 1800,
@@ -19,16 +15,12 @@
  ],
  "standard/birthday": [
   {
-   "src": "/catalog/standard/birthday/hero.jpg",
-   "w": 1800,
-   "h": 1200
+   "src": "/catalog/standard/birthday/hero-2.jpg",
+   "w": 1536,
+   "h": 1024
   },
   null,
-  {
-   "src": "/catalog/standard/birthday/v3.jpg",
-   "w": 1800,
-   "h": 1440
-  },
+  null,
   {
    "src": "/catalog/standard/birthday/room1.jpg",
    "w": 1800,
@@ -59,20 +51,16 @@
  ],
  "standard/princess": [
   {
-   "src": "/catalog/standard/princess/hero.jpg",
-   "w": 1800,
-   "h": 1200
+   "src": "/catalog/standard/princess/hero-2.jpg",
+   "w": 1536,
+   "h": 1024
   },
   {
-   "src": "/catalog/standard/princess/v2.jpg",
-   "w": 1800,
-   "h": 1200
+   "src": "/catalog/standard/princess/v2-2.jpg",
+   "w": 1536,
+   "h": 1024
   },
-  {
-   "src": "/catalog/standard/princess/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   {
    "src": "/catalog/standard/princess/room1.jpg",
    "w": 1800,
@@ -90,11 +78,7 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/space/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   {
    "src": "/catalog/standard/space/room1.jpg",
    "w": 1800,
@@ -103,20 +87,12 @@
  ],
  "standard/reading": [
   {
-   "src": "/catalog/standard/reading/hero.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
    "src": "/catalog/standard/reading/v2.jpg",
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/reading/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
+  null,
   {
    "src": "/catalog/standard/reading/room1.jpg",
    "w": 1800,
@@ -129,16 +105,8 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/arabian/v2.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/standard/arabian/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
+  null,
   {
    "src": "/catalog/standard/arabian/room1.jpg",
    "w": 1800,
@@ -152,11 +120,7 @@
    "h": 1200
   },
   null,
-  {
-   "src": "/catalog/standard/cafe/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   {
    "src": "/catalog/standard/cafe/room1.jpg",
    "w": 1800,
@@ -165,118 +129,59 @@
  ],
  "cities/london": [
   {
-   "src": "/catalog/cities/london/hero.jpg",
-   "w": 1448,
-   "h": 1086
+   "src": "/catalog/cities/london/raffles.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/cities/london/suite-close.jpg",
+   "w": 1100,
+   "h": 733
   },
   {
    "src": "/catalog/cities/london/v2.jpg",
    "w": 1448,
    "h": 1086
-  },
-  {
-   "src": "/catalog/cities/london/v3.jpg",
-   "w": 1800,
-   "h": 735
-  },
-  {
-   "src": "/catalog/cities/london/room1.jpg",
-   "w": 1800,
-   "h": 735
   }
  ],
  "cities/paris": [
   {
-   "src": "/catalog/cities/paris/hero.jpg",
-   "w": 1800,
-   "h": 1018
-  },
-  {
-   "src": "/catalog/cities/paris/v2.jpg",
-   "w": 1800,
-   "h": 1018
+   "src": "/catalog/cities/paris/room2.jpg",
+   "w": 1536,
+   "h": 1024
   },
   {
    "src": "/catalog/cities/paris/v3.jpg",
    "w": 1800,
    "h": 1018
   },
+  null
+ ],
+ "cities/new-york": [
   {
-   "src": "/catalog/cities/paris/room1.jpg",
-   "w": 1466,
+   "src": "/catalog/cities/new-york/studio-2.jpg",
+   "w": 1536,
    "h": 1024
   },
+  null,
   {
-   "src": "/catalog/cities/paris/room2.jpg",
+   "src": "/catalog/cities/new-york/lobby.jpg",
    "w": 1536,
    "h": 1024
   }
  ],
- "cities/new-york": [
-  {
-   "src": "/catalog/cities/new-york/hero.jpg",
-   "w": 1800,
-   "h": 1156
-  },
-  {
-   "src": "/catalog/cities/new-york/v2.jpg",
-   "w": 1800,
-   "h": 1350
-  },
-  {
-   "src": "/catalog/cities/new-york/v3.jpg",
-   "w": 1448,
-   "h": 1086
-  },
-  {
-   "src": "/catalog/cities/new-york/room1.jpg",
-   "w": 1800,
-   "h": 1208
-  }
- ],
  "cities/san-francisco": [
+  {
+   "src": "/catalog/cities/san-francisco/room-2.jpg",
+   "w": 1536,
+   "h": 1024
+  },
   {
    "src": "/catalog/cities/san-francisco/hero.jpg",
    "w": 1800,
    "h": 1129
   },
-  {
-   "src": "/catalog/cities/san-francisco/v2.jpg",
-   "w": 1248,
-   "h": 832
-  },
-  {
-   "src": "/catalog/cities/san-francisco/v3.jpg",
-   "w": 1800,
-   "h": 1587
-  },
-  {
-   "src": "/catalog/cities/san-francisco/room1.jpg",
-   "w": 1800,
-   "h": 1587
-  }
- ],
- "cities/berlin": [
-  {
-   "src": "/catalog/cities/berlin/hero.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/cities/berlin/v2.jpg",
-   "w": 1152,
-   "h": 768
-  },
-  {
-   "src": "/catalog/cities/berlin/v3.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/cities/berlin/room1.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null
  ],
  "bedwrappers/marine": [
   {
@@ -284,21 +189,8 @@
    "w": 1800,
    "h": 1211
   },
-  {
-   "src": "/catalog/bedwrappers/marine/v2.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/bedwrappers/marine/v3.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/bedwrappers/marine/room1.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null,
+  null
  ],
  "bespoke/forte": [
   {
@@ -306,21 +198,8 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/bespoke/forte/v2.jpg",
-   "w": 1280,
-   "h": 960
-  },
-  {
-   "src": "/catalog/bespoke/forte/v3.jpg",
-   "w": 1280,
-   "h": 960
-  },
-  {
-   "src": "/catalog/bespoke/forte/room1.jpg",
-   "w": 1280,
-   "h": 960
-  }
+  null,
+  null
  ],
  "bespoke/mallorca": [
   {
@@ -328,70 +207,34 @@
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/bespoke/mallorca/v2.jpg",
-   "w": 972,
-   "h": 1024
-  },
-  {
-   "src": "/catalog/bespoke/mallorca/v3.jpg",
-   "w": 1800,
-   "h": 1524
-  },
-  {
-   "src": "/catalog/bespoke/mallorca/room1.jpg",
-   "w": 1074,
-   "h": 878
-  },
-  {
-   "src": "/catalog/bespoke/mallorca/room2.jpg",
-   "w": 1244,
-   "h": 1024
-  }
+  null,
+  null
  ],
  "standard/police": [
-  {
-   "src": "/catalog/standard/police/hero.jpg",
-   "w": 1536,
-   "h": 1024
-  },
   {
    "src": "/catalog/standard/police/v2.jpg",
    "w": 1536,
    "h": 1024
   },
   {
-   "src": "/catalog/standard/police/v3.jpg",
+   "src": "/catalog/standard/police/hero.jpg",
    "w": 1536,
    "h": 1024
   },
-  {
-   "src": "/catalog/standard/police/room1.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null
  ],
  "standard/fire-station": [
-  {
-   "src": "/catalog/standard/fire-station/hero.jpg",
-   "w": 1536,
-   "h": 1024
-  },
   {
    "src": "/catalog/standard/fire-station/v2.jpg",
    "w": 1536,
    "h": 1024
   },
   {
-   "src": "/catalog/standard/fire-station/v3.jpg",
+   "src": "/catalog/standard/fire-station/hero.jpg",
    "w": 1536,
    "h": 1024
   },
-  {
-   "src": "/catalog/standard/fire-station/room1.jpg",
-   "w": 1536,
-   "h": 1024
-  }
+  null
  ],
  "standard/castle-xl": [
   {
@@ -400,11 +243,7 @@
    "h": 1200
   },
   null,
-  {
-   "src": "/catalog/standard/castle-xl/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
   {
    "src": "/catalog/standard/castle-xl/room1.jpg",
    "w": 1800,
@@ -413,20 +252,12 @@
  ],
  "standard/hospital": [
   {
-   "src": "/catalog/standard/hospital/hero.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
    "src": "/catalog/standard/hospital/v2.jpg",
    "w": 1800,
    "h": 1200
   },
-  {
-   "src": "/catalog/standard/hospital/v3.jpg",
-   "w": 1800,
-   "h": 1200
-  },
+  null,
+  null,
   {
    "src": "/catalog/standard/hospital/room1.jpg",
    "w": 1800,
@@ -435,41 +266,38 @@
  ],
  "bespoke/great-wall": [
   {
-   "src": "/catalog/bespoke/great-wall/hero.jpg",
-   "w": 1800,
-   "h": 1440
-  },
-  {
-   "src": "/catalog/bespoke/great-wall/v2.jpg",
-   "w": 1800,
-   "h": 1440
-  },
-  {
-   "src": "/catalog/bespoke/great-wall/v3.jpg",
-   "w": 1800,
-   "h": 1440
-  },
-  {
    "src": "/catalog/bespoke/great-wall/room1.jpg",
    "w": 1800,
    "h": 1200
-  }
+  },
+  null,
+  null
  ],
  "bespoke/munich-airport": [
-  {
-   "src": "/catalog/bespoke/munich-airport/hero.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  {
-   "src": "/catalog/bespoke/munich-airport/v2.jpg",
-   "w": 1800,
-   "h": 1440
-  },
   {
    "src": "/catalog/bespoke/munich-airport/v3.jpg",
    "w": 1800,
    "h": 1200
-  }
+  },
+  null,
+  null
+ ],
+ "bespoke/sandcastle": [
+  {
+   "src": "/catalog/bespoke/sandcastle/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  null
+ ],
+ "bespoke/radisson": [
+  {
+   "src": "/catalog/bespoke/radisson/suite.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  null
  ]
 }

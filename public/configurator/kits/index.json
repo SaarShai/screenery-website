@@ -1,0 +1,32 @@
+[
+ {
+  "id": "birthday",
+  "name": "Birthday",
+  "thumbnail": "/configurator/kits/birthday/thumb.webp",
+  "order": 1
+ },
+ {
+  "id": "police",
+  "name": "Police Station",
+  "thumbnail": "/configurator/kits/police/thumb.webp",
+  "order": 2
+ },
+ {
+  "id": "fire-station",
+  "name": "Fire Station",
+  "thumbnail": "/configurator/kits/fire-station/thumb.webp",
+  "order": 3
+ },
+ {
+  "id": "princess",
+  "name": "Princess Palace",
+  "thumbnail": "/configurator/kits/princess/thumb.webp",
+  "order": 4
+ },
+ {
+  "id": "space",
+  "name": "Spaceship",
+  "thumbnail": "/configurator/kits/space/thumb.webp",
+  "order": 5
+ }
+]

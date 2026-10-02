@@ -1,0 +1,2878 @@
+{
+ "schema": "screenery.kit/v1",
+ "id": "space",
+ "name": "Spaceship",
+ "units": "mm",
+ "up": "y",
+ "source": {
+  "catalog_all": "output/catalog-all/space-opened.json",
+  "pins": {
+   "output/catalog-all/space-opened.json": "1c68d15162a7db05c7a2e5cb897af78be10cf321ba18f7d0da116f529441effa",
+   "output/catalog-all/space-fold-check.json": "0a99e1cb842a8b6c5e60bb21be18510856e4b86dd429d6777e009edce63de9ee",
+   "output/catalog-all/space-opening-check.json": "1afc58706ba865779aea2e749c89903cb42fc4ed77aab921456f231d90d72f86",
+   "output/catalog-all/space-view-openings.json": "c7b874e7659539be2ac329df922e6743100bbaa2be3476da0f59304a4506f4b9",
+   "ground truth/rules.json": "11b374a223a6b19737dae479c5b968393a49d129ea928e45a98842496ec19d55",
+   "configurator/export/export_kit.mjs": "161a833f1799110447038256d4f647e3b481b4f2a46c857c9f40c89c1ba19bba",
+   "configurator/export/joints.mjs": "133d1974f16dd082ed4b49848fc01b23c7166a7c607a9c91ee5f8903fc1a76b6",
+   "configurator/export/prepare_joint_meshes.py": "3f71b4ee0c833ad9284e9f8d26d825440e167e48a3d238cab7c0cf1fd306cba2"
+  },
+  "normalization_translate_mm": [
+   5.7205242896518484,
+   0.09508911639451981,
+   -18.007247311619608
+  ]
+ },
+ "palette": {
+  "front": "#91B9D1",
+  "middle": "#244D78",
+  "back": "#557B9C"
+ },
+ "rear_artwork_policy": "mirrored",
+ "bounds_mm": {
+  "min": [
+   -1135.9356888631505,
+   0,
+   -168.2580643225948
+  ],
+  "max": [
+   1135.9356888631505,
+   1519.9242352080075,
+   168.2580643225948
+  ]
+ },
+ "parts": [
+  {
+   "id": "narrow-1-bottom",
+   "label": "narrow-1-bottom",
+   "kind": "wall",
+   "glb": "parts/narrow-1-bottom.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow-1-bottom/front",
+     "role": "front"
+    },
+    {
+     "id": "narrow-1-bottom/middle",
+     "role": "middle"
+    },
+    {
+     "id": "narrow-1-bottom/back/body",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1135.9356372976822,
+     0.17370182961227656,
+     -18.007247311619608
+    ],
+    "max": [
+     -555.9336914914364,
+     925.2591018298269,
+     17.992752688380392
+    ]
+   },
+   "bytes": 889344
+  },
+  {
+   "id": "narrow-1-bottom-flap",
+   "label": "narrow-1-bottom",
+   "kind": "flap",
+   "glb": "parts/narrow-1-bottom-flap.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow-1-bottom/back/flap",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -555.9336914914364,
+     10.1620427512583,
+     -18.007247311619608
+    ],
+    "max": [
+     -444.2318905020279,
+     915.22166165082,
+     -6.007247311619608
+    ]
+   },
+   "bytes": 66492
+  },
+  {
+   "id": "narrow-1-top",
+   "label": "narrow-1-top",
+   "kind": "wall",
+   "glb": "parts/narrow-1-top.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow-1-top/front",
+     "role": "front"
+    },
+    {
+     "id": "narrow-1-top/middle",
+     "role": "middle"
+    },
+    {
+     "id": "narrow-1-top/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1135.9356888631505,
+     886.5902469552395,
+     -18.007247311619608
+    ],
+    "max": [
+     -555.9337372953219,
+     1467.6656770131824,
+     17.992752688380392
+    ]
+   },
+   "bytes": 763652
+  },
+  {
+   "id": "door-left",
+   "label": "door-left",
+   "kind": "wall",
+   "glb": "parts/door-left.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door-left/middle",
+     "role": "middle"
+    },
+    {
+     "id": "door-left/back",
+     "role": "back"
+    },
+    {
+     "id": "door-left/front/fixed-body",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -527.1155370051188,
+     0.14005182623863222,
+     -18.007247311619608
+    ],
+    "max": [
+     -145.13830361758892,
+     924.9413085797429,
+     17.992752688380392
+    ]
+   },
+   "bytes": 221220
+  },
+  {
+   "id": "door-right",
+   "label": "door-right",
+   "kind": "wall",
+   "glb": "parts/door-right.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door-right/middle",
+     "role": "middle"
+    },
+    {
+     "id": "door-right/back/body",
+     "role": "back"
+    },
+    {
+     "id": "door-right/front/fixed-body",
+     "role": "front"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     156.56585665663306,
+     0.14008911639451982,
+     -18.007247311619608
+    ],
+    "max": [
+     538.5430629911048,
+     925.0239932009578,
+     17.992752688380392
+    ]
+   },
+   "bytes": 176384
+  },
+  {
+   "id": "door-right-flap",
+   "label": "door-right",
+   "kind": "flap",
+   "glb": "parts/door-right-flap.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door-right/back/flap",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     538.5331992132628,
+     4.867897087051485,
+     -18.007247311619608
+    ],
+    "max": [
+     645.897831699453,
+     774.0841228583455,
+     -6.007247311619608
+    ]
+   },
+   "bytes": 79744
+  },
+  {
+   "id": "door-top",
+   "label": "door-top",
+   "kind": "wall",
+   "glb": "parts/door-top.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "door-top/front",
+     "role": "front"
+    },
+    {
+     "id": "door-top/middle",
+     "role": "middle"
+    },
+    {
+     "id": "door-top/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -527.0438363965907,
+     891.7880809884995,
+     -18.007247311619608
+    ],
+    "max": [
+     538.6148636001788,
+     1519.9242352080075,
+     17.992752688380392
+    ]
+   },
+   "bytes": 560732
+  },
+  {
+   "id": "narrow-2-bottom",
+   "label": "narrow-2-bottom",
+   "kind": "wall",
+   "glb": "parts/narrow-2-bottom.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow-2-bottom/front",
+     "role": "front"
+    },
+    {
+     "id": "narrow-2-bottom/middle",
+     "role": "middle"
+    },
+    {
+     "id": "narrow-2-bottom/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     555.9336888590974,
+     0.3055834497408953,
+     -18.007247311619608
+    ],
+    "max": [
+     1135.9356888631505,
+     925.3909834499556,
+     17.992752688380392
+    ]
+   },
+   "bytes": 837396
+  },
+  {
+   "id": "narrow-2-top",
+   "label": "narrow-2-top",
+   "kind": "wall",
+   "glb": "parts/narrow-2-top.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow-2-top/front",
+     "role": "front"
+    },
+    {
+     "id": "narrow-2-top/middle",
+     "role": "middle"
+    },
+    {
+     "id": "narrow-2-top/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     555.9337359401625,
+     886.7221285753682,
+     -18.007247311619608
+    ],
+    "max": [
+     1135.9354888606113,
+     1467.7976507969931,
+     17.992752688380392
+    ]
+   },
+   "bytes": 968928
+  },
+  {
+   "id": "connector-1",
+   "label": "connector-1",
+   "kind": "support",
+   "glb": "parts/connector-1.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "connector-1/front",
+     "role": "front"
+    },
+    {
+     "id": "connector-1/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -857.9346611101055,
+     0.19014694287779094,
+     -168.25804807805332
+    ],
+    "max": [
+     -833.9346611101055,
+     1095.206771773541,
+     168.25806249863592
+    ]
+   },
+   "bytes": 578452
+  },
+  {
+   "id": "connector-2",
+   "label": "connector-2",
+   "kind": "support",
+   "glb": "parts/connector-2.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "connector-2/front",
+     "role": "front"
+    },
+    {
+     "id": "connector-2/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -382.29237857375483,
+     0,
+     -168.2580643225948
+    ],
+    "max": [
+     -358.29237857375483,
+     1095.0166999995708,
+     168.25803567427
+    ]
+   },
+   "bytes": 583288
+  },
+  {
+   "id": "connector-3",
+   "label": "connector-3",
+   "kind": "support",
+   "glb": "parts/connector-3.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "connector-3/front",
+     "role": "front"
+    },
+    {
+     "id": "connector-3/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     386.67570579066194,
+     0.00007896125316619873,
+     -168.25805168556315
+    ],
+    "max": [
+     410.67570579066194,
+     1095.0166891142726,
+     168.2580497865166
+    ]
+   },
+   "bytes": 600568
+  },
+  {
+   "id": "connector-4",
+   "label": "connector-4",
+   "kind": "support",
+   "glb": "parts/connector-4.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "connector-4/front",
+     "role": "front"
+    },
+    {
+     "id": "connector-4/back",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     833.9346943905005,
+     0.3016533957915392,
+     -168.25805704998572
+    ],
+    "max": [
+     857.9346943905005,
+     1095.318359959324,
+     168.2580643225948
+    ]
+   },
+   "bytes": 586500
+  },
+  {
+   "id": "door-left-leaf",
+   "label": "door-left-leaf",
+   "kind": "leaf",
+   "glb": "parts/door-left-leaf.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": "door-left",
+   "hinge": {
+    "origin": [
+     -249.95657354233185,
+     0.09508911639451981,
+     17.992752688380392
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "open_deg": -35
+   },
+   "plies": [
+    {
+     "id": "door-left/front/door-left-leaf",
+     "role": "front"
+    },
+    {
+     "id": "door-left/door-back",
+     "role": "door-back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -249.95657354499494,
+     0.14008911639451982,
+     -6.007247311619608
+    ],
+    "max": [
+     1.1756629919486699,
+     924.9188891196251,
+     17.99275268838042
+    ]
+   },
+   "bytes": 211892
+  },
+  {
+   "id": "door-right-leaf",
+   "label": "door-right-leaf",
+   "kind": "leaf",
+   "glb": "parts/door-right-leaf.glb",
+   "quantity": 1,
+   "variant_of": null,
+   "extra_id": null,
+   "leaf_of": "door-right",
+   "hinge": {
+    "origin": [
+     261.384129583951,
+     0.09508911639451981,
+     17.992752688380392
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "open_deg": 35
+   },
+   "plies": [
+    {
+     "id": "door-right/front/door-right-leaf",
+     "role": "front"
+    },
+    {
+     "id": "door-right/door-back",
+     "role": "door-back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     10.25196299573011,
+     6.065889119505882,
+     -6.007247311619636
+    ],
+    "max": [
+     261.3841295847736,
+     924.9394891181588,
+     17.99275268838042
+    ]
+   },
+   "bytes": 198336
+  },
+  {
+   "id": "narrow-1-bottom-linked",
+   "label": "narrow-1-bottom",
+   "kind": "wall",
+   "glb": "parts/narrow-1-bottom-linked.glb",
+   "quantity": 1,
+   "variant_of": "narrow-1-bottom",
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow-1-bottom/front",
+     "role": "front"
+    },
+    {
+     "id": "narrow-1-bottom/middle",
+     "role": "middle"
+    },
+    {
+     "id": "narrow-1-bottom/back/body-linked",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     -1135.9356372976822,
+     0.17370182961227656,
+     -18.007247311619608
+    ],
+    "max": [
+     -555.9336914914364,
+     925.2591018298269,
+     17.992752688380392
+    ]
+   },
+   "bytes": 939624
+  },
+  {
+   "id": "narrow-2-bottom-linked",
+   "label": "narrow-2-bottom",
+   "kind": "wall",
+   "glb": "parts/narrow-2-bottom-linked.glb",
+   "quantity": 1,
+   "variant_of": "narrow-2-bottom",
+   "extra_id": null,
+   "leaf_of": null,
+   "hinge": null,
+   "plies": [
+    {
+     "id": "narrow-2-bottom/front",
+     "role": "front"
+    },
+    {
+     "id": "narrow-2-bottom/middle",
+     "role": "middle"
+    },
+    {
+     "id": "narrow-2-bottom/back-linked",
+     "role": "back"
+    }
+   ],
+   "bounds_mm": {
+    "min": [
+     555.9336888590974,
+     0.3055834497408953,
+     -18.007247311619608
+    ],
+    "max": [
+     1135.9356888631505,
+     925.3909834499556,
+     17.992752688380392
+    ]
+   },
+   "bytes": 837660
+  }
+ ],
+ "faces": [
+  {
+   "id": "narrow-1-bottom:front",
+   "part_id": "narrow-1-bottom",
+   "ply_id": "narrow-1-bottom/front",
+   "role": "front",
+   "texture": "textures/narrow-1-bottom-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1141.6929016287497,
+    0.0786,
+    -561.6910016263894,
+    925.1638999985219
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "narrow-1-bottom:back",
+   "part_id": "narrow-1-bottom",
+   "ply_id": "narrow-1-bottom/back/body",
+   "role": "back",
+   "texture": "textures/narrow-1-bottom-back.webp",
+   "texture_px": [
+    1536,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1141.692854831653,
+    0.07853005394935608,
+    -449.9891548330954,
+    925.163930054164
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "narrow-1-top:front",
+   "part_id": "narrow-1-top",
+   "ply_id": "narrow-1-top/front",
+   "role": "front",
+   "texture": "textures/narrow-1-top-front.webp",
+   "texture_px": [
+    2050,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1141.6929016287497,
+    886.4950751795766,
+    -561.6910016263894,
+    1467.5704751818773
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "narrow-1-top:back",
+   "part_id": "narrow-1-top",
+   "ply_id": "narrow-1-top/back",
+   "role": "back",
+   "texture": "textures/narrow-1-top-back.webp",
+   "texture_px": [
+    2050,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1141.692953194218,
+    886.4951052352187,
+    -561.6910531993083,
+    1467.5705052375195
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "door-left:back",
+   "part_id": "door-left",
+   "ply_id": "door-left/back",
+   "role": "back",
+   "texture": "textures/door-left-back.webp",
+   "texture_px": [
+    848,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -532.8360147956971,
+    0.044962709844112395,
+    -150.8589147959117,
+    924.828862709999
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "door-left:front",
+   "part_id": "door-left",
+   "ply_id": "door-left/front/fixed-body",
+   "role": "front",
+   "texture": "textures/door-left-front.webp",
+   "texture_px": [
+    1173,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -532.8360612947706,
+    0.045,
+    -4.544861297703164,
+    924.8291000035405
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "door-right:back",
+   "part_id": "door-right",
+   "ply_id": "door-right/back/body",
+   "role": "back",
+   "texture": "textures/door-right-back.webp",
+   "texture_px": [
+    1087,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    150.84540740922898,
+    0.04503404170274734,
+    640.1773074098012,
+    924.8454340454936
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "door-right:front",
+   "part_id": "door-right",
+   "ply_id": "door-right/front/fixed-body",
+   "role": "front",
+   "texture": "textures/door-right-front.webp",
+   "texture_px": [
+    1173,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    4.531438706078234,
+    0.045,
+    532.8225387014529,
+    924.8449999970197
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "door-top:front",
+   "part_id": "door-top",
+   "ply_id": "door-top/front",
+   "role": "front",
+   "texture": "textures/door-top-front.webp",
+   "texture_px": [
+    2053,
+    1211
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -532.7643000012636,
+    891.6929918721049,
+    532.8943000012637,
+    1519.829091873738
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "door-top:back",
+   "part_id": "door-top",
+   "ply_id": "door-top/back",
+   "role": "back",
+   "texture": "textures/door-top-back.webp",
+   "texture_px": [
+    2053,
+    1211
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -532.7642654901742,
+    891.6930460974305,
+    532.894334512353,
+    1519.829146091613
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "narrow-2-bottom:front",
+   "part_id": "narrow-2-bottom",
+   "ply_id": "narrow-2-bottom/front",
+   "role": "front",
+   "texture": "textures/narrow-2-bottom-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    550.2705183260905,
+    0.099,
+    1130.2725183301436,
+    925.1842999985219
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "narrow-2-bottom:back",
+   "part_id": "narrow-2-bottom",
+   "ply_id": "narrow-2-bottom/back",
+   "role": "back",
+   "texture": "textures/narrow-2-bottom-back.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    550.2705618076789,
+    0.09893005394935608,
+    1130.2724618100392,
+    925.184330054164
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "narrow-2-top:front",
+   "part_id": "narrow-2-top",
+   "ply_id": "narrow-2-top/front",
+   "role": "front",
+   "texture": "textures/narrow-2-top-front.webp",
+   "texture_px": [
+    2050,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    550.2706183286296,
+    886.5154751795766,
+    1130.2723183276044,
+    1467.5909751835702
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "narrow-2-top:back",
+   "part_id": "narrow-2-top",
+   "ply_id": "narrow-2-top/back",
+   "role": "back",
+   "texture": "textures/narrow-2-top-back.webp",
+   "texture_px": [
+    2050,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    550.2705654071556,
+    886.5155052352187,
+    1130.272265413581,
+    1467.5909052375196
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "connector-1:front",
+   "part_id": "connector-1",
+   "ply_id": "connector-1/front",
+   "role": "front",
+   "texture": "textures/connector-1-front.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.095,
+    -150.2508007664337,
+    1095.111599997878,
+    186.26529923788166
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "connector-1:back",
+   "part_id": "connector-1",
+   "ply_id": "connector-1/back",
+   "role": "back",
+   "texture": "textures/connector-1-back.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.09497516721487045,
+    -150.25079018660927,
+    1095.111575165093,
+    186.26530981025553
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "connector-2:front",
+   "part_id": "connector-2",
+   "ply_id": "connector-2/front",
+   "role": "front",
+   "texture": "textures/connector-2-front.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.095,
+    -150.25074421880277,
+    1094.921599997878,
+    186.26525578381984
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "connector-2:back",
+   "part_id": "connector-2",
+   "ply_id": "connector-2/back",
+   "role": "back",
+   "texture": "textures/connector-2-back.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.09508911639451981,
+    -150.2508170109752,
+    1094.9216108831763,
+    186.2652829858896
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "connector-3:front",
+   "part_id": "connector-3",
+   "ply_id": "connector-3/front",
+   "role": "front",
+   "texture": "textures/connector-3-front.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.095,
+    -150.25080290617916,
+    1094.921599997878,
+    186.26529709813622
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "connector-3:back",
+   "part_id": "connector-3",
+   "ply_id": "connector-3/back",
+   "role": "back",
+   "texture": "textures/connector-3-back.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -0.09501015514135361,
+    -150.25080437394354,
+    1094.9215898427367,
+    186.26529563037184
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "connector-4:front",
+   "part_id": "connector-4",
+   "ply_id": "connector-4/front",
+   "role": "front",
+   "texture": "textures/connector-4-front.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.095,
+    -150.25080973836612,
+    1095.1116999995709,
+    186.26529026594926
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "connector-4:back",
+   "part_id": "connector-4",
+   "ply_id": "connector-4/back",
+   "role": "back",
+   "texture": "textures/connector-4-back.webp",
+   "texture_px": [
+    2053,
+    632
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    0.09500656396150589,
+    -150.25078836265038,
+    1095.1117065635324,
+    186.2653116342144
+   ],
+   "print_axes": [
+    1,
+    2
+   ],
+   "print_normal": [
+    -1,
+    0,
+    0
+   ]
+  },
+  {
+   "id": "door-left-leaf:front",
+   "part_id": "door-left-leaf",
+   "ply_id": "door-left/front/door-left-leaf",
+   "role": "front",
+   "texture": "textures/door-left-leaf-front.webp",
+   "texture_px": [
+    1173,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -532.8360612947706,
+    0.045,
+    -4.544861297703164,
+    924.8291000035405
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    -0.5735764363510462,
+    0,
+    0.819152044288992
+   ]
+  },
+  {
+   "id": "door-left-leaf:door-back",
+   "part_id": "door-left-leaf",
+   "ply_id": "door-left/door-back",
+   "role": "door-back",
+   "texture": "textures/door-left-leaf-door-back.webp",
+   "texture_px": [
+    509,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -230.3356637168888,
+    28.448520300984384,
+    -20.36136371234693,
+    878.1518203002214
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0.5735764363510462,
+    0,
+    -0.819152044288992
+   ]
+  },
+  {
+   "id": "door-right-leaf:front",
+   "part_id": "door-right-leaf",
+   "ply_id": "door-right/front/door-right-leaf",
+   "role": "front",
+   "texture": "textures/door-right-leaf-front.webp",
+   "texture_px": [
+    1173,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    4.531438706078234,
+    0.045,
+    532.8225387014529,
+    924.8449999970197
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0.5735764363510462,
+    0,
+    0.819152044288992
+   ]
+  },
+  {
+   "id": "door-right-leaf:door-back",
+   "part_id": "door-right-leaf",
+   "ply_id": "door-right/door-back",
+   "role": "door-back",
+   "texture": "textures/door-right-leaf-door-back.webp",
+   "texture_px": [
+    509,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    17.028236282624903,
+    28.317520296275617,
+    227.00253628716678,
+    878.0208202955126
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    -0.5735764363510462,
+    0,
+    -0.819152044288992
+   ]
+  },
+  {
+   "id": "narrow-1-bottom-linked:front",
+   "part_id": "narrow-1-bottom-linked",
+   "ply_id": "narrow-1-bottom/front",
+   "role": "front",
+   "texture": "textures/narrow-1-bottom-linked-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1141.6929016287497,
+    0.0786,
+    -561.6910016263894,
+    925.1638999985219
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "narrow-1-bottom-linked:back",
+   "part_id": "narrow-1-bottom-linked",
+   "ply_id": "narrow-1-bottom/back/body-linked",
+   "role": "back",
+   "texture": "textures/narrow-1-bottom-linked-back.webp",
+   "texture_px": [
+    1536,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    -1141.692854831653,
+    0.07853005394935608,
+    -449.9891548330954,
+    925.163930054164
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  },
+  {
+   "id": "narrow-2-bottom-linked:front",
+   "part_id": "narrow-2-bottom-linked",
+   "ply_id": "narrow-2-bottom/front",
+   "role": "front",
+   "texture": "textures/narrow-2-bottom-linked-front.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    550.2705183260905,
+    0.099,
+    1130.2725183301436,
+    925.1842999985219
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "id": "narrow-2-bottom-linked:back",
+   "part_id": "narrow-2-bottom-linked",
+   "ply_id": "narrow-2-bottom/back-linked",
+   "role": "back",
+   "texture": "textures/narrow-2-bottom-linked-back.webp",
+   "texture_px": [
+    1288,
+    2053
+   ],
+   "two_sided": false,
+   "rect_mm": [
+    550.2705618076789,
+    0.09893005394935608,
+    1130.2724618100392,
+    925.184330054164
+   ],
+   "print_axes": [
+    0,
+    1
+   ],
+   "print_normal": [
+    0,
+    0,
+    -1
+   ]
+  }
+ ],
+ "layouts": [
+  {
+   "id": "straight",
+   "label": "Straight",
+   "catalog_id": "straight",
+   "transforms": {
+    "narrow-1-bottom": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-bottom-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-top": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-left": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-top": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-2-bottom": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-2-top": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-1": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-2": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-3": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-4": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-bottom-linked": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-2-bottom-linked": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  },
+  {
+   "id": "convex",
+   "label": "Convex",
+   "catalog_id": "135-backward",
+   "transforms": {
+    "narrow-1-bottom": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -167.78408043926908,
+     0,
+     391.05210792354256,
+     1
+    ],
+    "narrow-1-bottom-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-top": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -167.78408043926908,
+     0,
+     391.05210792354256,
+     1
+    ],
+    "door-left": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-flap": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "door-top": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-2-bottom": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "narrow-2-top": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "connector-1": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -167.78408043926908,
+     0,
+     391.05210792354256,
+     1
+    ],
+    "connector-2": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-3": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-4": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-bottom-linked": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -167.78408043926908,
+     0,
+     391.05210792354256,
+     1
+    ],
+    "narrow-2-bottom-linked": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ]
+   }
+  },
+  {
+   "id": "concave",
+   "label": "Concave",
+   "catalog_id": "135-forward",
+   "transforms": {
+    "narrow-1-bottom": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "narrow-1-bottom-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-top": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "door-left": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-flap": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     152.77785006398136,
+     0,
+     -382.85285227790615,
+     1
+    ],
+    "door-top": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-2-bottom": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     152.77785006398136,
+     0,
+     -382.85285227790615,
+     1
+    ],
+    "narrow-2-top": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     152.77785006398136,
+     0,
+     -382.85285227790615,
+     1
+    ],
+    "connector-1": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "connector-2": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-3": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-4": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     152.77785006398136,
+     0,
+     -382.85285227790615,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-bottom-linked": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "narrow-2-bottom-linked": [
+     0.7071067811865476,
+     0,
+     0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     -0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     152.77785006398136,
+     0,
+     -382.85285227790615,
+     1
+    ]
+   }
+  },
+  {
+   "id": "concertina",
+   "label": "Concertina",
+   "catalog_id": "concertina",
+   "transforms": {
+    "narrow-1-bottom": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "narrow-1-bottom-flap": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-top": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "door-left": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-flap": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "door-top": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-2-bottom": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "narrow-2-top": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "connector-1": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "connector-2": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-3": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "connector-4": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ],
+    "door-left-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "door-right-leaf": [
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0,
+     1
+    ],
+    "narrow-1-bottom-linked": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     -157.87433625627423,
+     0,
+     -395.1568583637869,
+     1
+    ],
+    "narrow-2-bottom-linked": [
+     0.7071067811865476,
+     0,
+     -0.7071067811865475,
+     0,
+     0,
+     1,
+     0,
+     0,
+     0.7071067811865475,
+     0,
+     0.7071067811865476,
+     0,
+     162.6875942469762,
+     0,
+     378.7481018376618,
+     1
+    ]
+   }
+  }
+ ],
+ "extras": [],
+ "chain": {
+  "max_extra": 2,
+  "sides": {
+   "left": {
+    "part_ids": [
+     "narrow-1-bottom",
+     "narrow-1-top",
+     "connector-1"
+    ],
+    "inner_part_ids": [
+     "narrow-1-bottom-flap"
+    ],
+    "linked_parts": {
+     "narrow-1-bottom": "narrow-1-bottom-linked"
+    },
+    "step_x_mm": -608.8200999945402,
+    "step_mm": 608.8200999945402,
+    "hinge_mm": [
+     -555.9336914914364,
+     0.09508911639451981,
+     -7.007247311619608
+    ],
+    "joints": {
+     "straight": {
+      "angle_deg": 0,
+      "alternate": false
+     },
+     "convex": {
+      "angle_deg": -45,
+      "alternate": false
+     },
+     "concave": {
+      "angle_deg": 45,
+      "alternate": false
+     },
+     "concertina": {
+      "angle_deg": 45,
+      "alternate": true
+     }
+    }
+   },
+   "right": {
+    "part_ids": [
+     "narrow-2-bottom",
+     "narrow-2-top",
+     "connector-4",
+     "door-right-flap"
+    ],
+    "inner_part_ids": [],
+    "linked_parts": {
+     "narrow-2-bottom": "narrow-2-bottom-linked"
+    },
+    "step_x_mm": 597.4024331297833,
+    "step_mm": 597.4024331297833,
+    "hinge_mm": [
+     538.5331992132628,
+     0.09508911639451981,
+     -7.007247311619608
+    ],
+    "joints": {
+     "straight": {
+      "angle_deg": 0,
+      "alternate": false
+     },
+     "convex": {
+      "angle_deg": 45,
+      "alternate": false
+     },
+     "concave": {
+      "angle_deg": -45,
+      "alternate": false
+     },
+     "concertina": {
+      "angle_deg": 45,
+      "alternate": true
+     }
+    }
+   }
+  }
+ },
+ "joints": [
+  {
+   "donor": "narrow-1-bottom",
+   "receiver": "door-left",
+   "flap": "narrow-1-bottom-flap",
+   "hinge_mm": [
+    -555.9336914914364,
+    0.09508911639451981,
+    -7.007247311619608
+   ],
+   "seating": {
+    "flap": "narrow-1-bottom/back/flap",
+    "receiver": "door-left/back",
+    "vertical_refinement_mm": 0,
+    "overlap_before_mm2": 0.004288402887112604,
+    "overlap_after_mm2": 0.004288402887112604
+   }
+  },
+  {
+   "donor": "door-right",
+   "receiver": "narrow-2-bottom",
+   "flap": "door-right-flap",
+   "hinge_mm": [
+    538.5331992132628,
+    0.09508911639451981,
+    -7.007247311619608
+   ],
+   "seating": {
+    "flap": "door-right/back/flap",
+    "receiver": "narrow-2-bottom/back",
+    "vertical_refinement_mm": -0.07632550536562077,
+    "overlap_before_mm2": 10.169970296140443,
+    "overlap_after_mm2": 0.292751144841608
+   }
+  }
+ ],
+ "geometry_repairs": [],
+ "cameras": {
+  "front": {
+   "azimuth_deg": 0,
+   "elevation_deg": 2
+  },
+  "oblique": {
+   "azimuth_deg": 25,
+   "elevation_deg": 7
+  },
+  "wide": {
+   "azimuth_deg": 45,
+   "elevation_deg": 8
+  },
+  "rear": {
+   "azimuth_deg": 180,
+   "elevation_deg": 4
+  }
+ },
+ "logo_slots": []
+}
