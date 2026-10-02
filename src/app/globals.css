@@ -103,3 +103,4 @@ img {
 @keyframes marquee {
   to { transform: translateX(-50%); }
 }
+

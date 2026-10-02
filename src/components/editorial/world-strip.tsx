@@ -2,41 +2,49 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
+import { AnimatePresence, motion, useInView, type Variants } from "framer-motion";
 import type { Section } from "@/data/catalog";
+import { usePrefersStill } from "@/lib/use-prefers-still";
 
 type Place = NonNullable<Section["world"]>[number];
 
-/** "Around the world": a sideways strip of cities made for other hotels, with arrows and a viewer. */
+// Cards swing in from the right like turned pages and swing out to the left.
+const card: Variants = {
+  hidden: { opacity: 0, rotateY: 80, x: 140 },
+  show: (k: number) => ({ opacity: 1, rotateY: 0, x: 0, transition: { type: "spring", stiffness: 70, damping: 16, delay: k * 0.18 } }),
+  gone: { opacity: 0, rotateY: -80, x: -80, transition: { duration: 0.5, ease: [0.4, 0, 1, 1], opacity: { duration: 0.25 } } },
+};
+
+/**
+ * "Around the world": cities made for other hotels. When the row comes into view the cards flip in
+ * from the right one by one; then every few seconds the first card flips away and the next city
+ * flips in at the right end. Hover or Pause holds it; reduced motion gets a still row.
+ */
 export default function WorldStrip({ places }: { places: Place[] }) {
-  const row = useRef<HTMLUListElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
+  const stage = useRef<HTMLDivElement>(null);
+  const inView = useInView(stage, { amount: 0.3 });
+  const still = usePrefersStill();
   const title = useId();
+  const n = places.length;
   const [i, setI] = useState(0);
-  // Arrows show whenever the strip overflows; each one is off at its own end.
-  const [edge, setEdge] = useState({ over: false, start: true, end: true });
+  const [start, setStart] = useState(0); // keeps counting, so a city that comes round again is a new card
+  const [hold, setHold] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [slots, setSlots] = useState(3);
   useEffect(() => {
-    const el = row.current;
-    if (!el) return;
-    const f = () =>
-      setEdge({
-        over: el.scrollWidth > el.clientWidth + 1,
-        start: el.scrollLeft <= 1,
-        end: el.scrollLeft + el.clientWidth >= el.scrollWidth - 1,
-      });
+    const f = () => setSlots(innerWidth < 640 ? 1 : innerWidth < 1024 ? 2 : 3);
     f();
-    const ro = new ResizeObserver(f);
-    ro.observe(el);
-    el.addEventListener("scroll", f, { passive: true });
-    return () => {
-      ro.disconnect();
-      el.removeEventListener("scroll", f);
-    };
+    addEventListener("resize", f);
+    return () => removeEventListener("resize", f);
   }, []);
-  const scroll = (d: number) => {
-    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
-    row.current?.scrollBy({ left: d * row.current.clientWidth * 0.8, behavior: still ? "auto" : "smooth" });
-  };
+  useEffect(() => {
+    if (still || paused || hold || !inView) return;
+    const t = setInterval(() => setStart((v) => v + 1), 4200);
+    return () => clearInterval(t);
+  }, [still, paused, hold, inView]);
   const shown = places[i];
+  const visible = Array.from({ length: Math.min(slots, n) }, (_, j) => start + j);
 
   return (
     <div className="mt-24">
@@ -45,33 +53,62 @@ export default function WorldStrip({ places }: { places: Place[] }) {
           <p className="text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">More skylines</p>
           <h3 className="font-display mt-3 text-[clamp(1.8rem,3.5vw,2.75rem)] leading-tight">Around the world</h3>
         </div>
-        {edge.over && (
-          <div className="flex gap-2">
-            <button type="button" onClick={() => scroll(-1)} disabled={edge.start} aria-label="Previous cities" className="h-11 w-11 border border-[#17150f]/25 transition-colors hover:border-[#17150f] disabled:cursor-default disabled:opacity-30 disabled:hover:border-[#17150f]/25">←</button>
-            <button type="button" onClick={() => scroll(1)} disabled={edge.end} aria-label="More cities" className="h-11 w-11 border border-[#17150f]/25 transition-colors hover:border-[#17150f] disabled:cursor-default disabled:opacity-30 disabled:hover:border-[#17150f]/25">→</button>
-          </div>
+        {!still && (
+          <button
+            type="button"
+            onClick={() => setPaused((v) => !v)}
+            aria-pressed={paused}
+            className="py-2 text-[11px] uppercase tracking-[0.14em] text-[#5b574f] underline decoration-[#17150f]/20 underline-offset-4 hover:text-[#17150f]"
+          >
+            {paused ? "Play" : "Pause"}
+          </button>
         )}
       </div>
 
-      <ul ref={row} className="-mx-6 mt-8 flex snap-x snap-mandatory scroll-px-6 gap-6 overflow-x-auto px-6 pb-6 [scrollbar-width:none] md:-mx-12 md:scroll-px-12 md:px-12">
-        {places.map((p, k) => (
-          <li key={p.city} className="w-[78vw] shrink-0 snap-start sm:w-[46vw] lg:w-[400px]">
-            <button
-              type="button"
-              onClick={() => {
-                setI(k);
-                dialog.current?.showModal();
-              }}
-              aria-label={`Enlarge ${p.city}`}
-              className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-[6px] bg-[#e4dccf] shadow-[0_12px_30px_-10px_rgba(60,45,25,0.22)]"
-            >
-              <Image src={p.image.src} alt={`${p.city} play-screen`} fill sizes="(max-width: 640px) 78vw, 400px" className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
-            </button>
-            <p className="font-display mt-4 text-xl leading-tight">{p.city}</p>
-            <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{p.note}</p>
-          </li>
-        ))}
-      </ul>
+      <div
+        ref={stage}
+        className="mt-8 [perspective:1600px]"
+        onPointerEnter={() => setHold(true)}
+        onPointerLeave={() => setHold(false)}
+        onFocus={() => setHold(true)}
+        onBlur={() => setHold(false)}
+      >
+        <ul className="grid gap-6 pb-6 sm:grid-cols-2 lg:grid-cols-3">
+          <AnimatePresence mode="popLayout" initial={false}>
+            {visible.map((abs, j) => {
+              const k = abs % n;
+              const p = places[k];
+              return (
+                <motion.li
+                  key={abs}
+                  layout
+                  custom={j}
+                  variants={card}
+                  initial={still ? false : "hidden"}
+                  animate={still || inView ? "show" : "hidden"}
+                  exit="gone"
+                  style={{ transformOrigin: "left center" }}
+                  className="min-w-0"
+                >
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setI(k);
+                      dialog.current?.showModal();
+                    }}
+                    aria-label={`Enlarge ${p.city}`}
+                    className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-[6px] bg-[#e4dccf] shadow-[0_12px_30px_-10px_rgba(60,45,25,0.22)]"
+                  >
+                    <Image src={p.image.src} alt={`${p.city} play-screen`} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px" className="object-cover transition-transform duration-700 group-hover:scale-[1.03] motion-reduce:transition-none" />
+                  </button>
+                  <p className="font-display mt-4 text-xl leading-tight">{p.city}</p>
+                  <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{p.note}</p>
+                </motion.li>
+              );
+            })}
+          </AnimatePresence>
+        </ul>
+      </div>
 
       <dialog
         ref={dialog}

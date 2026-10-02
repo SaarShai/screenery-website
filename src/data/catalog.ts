@@ -107,7 +107,7 @@ export const sections: Section[] = [
     world: [
       { city: "Chicago", note: "Trump International Hotel & Tower", image: { src: "/catalog/world/chicago.jpg", w: 1536, h: 1024 } },
       { city: "Zurich", note: "Lake Zurich and the old town", image: { src: "/catalog/world/zurich-day-2.jpg", w: 1536, h: 1024 } },
-      { city: "Washington, D.C.", note: "The Capitol, Lincoln and Jefferson", image: { src: "/catalog/world/washington.jpg", w: 1536, h: 1024 } },
+      { city: "Washington, D.C.", note: "The Capitol", image: { src: "/catalog/world/washington.jpg", w: 1536, h: 1024 } },
     ],
   },
   {

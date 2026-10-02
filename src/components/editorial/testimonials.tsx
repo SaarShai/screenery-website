@@ -11,7 +11,7 @@ function Logo({ logo }: { logo: Testimonial["logo"] }) {
   const w = Math.min(180, h * aspect);
   return (
     <div className="flex h-12 items-center">
-      <Image src={logo.src} alt={logo.alt} width={Math.round(w)} height={Math.round(w / aspect)} className="opacity-60 grayscale" />
+      <Image src={logo.src} alt={logo.alt} width={Math.round(w)} height={Math.round(w / aspect)} style={{ width: Math.round(w), height: Math.round(w / aspect) }} className="opacity-60 grayscale" />
     </div>
   );
 }
