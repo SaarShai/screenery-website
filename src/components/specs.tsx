@@ -61,25 +61,25 @@ export default function Specs() {
             <div>
               <div className="overflow-hidden rounded-sm">
                 <Image
-                  src="/images/bright bevel closeup.jpg"
-                  alt="Finely grooved surface detail of a Screenery panel"
-                  width={640}
-                  height={370}
+                  src="/images/closeup-uv-print.jpg"
+                  alt="Close-up of a vivid UV print on Screenery felt"
+                  width={1280}
+                  height={740}
                   className="w-full h-auto"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
               </div>
               <p className="text-[11px] tracking-[0.15em] uppercase text-[#6f5a41] mt-2.5 font-light">
-                Finely grooved
+                Vivid UV print
               </p>
             </div>
             <div>
               <div className="overflow-hidden rounded-sm">
                 <Image
-                  src="/images/bevel closeup.jpg"
+                  src="/images/closeup-bevelling.jpg"
                   alt="Intricate bevelling detail of a Screenery panel"
-                  width={689}
-                  height={398}
+                  width={1280}
+                  height={740}
                   className="w-full h-auto"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
@@ -106,10 +106,10 @@ export default function Specs() {
             <div>
               <div className="overflow-hidden rounded-sm">
                 <Image
-                  src="/images/double layer closeup.jpg"
-                  alt="Double-layer color detail of a Screenery panel"
-                  width={640}
-                  height={370}
+                  src="/images/closeup-double-layer.jpg"
+                  alt="Double-layer colour detail of a Screenery panel"
+                  width={1280}
+                  height={740}
                   className="w-full h-auto"
                   sizes="(max-width: 768px) 45vw, 220px"
                 />
