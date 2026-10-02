@@ -86,7 +86,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 px-6 md:px-12 bg-[#221c16]"
+      className="py-14 md:py-16 px-6 md:px-12 bg-[#221c16]"
       ref={ref}
     >
       <div className="max-w-3xl mx-auto text-center">
@@ -96,9 +96,6 @@ export default function Contact() {
           animate={isInView ? { y: 0 } : { y: 30 }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-[13px] tracking-[0.3em] uppercase text-[#c4a97d] mb-6">
-            Get in Touch
-          </p>
           <h2 ref={heading} tabIndex={-1} className="font-display text-3xl md:text-5xl text-white leading-tight mb-6 outline-none">
             Bring Screenery to
             <br />

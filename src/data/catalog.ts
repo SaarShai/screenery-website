@@ -16,8 +16,6 @@ export type Design = {
 export type Section = {
   slug: string;
   name: string;
-  kicker: string;
-  intro: string;
   items: Design[];
   world?: { city: string; note: string; image: Img }[]; // "Around the world" strip under the cards
 };
@@ -59,9 +57,6 @@ export const sections: Section[] = [
   {
     slug: "standard",
     name: "The Collection",
-    kicker: "Standard models",
-    intro:
-      "Twelve themed worlds, ready to ship. Each one unfolds into a play area in minutes and packs flat when the guests check out.",
     items: [
       design("standard", "castle", "Castle", "Standard edition", "A fortress of imagination stands tall. Perfect for kids who believe every room should come with a throne.", ["Front", "Back", "In a room"], "From £1,150"),
       design("standard", "castle-xl", "Castle XL", "Grand edition", "The castle, scaled up for lobbies, kids clubs and events. Room inside for a whole group of little knights.", ["Front", "Back", "In a lobby"]),
@@ -80,9 +75,6 @@ export const sections: Section[] = [
   {
     slug: "bespoke",
     name: "Bespoke",
-    kicker: "Made for one hotel",
-    intro:
-      "Your building, your mascot, your colour palette. A selection of sets our creative team designed for one hotel each, and that exist nowhere else.",
     items: [
       design("bespoke", "forte", "Forte Village", "Sardinia", "Pine woods, peacocks and zebras, front and back.", ["In a suite", "Front", "Back"]),
       design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["In a suite", "", ""]),
@@ -95,9 +87,6 @@ export const sections: Section[] = [
   {
     slug: "cities",
     name: "Cities",
-    kicker: "Skyline collection",
-    intro:
-      "Your city, at child height. Landmark skylines illustrated for the hotel that wants guests to know exactly where they woke up.",
     items: [
       design("cities", "london", "London", "Skyline", "Big Ben, the Shard and Tower Bridge, with a window to peek through.", ["Raffles London edition", "In a suite", "With the bus"], "From £1,250"),
       design("cities", "paris", "Paris", "Skyline", "Notre-Dame, the Arc de Triomphe and the Eiffel Tower in watercolour.", ["In a suite", "Studio", ""], "From £1,250"),
@@ -113,9 +102,6 @@ export const sections: Section[] = [
   {
     slug: "bedwrappers",
     name: "Bedwrappers",
-    kicker: "Bed collection",
-    intro:
-      "A themed wrap for the bed itself. The room stays as it is; the bed becomes part of the story.",
     items: [
       design("bedwrappers", "marine", "Marine Life", "Twin beds", "Coral and clownfish for a twin room.", ["In a suite", "Twin beds", "Twin room"], "From £850"),
     ],

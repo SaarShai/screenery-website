@@ -24,7 +24,7 @@ export default function Stats() {
       </section>
 
       {/* Trust row: every hotel brand, in one place before the catalogue */}
-      <section aria-label="Hotel clients" className="px-6 py-14 md:px-12 md:py-20">
+      <section aria-label="Hotel clients" className="px-6 pt-12 pb-12 md:px-12 md:pt-14 md:pb-14">
         <div className="mx-auto max-w-5xl">
           <p className="text-center text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">Trusted by</p>
           <LogoWall />

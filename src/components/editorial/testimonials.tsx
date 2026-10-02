@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
@@ -17,32 +16,19 @@ function Logo({ logo }: { logo: Testimonial["logo"] }) {
 }
 
 /**
- * What hotels say: quotes drifting sideways in an endless bar under the logos. Hover or the
- * pause button stops it; reduced motion gets a still row to scroll by hand.
+ * What hotels say: quotes drifting sideways in an endless bar under the logos. Hover stops it;
+ * reduced motion gets a still row to scroll by hand.
  */
 export default function Testimonials() {
-  const [paused, setPaused] = useState(false);
   const n = testimonials.length;
   if (!n) return null;
 
   return (
-    <div className="mt-14 md:mt-20">
-      <div className="mx-auto flex max-w-5xl items-center justify-between gap-6">
-        <p className="text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">In their words</p>
-        <button
-          type="button"
-          onClick={() => setPaused((p) => !p)}
-          aria-pressed={paused}
-          className="py-2 text-[11px] uppercase tracking-[0.14em] text-[#5b574f] underline decoration-[#17150f]/20 underline-offset-4 hover:text-[#17150f] motion-reduce:hidden"
-        >
-          {paused ? "Play" : "Pause"}
-        </button>
-      </div>
-
-      <div className="-mx-6 mt-6 overflow-hidden border-y border-[#17150f]/10 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] md:-mx-12 motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]">
+    <div className="mt-12 md:mt-14">
+      <div className="-mx-6 overflow-hidden border-y border-[#17150f]/10 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] md:-mx-12 motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]">
         <ul
           className="flex w-max animate-[marquee_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none"
-          style={{ animationDuration: `${n * 12}s`, animationPlayState: paused ? "paused" : undefined }}
+          style={{ animationDuration: `${n * 12}s` }}
         >
           {/* The list runs twice so the loop has no seam; the copy is hidden from screen readers */}
           {[...testimonials, ...testimonials].map((t, k) => (

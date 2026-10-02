@@ -14,7 +14,7 @@ const SPEED = 38; // px per second, left to right
 /**
  * "Around the world": an endless conveyor of cities moving left to right. Each card swings on a
  * shallow curve as it travels: it comes in turned and smaller at the left, faces the viewer and
- * grows at the centre, then turns away at the right. Hover or Pause holds it; reduced
+ * grows at the centre, then turns away at the right. Hover holds it; reduced
  * motion gets a still row to scroll by hand.
  */
 export default function WorldStrip({ places }: { places: Place[] }) {
@@ -24,7 +24,6 @@ export default function WorldStrip({ places }: { places: Place[] }) {
   const still = usePrefersStill();
   const title = useId();
   const [i, setI] = useState(0);
-  const [paused, setPaused] = useState(false);
   const hold = useRef(false);
   const [size, setSize] = useState({ view: 1200, card: 380 });
   useEffect(() => {
@@ -39,7 +38,7 @@ export default function WorldStrip({ places }: { places: Place[] }) {
   }, []);
   const offset = useMotionValue(0);
   useAnimationFrame((_, dt) => {
-    if (still || paused || hold.current || !inView) return;
+    if (still || hold.current || !inView) return;
     offset.set(offset.get() + (SPEED * Math.min(dt, 64)) / 1000);
   });
   const shown = places[i];
@@ -48,21 +47,10 @@ export default function WorldStrip({ places }: { places: Place[] }) {
 
   return (
     <div className="mt-14 md:mt-16">
-      <div className="flex items-end justify-between gap-6 border-t border-[#17150f]/10 pt-10">
+      <div className="border-t border-[#17150f]/10 pt-10">
         <div>
-          <p className="text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">More skylines</p>
-          <h3 className="font-display mt-3 text-[clamp(1.8rem,3.5vw,2.75rem)] leading-tight">Around the world</h3>
+          <h3 className="font-display text-[clamp(1.8rem,3.5vw,2.75rem)] leading-tight">Around the world</h3>
         </div>
-        {!still && (
-          <button
-            type="button"
-            onClick={() => setPaused((v) => !v)}
-            aria-pressed={paused}
-            className="py-2 text-[11px] uppercase tracking-[0.14em] text-[#5b574f] underline decoration-[#17150f]/20 underline-offset-4 hover:text-[#17150f]"
-          >
-            {paused ? "Play" : "Pause"}
-          </button>
-        )}
       </div>
 
       {still ? (

@@ -47,29 +47,14 @@ const PROMISES = [
 
 export default function Specs() {
   return (
-    <section id="specs" className="py-16 md:py-24 px-6 md:px-12">
+    <section id="specs" className="py-12 md:py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <FadeInWhenVisible>
-          <p className="text-[13px] tracking-[0.3em] uppercase text-[#6f5a41] mb-6">
-            Technical Details
-          </p>
-        </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.1}>
-          <h2 className="font-display text-3xl md:text-5xl leading-tight max-w-3xl mb-6">
+          <h2 className="font-display text-3xl md:text-5xl leading-tight max-w-3xl mb-8 md:mb-10">
             Engineered for&nbsp;hospitality
           </h2>
         </FadeInWhenVisible>
-        <FadeInWhenVisible delay={0.15}>
-          <p
-            className="text-[#6b6b6b] text-lg max-w-2xl leading-relaxed font-light mb-10 md:mb-12"
-            style={{ textWrap: "balance" }}
-          >
-            High-performance luxury room dividers, made from 100% recyclable
-            felt panels. Used in nurseries, hospitals, and swimming&nbsp;pools.
-          </p>
-        </FadeInWhenVisible>
-
         {/* Material closeup images */}
         <FadeInWhenVisible delay={0.2}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-16">
