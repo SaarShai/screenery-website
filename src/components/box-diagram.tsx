@@ -11,8 +11,8 @@ import { usePrefersStill } from "@/lib/use-prefers-still";
  * Sizes are outer, from ground truth/box-framework.md.
  */
 const BOXES = [
-  { name: "Primary box", note: "Most designs", w: 112, h: 71, d: 27 },
-  { name: "Large box", note: "Designs with longer panels", w: 150, h: 106, d: 16 },
+  { name: "Standard case", note: "Most designs", w: 112, h: 71, d: 27 },
+  { name: "Large case", note: "Designs with longer panels", w: 150, h: 106, d: 16 },
 ];
 
 const ink = "#17150f";
