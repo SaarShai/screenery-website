@@ -17,6 +17,7 @@ export type Design = {
 export type Section = {
   slug: string;
   name: string;
+  subtitle?: string; // one line under the section name
   items: Design[];
   world?: { city: string; note: string; image: Img }[]; // "Around the world" strip under the cards
 };
@@ -76,6 +77,7 @@ export const sections: Section[] = [
   {
     slug: "bespoke",
     name: "Bespoke",
+    subtitle: "Order a design made only for your hotel: your theme, artwork, colours, sizes and branding.",
     items: [
       design("bespoke", "forte", "Forte Village", "Sardinia", "Pine woods, peacocks and zebras, front and back.", ["In a suite", "Front", "Back"]),
       design("bespoke", "great-wall", "Great Wall", "Beijing", "The Great Wall winding over the hills, made for a Beijing family suite.", ["In a suite", "", ""]),
