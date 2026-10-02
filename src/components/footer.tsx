@@ -18,19 +18,19 @@ export default function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           <Link
             href="/#standard"
-            className="text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
+            className="py-2 text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
           >
             Collection
           </Link>
           <Link
             href="/#specs"
-            className="text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
+            className="py-2 text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
           >
             Specifications
           </Link>
           <Link
             href="/#contact"
-            className="text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
+            className="py-2 text-white/75 text-[13px] tracking-[0.1em] uppercase hover:text-white transition-colors"
           >
             Contact
           </Link>
@@ -38,7 +38,7 @@ export default function Footer() {
             href="https://www.linkedin.com/company/wanderland-london/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white/75 hover:text-white transition-colors"
+            className="p-2 text-white/75 hover:text-white transition-colors"
             aria-label="LinkedIn"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

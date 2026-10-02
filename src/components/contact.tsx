@@ -33,6 +33,7 @@ export default function Contact() {
       name: formData.get("name") as string,
       company: formData.get("company") as string,
       email: formData.get("email") as string,
+      message: formData.get("message") as string,
       website: formData.get("website") as string,
       designs,
     };
@@ -134,6 +135,20 @@ export default function Contact() {
                 required
                 className="w-full bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/50"
                 placeholder="your@email.com"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="contact-message" className="text-white/70 text-xs tracking-[0.15em] uppercase block mb-2">
+                Message <span className="normal-case tracking-normal text-white/50">(optional)</span>
+              </label>
+              <textarea
+                name="message"
+                id="contact-message"
+                rows={3}
+                maxLength={2000}
+                className="w-full resize-y bg-transparent border-b border-white/20 text-white py-3 text-[15px] font-light focus:outline-none focus:border-[#c4a97d] transition-colors placeholder:text-white/50"
+                placeholder="Rooms or spaces, quantities, dates…"
               />
             </div>
 

@@ -133,7 +133,7 @@ export default function BoxDiagram() {
     <div
       ref={stage}
       data-boxes
-      className="w-full min-w-0 overflow-x-clip"
+      className="relative w-full min-w-0 overflow-x-clip"
       onPointerMove={(e) => {
         if (e.pointerType !== "mouse" || reduce) return;
         const r = e.currentTarget.getBoundingClientRect();
@@ -148,7 +148,7 @@ export default function BoxDiagram() {
       <div className={`flex gap-6 ${stack ? "flex-col gap-10" : "justify-between"}`}>
         {BOXES.map((b) => (
           <div key={b.name} style={{ width: b.w * k + 95 }}>
-            <div className="flex items-center justify-center [perspective:1100px]" style={{ height: b.h * k + 110 }}>
+            <div className="flex items-end justify-start pb-6 pl-3 [perspective:1100px]" style={{ height: 106 * k + 110 }}>
               <Box3D {...b} k={k} rx={rx} ry={ry} />
             </div>
             <p className="font-display mt-2 text-[17px] leading-tight">{b.name}</p>

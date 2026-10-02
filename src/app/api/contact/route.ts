@@ -17,6 +17,7 @@ export async function POST(request: Request) {
     const name = clean(body.name, 200);
     const company = clean(body.company, 200);
     const email = clean(body.email, 320);
+    const message = clean(body.message, 2000);
     const designs = (Array.isArray(body.designs) ? body.designs : []).slice(0, 30).map((d: unknown) => clean(d, 100)).filter(Boolean);
 
     if (!name || !company || !email) {
@@ -58,6 +59,10 @@ export async function POST(request: Request) {
             ${designs.length ? `<tr>
               <td style="padding: 10px 0; border-bottom: 1px solid #e5e2dc; color: #6b6b6b;">Interested in</td>
               <td style="padding: 10px 0; border-bottom: 1px solid #e5e2dc;">${designs.map(esc).join(", ")}</td>
+            </tr>` : ""}
+            ${message ? `<tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e5e2dc; color: #6b6b6b; vertical-align: top;">Message</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #e5e2dc; white-space: pre-wrap;">${esc(message)}</td>
             </tr>` : ""}
           </table>
           <p style="margin-top: 24px; font-size: 13px; color: #999;">

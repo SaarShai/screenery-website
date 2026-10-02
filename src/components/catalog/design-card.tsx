@@ -5,16 +5,28 @@ import Image from "next/image";
 import type { Design } from "@/data/catalog";
 
 /** One design: a single 3:2 frame with every view (studio and room) as labelled thumbnails, plus a lightbox. */
-export default function DesignCard({ design, sizes }: { design: Design; sizes: string }) {
+export default function DesignCard({
+  design,
+  sizes,
+  wide = false,
+}: {
+  design: Design;
+  sizes: string;
+  wide?: boolean;
+}) {
   const views = [
     ...design.variants,
-    ...design.rooms.map((image, i) => ({ label: design.rooms.length > 1 ? `In the room ${i + 1}` : "In the room", image })),
+    ...design.rooms.map((image, i) => ({
+      label: design.rooms.length > 1 ? `In the room ${i + 1}` : "In the room",
+      image,
+    })),
   ];
   const [i, setI] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);
   const { image: shown, label } = views[i];
   // Frame is 3:2 like most shots; show odd-shaped shots whole instead of cropping the product.
-  const fit = Math.abs(shown.w / shown.h - 1.5) > 0.1 ? "object-contain" : "object-cover";
+  const fit =
+    Math.abs(shown.w / shown.h - 1.5) > 0.1 ? "object-contain" : "object-cover";
   const step = (d: number) => setI((i + d + views.length) % views.length);
 
   const enquire = () => {
@@ -23,55 +35,78 @@ export default function DesignCard({ design, sizes }: { design: Design; sizes: s
   };
 
   return (
-    <article>
-      <button
-        type="button"
-        onClick={() => dialog.current?.showModal()}
-        aria-label={`Enlarge ${design.name}: ${label}`}
-        className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-[6px] bg-[#efe9df] shadow-[0_12px_30px_-10px_rgba(60,45,25,0.22)] transition-shadow duration-500 hover:shadow-[0_18px_40px_-12px_rgba(60,45,25,0.3)]"
-      >
-        <Image
-          key={shown.src}
-          src={shown.src}
-          alt={`${design.name}: ${label}`}
-          fill
-          sizes={sizes}
-          className={`${fit} animate-[fade_220ms_ease-out] transition-transform duration-700 group-hover:scale-[1.02] motion-reduce:animate-none motion-reduce:transition-none`}
-        />
-      </button>
+    <article
+      className={
+        wide ? "md:grid md:grid-cols-12 md:items-center md:gap-12" : undefined
+      }
+    >
+      <div className={wide ? "md:col-span-7" : undefined}>
+        <button
+          type="button"
+          onClick={() => dialog.current?.showModal()}
+          aria-label={`Enlarge ${design.name}: ${label}`}
+          className="group relative block aspect-[3/2] w-full cursor-zoom-in overflow-hidden rounded-[6px] bg-[#efe9df] shadow-[0_12px_30px_-10px_rgba(60,45,25,0.22)] transition-shadow duration-500 hover:shadow-[0_18px_40px_-12px_rgba(60,45,25,0.3)]"
+        >
+          <Image
+            key={shown.src}
+            src={shown.src}
+            alt={`${design.name}: ${label}`}
+            fill
+            sizes={sizes}
+            className={`${fit} animate-[fade_220ms_ease-out] transition-transform duration-700 group-hover:scale-[1.02] motion-reduce:animate-none motion-reduce:transition-none`}
+          />
+        </button>
 
-      {/* Views; the row keeps its height even with one view so cards line up */}
-      <div className="mt-3 flex h-12 gap-2 overflow-x-auto [scrollbar-width:none]">
-        {views.length > 1 &&
-          views.map((v, k) => (
-            <button
-              key={k}
-              type="button"
-              onClick={() => setI(k)}
-              aria-label={`${design.name}: ${v.label}`}
-              aria-pressed={k === i}
-              title={v.label}
-              className={`relative h-12 w-[4.5rem] shrink-0 overflow-hidden rounded-[3px] bg-[#efe9df] transition-shadow ${k === i ? "ring-2 ring-inset ring-[#17150f]" : "hover:ring-1 hover:ring-inset hover:ring-[#17150f]/40"}`}
-            >
-              <Image src={v.image.src} alt="" fill sizes="72px" className="object-cover" />
-            </button>
-          ))}
+        {/* Views; the row keeps its height even with one view so cards line up */}
+        <div className="mt-3 flex h-12 gap-2 overflow-x-auto [scrollbar-width:none]">
+          {views.length > 1 &&
+            views.map((v, k) => (
+              <button
+                key={k}
+                type="button"
+                onClick={() => setI(k)}
+                aria-label={`${design.name}: ${v.label}`}
+                aria-pressed={k === i}
+                title={v.label}
+                className={`relative h-12 w-[4.5rem] shrink-0 overflow-hidden rounded-[3px] bg-[#efe9df] transition-shadow ${k === i ? "ring-2 ring-inset ring-[#17150f]" : "hover:ring-1 hover:ring-inset hover:ring-[#17150f]/40"}`}
+              >
+                <Image
+                  src={v.image.src}
+                  alt=""
+                  fill
+                  sizes="72px"
+                  className="object-cover"
+                />
+              </button>
+            ))}
+        </div>
       </div>
 
-      <div className="mt-4">
-        <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">{design.tagline}</p>
+      <div className={wide ? "mt-4 md:col-span-5 md:mt-0" : "mt-4"}>
+        <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
+          {design.tagline}
+        </p>
         <div className="mt-1.5 flex items-baseline justify-between gap-4">
           <h3 className="font-display text-2xl leading-tight">{design.name}</h3>
-          {design.price && <p className="shrink-0 text-[13px] font-medium">{design.price}</p>}
+          {design.price && (
+            <p className="shrink-0 text-[13px] font-medium">{design.price}</p>
+          )}
         </div>
-        <p className="mt-2 text-[16px] leading-[25px] text-[#5b574f]">{design.description}</p>
+        <p className="mt-2 text-[16px] leading-[25px] text-[#5b574f]">
+          {design.description}
+        </p>
         <button
           type="button"
           onClick={enquire}
           className="group/e mt-3 inline-flex items-center gap-2 py-2 text-[12px] uppercase tracking-[0.14em] underline decoration-[#17150f]/25 underline-offset-4 transition-colors hover:decoration-[#17150f]"
         >
           Enquire about {design.name}
-          <span aria-hidden className="transition-transform duration-200 group-hover/e:translate-x-1">→</span>
+          <span
+            aria-hidden
+            className="transition-transform duration-200 group-hover/e:translate-x-1"
+          >
+            →
+          </span>
         </button>
       </div>
 
@@ -95,17 +130,42 @@ export default function DesignCard({ design, sizes }: { design: Design; sizes: s
         <div className="mt-3 flex items-center justify-between gap-6 text-[13px]">
           <p>
             <span className="font-display text-lg">{design.name}</span>
-            <span className="ml-3 uppercase tracking-[0.14em] text-white/70">{label}</span>
+            <span className="ml-3 uppercase tracking-[0.14em] text-white/70">
+              {label}
+            </span>
           </p>
           <div className="flex items-center gap-1">
             {views.length > 1 && (
               <>
-                <button type="button" onClick={() => step(-1)} aria-label="Previous view" className="px-3 py-2 hover:text-white">←</button>
-                <span className="tabular-nums text-white/70">{i + 1} / {views.length}</span>
-                <button type="button" onClick={() => step(1)} aria-label="Next view" className="px-3 py-2 hover:text-white">→</button>
+                <button
+                  type="button"
+                  onClick={() => step(-1)}
+                  aria-label="Previous view"
+                  className="px-3 py-2 hover:text-white"
+                >
+                  ←
+                </button>
+                <span className="tabular-nums text-white/70">
+                  {i + 1} / {views.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => step(1)}
+                  aria-label="Next view"
+                  className="px-3 py-2 hover:text-white"
+                >
+                  →
+                </button>
               </>
             )}
-            <button type="button" onClick={() => dialog.current?.close()} aria-label="Close" className="ml-2 px-3 py-2 uppercase tracking-[0.14em] hover:text-white">Close ✕</button>
+            <button
+              type="button"
+              onClick={() => dialog.current?.close()}
+              aria-label="Close"
+              className="ml-2 px-3 py-2 uppercase tracking-[0.14em] hover:text-white"
+            >
+              Close ✕
+            </button>
           </div>
         </div>
       </dialog>

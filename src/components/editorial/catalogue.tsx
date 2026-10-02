@@ -38,10 +38,11 @@ export default function Catalogue() {
                 {s.items.map((d) => (
                   <div
                     key={d.slug}
-                    className={s.items.length === 1 ? "min-w-0 sm:col-span-2" : "min-w-0"}
+                    className={s.items.length === 1 ? "min-w-0 sm:col-span-2 xl:col-span-3" : "min-w-0"}
                   >
                     <DesignCard
                       design={d}
+                      wide={s.items.length === 1}
                       sizes={
                         s.items.length === 1
                           ? "(max-width: 640px) 100vw, 850px"
