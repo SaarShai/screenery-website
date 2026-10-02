@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
+import { motion, useMotionValue, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
+import { usePrefersStill } from "@/lib/use-prefers-still";
 
 /**
  * The two carry boxes as live CSS 3D models, to one scale, in the style of the original box
@@ -120,7 +121,7 @@ export default function BoxDiagram() {
     return () => ro.disconnect();
   }, []);
 
-  const reduce = useReducedMotion();
+  const reduce = usePrefersStill();
   const { scrollYProgress } = useScroll({ target: stage, offset: ["start end", "end start"] });
   const swing = useTransform(scrollYProgress, [0, 1], reduce ? [-24, -24] : [-62, 28]);
   const mx = useMotionValue(0);

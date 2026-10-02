@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
+import MotionProvider from "@/components/motion-provider";
 
 const display = Fraunces({ subsets: ["latin"], axes: ["opsz", "SOFT"], variable: "--font-display" });
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 
 const description =
-  "Felt play-screens for hotels: a children's play area in minutes. Illustrated, hand-finished in Britain, flat-packed when the guests check out.";
+  "Felt play-screens for hotels: a children's play area in minutes. Illustrated, hand-made in Britain, flat-packed when the guests check out.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.screenery.design"),
@@ -38,7 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   );
 }

@@ -6,21 +6,21 @@ export default function Hero() {
     <>
       {/* Hero: split, image left, type right */}
       <section className="relative grid min-h-[100svh] grid-cols-1 pt-[var(--nav-h)] lg:grid-cols-12">
-        <div className="relative lg:order-1 lg:col-span-7 min-h-[45svh] lg:min-h-0 overflow-hidden">
+        <div className="relative lg:order-1 lg:col-span-7 min-h-[38svh] sm:min-h-[45svh] lg:min-h-0 overflow-hidden">
           <Image src="/images/princess-v33-hero.jpg" alt="Princess Palace in a hotel suite" fill priority sizes="(max-width:1024px) 100vw, 58vw" className="object-cover" />
           <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#f6f1e8] to-transparent lg:hidden" />
         </div>
         <div className="lg:order-2 lg:col-span-5 flex flex-col justify-between px-6 pt-4 pb-10 md:px-12 lg:pl-12 lg:pr-8 lg:pt-16">
           <div>
             <p className="text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">Screenery™ — 2026 catalogue</p>
-            <h1 className="font-display mt-6 text-[clamp(2.75rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.02em]">
+            <h1 className="font-display mt-4 sm:mt-6 text-[clamp(2.75rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.02em]">
               Themed rooms,<br />
               <em className="font-light italic text-[#8b7355]">within minutes.</em>
             </h1>
-            <p className="mt-8 max-w-md text-[17px] leading-relaxed font-light text-[#5b574f]">
+            <p className="mt-6 sm:mt-8 max-w-md text-[17px] leading-relaxed font-light text-[#5b574f]">
               Felt play-screens for hotels: a children&rsquo;s play area in minutes. Illustrated, hand-made in Britain, flat-packed when the guests check out.
             </p>
-            <div className="mt-10 flex flex-wrap gap-2">
+            <div className="mt-8 sm:mt-10 flex flex-wrap gap-2">
               <a href="#standard" className="bg-[#17150f] px-3.5 py-3 text-[11px] uppercase tracking-[0.12em] text-[#f6f1e8] hover:bg-[#70593f] transition-colors">See the collection</a>
               <a href="#contact" className="border border-[#17150f]/30 px-3.5 py-3 text-[11px] uppercase tracking-[0.12em] hover:border-[#17150f] transition-colors">Request a quote</a>
               <a href="/festive" className="group inline-flex items-center gap-1.5 bg-[#b23a3a] px-3.5 py-3 text-[11px] font-medium uppercase tracking-[0.12em] text-white shadow-[inset_0_0_0_2px_#1f6b3a,inset_0_0_0_4px_#fff] animate-[festive-pulse_2.4s_ease-in-out_infinite] transition-colors hover:bg-[#9a2f2f] motion-reduce:animate-none">

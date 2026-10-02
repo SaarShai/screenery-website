@@ -1,17 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import {
   motion,
   useMotionValue,
-  useReducedMotion,
   useScroll,
   useSpring,
   useTransform,
   type MotionValue,
 } from "framer-motion";
 import type { Design } from "@/data/catalog";
+import { enquire } from "@/lib/enquiry";
+import { usePrefersStill } from "@/lib/use-prefers-still";
 
 type Shot = { d: Design; label: string; image: { src: string; w: number; h: number } };
 
@@ -28,14 +29,11 @@ export default function Showcase({ items }: { items: Design[] }) {
 
   const [i, setI] = useState(0);
   const dialog = useRef<HTMLDialogElement>(null);
+  const title = useId();
   const go = (k: number) => setI((k + n) % n);
   const open = (k: number) => {
     setI(k);
     dialog.current?.showModal();
-  };
-  const enquire = () => {
-    window.dispatchEvent(new CustomEvent("enquire", { detail: "A bespoke design" }));
-    document.getElementById("contact")?.scrollIntoView();
   };
 
   // Scroll over the stage tips it and drifts each photo by its depth; the cursor turns it.
@@ -57,13 +55,13 @@ export default function Showcase({ items }: { items: Design[] }) {
   }, []);
   const spots = narrow ? SPOTS_NARROW : SPOTS;
 
-  const reduce = useReducedMotion();
+  const reduce = usePrefersStill();
   const shown = shots[i];
 
   return (
     <>
       {reduce ? (
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div ref={stage} className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {shots.map((s, k) => (
             <button key={s.image.src} type="button" onClick={() => open(k)} aria-label={`Enlarge ${s.d.name}`} className="relative aspect-[3/2] overflow-hidden">
               <Image src={s.image.src} alt={`${s.d.name}: ${s.label}`} fill sizes="(max-width: 640px) 100vw, 405px" className="object-cover" />
@@ -98,13 +96,14 @@ export default function Showcase({ items }: { items: Design[] }) {
 
       <div className="mt-10 flex flex-col items-start gap-5 border-t border-[#17150f]/10 pt-10 md:flex-row md:items-center md:justify-between">
         <p className="font-display max-w-xl text-2xl leading-snug">Have a building, a mascot or a story in mind? We design it with you, from first sketch to finished set.</p>
-        <button type="button" onClick={enquire} className="shrink-0 bg-[#17150f] px-6 py-4 text-[12px] uppercase tracking-[0.14em] text-[#f6f1e8] transition-colors hover:bg-[#70593f]">
+        <button type="button" onClick={() => enquire("A bespoke design")} className="shrink-0 bg-[#17150f] px-6 py-4 text-[12px] uppercase tracking-[0.14em] text-[#f6f1e8] transition-colors hover:bg-[#70593f]">
           Enquire about a bespoke design →
         </button>
       </div>
 
       <dialog
         ref={dialog}
+        aria-labelledby={title}
         onClick={(e) => e.target === dialog.current && dialog.current.close()}
         onKeyDown={(e) => {
           if (e.key === "ArrowRight") go(i + 1);
@@ -114,7 +113,7 @@ export default function Showcase({ items }: { items: Design[] }) {
       >
         <Image src={shown.image.src} alt={`${shown.d.name}: ${shown.label}`} width={shown.image.w} height={shown.image.h} sizes="94vw" className="h-auto max-h-[82vh] w-auto max-w-[94vw] object-contain" />
         <div className="mt-3 flex items-center justify-between gap-6 text-[13px]">
-          <p>
+          <p id={title}>
             <span className="font-display text-lg">{shown.d.name}</span>
             <span className="ml-3 uppercase tracking-[0.14em] text-white/70">{shown.d.tagline}</span>
           </p>

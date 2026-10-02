@@ -2,25 +2,48 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { loadDraft, saveDraft } from "@/lib/enquiry";
 
 export default function Contact() {
   const ref = useRef(null);
+  const heading = useRef<HTMLHeadingElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
   const [designs, setDesigns] = useState<string[]>([]);
+  const [fields, setFields] = useState<Record<string, string>>({});
+  const [loaded, setLoaded] = useState(false);
 
-  // "Enquire about …" on a design card adds that design here.
+  // Restore the draft (designs and typed fields) from earlier in this tab, then keep it saved.
+  useEffect(() => {
+    const d = loadDraft();
+    setDesigns(d.designs);
+    setFields(d.fields);
+    setLoaded(true);
+  }, []);
+  useEffect(() => {
+    if (loaded) saveDraft({ designs, fields });
+  }, [loaded, designs, fields]);
+
+  // "Enquire about …" adds that design here, brings the form into view and moves focus to it.
   useEffect(() => {
     const add = (e: Event) => {
       const name = (e as CustomEvent<string>).detail;
       setDesigns((d) => (d.includes(name) ? d : [...d, name]));
       setSubmitted(false);
+      document.getElementById("contact")?.scrollIntoView();
+      heading.current?.focus({ preventScroll: true });
     };
     addEventListener("enquire", add);
     return () => removeEventListener("enquire", add);
   }, []);
+
+  const field = (k: string) => ({
+    name: k,
+    value: fields[k] ?? "",
+    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setFields((f) => ({ ...f, [k]: e.target.value })),
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -51,6 +74,8 @@ export default function Contact() {
       }
 
       setSubmitted(true);
+      setDesigns([]);
+      setFields({});
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
@@ -65,30 +90,38 @@ export default function Contact() {
       ref={ref}
     >
       <div className="max-w-3xl mx-auto text-center">
+        {/* Slide in only: the form must stay visible if scripts never load */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          initial={{ y: 30 }}
+          animate={isInView ? { y: 0 } : { y: 30 }}
           transition={{ duration: 0.8 }}
         >
           <p className="text-[13px] tracking-[0.3em] uppercase text-[#c4a97d] mb-6">
             Get in Touch
           </p>
-          <h2 className="font-display text-3xl md:text-5xl text-white leading-tight mb-6">
+          <h2 ref={heading} tabIndex={-1} className="font-display text-3xl md:text-5xl text-white leading-tight mb-6 outline-none">
             Bring Screenery to
             <br />
             your hotel
           </h2>
-          <p className="text-white/75 text-base mb-10 max-w-lg mx-auto">
+          <p className="text-white/75 text-base max-w-lg mx-auto">
             Interested in learning more? Our team will be in touch
             within 24&nbsp;hours.
+          </p>
+          <p className="mt-3 mb-10 text-white/60 text-[14px] max-w-lg mx-auto">
+            Or email Alicia at{" "}
+            <a href="mailto:alicia@wanderland.london" className="text-white/85 underline underline-offset-4 decoration-white/30 hover:decoration-white">
+              alicia@wanderland.london
+            </a>
+            . We use your details only to reply to your enquiry.
           </p>
         </motion.div>
 
         {!submitted ? (
           <motion.form
             onSubmit={handleSubmit}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            initial={{ y: 20 }}
+            animate={isInView ? { y: 0 } : { y: 20 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="space-y-6 text-left"
           >
@@ -99,7 +132,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
-                  name="name"
+                  {...field("name")}
                   id="contact-name"
                   autoComplete="name"
                   required
@@ -113,7 +146,7 @@ export default function Contact() {
                 </label>
                 <input
                   type="text"
-                  name="company"
+                  {...field("company")}
                   id="contact-company"
                   autoComplete="organization"
                   required
@@ -129,7 +162,7 @@ export default function Contact() {
               </label>
               <input
                 type="email"
-                name="email"
+                {...field("email")}
                   id="contact-email"
                   autoComplete="email"
                 required
@@ -143,7 +176,7 @@ export default function Contact() {
                 Message <span className="normal-case tracking-normal text-white/50">(optional)</span>
               </label>
               <textarea
-                name="message"
+                {...field("message")}
                 id="contact-message"
                 rows={3}
                 maxLength={2000}

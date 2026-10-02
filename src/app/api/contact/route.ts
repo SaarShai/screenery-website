@@ -8,7 +8,29 @@ const esc = (s: string) =>
 
 const clean = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
+// At most 5 enquiries per address in 10 minutes. The count lives in this server instance's
+// memory, so it slows a flood from one sender; it is not a hard limit across instances.
+const WINDOW = 10 * 60 * 1000;
+const LIMIT = 5;
+const recent = new Map<string, number[]>();
+function tooMany(request: Request) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || request.headers.get("x-real-ip") || "unknown";
+  const now = Date.now();
+  const times = (recent.get(ip) ?? []).filter((t) => now - t < WINDOW);
+  if (times.length >= LIMIT) return true;
+  times.push(now);
+  recent.set(ip, times);
+  if (recent.size > 5000) for (const [k, v] of recent) if (now - v[v.length - 1] >= WINDOW) recent.delete(k);
+  return false;
+}
+
 export async function POST(request: Request) {
+  if (tooMany(request)) {
+    return NextResponse.json(
+      { error: "Too many enquiries in a short time. Please wait a few minutes, or email alicia@wanderland.london." },
+      { status: 429 }
+    );
+  }
   try {
     const body = await request.json();
     // Honeypot: real visitors never see or fill this field.

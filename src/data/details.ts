@@ -3,7 +3,7 @@ export const details: { h: string; p: string[] }[] = [
   { h: "Installation", p: ["5 to 15 minutes to set up or take apart. No tools necessary. Designed to be modular for easy storage."] },
   {
     h: "Product properties",
-    p: ["Lightweight – below tipping risk thresholds. No risk of injury with suitable use. Soft-touch and safe for children."],
+    p: ["Lightweight – below tipping risk thresholds. Soft-touch and safe for children."],
   },
   {
     h: "Material properties",

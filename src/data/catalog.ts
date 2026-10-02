@@ -5,6 +5,7 @@ export type Variant = { label: string; image: Img };
 export type Design = {
   slug: string;
   name: string;
+  quoteName: string; // the name in the quote form; tells a bedwrapper from the play-screen of the same name
   tagline: string;
   description: string;
   price?: string;
@@ -37,6 +38,7 @@ function design(
   return {
     slug,
     name,
+    quoteName: section === "bedwrappers" ? `${name} bedwrapper` : name,
     tagline,
     description,
     price: price ?? "Price on enquiry",

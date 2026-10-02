@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { usePrefersStill } from "@/lib/use-prefers-still";
 import clientLogos from "@/data/hotel-logos.json";
 
 const COLS = 6;
@@ -11,7 +12,7 @@ const COLS = 6;
  * another in a diagonal wave from the top left, then settle. Hover brings back the colour.
  */
 export default function LogoWall() {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersStill();
   const item: Variants = {
     hidden: { opacity: 0, y: 36, scale: 0.82, filter: "blur(10px)" },
     show: (i: number) => ({

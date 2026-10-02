@@ -1,0 +1,51 @@
+"use client";
+
+import { useState } from "react";
+import { testimonials } from "@/data/testimonials";
+
+/**
+ * What hotels say: quotes drifting sideways in an endless bar under the logos. Hover or the
+ * pause button stops it; reduced motion gets a still row to scroll by hand.
+ */
+export default function Testimonials() {
+  const [paused, setPaused] = useState(false);
+  const n = testimonials.length;
+  if (!n) return null;
+
+  return (
+    <div className="mt-14 md:mt-20">
+      <div className="mx-auto flex max-w-5xl items-center justify-between gap-6">
+        <p className="text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">In their words</p>
+        <button
+          type="button"
+          onClick={() => setPaused((p) => !p)}
+          aria-pressed={paused}
+          className="py-2 text-[11px] uppercase tracking-[0.14em] text-[#5b574f] underline decoration-[#17150f]/20 underline-offset-4 hover:text-[#17150f] motion-reduce:hidden"
+        >
+          {paused ? "Play" : "Pause"}
+        </button>
+      </div>
+
+      <div className="-mx-6 mt-6 overflow-hidden border-y border-[#17150f]/10 [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] md:-mx-12 motion-reduce:overflow-x-auto motion-reduce:[mask-image:none]">
+        <ul
+          className="flex w-max animate-[marquee_linear_infinite] hover:[animation-play-state:paused] motion-reduce:animate-none"
+          style={{ animationDuration: `${n * 14}s`, animationPlayState: paused ? "paused" : undefined }}
+        >
+          {/* The list runs twice so the loop has no seam; the copy is hidden from screen readers */}
+          {[...testimonials, ...testimonials].map((t, k) => (
+            <li
+              key={k}
+              aria-hidden={k >= n || undefined}
+              className={`w-[min(82vw,460px)] shrink-0 border-r border-[#17150f]/10 px-8 py-8 md:px-10 ${k >= n ? "motion-reduce:hidden" : ""}`}
+            >
+              <blockquote className="font-display text-[19px] italic leading-snug md:text-[21px]">&ldquo;{t.quote}&rdquo;</blockquote>
+              <p className="mt-4 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
+                {t.name} <span className="text-[#17150f]/30">·</span> {t.role}
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
