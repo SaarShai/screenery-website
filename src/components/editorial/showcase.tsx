@@ -103,7 +103,7 @@ export default function Showcase({ items }: { items: Design[] }) {
       )}
 
       <div className="mt-10 flex flex-col items-start gap-5 border-t border-[#17150f]/10 pt-10 md:flex-row md:items-center md:justify-between">
-        <p className="font-display max-w-xl text-2xl leading-snug">Need a bespoke design for your hotel? Let&rsquo;s design it together.</p>
+        <p className="font-display max-w-xl text-2xl leading-snug">Looking for a bespoke design for your hotel? Let&rsquo;s design it together.</p>
         <button type="button" onClick={() => enquire("A bespoke design")} className="shrink-0 bg-[#17150f] px-6 py-4 text-[12px] uppercase tracking-[0.14em] text-[#f6f1e8] transition-colors hover:bg-[#70593f]">
           Request a design →
         </button>

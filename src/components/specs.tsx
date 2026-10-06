@@ -122,13 +122,13 @@ export default function Specs() {
         </FadeInWhenVisible>
 
         <div className="grid gap-16 md:grid-cols-12 md:gap-16">
-          {/* Left: the two shipping boxes, to scale */}
+          {/* Left: the two carry cases, to scale */}
           <div className="min-w-0 md:col-span-6">
             <div className="md:sticky md:top-[calc(var(--nav-h)+3rem)]">
               <FadeInWhenVisible delay={0.25}>
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
-                    Carry box
+                    Carry case
                   </p>
                   <div className="mt-6">
                     <BoxDiagram />

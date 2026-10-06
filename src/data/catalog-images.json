@@ -29,25 +29,16 @@
  ],
  "standard/marine": [
   {
-   "src": "/catalog/standard/marine/hero.jpg",
-   "w": 1659,
-   "h": 1800
+   "src": "/catalog/standard/marine/studio.jpg",
+   "w": 1536,
+   "h": 1024
   },
   {
-   "src": "/catalog/standard/marine/v2.jpg",
-   "w": 1538,
-   "h": 1800
+   "src": "/catalog/standard/marine/pool.jpg",
+   "w": 1536,
+   "h": 1024
   },
-  {
-   "src": "/catalog/standard/marine/v3.jpg",
-   "w": 1800,
-   "h": 1211
-  },
-  {
-   "src": "/catalog/standard/marine/room1.jpg",
-   "w": 1800,
-   "h": 1347
-  }
+  null
  ],
  "standard/princess": [
   {
@@ -56,7 +47,7 @@
    "h": 1024
   },
   {
-   "src": "/catalog/standard/princess/v2-2.jpg",
+   "src": "/catalog/standard/princess/v2-soft.jpg",
    "w": 1536,
    "h": 1024
   },
@@ -238,7 +229,7 @@
  ],
  "standard/castle-xl": [
   {
-   "src": "/catalog/standard/castle-xl/hero.jpg",
+   "src": "/catalog/standard/castle-xl/hero-zoom.jpg",
    "w": 1800,
    "h": 1200
   },
@@ -285,15 +276,6 @@
  "bespoke/sandcastle": [
   {
    "src": "/catalog/bespoke/sandcastle/hero.jpg",
-   "w": 1536,
-   "h": 1024
-  },
-  null,
-  null
- ],
- "bespoke/radisson": [
-  {
-   "src": "/catalog/bespoke/radisson/suite.jpg",
    "w": 1536,
    "h": 1024
   },

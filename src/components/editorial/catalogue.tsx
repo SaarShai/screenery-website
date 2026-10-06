@@ -17,6 +17,9 @@ export default function Catalogue() {
             <h2 className="font-display text-[clamp(2.4rem,5vw,4rem)] leading-[1.02] tracking-[-0.02em]">
               {s.name}
             </h2>
+            {s.subtitle && (
+              <p className="mt-4 max-w-2xl text-[17px] font-light leading-relaxed text-[#5b574f]">{s.subtitle}</p>
+            )}
 
             {s.slug === "bespoke" ? (
               <Showcase items={s.items} />
