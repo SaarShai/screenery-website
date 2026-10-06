@@ -1,0 +1,25 @@
+.mark { display: block; overflow: visible; }
+
+/* Start the endless fold as each panel finishes entering; never hold between cycles. */
+.panel {
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: unfold 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) both,
+             fold 1.2s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 130ms), calc(0.7s + var(--i) * 130ms);
+}
+
+@keyframes unfold {
+  from { transform: scaleX(0.04); opacity: 0; }
+  35% { opacity: 1; }
+  to { transform: none; opacity: 1; }
+}
+
+@keyframes fold {
+  from { transform: none; }
+  to { transform: scaleX(0.82); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel { animation: none; }
+}

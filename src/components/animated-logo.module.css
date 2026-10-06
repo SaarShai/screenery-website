@@ -45,10 +45,7 @@
   to { transform: none; opacity: 1; }
 }
 
-/* Seen this session (set before paint), or reduced motion: no entrance */
-:global(:root[data-logo-seen]) .logo.enter .p,
-:global(:root[data-logo-seen]) .logo.enter .l,
-:global(:root[data-logo-seen]) .logo.enter .s { animation: none; }
+/* Reduced motion shows the still logo. */
 @media (prefers-reduced-motion: reduce) {
   .logo .p, .logo .l, .logo .s { animation: none !important; }
 }

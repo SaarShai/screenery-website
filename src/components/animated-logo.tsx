@@ -1,16 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import LogoPanels from "./logo-panels";
 import s from "./animated-logo.module.css";
 
 type Phase = "enter" | "idle" | "tick";
 
 /**
  * The Wanderland Screenery logo with motion (owner's pick, variant A): the screen unfolds and the
- * letters drop in and bounce, once per visit; afterwards, near the top of the page, the letters
- * ripple in a small wave every few seconds, and on hover. Reduced motion shows the still logo.
+ * letters drop in and bounce on page load; afterwards, the letters ripple in a small wave every
+ * two seconds, and on hover. Reduced motion shows the still logo.
  */
-export default function AnimatedLogo({ every = 13000, className }: { every?: number; className?: string }) {
+export default function AnimatedLogo({ every = 2000, className }: { every?: number; className?: string }) {
   const [phase, setPhase] = useState<Phase>("enter");
   const tick = () => {
     setPhase("tick");
@@ -18,16 +19,12 @@ export default function AnimatedLogo({ every = 13000, className }: { every?: num
   };
   // The entrance runs from the first paint (CSS); afterwards the logo rests.
   useEffect(() => {
-    try {
-      sessionStorage.setItem("logo-seen", "1");
-    } catch {}
     const t = setTimeout(() => setPhase("idle"), 2000);
     return () => clearTimeout(t);
   }, []);
   useEffect(() => {
     if (!every) return;
-    // Only near the top of the page, so nothing moves while someone reads.
-    const t = setInterval(() => document.visibilityState === "visible" && scrollY < 200 && tick(), every);
+    const t = setInterval(() => document.visibilityState === "visible" && tick(), every);
     return () => clearInterval(t);
   }, [every]);
 
@@ -39,22 +36,7 @@ export default function AnimatedLogo({ every = 13000, className }: { every?: num
       className={`${s.logo} ${phase === "enter" ? s.enter : phase === "tick" ? s.tick : ""} ${className ?? ""}`}
       onMouseEnter={() => phase === "idle" && tick()}
     >
-      {/* Icon: four folding-screen panels */}
-      <g className={s.p} style={{ "--i": 0 } as React.CSSProperties} data-panel={0}>
-        <polygon fill="#2eb3a4" points="182.42 488.48 22.79 453.46 22.79 103.23 182.42 138.25 182.42 488.48" />
-        <polygon fill="#004a73" points="162.33 454.13 182.42 449.73 182.42 138.25 162.33 133.84 162.33 454.13" />
-      </g>
-      <g className={s.p} style={{ "--i": 1 } as React.CSSProperties} data-panel={1}>
-        <path fill="#ed686a" d="M162.34,103.9v350.23l47.17-10.35v-178.98c-.3-14.68,14-30.21,31.96-34.69,17.96-4.48,32.77,3.8,33.09,18.48v180.92l47.4-10.4V68.88l-159.62,35.02Z" />
-      </g>
-      <g className={s.p} style={{ "--i": 2 } as React.CSSProperties} data-panel={2}>
-        <polygon fill="#fdc424" points="460.61 481.94 300.99 446.92 300.99 96.69 460.61 131.72 460.61 481.94" />
-        <polygon fill="#d73316" points="321.96 419.11 321.96 101.3 300.99 96.69 300.99 423.71 321.96 419.11" />
-      </g>
-      <g className={s.p} style={{ "--i": 3 } as React.CSSProperties} data-panel={3}>
-        <path fill="#42afe4" d="M440.46,111.79v350.23l159.62-35.02V76.77l-159.62,35.02ZM559.88,237.64l-66.61,17.51v-58.39c-.31-15.04,14.34-30.94,32.73-35.52,18.39-4.58,33.56,3.89,33.88,18.93v57.48Z" />
-        <polygon fill="#248336" points="440.46 462.02 460.61 457.6 460.61 131.72 440.46 127.29 440.46 462.02" />
-      </g>
+      <LogoPanels panelClassName={s.p} />
       {/* WANDERLAND: each letter with the overlap it shares with the letter before */}
       <g className={s.l} style={{ "--i": 0 } as React.CSSProperties}>
         <polygon fill="#ed686a" points="975.36 65.89 885.08 65.89 758.47 65.89 668.19 65.89 777.35 310.08 822.2 208.43 867.64 310.08 975.36 65.89" />

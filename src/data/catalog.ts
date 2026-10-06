@@ -19,7 +19,7 @@ export type Section = {
   name: string;
   subtitle?: string; // one line under the section name
   items: Design[];
-  world?: { city: string; note: string; image: Img }[]; // "Around the world" strip under the cards
+  moreCities?: { city: string; note: string; image: Img }[];
 };
 
 const shots = images as Record<string, (Img | null)[]>;
@@ -95,10 +95,11 @@ export const sections: Section[] = [
       design("cities", "new-york", "New York", "Skyline", "The Manhattan skyline, from the Empire State to Lady Liberty.", ["Studio", "", "In a hotel lobby"], "From £1,250"),
       design("cities", "san-francisco", "San Francisco", "Skyline", "Cable cars, painted ladies and the Golden Gate.", ["In a suite", "Cable car", ""], "From £1,250"),
     ],
-    world: [
-      { city: "Chicago", note: "Trump International Hotel & Tower", image: { src: "/catalog/world/chicago.jpg", w: 1536, h: 1024 } },
-      { city: "Zurich", note: "Lake Zurich and the old town", image: { src: "/catalog/world/zurich-day-2.jpg", w: 1536, h: 1024 } },
-      { city: "Washington, D.C.", note: "The Capitol", image: { src: "/catalog/world/washington.jpg", w: 1536, h: 1024 } },
+    moreCities: [
+      { city: "Chicago", note: "Trump International Hotel & Tower", image: { src: "/catalog/cities/chicago/chicago.jpg", w: 1536, h: 1024 } },
+      { city: "Zurich", note: "Lake Zurich and the old town", image: { src: "/catalog/cities/zurich/zurich-day-2.jpg", w: 1536, h: 1024 } },
+      { city: "Washington, D.C.", note: "The Capitol", image: { src: "/catalog/cities/washington/washington.jpg", w: 1536, h: 1024 } },
+      { city: "Las Vegas", note: "Welcome to Fabulous Las Vegas", image: { src: "/catalog/cities/las-vegas/room-option-c.png", w: 1536, h: 1024 } },
     ],
   },
   {

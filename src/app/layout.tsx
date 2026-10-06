@@ -3,9 +3,6 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import MotionProvider from "@/components/motion-provider";
 
-// Runs before first paint: a visitor who has seen the logo's entrance this session gets the still logo.
-const logoSeenScript = `try{sessionStorage.getItem("logo-seen")&&document.documentElement.setAttribute("data-logo-seen","")}catch(e){}`;
-
 const display = Fraunces({ subsets: ["latin"], axes: ["opsz", "SOFT"], variable: "--font-display" });
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 
@@ -41,10 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: logoSeenScript }} />
-      </head>
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <body className="antialiased">
         <MotionProvider>{children}</MotionProvider>
       </body>
