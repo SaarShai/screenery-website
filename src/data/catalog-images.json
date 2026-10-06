@@ -106,16 +106,16 @@
  ],
  "standard/cafe": [
   {
-   "src": "/catalog/standard/cafe/hero.jpg",
-   "w": 1800,
-   "h": 1200
+   "src": "/catalog/standard/cafe/hero-v50-through-hatch.png",
+   "w": 1536,
+   "h": 1024
   },
   null,
   null,
   {
-   "src": "/catalog/standard/cafe/room1.jpg",
-   "w": 1800,
-   "h": 1200
+   "src": "/catalog/standard/cafe/room-v50-through-hatch.png",
+   "w": 1536,
+   "h": 1024
   }
  ],
  "cities/london": [
@@ -163,7 +163,7 @@
  ],
  "cities/san-francisco": [
   {
-   "src": "/catalog/cities/san-francisco/room-2.jpg",
+   "src": "/catalog/cities/san-francisco/room-option-2-reading.png",
    "w": 1536,
    "h": 1024
   },

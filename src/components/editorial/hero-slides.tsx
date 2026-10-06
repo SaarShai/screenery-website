@@ -10,7 +10,7 @@ const SLIDES = [
   { src: "/catalog/standard/space/room1.jpg", alt: "Spaceship in a hotel suite" },
   { src: "/festive/hero.jpg", alt: "Gingerbread House and Biscuit Bed Wrapper in a hotel room" },
   { src: "/catalog/standard/arabian/hero.jpg", alt: "Arabian Nights in the studio" },
-  { src: "/catalog/standard/cafe/room1.jpg", alt: "Kids Cafe in a hotel restaurant" },
+  { src: "/catalog/standard/cafe/room-v50-through-hatch.png", alt: "Kids Cafe in a hotel restaurant" },
   { src: "/catalog/standard/birthday/room1.jpg", alt: "Birthday in a hotel room" },
   { src: "/catalog/standard/reading/room1.jpg", alt: "Reading Corner in a hotel lobby" },
   { src: "/catalog/standard/hospital/room1.jpg", alt: "Hospital in a hotel room" },
