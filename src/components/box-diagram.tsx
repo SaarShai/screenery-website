@@ -8,11 +8,12 @@ import { usePrefersStill } from "@/lib/use-prefers-still";
  * The two carry boxes as live CSS 3D models, to one scale, in the style of the original box
  * drawing (public/images/model diagrams/diagrams-box.png): white board, ink edges, confetti,
  * the outlined Wanderland Screenery logo cut from that drawing, and a carry handle. Scrolling swings them round; the cursor turns them.
- * Sizes are the ones the owner gave for the website (2026-10-02).
+ * Outer carton sizes from the product records (ground truth/box-framework.md): Primary 1120 × 710 × 270,
+ * Large 1500 × 1060 × 160 mm (Large updated 2026-10-12).
  */
 const BOXES = [
   { name: "Standard case", note: "Most designs", w: 112, h: 71, d: 27 },
-  { name: "Large case", note: "Designs with longer panels", w: 145, h: 98, d: 15 },
+  { name: "Large case", note: "Designs with longer panels", w: 150, h: 106, d: 16 },
 ];
 
 const ink = "#17150f";
