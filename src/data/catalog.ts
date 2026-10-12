@@ -107,7 +107,7 @@ export const sections: Section[] = [
     name: "Bedwrappers",
     subtitle: "Around every bed. Single and double sizes, panels 75 cm high.",
     items: [
-      design("bedwrappers", "marine", "Marine Life", "Single bed", "Whales, turtles and coral.", ["In a suite", "", ""], "From £850"),
+      design("bedwrappers", "marine", "Marine Life", "Single bed", "Whales, turtles and coral.", ["In a suite", "", ""]),
       design("bedwrappers", "chinese-dragon", "Chinese Dragon", "Lunar New Year", "A red and gold dragon curls around the bed.", ["In a suite", "", ""]),
       design("bedwrappers", "arabian-nights", "Arabian Nights", "Ramadan and Eid", "Domes, arches and lanterns around the bed.", ["In a suite", "", ""]),
       design("bedwrappers", "alebrijes", "Alebrijes", "Mexican folk art", "Winged cats, jaguars and dragons in bright folk-art colours.", ["In a suite", "", ""]),

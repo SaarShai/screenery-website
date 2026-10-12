@@ -177,8 +177,8 @@
  "bedwrappers/marine": [
   {
    "src": "/catalog/bedwrappers/marine/single.jpg",
-   "w": 1536,
-   "h": 1024
+   "w": 1024,
+   "h": 683
   },
   null,
   null
@@ -293,8 +293,8 @@
  "bedwrappers/chinese-dragon": [
   {
    "src": "/catalog/bedwrappers/chinese-dragon/hero.jpg",
-   "w": 1800,
-   "h": 1208
+   "w": 1200,
+   "h": 800
   },
   null,
   null
@@ -302,8 +302,8 @@
  "bedwrappers/arabian-nights": [
   {
    "src": "/catalog/bedwrappers/arabian-nights/hero.jpg",
-   "w": 1800,
-   "h": 1307
+   "w": 1200,
+   "h": 800
   },
   null,
   null
@@ -311,8 +311,8 @@
  "bedwrappers/alebrijes": [
   {
    "src": "/catalog/bedwrappers/alebrijes/hero.jpg",
-   "w": 1536,
-   "h": 1024
+   "w": 1024,
+   "h": 683
   },
   null,
   null
