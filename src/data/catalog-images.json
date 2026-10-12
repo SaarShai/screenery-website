@@ -137,7 +137,7 @@
  ],
  "cities/paris": [
   {
-   "src": "/catalog/cities/paris/room2.jpg",
+   "src": "/catalog/cities/paris/room-studio.jpg",
    "w": 1536,
    "h": 1024
   },
@@ -176,9 +176,9 @@
  ],
  "bedwrappers/marine": [
   {
-   "src": "/catalog/bedwrappers/marine/hero.jpg",
-   "w": 1800,
-   "h": 1211
+   "src": "/catalog/bedwrappers/marine/single.jpg",
+   "w": 1536,
+   "h": 1024
   },
   null,
   null
@@ -212,7 +212,11 @@
    "w": 1536,
    "h": 1024
   },
-  null
+  {
+   "src": "/catalog/standard/police/suite.jpg",
+   "w": 1536,
+   "h": 1024
+  }
  ],
  "standard/fire-station": [
   {
@@ -225,7 +229,11 @@
    "w": 1536,
    "h": 1024
   },
-  null
+  {
+   "src": "/catalog/standard/fire-station/suite.jpg",
+   "w": 1536,
+   "h": 1024
+  }
  ],
  "standard/castle-xl": [
   {
@@ -276,6 +284,42 @@
  "bespoke/sandcastle": [
   {
    "src": "/catalog/bespoke/sandcastle/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  null
+ ],
+ "bedwrappers/chinese-dragon": [
+  {
+   "src": "/catalog/bedwrappers/chinese-dragon/hero.jpg",
+   "w": 1800,
+   "h": 1208
+  },
+  null,
+  null
+ ],
+ "bedwrappers/arabian-nights": [
+  {
+   "src": "/catalog/bedwrappers/arabian-nights/hero.jpg",
+   "w": 1800,
+   "h": 1307
+  },
+  null,
+  null
+ ],
+ "bedwrappers/alebrijes": [
+  {
+   "src": "/catalog/bedwrappers/alebrijes/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  null
+ ],
+ "bedwrappers/twin-room": [
+  {
+   "src": "/catalog/bedwrappers/twin-room/hero.jpg",
    "w": 1536,
    "h": 1024
   },

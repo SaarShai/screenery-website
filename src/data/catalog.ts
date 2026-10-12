@@ -69,8 +69,8 @@ export const sections: Section[] = [
       design("standard", "reading", "Reading Corner", "Storybook retreat", "After a long day of travel, the young ones need a cosy moment to relax.", ["Studio", "", "In a room"], "From £1,250"),
       design("standard", "arabian", "Arabian Nights", "Luxe edition", "Shimmering palaces, starlit deserts and treasures untold. No lamp-rubbing required.", ["Front", "Angled", "In a room"], "From £1,350"),
       design("standard", "cafe", "Kids Cafe", "Sweet delights", "Every day is opening day at the sweetest spot in town.", ["Front", "Back", "In a hotel restaurant"], "From £1,250"),
-      design("standard", "police", "Police Station", "On patrol", "Blue lights, a patrol car and a lookout tower. Little officers keep the suite safe and sound.", ["With a cadet", "Studio", "On duty"]),
-      design("standard", "fire-station", "Fire Station", "To the rescue", "A red fire engine, a bell tower and big arched doors. Ready for the next call-out, siren optional.", ["Two firefighters", "Studio", "Wide"]),
+      design("standard", "police", "Police Station", "On patrol", "Blue lights, a patrol car and a lookout tower. Little officers keep the suite safe and sound.", ["With a cadet", "Studio", "In a hotel suite"]),
+      design("standard", "fire-station", "Fire Station", "To the rescue", "A red fire engine, a bell tower and big arched doors. Ready for the next call-out, siren optional.", ["Two firefighters", "Studio", "In a hotel suite"]),
       design("standard", "hospital", "Hospital", "Little doctors", "An emergency bay with its ambulance, a rooftop helipad and a park bench for recovering teddies.", ["Studio", "", "In a room"]),
     ],
   },
@@ -105,8 +105,13 @@ export const sections: Section[] = [
   {
     slug: "bedwrappers",
     name: "Bedwrappers",
+    subtitle: "Around every bed. Single and double sizes, panels 75 cm high.",
     items: [
-      design("bedwrappers", "marine", "Marine Life", "Twin beds", "Coral and clownfish for a twin room.", ["In a suite", "Twin beds", "Twin room"], "From £850"),
+      design("bedwrappers", "marine", "Marine Life", "Single bed", "Whales, turtles and coral.", ["In a suite", "", ""], "From £850"),
+      design("bedwrappers", "chinese-dragon", "Chinese Dragon", "Lunar New Year", "A red and gold dragon curls around the bed.", ["In a suite", "", ""]),
+      design("bedwrappers", "arabian-nights", "Arabian Nights", "Ramadan and Eid", "Domes, arches and lanterns around the bed.", ["In a suite", "", ""]),
+      design("bedwrappers", "alebrijes", "Alebrijes", "Mexican folk art", "Winged cats, jaguars and dragons in bright folk-art colours.", ["In a suite", "", ""]),
+      design("bedwrappers", "twin-room", "Twin room", "Meadow and autumn", "A lamb in a clover meadow and a fox in autumn leaves, one for each bed.", ["In a twin room", "", ""]),
     ],
   },
 ];

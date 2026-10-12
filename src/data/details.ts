@@ -25,7 +25,7 @@ export const details: { h: string; p: string[] }[] = [
   {
     h: "Durability & re-usability",
     p: [
-      "Screenery is designed for multiple uses, unlike materials such as cardboard or foam. The material does not wear and tear, nor does the colour or print fade over time. Screenery is weatherproof and waterproof and needs no special storage conditions; suitable for rooms as well as public and outdoor spaces. Used with due care, it should last for many years.",
+      "Screenery is designed for multiple uses, unlike materials such as cardboard or foam. The material does not wear and tear, nor does the colour or print fade over time. Screenery is weatherproof and waterproof.",
     ],
   },
 ];
