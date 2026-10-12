@@ -46,6 +46,31 @@ export default function Catalogue() {
                     />
                   </div>
                 ))}
+                {/* Bedwrappers: the single and double bed models from the catalogue (page 18), in the cell after the five designs */}
+                {s.slug === "bedwrappers" && (
+                  <div className="flex min-w-0 flex-col justify-center">
+                    <div className="grid grid-cols-2 items-end gap-6">
+                      {[
+                        { src: "bed-single.png", name: "Single", bed: "95 × 200", outer: "112 × 217", w: 900, h: 700 },
+                        { src: "bed-double.png", name: "Double", bed: "151 × 208", outer: "168 × 225", w: 900, h: 655 },
+                      ].map((b) => (
+                        <figure key={b.name} className="text-center">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={`/images/model diagrams/${b.src}`} alt={`${b.name} bedwrapper model`} width={b.w} height={b.h} className="h-auto w-full" />
+                          <figcaption className="mt-2">
+                            <p className="font-display text-[17px] leading-tight">{b.name}</p>
+                            <p className="mt-1 text-[12px] font-light leading-snug tabular-nums text-[#5b574f]">
+                              bed {b.bed} cm
+                              <br />
+                              outer {b.outer} cm
+                            </p>
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                    <p className="mt-6 text-center text-[11px] uppercase tracking-[0.14em] text-[#6f5a41]">Panel height 75 cm · single and double sizes</p>
+                  </div>
+                )}
               </div>
             )}
             {s.moreCities && <CityGallery places={s.moreCities} />}
