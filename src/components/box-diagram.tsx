@@ -8,11 +8,12 @@ import { usePrefersStill } from "@/lib/use-prefers-still";
  * The two carry boxes as live CSS 3D models, to one scale, in the style of the original box
  * drawing (public/images/model diagrams/diagrams-box.png): white board, ink edges, confetti,
  * the outlined Wanderland Screenery logo cut from that drawing, and a carry handle. Scrolling swings them round; the cursor turns them.
- * Sizes are the ones the owner gave for the website (2026-10-02).
+ * Outer carton sizes from the product records (ground truth/box-framework.md): Primary 1120 × 710 × 270,
+ * Large 1500 × 1060 × 160 mm (Large updated 2026-10-12).
  */
 const BOXES = [
   { name: "Standard case", note: "Most designs", w: 112, h: 71, d: 27 },
-  { name: "Large case", note: "Designs with longer panels", w: 145, h: 98, d: 15 },
+  { name: "Large case", note: "Designs with longer panels", w: 150, h: 106, d: 16 },
 ];
 
 const ink = "#17150f";
@@ -103,7 +104,8 @@ function Box3D({ w, h, d, k, rx, ry }: { w: number; h: number; d: number; k: num
   );
 }
 
-export default function BoxDiagram() {
+/** rowBelow: below this window width the boxes always share one row, scaled down to fit (under the trolley on phones). */
+export default function BoxDiagram({ rowBelow = 0 }: { rowBelow?: number }) {
   const stage = useRef<HTMLDivElement>(null);
   const [k, setK] = useState(1.4);
   const [stack, setStack] = useState(false);
@@ -114,12 +116,13 @@ export default function BoxDiagram() {
     const ro = new ResizeObserver(([e]) => {
       const w = e.contentRect.width;
       const side = (w - 2 * 95 - 24) / (112 + 150);
-      setStack(side < 1.1);
-      setK(0.88 * Math.min(1.9, side < 1.1 ? (w - 95) / 150 : side)); // headroom for the turn
+      const s = side < 1.1 && window.innerWidth >= rowBelow;
+      setStack(s);
+      setK(0.88 * Math.min(1.9, s ? (w - 95) / 150 : side)); // headroom for the turn
     });
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
+  }, [rowBelow]);
 
   const reduce = usePrefersStill();
   const { scrollYProgress } = useScroll({ target: stage, offset: ["start end", "end start"] });

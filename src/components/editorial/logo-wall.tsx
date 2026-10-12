@@ -6,7 +6,7 @@ import { usePrefersStill } from "@/lib/use-prefers-still";
 import allLogos from "@/data/hotel-logos.json";
 
 // Brands with a testimonial show their logo there instead.
-const quoted = new Set(["Kempinski", "Hilton", "Langham Hospitality Group", "St. Regis", "Mandarin Oriental"]);
+const quoted = new Set(["Kempinski", "Hilton", "Langham Hospitality Group", "St. Regis"]); // Mandarin Oriental stays on the wall too (owner, 2026-10-12)
 const clientLogos = allLogos.filter((l) => !quoted.has(l.alt));
 
 const COLS = 6;

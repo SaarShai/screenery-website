@@ -130,8 +130,24 @@ export default function Specs() {
                   <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
                     Carry case
                   </p>
-                  <div className="mt-6">
-                    <BoxDiagram />
+                  {/* The trolley (both cases standing on end), then the two cases: side by side from md up; on phones the cases share one row below */}
+                  <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-end md:gap-6">
+                    <figure className="mx-auto w-[58%] max-w-[260px] shrink-0 md:mx-0 md:w-[40%]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/images/model diagrams/trolley.svg"
+                        alt="Both carry cases standing on end on a standard hotel luggage trolley"
+                        className="h-auto w-full"
+                      />
+                      <figcaption className="mt-2 text-[11px] font-light leading-snug text-[#5b574f]">
+                        Standard hotel luggage trolley
+                        <br />
+                        deck 112 × 61 cm · 193 cm high
+                      </figcaption>
+                    </figure>
+                    <div className="min-w-0 flex-1">
+                      <BoxDiagram rowBelow={768} />
+                    </div>
                   </div>
                 </div>
               </FadeInWhenVisible>
