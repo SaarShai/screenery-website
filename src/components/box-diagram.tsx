@@ -112,7 +112,7 @@ export default function BoxDiagram({ rowBelow = 0 }: { rowBelow?: number }) {
   useEffect(() => {
     const el = stage.current;
     if (!el) return;
-    // Side by side when both boxes fit with room for their labels; otherwise one above the other.
+    // Always turned (never face-on), so the depth reads. Side by side when both boxes fit with room for their labels; otherwise one above the other.
     const ro = new ResizeObserver(([e]) => {
       const w = e.contentRect.width;
       const side = (w - 2 * 95 - 24) / (112 + 150);
@@ -126,7 +126,7 @@ export default function BoxDiagram({ rowBelow = 0 }: { rowBelow?: number }) {
 
   const reduce = usePrefersStill();
   const { scrollYProgress } = useScroll({ target: stage, offset: ["start end", "end start"] });
-  const swing = useTransform(scrollYProgress, [0, 1], reduce ? [-24, -24] : [-62, 28]);
+  const swing = useTransform(scrollYProgress, [0, 1], reduce ? [-28, -28] : [-58, -18]);
   const mx = useMotionValue(0);
   const my = useMotionValue(0.15);
   const turn = useTransform(() => swing.get() + mx.get() * 30);
