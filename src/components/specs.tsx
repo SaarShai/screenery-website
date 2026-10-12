@@ -121,18 +121,18 @@ export default function Specs() {
           </div>
         </FadeInWhenVisible>
 
-        <div className="grid gap-16 md:grid-cols-12 md:gap-16">
+        <div className="grid gap-16 lg:grid-cols-12 lg:gap-16">
           {/* Left: the two carry cases, to scale */}
-          <div className="min-w-0 md:col-span-6">
-            <div className="md:sticky md:top-[calc(var(--nav-h)+3rem)]">
+          <div className="min-w-0 lg:col-span-6">
+            <div className="lg:sticky lg:top-[calc(var(--nav-h)+3rem)]">
               <FadeInWhenVisible delay={0.25}>
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
                     Carry case
                   </p>
-                  {/* The trolley (both cases standing on end), then the two cases: side by side from md up; on phones the cases share one row below */}
-                  <div className="mt-6 flex flex-col gap-8 md:flex-row md:items-end md:gap-6">
-                    <figure className="mx-auto w-[58%] max-w-[260px] shrink-0 md:mx-0 md:w-[40%]">
+                  {/* The trolley (both cases standing on end), then the two cases: side by side from xl up; narrower, the cases share one row below */}
+                  <div className="mt-6 flex flex-col gap-8 xl:flex-row xl:items-end xl:gap-6">
+                    <figure className="mx-auto w-[58%] max-w-[260px] shrink-0 xl:mx-0 xl:w-[40%]">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="/images/model diagrams/trolley.svg"
@@ -146,7 +146,7 @@ export default function Specs() {
                       </figcaption>
                     </figure>
                     <div className="min-w-0 flex-1">
-                      <BoxDiagram rowBelow={768} />
+                      <BoxDiagram rowBelow={1280} />
                     </div>
                   </div>
                 </div>
@@ -155,7 +155,7 @@ export default function Specs() {
           </div>
 
           {/* Right: details, as on the festive page */}
-          <div className="md:col-span-6 md:col-start-7">
+          <div className="lg:col-span-6 lg:col-start-7">
             {brief.map((s, i) => (
               <FadeInWhenVisible key={s.h} delay={i * 0.04} y={20}>
                 <div className="border-b border-[#e5e2dc] py-5 first:pt-0">
