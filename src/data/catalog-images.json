@@ -275,9 +275,9 @@
  ],
  "bespoke/the-charles": [
   {
-   "src": "/catalog/bespoke/the-charles/hero.png",
-   "w": 1536,
-   "h": 1024
+   "src": "/catalog/bespoke/the-charles/hero.jpg",
+   "w": 2150,
+   "h": 1434
   },
   null,
   null
@@ -326,5 +326,28 @@
   },
   null,
   null
+ ],
+ "standard/gingerbread": [
+  {
+   "src": "/catalog/standard/gingerbread/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/gingerbread/studio.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  {
+   "src": "/catalog/standard/gingerbread/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/standard/gingerbread/room2.jpg",
+   "w": 1536,
+   "h": 1024
+  }
  ]
 }
