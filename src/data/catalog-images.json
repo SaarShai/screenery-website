@@ -273,6 +273,15 @@
   null,
   null
  ],
+ "bespoke/the-charles": [
+  {
+   "src": "/catalog/bespoke/the-charles/hero.png",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  null
+ ],
  "bespoke/sandcastle": [
   {
    "src": "/catalog/bespoke/sandcastle/hero.jpg",

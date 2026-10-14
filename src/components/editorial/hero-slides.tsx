@@ -6,7 +6,7 @@ import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import { usePrefersStill } from "@/lib/use-prefers-still";
 
 const SLIDES = [
-  { src: "/images/princess-v33-hero.jpg", alt: "Princess Palace in a hotel suite" },
+  { src: "/images/birthday-hotel-hero.jpg", alt: "Birthday in a hotel suite" },
   { src: "/catalog/standard/space/room1.jpg", alt: "Spaceship in a hotel suite" },
   { src: "/festive/hero.jpg", alt: "Gingerbread House and Biscuit Bed Wrapper in a hotel room" },
   { src: "/catalog/standard/arabian/hero.jpg", alt: "Arabian Nights in the studio" },
