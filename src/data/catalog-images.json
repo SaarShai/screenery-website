@@ -333,17 +333,9 @@
    "w": 1536,
    "h": 1024
   },
-  {
-   "src": "/catalog/standard/gingerbread/studio.jpg",
-   "w": 1536,
-   "h": 1024
-  },
   null,
-  {
-   "src": "/catalog/standard/gingerbread/room1.jpg",
-   "w": 1536,
-   "h": 1024
-  },
+  null,
+  null,
   {
    "src": "/catalog/standard/gingerbread/room2.jpg",
    "w": 1536,
