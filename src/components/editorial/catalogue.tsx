@@ -1,17 +1,19 @@
 import DesignCard from "@/components/catalog/design-card";
 import Showcase from "@/components/editorial/showcase";
 import CityGallery from "@/components/editorial/city-gallery";
+import Lineup from "@/components/editorial/lineup";
 import { sections } from "@/data/catalog";
 
 export default function Catalogue() {
   return (
     <>
+      <Lineup />
       {/* Catalogue sections */}
       {sections.map((s, i) => (
         <section
           key={s.slug}
           id={s.slug}
-          className={`px-6 py-12 md:px-12 md:py-16 ${i % 2 ? "bg-[#efe9df]" : ""}`}
+          className={`px-6 py-12 md:px-12 md:py-16 ${i % 2 ? "" : "bg-[#efe9df]"}`}
         >
           <div className="mx-auto max-w-7xl">
             <h2 className="font-display text-[clamp(2.4rem,5vw,4rem)] leading-[1.02] tracking-[-0.02em]">
@@ -31,7 +33,8 @@ export default function Catalogue() {
                 {s.items.map((d) => (
                   <div
                     key={d.slug}
-                    className={s.items.length === 1 ? "min-w-0 sm:col-span-2 xl:col-span-3" : "min-w-0"}
+                    id={`${s.slug}-${d.slug}`}
+                    className={`scroll-mt-28 ${s.items.length === 1 ? "min-w-0 sm:col-span-2 xl:col-span-3" : "min-w-0"}`}
                   >
                     <DesignCard
                       design={d}

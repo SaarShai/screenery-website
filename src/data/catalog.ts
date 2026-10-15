@@ -58,6 +58,29 @@ const ST = ["Front", "Back", "In a room"] as [string, string, string];
 
 export const sections: Section[] = [
   {
+    slug: "bedwrappers",
+    name: "Bedwrappers",
+    subtitle: "Around every bed. Single and double sizes, panels 75 cm high.",
+    items: [
+      design("bedwrappers", "marine", "Marine Life", "Single bed", "Whales, turtles and coral.", ["In a suite", "", ""], "From £950"),
+      design("bedwrappers", "chinese-dragon", "Chinese Dragon", "Lunar New Year", "A red and gold dragon curls around the bed.", ["In a suite", "", ""], "From £950"),
+      design("bedwrappers", "arabian-nights", "Arabian Nights", "Ramadan and Eid", "Domes, arches and lanterns around the bed.", ["In a suite", "", ""], "From £950"),
+      design("bedwrappers", "alebrijes", "Alebrijes", "Mexican folk art", "Winged cats, jaguars and dragons in bright folk-art colours.", ["In a suite", "", ""], "From £950"),
+      design("bedwrappers", "twin-room", "Twin room", "Meadow and autumn", "A lamb in a clover meadow and a fox in autumn leaves, one for each bed.", ["In a twin room", "", ""], "From £950"),
+    ],
+  },
+  {
+    slug: "pods",
+    name: "Pods",
+    subtitle: "A room within the room: freestanding play pods for lobbies, kids clubs and events.",
+    items: [
+      design("pods", "castle-xl", "Castle XL", "W 216 × D 200 × H 170 cm", "The castle, scaled up for lobbies, kids clubs and events. Room inside for a whole group of little knights.", ["With children", "", ""], "From £1,550"),
+      design("pods", "marine-pod", "Marine Pod", "About 2.4 m across · panels 1.2 m high", "An ocean ring of whales, turtles and coral, open to the sky.", ["With children", "Studio", ""]),
+      design("pods", "gingerbread-cottage", "Gingerbread Cottage", "W 158 × D 166 × H 147 cm", "A gingerbread cottage children can play inside: iced biscuit roof, candy canes and a door that really opens.", ["With children", "", ""], "From £1,950"),
+      design("pods", "jungle-treehouse", "Jungle Treehouse", "W 158 × D 166 × H 147 cm", "A hideaway in the trees, with monkeys, a lion cub and an elephant around it.", ["With children", "", ""]),
+    ],
+  },
+  {
     slug: "standard",
     name: "The Collection",
     items: [
@@ -102,29 +125,6 @@ export const sections: Section[] = [
       { city: "Zurich", note: "Lake Zurich and the old town", image: { src: "/catalog/cities/zurich/zurich-day-2.jpg", w: 1536, h: 1024 } },
       { city: "Washington, D.C.", note: "The Capitol", image: { src: "/catalog/cities/washington/washington.jpg", w: 1536, h: 1024 } },
       { city: "Las Vegas", note: "Welcome to Fabulous Las Vegas", image: { src: "/catalog/cities/las-vegas/room-option-c.png", w: 1536, h: 1024 } },
-    ],
-  },
-  {
-    slug: "bedwrappers",
-    name: "Bedwrappers",
-    subtitle: "Around every bed. Single and double sizes, panels 75 cm high.",
-    items: [
-      design("bedwrappers", "marine", "Marine Life", "Single bed", "Whales, turtles and coral.", ["In a suite", "", ""], "From £950"),
-      design("bedwrappers", "chinese-dragon", "Chinese Dragon", "Lunar New Year", "A red and gold dragon curls around the bed.", ["In a suite", "", ""], "From £950"),
-      design("bedwrappers", "arabian-nights", "Arabian Nights", "Ramadan and Eid", "Domes, arches and lanterns around the bed.", ["In a suite", "", ""], "From £950"),
-      design("bedwrappers", "alebrijes", "Alebrijes", "Mexican folk art", "Winged cats, jaguars and dragons in bright folk-art colours.", ["In a suite", "", ""], "From £950"),
-      design("bedwrappers", "twin-room", "Twin room", "Meadow and autumn", "A lamb in a clover meadow and a fox in autumn leaves, one for each bed.", ["In a twin room", "", ""], "From £950"),
-    ],
-  },
-  {
-    slug: "pods",
-    name: "Pods",
-    subtitle: "A room within the room: freestanding play pods for lobbies, kids clubs and events.",
-    items: [
-      design("pods", "castle-xl", "Castle XL", "W 216 × D 200 × H 170 cm", "The castle, scaled up for lobbies, kids clubs and events. Room inside for a whole group of little knights.", ["With children", "", ""], "From £1,550"),
-      design("pods", "marine-pod", "Marine Pod", "About 2.4 m across · panels 1.2 m high", "An ocean ring of whales, turtles and coral, open to the sky.", ["With children", "Studio", ""]),
-      design("pods", "gingerbread-cottage", "Gingerbread Cottage", "W 158 × D 166 × H 147 cm", "A gingerbread cottage children can play inside: iced biscuit roof, candy canes and a door that really opens.", ["With children", "", ""], "From £1,950"),
-      design("pods", "jungle-treehouse", "Jungle Treehouse", "W 158 × D 166 × H 147 cm", "A hideaway in the trees, with monkeys, a lion cub and an elephant around it.", ["With children", "", ""]),
     ],
   },
 ];
