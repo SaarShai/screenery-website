@@ -1,4 +1,3 @@
-import Image from "next/image";
 import DesignCard from "@/components/catalog/design-card";
 import Showcase from "@/components/editorial/showcase";
 import CityGallery from "@/components/editorial/city-gallery";
@@ -17,17 +16,6 @@ export default function Catalogue() {
           className={`px-6 py-12 md:px-12 md:py-16 ${i % 2 ? "" : "bg-[#efe9df]"}`}
         >
           <div className="relative mx-auto max-w-7xl">
-            {/* Cities are made to order: the Bespoke wax stamp, as in the catalogue (owner, 2026-10-15) */}
-            {s.slug === "cities" && (
-              <Image
-                src="/images/bespoke-stamp.png"
-                alt="Bespoke"
-                width={480}
-                height={480}
-                sizes="(max-width: 768px) 80px, 104px"
-                className="absolute -top-8 right-0 w-20 -rotate-[8deg] md:-top-10 md:w-[100px]"
-              />
-            )}
             <h2 className="font-display text-[clamp(2.4rem,5vw,4rem)] leading-[1.02] tracking-[-0.02em]">
               {s.name}
             </h2>
