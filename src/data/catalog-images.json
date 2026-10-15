@@ -227,20 +227,6 @@
    "h": 1024
   }
  ],
- "standard/castle-xl": [
-  {
-   "src": "/catalog/standard/castle-xl/hero-zoom.jpg",
-   "w": 1800,
-   "h": 1200
-  },
-  null,
-  null,
-  {
-   "src": "/catalog/standard/castle-xl/room1.jpg",
-   "w": 1800,
-   "h": 1200
-  }
- ],
  "standard/hospital": [
   {
    "src": "/catalog/standard/hospital/v2.jpg",
@@ -333,21 +319,86 @@
    "w": 1536,
    "h": 1024
   },
-  {
-   "src": "/catalog/standard/gingerbread/studio.jpg",
-   "w": 1536,
-   "h": 1024
-  },
   null,
-  {
-   "src": "/catalog/standard/gingerbread/room1.jpg",
-   "w": 1536,
-   "h": 1024
-  },
+  null,
+  null,
   {
    "src": "/catalog/standard/gingerbread/room2.jpg",
    "w": 1536,
    "h": 1024
   }
+ ],
+ "pods/castle-xl": [
+  {
+   "src": "/catalog/pods/castle-xl/hero.jpg",
+   "w": 1800,
+   "h": 1200
+  },
+  null,
+  null,
+  {
+   "src": "/catalog/pods/castle-xl/room1.jpg",
+   "w": 1800,
+   "h": 1200
+  }
+ ],
+ "pods/marine-pod": [
+  {
+   "src": "/catalog/pods/marine-pod/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/pods/marine-pod/studio.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  {
+   "src": "/catalog/pods/marine-pod/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  }
+ ],
+ "pods/gingerbread-cottage": [
+  {
+   "src": "/catalog/pods/gingerbread-cottage/hero.jpg",
+   "w": 2000,
+   "h": 1333
+  },
+  null,
+  null,
+  {
+   "src": "/catalog/pods/gingerbread-cottage/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  }
+ ],
+ "pods/jungle-treehouse": [
+  {
+   "src": "/catalog/pods/jungle-treehouse/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  null,
+  null,
+  {
+   "src": "/catalog/pods/jungle-treehouse/room1.jpg",
+   "w": 1536,
+   "h": 1024
+  }
+ ],
+ "bespoke/aurora": [
+  {
+   "src": "/catalog/bespoke/aurora/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/bespoke/aurora/studio.jpg",
+   "w": 1280,
+   "h": 702
+  },
+  null
  ]
 }

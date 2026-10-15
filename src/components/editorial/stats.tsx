@@ -15,7 +15,7 @@ export function StatsRibbon() {
         {stats.map(([v, l]) => (
           <div key={l} className="bg-[#efe9df] px-4 py-5 lg:px-3 xl:px-5">
             <p className="font-display text-[clamp(1.25rem,2.1vw,1.8rem)]">{v}</p>
-            <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-[#5b574f]">{l}</p>
+            <p className="mt-1 text-[13px] uppercase tracking-[0.1em] text-[#3d3a33]">{l}</p>
           </div>
         ))}
       </div>
