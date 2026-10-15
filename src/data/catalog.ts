@@ -116,6 +116,17 @@ export const sections: Section[] = [
       design("bedwrappers", "twin-room", "Twin room", "Meadow and autumn", "A lamb in a clover meadow and a fox in autumn leaves, one for each bed.", ["In a twin room", "", ""], "From £950"),
     ],
   },
+  {
+    slug: "pods",
+    name: "Pods",
+    subtitle: "A room within the room: freestanding play pods for lobbies, kids clubs and events.",
+    items: [
+      design("pods", "castle-xl", "Castle XL", "W 216 × D 200 × H 170 cm", "The castle, scaled up for lobbies, kids clubs and events. Room inside for a whole group of little knights.", ["With children", "", ""], "From £1,550"),
+      design("pods", "marine-pod", "Marine Pod", "About 2.4 m across · panels 1.2 m high", "An ocean ring of whales, turtles and coral, open to the sky.", ["With children", "Studio", ""]),
+      design("pods", "gingerbread-cottage", "Gingerbread Cottage", "W 158 × D 166 × H 147 cm", "A gingerbread cottage children can play inside: iced biscuit roof, candy canes and a door that really opens.", ["With children", "", ""], "From £1,950"),
+      design("pods", "jungle-treehouse", "Jungle Treehouse", "W 158 × D 166 × H 147 cm", "A hideaway in the trees, with monkeys, a lion cub and an elephant around it.", ["With children", "", ""]),
+    ],
+  },
 ];
 
 export const bySlug = (slug: string) => sections.find((s) => s.slug === slug);
