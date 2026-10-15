@@ -112,7 +112,7 @@ export const sections: Section[] = [
   },
   {
     slug: "cities",
-    name: "Cities",
+    name: "Bespoke City Skylines",
     items: [
       design("cities", "london", "London", "Skyline", "Big Ben, the Shard and Tower Bridge, with a window to peek through.", ["Raffles London edition", "In a suite", "With the bus"], "From £1,250"),
       design("cities", "paris", "Paris", "Skyline", "Notre-Dame, the Arc de Triomphe and the Eiffel Tower in watercolour.", ["In a suite", "Studio", ""], "From £1,250"),
