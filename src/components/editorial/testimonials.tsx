@@ -41,8 +41,8 @@ export default function Testimonials() {
               <blockquote className="mt-5 font-display text-[17px] italic leading-snug md:text-[19px]">&ldquo;{t.quote}&rdquo;</blockquote>
               {/* Attribution sits on a shared baseline at the foot of each quote */}
               <div className="mt-auto pt-5">
-                <p className="text-[14px] font-medium">{t.name}</p>
-                <p className="mt-1 text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
+                {/* Logo and job title only, no names (owner, 2026-10-15) */}
+                <p className="text-[12px] uppercase tracking-[0.14em] text-[#6f5a41]">
                   {t.role}
                 </p>
               </div>

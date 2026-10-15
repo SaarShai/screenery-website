@@ -37,8 +37,8 @@ export default function LogoWall() {
       {clientLogos.map((c, i) => (
         // Rows of 3, 5 and 6; a short last row sits centred
         <motion.li key={c.src} custom={i} variants={item} className="flex basis-[calc((100%-5rem)/3)] justify-center sm:basis-[calc((100%-14rem)/5)] lg:basis-[calc((100%-17.5rem)/6)]">
-          <div className="relative aspect-[520/180] w-full max-w-[110px]">
-            <Image src={c.src} alt={c.alt} fill sizes="110px" className="object-contain opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0" />
+          <div className="relative aspect-[520/180] w-full max-w-[132px]">
+            <Image src={c.src} alt={c.alt} fill sizes="132px" className="object-contain opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0" />
           </div>
         </motion.li>
       ))}

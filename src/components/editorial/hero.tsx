@@ -25,7 +25,7 @@ export default function Hero() {
               <em className="font-light italic text-[#8b7355]">within minutes.</em>
             </h1>
             <p className="mt-6 sm:mt-8 max-w-md text-[17px] leading-relaxed font-light text-[#5b574f]">
-              Felt play-screens for hotels: a children&rsquo;s play area in minutes. Illustrated, hand-made in Britain, flat-packed when the guests check out.
+              Felt play-screens for hotels: a children&rsquo;s play area in minutes. Illustrated, <span className="whitespace-nowrap">hand-made</span> in Britain, flat-packed when the guests check out.
             </p>
             <div className="mt-8 sm:mt-10 flex flex-wrap gap-2">
               <a href="#standard" className="bg-[#17150f] px-3.5 py-3 text-[11px] uppercase tracking-[0.12em] text-[#f6f1e8] hover:bg-[#70593f] transition-colors">The collection</a>
