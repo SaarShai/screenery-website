@@ -7,7 +7,7 @@ export default function Lineup() {
   return (
     <section id="lineup" className="px-6 py-12 md:px-12 md:py-16">
       <div className="mx-auto max-w-7xl">
-        <p className="text-[11px] uppercase tracking-[0.2em] text-[#6f5a41]">The Collection · {items.length} designs</p>
+        <p className="text-[11px] uppercase tracking-[0.2em] text-[#6f5a41]">2027 Collection · {items.length} designs</p>
         <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
           {items.map((d) => (
             <a key={d.slug} href={`#standard-${d.slug}`} className="group block">

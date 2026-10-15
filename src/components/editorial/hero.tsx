@@ -17,7 +17,7 @@ export default function Hero() {
         <div className="flex flex-col justify-between px-6 pt-4 pb-10 md:px-12 lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1 lg:pl-12 lg:pr-8 lg:pt-16">
           <div>
             <div className="flex items-start justify-between gap-4">
-              <p className="pt-1 text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">Screenery™ — 2026 catalogue</p>
+              <p className="pt-1 text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">Screenery™ — 2027 Collection</p>
               <FoldingScreenMark className="w-[clamp(86px,16vw,150px)] shrink-0" />
             </div>
             <h1 className="font-display mt-4 sm:mt-6 text-[clamp(2.75rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.02em]">

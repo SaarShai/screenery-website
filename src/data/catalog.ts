@@ -82,7 +82,7 @@ export const sections: Section[] = [
   },
   {
     slug: "standard",
-    name: "The Collection",
+    name: "2027 Collection",
     items: [
       design("standard", "castle", "Castle", "Standard edition", "A fortress of imagination stands tall. Perfect for kids who believe every room should come with a throne.", ["Front", "Back", "In a room"], "From £1,250"),
       design("standard", "gingerbread", "Gingerbread House", "Festive edition", "The most delicious way to celebrate the festive season, with no sticky fingers or biscuit crumbs. Candy canes, pine trees and snowflakes around a cosy cabin with a double door.", ["With children", "", ""], "From £1,150"),
