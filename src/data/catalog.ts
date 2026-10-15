@@ -108,6 +108,7 @@ export const sections: Section[] = [
       design("bespoke", "mallorca", "Cap Rocat, Mallorca", "Cathedral of Palma", "La Seu and the old city walls in gold and blue.", ["In a suite", "Front", "With a guest"]),
       design("bespoke", "sandcastle", "Sand Castle", "Surf Club", "Sandcastle towers with shells and starfish, made for a beach club garden.", ["In the garden", "", ""]),
       design("bespoke", "munich-airport", "Munich Airport", "Hilton Munich Airport", "A little aeroplane for young travellers waiting to take off.", ["In the terminal", "", ""]),
+      design("bespoke", "aurora", "Northern Lights", "Events backdrop", "A 2.5 m mountain backdrop under the northern lights, for a winter party in the ballroom.", ["In the ballroom", "Studio", ""]),
       design("bespoke", "the-charles", "The Charles", "MUNICH", "Munich landmarks in watercolour, separating two junior beds in a family suite.", ["In a suite", "", ""]),
     ],
   },

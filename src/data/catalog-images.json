@@ -387,5 +387,18 @@
    "w": 1536,
    "h": 1024
   }
+ ],
+ "bespoke/aurora": [
+  {
+   "src": "/catalog/bespoke/aurora/hero.jpg",
+   "w": 1536,
+   "h": 1024
+  },
+  {
+   "src": "/catalog/bespoke/aurora/studio.jpg",
+   "w": 1280,
+   "h": 702
+  },
+  null
  ]
 }
