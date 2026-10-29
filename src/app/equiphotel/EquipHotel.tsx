@@ -43,6 +43,7 @@ export default function EquipHotel({ lang }: { lang: "en" | "fr" }) {
             </a>
           ))}
         </section>
+        <div className={styles.galleryLink}><Link href="/how-it-works">{t.gallery} <span aria-hidden="true">↗</span></Link></div>
         <section id="report" className={styles.report} aria-labelledby="report-title">
           <div className={styles.cover}><Image src="/equiphotel/report-cover.webp" alt={t.coverAlt} width={1000} height={1414} sizes="(max-width: 700px) 55vw, 260px" /></div>
           <div className={styles.reportCopy}>
