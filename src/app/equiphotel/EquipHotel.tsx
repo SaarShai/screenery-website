@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import AnimatedLogo from "@/components/animated-logo";
 import { copy } from "./content";
 import styles from "./equiphotel.module.css";
 
@@ -17,7 +18,7 @@ export default function EquipHotel({ lang }: { lang: "en" | "fr" }) {
     <div className={styles.page} lang={lang}>
       <a className={styles.skip} href="#content">{t.skip}</a>
       <header className={styles.header}>
-        <Link className={styles.wordmark} href="/" aria-label={t.home}>Screenery<span>by Wanderland</span></Link>
+        <Link className={styles.wordmark} href="/" aria-label={t.home}><AnimatedLogo /></Link>
         <nav className={styles.languages} aria-label={t.languageLabel}>
           <Link href="/equiphotel" lang="en" hrefLang="en" aria-current={lang === "en" ? "page" : undefined}>EN</Link>
           <span aria-hidden="true">/</span>
@@ -30,7 +31,6 @@ export default function EquipHotel({ lang }: { lang: "en" | "fr" }) {
           <p className={styles.suite}>The Family Suite <span>{t.by}</span></p>
           <h1 id="title">{t.title}</h1>
           <p className={styles.credit}>{t.credit}</p>
-          <p className={styles.description}>{t.intro}</p>
           <p className={styles.stand}>{t.pavilion} · Paris Expo Porte de Versailles</p>
         </section>
         <section className={styles.partners} aria-label={t.partners}>

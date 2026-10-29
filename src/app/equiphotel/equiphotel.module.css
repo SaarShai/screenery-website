@@ -5,8 +5,7 @@
 .skip { position: absolute; left: 20px; top: -80px; padding: 12px; background: white; z-index: 10; }
 .skip:focus { top: 10px; }
 .header { display: flex; justify-content: space-between; align-items: center; padding: 24px 5%; border-bottom: 1px solid #183c3726; gap: 24px; }
-.wordmark { font-family: var(--font-display), Georgia, serif; font-size: 28px; line-height: 1; font-weight: 600; letter-spacing: -.04em; }
-.wordmark span { display: block; font-family: var(--font-body), sans-serif; font-size: 9px; letter-spacing: .16em; margin-top: 7px; text-transform: uppercase; font-weight: 400; }
+.wordmark svg { display: block; height: 32px; width: auto; }
 .languages { display: flex; gap: 10px; font-size: 12px; }
 .languages [aria-current] { font-weight: 700; text-decoration: underline; }
 .intro { max-width: 1450px; margin: auto; padding: 56px 5% 42px; }
@@ -16,7 +15,6 @@
 .intro h1, .report h2 { font-family: var(--font-display), Georgia, serif; font-weight: 400; letter-spacing: -.035em; }
 .intro h1 { font-size: clamp(48px, 5vw, 74px); line-height: 1.05; margin-top: 25px; text-wrap: balance; }
 .credit { margin-top: 22px; font-size: 14px; font-weight: 600; }
-.description { margin-top: 16px; font-size: 17px; line-height: 1.7; max-width: 650px; }
 .stand { margin-top: 22px; font-size: 14px; font-weight: 600; }
 .partners { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; max-width: 1450px; margin: auto; padding: 0 5% 70px; }
 .partner { display: block; min-width: 0; background: #e9e9de; }
@@ -37,5 +35,5 @@
 .report a:hover { background: #e3d6c0; }
 .footer { padding: 26px 5%; font-size: 11px; line-height: 1.7; }
 @media (max-width: 900px) { .partners { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .header { padding: 19px 6%; } .intro { padding: 40px 6% 34px; } .partners { padding: 0 6% 50px; gap: 12px; } .partner > span { padding: 14px 12px; font-size: 21px; } .report { padding: 50px 6%; align-items: flex-start; flex-direction: column; gap: 28px; } .cover { flex: none; width: min(55%, 200px); } }
+@media (max-width: 600px) { .header { padding: 19px 6%; } .wordmark svg { height: 28px; } .intro { padding: 40px 6% 34px; } .partners { padding: 0 6% 50px; gap: 12px; } .partner > span { padding: 14px 12px; font-size: 21px; } .report { padding: 50px 6%; align-items: flex-start; flex-direction: column; gap: 28px; } .cover { flex: none; width: min(55%, 200px); } }
 @media (prefers-reduced-motion: reduce) { .partnerImage img { transition: none; } }
