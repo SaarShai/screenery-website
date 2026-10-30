@@ -34,11 +34,11 @@ export default function TransformationsVideo() {
   }
 
   return (
-    <div className="relative mx-auto mt-12 max-w-5xl md:mt-14">
+    <div className="relative mx-auto mt-12 max-w-5xl overflow-hidden rounded-2xl shadow-[0_12px_32px_-12px_rgba(24,60,55,0.28)] md:mt-14">
       <video
         ref={videoRef}
-        src={visible ? "/videos/screenery-transformations-no-bars.mp4" : undefined}
-        poster="/videos/screenery-transformations-no-bars-poster.jpg"
+        src={visible ? "/videos/screenery-transformations-no-corner-logo.mp4" : undefined}
+        poster="/videos/screenery-transformations-no-corner-logo-poster.jpg"
         autoPlay={!reducedMotion}
         muted
         loop
@@ -46,7 +46,7 @@ export default function TransformationsVideo() {
         preload="metadata"
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
-        className="aspect-[3/2] w-full bg-white object-contain"
+        className="block aspect-[3/2] w-full bg-white object-contain"
         aria-label="See rooms transformed with Screenery"
       />
       <button
