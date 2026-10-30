@@ -1,5 +1,6 @@
 import LogoWall from "./logo-wall";
 import Testimonials from "./testimonials";
+import TransformationsVideo from "./transformations-video";
 
 const stats = [
   ["5–15 min", "Set-up, no tools"],
@@ -30,6 +31,7 @@ export default function Stats() {
         <p className="text-center text-[12px] uppercase tracking-[0.2em] text-[#6f5a41]">Trusted by</p>
         <LogoWall />
       </div>
+      <TransformationsVideo />
       <Testimonials />
     </section>
   );
