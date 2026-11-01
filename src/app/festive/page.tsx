@@ -68,17 +68,17 @@ const items: Item[] = [
     price: (
       <>
         <p>
-          <b>Price</b> <P gbp="£1,150" usd="$1,450" eur="€1,325" />
+          <b>Price</b> <P gbp="£1,150" usd="$1,615" eur="€1,415" />
         </p>
         <p className="text-[#6f695e] text-[0.92em]">
-          Additional panel: <P gbp="£350" usd="$450" eur="€395" /> (each)
+          Additional panel: <P gbp="£350" usd="$495" eur="€435" /> (each)
         </p>
         <p className="mt-3">
           <b>Full Gingerbread Bundle</b>{" "}
           <span className="text-[#6f695e] text-[0.92em]">
             (Gingerbread House + Sleigh &amp; Reindeer + Christmas Tree, Polar Bear and Snowman)
           </span>{" "}
-          <P gbp="£1,895" usd="$2,375" eur="€2,175" />
+          <P gbp="£1,895" usd="$2,665" eur="€2,335" />
         </p>
       </>
     ),
@@ -103,10 +103,10 @@ const items: Item[] = [
     price: (
       <>
         <p>
-          <b>Single</b> <P gbp="£1,250" usd="$1,550" eur="€1,450" />
+          <b>Single</b> <P gbp="£1,250" usd="$1,755" eur="€1,535" />
         </p>
         <p>
-          <b>Double</b> <P gbp="£1,550" usd="$1,950" eur="€1,795" />
+          <b>Double</b> <P gbp="£1,550" usd="$2,175" eur="€1,905" />
         </p>
       </>
     ),
@@ -123,7 +123,7 @@ const items: Item[] = [
     dims: <>Sold as a set of sleigh + 3 pairs</>,
     price: (
       <p>
-        <b>Price</b> <P gbp="£495" usd="$595" eur="€575" />
+        <b>Price</b> <P gbp="£495" usd="$695" eur="€605" />
       </p>
     ),
   },
@@ -139,7 +139,7 @@ const items: Item[] = [
     dims: <>Sold as a set of 3</>,
     price: (
       <p>
-        <b>Price</b> <P gbp="£495" usd="$595" eur="€575" />
+        <b>Price</b> <P gbp="£495" usd="$695" eur="€605" />
       </p>
     ),
   },
@@ -159,7 +159,7 @@ const items: Item[] = [
     ),
     price: (
       <p>
-        <b>Price</b> <P gbp="£1,950" usd="$2,450" eur="€2,250" />
+        <b>Price</b> <P gbp="£1,950" usd="$2,735" eur="€2,405" />
       </p>
     ),
   },
@@ -179,7 +179,7 @@ const items: Item[] = [
     ),
     price: (
       <p>
-        <b>Price</b> <P gbp="£2,450" usd="$3,050" eur="€2,795" />
+        <b>Price</b> <P gbp="£2,450" usd="$3,445" eur="€3,015" />
       </p>
     ),
   },
