@@ -58,7 +58,7 @@ export default function PetsPage() {
       </p>
       <div className="mt-6 border-t border-[#d8d0c1] pt-5">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-          <p className="font-display text-[34px] leading-none whitespace-nowrap">£395 <span className="font-sans text-[13px] text-[#716a5e]">per set, ex VAT</span></p>
+          <p className="font-display text-[34px] leading-none whitespace-nowrap">£395 <span className="font-sans text-[13px] text-[#716a5e]">per set, ex VAT. Delivery quoted.</span></p>
           <p className="text-[11px] tracking-[0.2em] uppercase text-[#716a5e] text-right">Alcove or Suite · 5 designs</p>
         </div>
         <div className="grid grid-cols-2 gap-3 mt-5">
@@ -256,7 +256,7 @@ export default function PetsPage() {
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Toppers</dt><dd className="col-span-3">3 per set</dd></div>
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Assembly</dt><dd className="col-span-3">No tools</dd></div>
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Delivery</dt><dd className="col-span-3">From early December 2026</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Price</dt><dd className="col-span-3">£395 per set, ex VAT. Bespoke from £895. Bed, bowls and toys not included.</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Price</dt><dd className="col-span-3">£395 per set, ex VAT. Bespoke from £895. Delivery quoted. Bed, bowls and toys not included.</dd></div>
       </dl>
     </div>
   </div>
@@ -332,7 +332,7 @@ export default function PetsPage() {
       <ul className="md:space-y-2"><li><a href="#collection" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">Designs</a></li><li><a href="#models" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">Models</a></li><li><a href="#enquire" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">Enquire</a></li></ul>
     </div>
     <div className="md:col-span-4">
-      <p className="leading-[1.7]">Images are renders; colours can differ slightly. Prices exclude VAT.</p>
+      <p className="leading-[1.7]">Images are renders; colours can differ slightly. Prices exclude VAT and delivery.</p>
     </div>
   </div>
   <div className="mx-auto max-w-7xl px-4 md:px-12"><div className="py-6 border-t border-[#f5f0e7]/10 text-[12px] flex flex-col sm:flex-row justify-between gap-2">
