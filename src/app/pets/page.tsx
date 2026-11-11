@@ -64,8 +64,8 @@ export default function PetsPage() {
         A printed felt surround for the pet bed in your guest rooms. Choose one of six illustration styles, and we can draw it with your hotel&apos;s name or building.
       </p>
       <div className="mt-6 border-t border-[#d8d0c1] pt-5">
-        <div className="flex items-baseline justify-between gap-4">
-          <p className="font-display text-[34px] leading-none">£395 <span className="font-sans text-[13px] text-[#716a5e]">per set, ex VAT</span></p>
+        <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
+          <p className="font-display text-[34px] leading-none whitespace-nowrap">£395 <span className="font-sans text-[13px] text-[#716a5e]">per set, ex VAT</span></p>
           <p className="text-[11px] tracking-[0.2em] uppercase text-[#716a5e] text-right">Alcove or Suite · 6 styles</p>
         </div>
         <p className="text-[14px] text-[#47423a] mt-3">First deliveries from early December. We confirm your date with your quote.</p>
