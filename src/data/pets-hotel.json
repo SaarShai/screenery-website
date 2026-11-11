@@ -1,0 +1,11 @@
+{
+  "styles": [
+    { "id": "toile", "name": "Toile de Jouy", "text": "Blue on cream. A garden with a fountain and a pavilion, a spaniel at rest and cats at play.", "toppers": "two songbirds, an urn of flowers" },
+    { "id": "chinoiserie", "name": "Chinoiserie", "text": "A sage green garden of blossom and bamboo, with a pagoda, a pug and a ginger cat.", "toppers": "a bird, a peony, a butterfly" },
+    { "id": "artdeco", "name": "Art Deco", "text": "Gold on dark green. A great fan, two leaping greyhounds and a seated cat.", "toppers": "two gold fans, a skyscraper" },
+    { "id": "botanical", "name": "Botanical", "text": "Ferns, hellebore and ivy on a cream ground, drawn like a plate from an old herbarium.", "toppers": "a leaf sprig, a fern, a small bird" },
+    { "id": "woodblock", "name": "Woodblock", "text": "A Japanese print: the great wave, Mount Fuji, and a shiba with a cat on the shore.", "toppers": "a crane, a pine, a red sun" },
+    { "id": "travelposter", "name": "Grand Tour", "text": "A 1930s travel poster: a grand hotel on a lake, with a terrier and a cat on the terrace.", "toppers": "a sun, a pine tree, a sailing boat" }
+  ],
+  "size": { "alcove": "approx. 115 × 64 cm · for the bed", "suite": "approx. 163 × 51 cm · bed, bowls, toy" }
+}
