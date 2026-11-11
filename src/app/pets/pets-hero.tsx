@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { getImageProps } from "next/image";
 import { usePrefersStill } from "@/lib/use-prefers-still";
 
-// One slide for each style. `pos` is the object-position of the wide file on desktop, where the hero crops to about 2.25:1.
+// One slide for each design. `pos` is the object-position of the wide file on desktop, where the hero crops to about 2.25:1.
 const SLIDES = [
   { file: "room-bespoke-alcove", name: "Toile de Jouy · Alcove", pos: "50% 58%", alt: "A black labrador asleep in a Toile de Jouy Alcove, blue on cream, with songbird and urn toppers, in a panelled hotel bedroom" },
   { file: "room-chinoiserie-suite", name: "Chinoiserie · Suite", pos: "50% 62%", alt: "A pug in a Chinoiserie Suite, sage green with blossom, with two bowls inside, in a city hotel bedroom" },
@@ -80,7 +80,7 @@ export default function PetsHero() {
   }, [cur, still, held, first, moved]);
 
   return (
-    <figure aria-roledescription="carousel" aria-label="The five styles in hotel rooms">
+    <figure aria-roledescription="carousel" aria-label="The five designs in hotel rooms">
       <style>{"@keyframes pets-cap{from{opacity:0}to{opacity:1}}"}</style>
       <div
         className="relative w-full aspect-[4/5] md:aspect-auto md:h-[64vh] md:min-h-[460px] md:max-h-[700px] overflow-hidden bg-[#ece5d8]"
