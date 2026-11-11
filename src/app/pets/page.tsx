@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import Image, { getImageProps } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { BespokeLink, QuoteForm, StickyBar, Styles } from "./pets-client";
+import PetsHero from "./pets-hero";
+import logos from "@/data/hotel-logos.json";
+
+const LOGOS = ["JW Marriott", "The Ritz-Carlton", "Mandarin Oriental", "St. Regis", "Fairmont", "Four Seasons", "Park Hyatt", "Kempinski", "Shangri-La", "Rocco Forte Hotels", "Belmond", "The Peninsula Hotels"].map((n) => logos.find((l) => l.alt === n)!);
 
 // Not in the sitemap and not indexed until the owner releases it.
 export const metadata: Metadata = {
   title: "Screenery for Pets — Pet surrounds for hotel rooms",
   description:
-    "Printed felt surrounds for the pet bed in your guest rooms. Six illustration styles, each as an Alcove or a Suite, and each can carry your hotel's name or building. £395 per set ex VAT. First deliveries from early December.",
+    "Printed felt surrounds for the pet bed in hotel guest rooms. Five illustration styles, Alcove or Suite, £395 per set ex VAT. Bespoke from £895.",
   alternates: { canonical: "/pets" },
   robots: { index: false, follow: false },
 };
-
-// The hero is a wide image on desktop and an upright one on a phone.
-const heroAlt = "A black labrador asleep in a Toile de Jouy Alcove, blue on cream, with songbird and urn toppers, beside the bed in a panelled hotel room";
-const hero = { alt: heroAlt, sizes: "100vw", quality: 90 };
-const wide = getImageProps({ ...hero, src: "/pets/hotel/room-bespoke-alcove.jpg", width: 1672, height: 941 }).props;
-const upright = getImageProps({ ...hero, src: "/pets/hotel/room-bespoke-alcove-portrait.jpg", width: 1122, height: 1402 }).props;
 
 export default function PetsPage() {
   return (
@@ -38,22 +36,12 @@ export default function PetsPage() {
 </header>
 
 <main>
-<figure className="relative">
-  <picture>
-    <source media="(max-width: 767px)" srcSet={upright.srcSet} />
-    <img src={wide.src} srcSet={wide.srcSet} sizes="100vw" alt={heroAlt} fetchPriority="high" decoding="async"
-      className="w-full aspect-[4/5] md:aspect-auto md:h-[64vh] md:min-h-[460px] md:max-h-[700px] object-cover object-[50%_50%] md:object-[50%_58%]" />
-  </picture>
-  <figcaption className="mx-auto max-w-7xl px-4 md:px-12 mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4">
-    <span>Plate I — Toile de Jouy, Alcove, in a panelled bedroom</span>
-  </figcaption>
-</figure>
+<PetsHero />
 
 <section className="mx-auto max-w-7xl px-4 md:px-12 pt-8 md:pt-12 pb-6 md:pb-10">
   <div className="flex items-center justify-between text-[11px] tracking-[0.28em] uppercase text-[#716a5e] border-b border-[#d8d0c1] pb-3">
     <span>Screenery for Pets</span>
-    <span className="hidden sm:inline">For hotel guest rooms · London</span>
-    <span className="sm:hidden">For hotels</span>
+    <span>For hotels</span>
   </div>
   <div className="grid md:grid-cols-12 gap-8 md:gap-12 mt-8 md:mt-10 items-end">
     <h1 className="md:col-span-7 font-display font-light text-[44px] leading-[1.02] md:text-[76px] md:leading-[0.98] tracking-[-0.02em]">
@@ -61,14 +49,14 @@ export default function PetsPage() {
     </h1>
     <div className="md:col-span-5">
       <p className="text-[16px] leading-[1.65] text-[#47423a]">
-        A printed felt surround for the pet bed in your guest rooms. Choose one of six illustration styles, and we can draw it with your hotel&apos;s name or building.
+        A printed felt surround for the pet bed in your guest rooms. Five styles, or your own hotel in the art.
       </p>
       <div className="mt-6 border-t border-[#d8d0c1] pt-5">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
           <p className="font-display text-[34px] leading-none whitespace-nowrap">£395 <span className="font-sans text-[13px] text-[#716a5e]">per set, ex VAT</span></p>
-          <p className="text-[11px] tracking-[0.2em] uppercase text-[#716a5e] text-right">Alcove or Suite · 6 styles</p>
+          <p className="text-[11px] tracking-[0.2em] uppercase text-[#716a5e] text-right">Alcove or Suite · 5 styles</p>
         </div>
-        <p className="text-[14px] text-[#47423a] mt-3">First deliveries from early December. We confirm your date with your quote.</p>
+        <p className="text-[14px] text-[#47423a] mt-3">First deliveries from early December.</p>
         <div className="grid grid-cols-2 gap-3 mt-5">
           <a href="#enquire" className="text-center bg-[#1b1915] text-[#f5f0e7] text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 hover:bg-[#2f4170] transition-colors whitespace-nowrap">Request a quote</a>
           <a href="#collection" className="text-center text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 border border-[#1b1915]/40 hover:border-[#1b1915] transition-colors whitespace-nowrap">See the styles</a>
@@ -81,12 +69,10 @@ export default function PetsPage() {
 
 <section className="mx-auto max-w-6xl px-4 md:px-12 pt-14 md:pt-20 pb-6 md:pb-10">
   <p className="text-center text-[11px] tracking-[0.28em] uppercase text-[#716a5e]">Screenery screens are in hotels including</p>
-  <div className="mt-8 flex flex-wrap justify-center items-center gap-x-8 md:gap-x-14 gap-y-6">
-    <Image src="/festive/logos/01.png" alt="JW Marriott" width={520} height={180} className="h-9 md:h-11 w-auto opacity-75" />
-    <Image src="/festive/logos/02.png" alt="The Ritz-Carlton" width={520} height={180} className="h-9 md:h-11 w-auto opacity-75" />
-    <Image src="/festive/logos/14.png" alt="Mandarin Oriental" width={520} height={180} className="h-14 md:h-[68px] w-auto opacity-80 -my-2" />
-    <Image src="/festive/logos/04.png" alt="St. Regis" width={520} height={180} className="h-9 md:h-11 w-auto opacity-75" />
-    <Image src="/festive/logos/06.png" alt="Fairmont" width={520} height={180} className="h-9 md:h-11 w-auto opacity-75" />
+  <div className="mt-8 grid grid-cols-3 md:grid-cols-6 gap-x-6 md:gap-x-10 gap-y-6 md:gap-y-8 items-center justify-items-center">
+    {LOGOS.map((l) => (
+      <Image key={l.src} src={l.src} alt={l.alt} width={520} height={180} className={`w-auto max-w-full object-contain ${l.alt === "Mandarin Oriental" ? "h-14 md:h-[68px] -my-2 opacity-80" : "h-9 md:h-11 opacity-75"}`} />
+    ))}
   </div>
 </section>
 
@@ -95,17 +81,16 @@ export default function PetsPage() {
   <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-end">
     <div className="md:col-span-7">
       <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">I · The Styles</p>
-      <h2 className="font-display font-light text-[34px] md:text-[56px] leading-[1.02] mt-5 tracking-[-0.01em]">Six illustration styles, to suit the house.</h2>
+      <h2 className="font-display font-light text-[34px] md:text-[56px] leading-[1.02] mt-5 tracking-[-0.01em]">Five illustration styles.</h2>
     </div>
     <div className="md:col-span-4 md:col-start-9 text-[15px] leading-[1.7] text-[#47423a]">
-      <p>Each style comes as an Alcove or a Suite. Switch a card to see the other model.</p>
+      <p>Each as an Alcove or a Suite.</p>
       <p className="mt-3 text-[13px] text-[#1b1915]"><span className="font-medium">Alcove or Suite</span> £395 per set, ex VAT</p>
     </div>
   </div>
 
   <Styles />
 
-  <p className="mt-14 text-[14px] leading-[1.7] text-[#47423a] max-w-2xl">Any style can be drawn with your hotel&apos;s name or building. For a style of your own, see <a href="#bespoke" className="border-b border-[#1b1915]/40 hover:border-[#1b1915]">bespoke artwork</a>, from £895.</p>
 </section>
 
 
@@ -116,24 +101,24 @@ export default function PetsPage() {
         <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">II · The Welcome</p>
         <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5 tracking-[-0.01em]">A room that was expecting them both.</h2>
       </div>
-      <p className="md:col-span-4 md:col-start-9 text-[16px] md:text-[17px] leading-[1.8] text-[#47423a]">A guest with a pet sees it from the door. It goes around the bed and bowls you already provide.</p>
+      <p className="md:col-span-4 md:col-start-9 text-[16px] md:text-[17px] leading-[1.8] text-[#47423a]">It goes around the bed and bowls you already provide.</p>
     </div>
   </div>
   <figure className="mx-auto max-w-7xl md:px-12 pt-12 md:pt-16">
     <Image src="/pets/hotel/room-chinoiserie-suite.jpg" alt="A small dog in a Chinoiserie Suite, sage green with blossom, bowls inside, in a city hotel room" width={1672} height={941} sizes="100vw" className="w-full aspect-[4/3] md:aspect-[21/9] object-cover object-[55%_60%]" />
-    <figcaption className="px-4 md:px-0 mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span id="cap-p2">Plate II — Chinoiserie, Suite, in a city hotel room</span></figcaption>
+    <figcaption className="px-4 md:px-0 mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span id="cap-p2">Chinoiserie · Suite</span></figcaption>
   </figure>
   <div className="mx-auto max-w-7xl px-4 md:px-12 pt-12 md:pt-16 pb-20 md:pb-28 grid md:grid-cols-12 gap-8 md:gap-12 items-start">
     <figure className="md:col-span-5">
-      <div className="overflow-hidden"><Image src="/pets/hotel/room-artdeco-alcove-cat.jpg" alt="A cat in an Art Deco Alcove, dark green and gold, in a hotel lounge" width={1672} height={941} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-square object-cover object-[76%_50%]" /></div>
-      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span id="cap-p3">Plate III — Art Deco, Alcove, in the lounge</span></figcaption>
+      <div className="overflow-hidden"><Image src="/pets/hotel/room-botanical-alcove.jpg" alt="A tabby cat in a Botanical Alcove, in a garden-view hotel room" width={1672} height={941} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-square object-cover object-[58%_50%]" /></div>
+      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span id="cap-p3">Botanical · Alcove</span></figcaption>
     </figure>
     <div className="md:col-span-6 md:col-start-7 md:pt-16">
       <figure>
-        <div className="overflow-hidden"><Image src="/pets/hotel/room-travelposter-lobby.jpg" alt="A Grand Tour surround in a hotel lobby corner, a dog beside it with its lead" width={1672} height={941} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-[4/3] object-cover object-[100%_50%]" /></div>
-        <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span id="cap-p4">Plate IV — Grand Tour, in the lobby</span></figcaption>
+        <div className="overflow-hidden"><Image src="/pets/hotel/room-woodblock-suite.jpg" alt="A shiba inu in a Woodblock Suite, with two bowls inside, in a hotel room with pale timber" width={1672} height={941} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-[4/3] object-cover object-[35%_50%]" /></div>
+        <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span id="cap-p4">Woodblock · Suite</span></figcaption>
       </figure>
-      <p className="mt-10 font-display font-light text-[22px] md:text-[26px] leading-[1.35] text-[#1b1915] max-w-md">In the bedroom, the lounge or by the front desk, it shows guests that the hotel planned for their pet.</p>
+      <p className="mt-10 font-display font-light text-[22px] md:text-[26px] leading-[1.35] text-[#1b1915] max-w-md">For the bedroom, the lounge or the lobby.</p>
     </div>
   </div>
 </section>
@@ -145,44 +130,43 @@ export default function PetsPage() {
       <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">III · The Object</p>
       <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5 tracking-[-0.01em]">Two layers of printed felt, folded at two corners.</h2>
     </div>
-    <p className="md:col-span-4 md:col-start-9 text-[16px] leading-[1.8] text-[#47423a]">Each surround is cut from printed PET felt and arrives flat.</p>
   </div>
 
   <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mt-12 md:mt-16">
     <figure className="col-span-2 md:col-span-1">
       <Image src="/pets/hotel/detail-edge-toile.jpg" alt="Close-up of the top edge: two felt plies bonded together, with a bevel on each" width={1448} height={1086} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-[4/3] md:aspect-[4/5] object-cover" />
-      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-3"><span>Plate V — The 24 mm wall</span></figcaption>
+      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-3"><span>The 24 mm wall</span></figcaption>
     </figure>
     <figure>
       <Image src="/pets/hotel/detail-corner-toile.jpg" alt="Close-up of a grooved, rounded corner where the wall folds" width={1448} height={1086} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-square md:aspect-[4/5] object-cover" />
-      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">Plate VI — The folding corner</figcaption>
+      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">The folding corner</figcaption>
     </figure>
     <figure>
       <Image src="/pets/hotel/detail-toppers-toile.jpg" alt="Close-up of the toppers: one set on its slot on the top edge, two beside it" width={1448} height={1086} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-square md:aspect-[4/5] object-cover" />
-      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">Plate VII — Toppers and their slot</figcaption>
+      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">The toppers</figcaption>
     </figure>
   </div>
 
   <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-10 mt-14 md:mt-20">
     <li className="border-t border-[#1b1915] pt-5">
       <p className="font-display text-[15px] text-[#716a5e]">01</p>
-      <h3 className="font-display text-[23px] leading-tight mt-2">Two plies, printed both sides</h3>
-      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Two 12 mm layers of felt, bonded back to back into a 24 mm wall. Printed inside and out, so it looks finished from the bed and from the door.</p>
+      <h3 className="font-display text-[23px] leading-tight mt-2">Two plies</h3>
+      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Two 12 mm layers of PET felt make a 24 mm wall, printed on both faces.</p>
     </li>
     <li className="border-t border-[#1b1915] pt-5">
       <p className="font-display text-[15px] text-[#716a5e]">02</p>
       <h3 className="font-display text-[23px] leading-tight mt-2">One piece that folds</h3>
-      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Two grooved, rounded corners let the wall fold around the bed. It needs no tools or screws.</p>
+      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Two rounded corners fold the wall around the bed. No tools.</p>
     </li>
     <li className="border-t border-[#1b1915] pt-5">
       <p className="font-display text-[15px] text-[#716a5e]">03</p>
       <h3 className="font-display text-[23px] leading-tight mt-2">Toppers you place</h3>
-      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Each set comes with three printed toppers that match the style. They slot onto the top edge where your team wants them.</p>
+      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Three printed toppers slot onto the top edge.</p>
     </li>
     <li className="border-t border-[#1b1915] pt-5">
       <p className="font-display text-[15px] text-[#716a5e]">04</p>
       <h3 className="font-display text-[23px] leading-tight mt-2">A bevelled edge</h3>
-      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">A 6 mm bevel on each ply gives the outline a clean, carved line. Delivered flat.</p>
+      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">A 6 mm bevel on each layer. Delivered flat.</p>
     </li>
   </ol>
 </section>
@@ -195,7 +179,7 @@ export default function PetsPage() {
         <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">Two models</p>
         <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5">Alcove, or Suite.</h2>
       </div>
-      <p className="md:col-span-5 md:col-start-8 text-[16px] leading-[1.8] text-[#47423a]">Every style comes in both. Choose by the space in the room and what the guest&apos;s pet needs within reach.</p>
+      <p className="md:col-span-5 md:col-start-8 text-[16px] leading-[1.8] text-[#47423a]">Every style comes in both.</p>
     </div>
 
     <div className="grid md:grid-cols-2 gap-12 md:gap-16 mt-12 md:mt-16">
@@ -205,11 +189,11 @@ export default function PetsPage() {
           <h3 className="font-display text-[32px] md:text-[38px]">The Alcove</h3>
           <p className="text-[13px] text-[#1b1915] whitespace-nowrap">£395 per set, ex VAT</p>
         </div>
-        <p className="text-[15px] leading-[1.75] text-[#47423a] mt-5">For the bed alone. A close, three-sided wall that frames the bed like a reading nook.</p>
+        <p className="text-[15px] leading-[1.75] text-[#47423a] mt-5">For the bed alone.</p>
         <dl className="grid grid-cols-2 gap-y-3 gap-x-6 mt-6 text-[13px]">
           <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Width</dt><dd>approx. 115 cm</dd>
           <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Depth</dt><dd>approx. 64 cm</dd>
-          <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Height</dt><dd>up to 75 cm, by design</dd>
+          <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Height</dt><dd>up to 75 cm</dd>
           <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Fits a bed</dt><dd>up to 105 × 75 cm</dd>
         </dl>
       </article>
@@ -219,16 +203,16 @@ export default function PetsPage() {
           <h3 className="font-display text-[32px] md:text-[38px]">The Suite</h3>
           <p className="text-[13px] text-[#1b1915] whitespace-nowrap">£395 per set, ex VAT</p>
         </div>
-        <p className="text-[15px] leading-[1.75] text-[#47423a] mt-5">For the bed and its things: bowls, a toy, a blanket. A wider wall, with room for bowls and a toy beside the bed.</p>
+        <p className="text-[15px] leading-[1.75] text-[#47423a] mt-5">For the bed, the bowls and a toy.</p>
         <dl className="grid grid-cols-2 gap-y-3 gap-x-6 mt-6 text-[13px]">
           <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Width</dt><dd>approx. 163 cm</dd>
           <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Depth</dt><dd>approx. 51 cm</dd>
-          <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Height</dt><dd>up to 75 cm, by design</dd>
+          <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Height</dt><dd>up to 75 cm</dd>
           <dt className="text-[#716a5e] uppercase tracking-[0.14em] text-[11px]">Holds</dt><dd>bed, bowls and a toy</dd>
         </dl>
       </article>
     </div>
-    <p className="mt-10 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">Shown: Woodblock in both models</p>
+    <p className="mt-10 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">Shown: Woodblock</p>
   </div>
 </section>
 
@@ -238,18 +222,18 @@ export default function PetsPage() {
     <div className="grid md:grid-cols-12 gap-10 md:gap-12 items-center">
       <figure className="md:col-span-6 order-2 md:order-1">
         <div className="overflow-hidden aspect-[4/3]"><Image src="/pets/hotel/bespoke-travelposter-alcove.jpg" alt="Detail of the Grand Tour style: a grand hotel on a lake, with a terrier and a cat on the terrace" width={1536} height={1024} sizes="(min-width: 768px) 50vw, 100vw" className="w-full h-full object-cover scale-[1.75] origin-[52%_26%]" /></div>
-        <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span>Plate VIII — Grand Tour: a hotel drawn into the art</span></figcaption>
+        <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-4"><span>Grand Tour · detail</span></figcaption>
       </figure>
       <div className="md:col-span-5 md:col-start-8 order-1 md:order-2">
         <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">IV · Made for your house</p>
         <h2 className="font-display font-light text-[34px] md:text-[48px] leading-[1.05] mt-5">Your building,<br />drawn into the art.</h2>
-        <p className="text-[16px] leading-[1.8] text-[#47423a] mt-6">Any of the six styles can be drawn around your own hotel. We work from your building and its setting, and add the details you choose.</p>
+        <p className="text-[16px] leading-[1.8] text-[#47423a] mt-6">We draw any of the five styles around your hotel.</p>
         <ul className="mt-6 border-t border-[#d8d0c1] text-[15px] text-[#47423a]">
           <li className="flex gap-4 py-3 border-b border-[#d8d0c1]"><span className="font-display text-[#2f4170] w-6 shrink-0">i</span>Your façade, garden, street or view</li>
           <li className="flex gap-4 py-3 border-b border-[#d8d0c1]"><span className="font-display text-[#2f4170] w-6 shrink-0">ii</span>Your colours</li>
-          <li className="flex gap-4 py-3 border-b border-[#d8d0c1]"><span className="font-display text-[#2f4170] w-6 shrink-0">iii</span>Your hotel&apos;s name, or a guest pet&apos;s name</li>
+          <li className="flex gap-4 py-3 border-b border-[#d8d0c1]"><span className="font-display text-[#2f4170] w-6 shrink-0">iii</span>Your hotel&apos;s name</li>
         </ul>
-        <p className="text-[14px] leading-[1.7] text-[#47423a] mt-5">Bespoke from £895 for the first set, artwork included, then £395 per set. Ex VAT.</p>
+        <p className="text-[14px] leading-[1.7] text-[#47423a] mt-5">Bespoke from £895 for the first set, then £395 per set. Ex VAT.</p>
         <BespokeLink />
       </div>
     </div>
@@ -263,25 +247,25 @@ export default function PetsPage() {
       <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">For housekeeping</p>
       <h2 className="font-display font-light text-[30px] md:text-[44px] leading-[1.08] mt-4">Simple to live with.</h2>
       <ul className="mt-8 space-y-5 text-[15px] leading-[1.7] text-[#47423a]">
-        <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Arrives flat. Unfold it at the two corners and stand it. No tools.</li>
+        <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Arrives flat. Unfold it and stand it. No tools.</li>
         <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Uses the bed and bowls you already have.</li>
-        <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Lift it away to clean beneath; there are no feet to catch.</li>
+        <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Lift it away to clean beneath.</li>
       </ul>
     </div>
 
     <div className="md:col-span-7 md:col-start-6">
       <h3 className="text-[11px] tracking-[0.28em] uppercase text-[#716a5e]">Specification</h3>
       <dl className="mt-4 divide-y divide-[#d8d0c1] border-y border-[#d8d0c1] text-[14px]">
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Styles</dt><dd className="col-span-3">Six; each can carry your hotel&apos;s name or building</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Material</dt><dd className="col-span-3">Printed PET felt, two plies</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Wall</dt><dd className="col-span-3">24 mm (2 × 12 mm), printed both faces</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Edge</dt><dd className="col-span-3">6 mm bevel on each ply</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Styles</dt><dd className="col-span-3">Five, or bespoke</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Material</dt><dd className="col-span-3">Printed PET felt</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Wall</dt><dd className="col-span-3">24 mm, printed both faces</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Edge</dt><dd className="col-span-3">6 mm bevel</dd></div>
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Height</dt><dd className="col-span-3">Up to 75 cm; set by each style</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Alcove</dt><dd className="col-span-3">approx. 115 cm W × 64 cm D; fits a bed up to 105 × 75 cm</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Suite</dt><dd className="col-span-3">approx. 163 cm W × 51 cm D; bed plus bowls and a toy</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Toppers</dt><dd className="col-span-3">3 per set, slot-on, placed by you</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Assembly</dt><dd className="col-span-3">Folds at 2 rounded corners; no tools, no feet</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Delivery</dt><dd className="col-span-3">Flat-packed; first deliveries from early December 2026</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Alcove</dt><dd className="col-span-3">approx. 115 × 64 cm; bed up to 105 × 75 cm</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Suite</dt><dd className="col-span-3">approx. 163 × 51 cm; bed, bowls and a toy</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Toppers</dt><dd className="col-span-3">3 per set</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Assembly</dt><dd className="col-span-3">No tools</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Delivery</dt><dd className="col-span-3">Flat-packed, from early December 2026</dd></div>
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Price</dt><dd className="col-span-3">£395 per set, ex VAT, as an Alcove or a Suite. Bespoke from £895 for the first set, then £395 per set. Bed, bowls and toys not included.</dd></div>
       </dl>
     </div>
@@ -292,27 +276,27 @@ export default function PetsPage() {
 <section id="questions" className="bg-[#ece5d8]">
   <div className="mx-auto max-w-4xl px-4 md:px-12 py-20 md:py-28">
     <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170] text-center">Questions</p>
-    <h2 className="font-display font-light text-[30px] md:text-[44px] leading-[1.08] mt-4 text-center">What hotels ask us first.</h2>
+    <h2 className="font-display font-light text-[30px] md:text-[44px] leading-[1.08] mt-4 text-center">Questions</h2>
     <div className="mt-12 border-t border-[#1b1915]/80">
       <details className="group border-b border-[#d8d0c1]" open>
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">When can we have it?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
-        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">First deliveries are from early December 2026. We confirm your delivery date with your quote, so you can plan the rooms before you order.</p>
+        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">From early December 2026. Your quote gives the date.</p>
       </details>
       <details className="group border-b border-[#d8d0c1]">
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">Will it fit the beds we already use?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
-        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">The Alcove fits a bed up to 105 × 75 cm. Send us the size of your beds with your enquiry and we will confirm the fit, or suggest the Suite.</p>
+        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">The Alcove fits a bed up to 105 × 75 cm. Send us your bed size and we confirm the fit.</p>
       </details>
       <details className="group border-b border-[#d8d0c1]">
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">Can we mix styles across our rooms?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
-        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. Choose any of the six styles, in either model, and tell us how many of each. We quote for the whole selection.</p>
+        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. Any styles, either model, in one order.</p>
       </details>
       <details className="group border-b border-[#d8d0c1]">
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">Do the styles suit cats as well as dogs?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
-        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. The Alcove and the Suite work around a dog bed or a cat bed.</p>
+        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. Both models go around a dog bed or a cat bed.</p>
       </details>
       <details className="group border-b border-[#d8d0c1]">
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">Can it carry our hotel&apos;s name or building?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
-        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. We can draw any style with your hotel&apos;s name or building, or make a design of your own. Tell us what you have in mind and we will quote for it.</p>
+        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. Tell us what you have in mind and we quote for it.</p>
       </details>
     </div>
   </div>
@@ -322,10 +306,10 @@ export default function PetsPage() {
 <section aria-labelledby="how" className="mx-auto max-w-7xl px-4 md:px-12 py-16 md:py-20">
   <h2 id="how" className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">How ordering works</h2>
   <ol className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 mt-8">
-    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">1</p><p className="mt-3 text-[15px] leading-[1.6]">Choose your styles, and Alcove or Suite.</p></li>
-    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">2</p><p className="mt-3 text-[15px] leading-[1.6]">We send a quote and a confirmed delivery date.</p></li>
-    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">3</p><p className="mt-3 text-[15px] leading-[1.6]">You confirm the order, with any names or bespoke details.</p></li>
-    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">4</p><p className="mt-3 text-[15px] leading-[1.6]">Your sets arrive flat. First deliveries from early December.</p></li>
+    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">1</p><p className="mt-3 text-[15px] leading-[1.6]">Choose styles and models.</p></li>
+    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">2</p><p className="mt-3 text-[15px] leading-[1.6]">We send a quote and a delivery date.</p></li>
+    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">3</p><p className="mt-3 text-[15px] leading-[1.6]">You confirm the order.</p></li>
+    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">4</p><p className="mt-3 text-[15px] leading-[1.6]">Your sets arrive flat.</p></li>
   </ol>
 </section>
 
@@ -334,10 +318,9 @@ export default function PetsPage() {
     <div className="md:col-span-5">
       <p className="text-[11px] tracking-[0.28em] uppercase text-[#c4a97d]">Request a quote</p>
       <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5">Tell us about your pet&#8209;friendly rooms.</h2>
-      <p className="text-[16px] leading-[1.8] text-[#f5f0e7]/75 mt-6">Tell us the styles, the model and the number of rooms. We reply with a quote and a confirmed delivery date.</p>
+      <p className="text-[16px] leading-[1.8] text-[#f5f0e7]/75 mt-6">We reply with a quote and a delivery date.</p>
       <div className="mt-10 border-t border-[#f5f0e7]/15 pt-6 text-[13px] text-[#f5f0e7]/65 space-y-2">
         <p>£395 per set, ex VAT · Alcove or Suite · Bespoke from £895</p>
-        <p>First deliveries from early December 2026</p>
         <p>Replies come from the Screenery team in London.</p>
       </div>
     </div>
@@ -363,7 +346,7 @@ export default function PetsPage() {
     </div>
     <div className="md:col-span-4">
       <p className="text-[11px] tracking-[0.2em] uppercase text-[#f5f0e7]/45 mb-4">A note on images and prices</p>
-      <p className="leading-[1.7]">Images on this page are renders. Final artwork and colours can differ slightly from what you see here. Prices exclude VAT. We confirm delivery with your quote.</p>
+      <p className="leading-[1.7]">Images are renders; final artwork and colours can differ slightly. Prices exclude VAT.</p>
     </div>
   </div>
   <div className="mx-auto max-w-7xl px-4 md:px-12"><div className="py-6 border-t border-[#f5f0e7]/10 text-[12px] flex flex-col sm:flex-row justify-between gap-2">

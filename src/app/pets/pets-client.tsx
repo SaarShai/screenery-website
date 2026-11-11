@@ -9,7 +9,7 @@ type Model = "alcove" | "suite";
 const LABEL = { alcove: "Alcove", suite: "Suite" } as const;
 const ROMAN = ["I", "II", "III", "IV", "V", "VI"];
 
-/** The six style cards. Each card has its own Alcove / Suite switch; "Enquire" puts "<Style> — <Model>" in the quote form. */
+/** The five style cards and the bespoke card. Each card has its own Alcove / Suite switch; "Enquire" puts "<Style> — <Model>" in the quote form. */
 export function Styles() {
   const [models, setModels] = useState<Record<string, Model>>({});
   return (
@@ -49,17 +49,27 @@ export function Styles() {
           </article>
         );
       })}
+      <article className="flex flex-col">
+        <div className="relative overflow-hidden bg-[#ece5d8] aspect-[3/2]">
+          <Image src="/pets/hotel/bespoke-travelposter-alcove.jpg" alt="Detail of the Grand Tour style: a grand hotel on a lake, with a terrier and a cat on the terrace" width={1536} height={1024}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="w-full h-full object-cover scale-[1.75] origin-[52%_26%]" />
+        </div>
+        <p className="mt-5 text-[10px] tracking-[0.22em] uppercase text-[#716a5e]">Bespoke</p>
+        <h3 className="font-display text-[25px] leading-[1.15] mt-1.5">Your hotel in the art</h3>
+        <p className="text-[14px] leading-[1.65] text-[#47423a] mt-2">Your building, your colours, your hotel&apos;s name.</p>
+        <div className="mt-auto pt-5">
+          <div className="flex items-baseline justify-end gap-3 mt-3">
+            <p className="font-display text-[17px] whitespace-nowrap"><span className="font-sans text-[11px] text-[#716a5e]">from</span> £895</p>
+          </div>
+          <BespokeLink className="inline-block mt-1 py-3.5 text-[11px] tracking-[0.16em] uppercase underline decoration-[#1b1915] decoration-1 underline-offset-[6px] hover:text-[#2f4170] hover:decoration-[#2f4170]" />
+        </div>
+      </article>
     </div>
   );
 }
 
-export function BespokeLink() {
-  return (
-    <a href="#enquire" onClick={() => enquire("Bespoke artwork")}
-      className="inline-block mt-5 py-3.5 text-[12px] tracking-[0.18em] uppercase underline decoration-[#1b1915] decoration-1 underline-offset-[6px] hover:text-[#2f4170] hover:decoration-[#2f4170]">
-      Ask about bespoke artwork
-    </a>
-  );
+export function BespokeLink({ className = "inline-block mt-5 py-3.5 text-[12px] tracking-[0.18em] uppercase underline decoration-[#1b1915] decoration-1 underline-offset-[6px] hover:text-[#2f4170] hover:decoration-[#2f4170]" }: { className?: string }) {
+  return <a href="#enquire" onClick={() => enquire("Bespoke")} className={className}>Ask about bespoke artwork</a>;
 }
 
 const label = "text-[11px] tracking-[0.2em] uppercase text-[#f5f0e7]/55";
@@ -172,8 +182,7 @@ export function QuoteForm() {
           <input type="date" {...field("needed_by")} className={`${input} [color-scheme:dark] text-[#f5f0e7]/80`} /></label>
       </div>
       <label className="block"><span className={label}>Message <span className="normal-case tracking-normal">(optional)</span></span>
-        <textarea rows={3} maxLength={1800} placeholder="Bed sizes, the rooms you have in mind, a bespoke idea…" {...field("message")} className={`${input} resize-none`} /></label>
-      <p className="text-[13px] leading-[1.6] text-[#f5f0e7]/65 -mt-2">You can add your hotel&apos;s name or the guest pet&apos;s name to the art. Tell us in your message.</p>
+        <textarea rows={3} maxLength={1800} placeholder="Bed sizes, rooms, a bespoke idea…" {...field("message")} className={`${input} resize-none`} /></label>
       {/* Honeypot for bots; hidden from people and screen readers */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <div className="flex flex-col sm:flex-row sm:items-center gap-5 pt-2">
