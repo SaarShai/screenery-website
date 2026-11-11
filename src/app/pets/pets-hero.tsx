@@ -19,27 +19,51 @@ const SLIDES = [
     tall: getImageProps({ ...common, src: `/pets/hotel/${s.file}-portrait.jpg`, width: 1122, height: 1402 }).props,
   };
 });
-const HOLD = 6000; // ms each slide stays
+const FIRST = 3000, HOLD = 4000; // ms: the first slide stays 3 s after it shows, each later slide 4 s
 const FADE = "opacity 1.2s ease-in-out, transform 1.8s ease-out";
 
 /** The hero: five room images in turn, a slow cross-fade, and the caption below changes with the image. */
 export default function PetsHero() {
   const still = usePrefersStill();
   const [[cur, prev], setPair] = useState<[number, number | null]>([0, null]);
-  const [all, setAll] = useState(false); // slides 2 to 6 are added after the first paint
+  const [count, setCount] = useState(1); // slides on the page: each one is added when the one before it is loaded
+  const [ready, setReady] = useState(0); // bit k is set when slide k is loaded and decoded
   const [held, setHeld] = useState(false); // pointer on the image, or the tab is hidden
+  const seen = useRef(new Set<number>());
+  const done = useRef(new Set<number>()); // the same as `ready`, for use in callbacks
+  const wanted = useRef<number | null>(null); // the slide to show as soon as it is ready
+  const [moved, setMoved] = useState(false); // false until the first change
   const touch = useRef(0);
+  const first = (ready & 1) === 1; // the first image is on screen
+
+  // A change starts only when its image is decoded.
+  const show = (k: number) => {
+    if (!done.current.has(k)) { wanted.current = k; return; }
+    wanted.current = null;
+    setMoved(true);
+    setPair(([c]) => (k === c ? [c, null] : [k, c]));
+  };
+
+  const loaded = (k: number, img: HTMLImageElement | null) => {
+    if (!img || !img.complete || !img.naturalWidth || seen.current.has(k)) return;
+    seen.current.add(k);
+    img.decode().catch(() => {}).finally(() => {
+      done.current.add(k);
+      setReady((r) => r | (1 << k));
+      setCount((n) => Math.max(n, k + 2));
+      if (wanted.current === k) show(k);
+    });
+  };
 
   const go = (k: number) => {
-    setAll(true);
-    setPair(([c]) => (k === c ? [c, null] : [(k + SLIDES.length) % SLIDES.length, c]));
+    setCount(SLIDES.length);
+    show((k + SLIDES.length) % SLIDES.length);
   };
 
   useEffect(() => {
-    const t = setTimeout(() => setAll(true), 2500);
     const vis = () => setHeld(document.hidden);
     document.addEventListener("visibilitychange", vis);
-    return () => { clearTimeout(t); document.removeEventListener("visibilitychange", vis); };
+    return () => document.removeEventListener("visibilitychange", vis);
   }, []);
 
   // The slide below stays only for the length of the fade, so a step back fades too.
@@ -50,10 +74,10 @@ export default function PetsHero() {
   }, [cur, prev]);
 
   useEffect(() => {
-    if (still || held) return;
-    const t = setTimeout(() => setPair(([c]) => [(c + 1) % SLIDES.length, c]), HOLD);
+    if (still || held || !first) return;
+    const t = setTimeout(() => show((cur + 1) % SLIDES.length), moved ? HOLD : FIRST);
     return () => clearTimeout(t);
-  }, [cur, still, held]);
+  }, [cur, still, held, first, moved]);
 
   return (
     <figure aria-roledescription="carousel" aria-label="The five styles in hotel rooms">
@@ -69,7 +93,7 @@ export default function PetsHero() {
         }}
       >
         {SLIDES.map((s, k) => {
-          if (k > 0 && !all) return null;
+          if (k >= count) return null;
           const on = k === cur, under = k === prev;
           return (
             <picture key={s.file} className="absolute inset-0"
@@ -82,7 +106,7 @@ export default function PetsHero() {
               <source media="(max-width: 767px)" srcSet={s.tall.srcSet} />
               {/* A wide file on desktop, an upright file on a phone. */}
               <img src={s.wide.src} srcSet={s.wide.srcSet} sizes="100vw" alt={on ? s.alt : ""} decoding="async"
-                fetchPriority={k === 0 ? "high" : undefined} loading={k === 0 ? undefined : "lazy"}
+                fetchPriority={k === 0 ? "high" : undefined} ref={(el) => loaded(k, el)} onLoad={(e) => loaded(k, e.currentTarget)}
                 style={{ "--pos": s.pos } as React.CSSProperties}
                 className="h-full w-full object-cover object-center md:object-[var(--pos)]" />
             </picture>
