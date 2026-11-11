@@ -80,7 +80,7 @@ export function EnquiryForm() {
   const [flash, setFlash] = useState(0);
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
-  const [error, setError] = useState("");
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     const d = loadDraft();
@@ -119,7 +119,7 @@ export function EnquiryForm() {
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
-    setError("");
+    setFailed(false);
     const f = fields;
     // The shared API mails the design labels; with none, this line marks the email as from the pets page.
     const extra = [!designs.length && "Page: Pets", f.rooms && `Number of rooms: ${f.rooms}`, f.model && f.model !== "Not sure yet" && `Model: ${f.model}`, f.needed_by && `Needed by: ${f.needed_by}`].filter(Boolean).join("\n");
@@ -138,7 +138,7 @@ export function EnquiryForm() {
       setDesigns([]);
       setFields({});
     } catch {
-      setError("Not sent. Please try again.");
+      setFailed(true);
     } finally {
       setSending(false);
     }
@@ -186,7 +186,9 @@ export function EnquiryForm() {
         </button>
         <p className="text-[12px] text-[#f5f0e7]/55">We use your details only to reply.</p>
       </div>
-      <p role="alert" className="text-[14px] text-red-300">{error}</p>
+      <p role="alert" className="text-[14px] text-red-300">
+        {failed && <>Not sent. Please try again, or email <a href="mailto:alicia@wanderland.london" className="underline underline-offset-4 hover:text-[#f5f0e7]">alicia@wanderland.london</a>.</>}
+      </p>
       {done && <p role="status" className="text-[14px] text-[#c4a97d]">Thank you. Your enquiry is with the Screenery team.</p>}
     </form>
   );
