@@ -1,0 +1,38 @@
+{
+  "designs": [
+    {
+      "id": "toile",
+      "name": "Toile de Jouy",
+      "text": "Blue on cream: a garden, a spaniel, cats at play.",
+      "suits": "Suits country-house and classic rooms."
+    },
+    {
+      "id": "chinoiserie",
+      "name": "Chinoiserie",
+      "text": "Sage green: blossom, bamboo, a pug and a ginger cat.",
+      "suits": "Suits townhouse and eclectic rooms."
+    },
+    {
+      "id": "botanical",
+      "name": "Botanical",
+      "text": "Ferns, hellebore and foxglove on cream.",
+      "suits": "Suits garden-view and nature-led rooms."
+    },
+    {
+      "id": "woodblock",
+      "name": "Woodblock",
+      "text": "The great wave, Mount Fuji, a shiba and a cat.",
+      "suits": "Suits Japandi and pale timber rooms."
+    },
+    {
+      "id": "travelposter",
+      "name": "Grand Tour",
+      "text": "A grand hotel on a lake, a terrier and a cat.",
+      "suits": "Suits heritage hotels and resorts."
+    }
+  ],
+  "size": {
+    "alcove": "approx. 115 × 64 cm",
+    "suite": "approx. 163 × 51 cm"
+  }
+}
