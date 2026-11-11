@@ -7,11 +7,16 @@ import logos from "@/data/hotel-logos.json";
 
 const LOGOS = ["JW Marriott", "The Ritz-Carlton", "Mandarin Oriental", "St. Regis", "Fairmont", "Four Seasons", "Park Hyatt", "Kempinski", "Shangri-La", "Rocco Forte Hotels", "Belmond", "The Peninsula Hotels"].map((n) => logos.find((l) => l.alt === n)!);
 
-// Not in the sitemap and not indexed until the owner releases it.
+const title = "Screenery for Pets — Pet surrounds for hotel rooms";
+const description = "Printed felt surrounds for the pet bed in hotel guest rooms. Five designs, Alcove or Suite, £395 per set ex VAT. Bespoke from £895.";
+const image = { url: "/pets/hotel/room-bespoke-alcove.jpg", width: 1672, height: 941, alt: "Toile de Jouy Alcove pet surround in a hotel bedroom" };
+
+// Not in the sitemap and not indexed until the owner releases it. Own share tags, so a link does not show the site's play-screen preview.
 export const metadata: Metadata = {
-  title: "Screenery for Pets — Pet surrounds for hotel rooms",
-  description:
-    "Printed felt surrounds for the pet bed in hotel guest rooms. Five designs, Alcove or Suite, £395 per set ex VAT. Bespoke from £895.",
+  title,
+  description,
+  openGraph: { type: "website", siteName: "Screenery", url: "/pets", title, description, images: [image] },
+  twitter: { card: "summary_large_image", title, description, images: [image] },
   alternates: { canonical: "/pets" },
   robots: { index: false, follow: false },
 };

@@ -133,15 +133,12 @@ export function EnquiryForm() {
     };
     try {
       const res = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-      if (!res.ok) {
-        const json = await res.json().catch(() => ({}));
-        throw new Error(json.error || "We could not send your enquiry. Please email alicia@wanderland.london.");
-      }
+      if (!res.ok) throw new Error();
       setDone(true);
       setDesigns([]);
       setFields({});
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } catch {
+      setError("Not sent. Please try again.");
     } finally {
       setSending(false);
     }
