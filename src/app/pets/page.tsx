@@ -105,7 +105,7 @@ export default function PetsPage() {
 
   <Styles />
 
-  <p className="mt-14 text-[14px] leading-[1.7] text-[#47423a] max-w-2xl">Any style can be drawn with your hotel&apos;s name or building. For a style of your own, see <a href="#bespoke" className="border-b border-[#1b1915]/40 hover:border-[#1b1915]">bespoke artwork</a>.</p>
+  <p className="mt-14 text-[14px] leading-[1.7] text-[#47423a] max-w-2xl">Any style can be drawn with your hotel&apos;s name or building. For a style of your own, see <a href="#bespoke" className="border-b border-[#1b1915]/40 hover:border-[#1b1915]">bespoke artwork</a>, from £895.</p>
 </section>
 
 
@@ -249,7 +249,7 @@ export default function PetsPage() {
           <li className="flex gap-4 py-3 border-b border-[#d8d0c1]"><span className="font-display text-[#2f4170] w-6 shrink-0">ii</span>Your colours</li>
           <li className="flex gap-4 py-3 border-b border-[#d8d0c1]"><span className="font-display text-[#2f4170] w-6 shrink-0">iii</span>Your hotel&apos;s name, or a guest pet&apos;s name</li>
         </ul>
-        <p className="text-[14px] leading-[1.7] text-[#47423a] mt-5">Bespoke artwork is quoted with your enquiry. If you have a style of your own in mind, tell us about it.</p>
+        <p className="text-[14px] leading-[1.7] text-[#47423a] mt-5">Bespoke from £895 for the first set, artwork included, then £395 per set. Ex VAT.</p>
         <BespokeLink />
       </div>
     </div>
@@ -282,7 +282,7 @@ export default function PetsPage() {
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Toppers</dt><dd className="col-span-3">3 per set, slot-on, placed by you</dd></div>
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Assembly</dt><dd className="col-span-3">Folds at 2 rounded corners; no tools, no feet</dd></div>
         <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Delivery</dt><dd className="col-span-3">Flat-packed; first deliveries from early December 2026</dd></div>
-        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Price</dt><dd className="col-span-3">£395 per set, ex VAT, as an Alcove or a Suite. Bespoke artwork quoted with your enquiry. Bed, bowls and toys not included.</dd></div>
+        <div className="grid grid-cols-5 gap-4 py-4"><dt className="col-span-2 text-[#716a5e]">Price</dt><dd className="col-span-3">£395 per set, ex VAT, as an Alcove or a Suite. Bespoke from £895 for the first set, then £395 per set. Bed, bowls and toys not included.</dd></div>
       </dl>
     </div>
   </div>
@@ -336,7 +336,7 @@ export default function PetsPage() {
       <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5">Tell us about your pet&#8209;friendly rooms.</h2>
       <p className="text-[16px] leading-[1.8] text-[#f5f0e7]/75 mt-6">Tell us the styles, the model and the number of rooms. We reply with a quote and a confirmed delivery date.</p>
       <div className="mt-10 border-t border-[#f5f0e7]/15 pt-6 text-[13px] text-[#f5f0e7]/65 space-y-2">
-        <p>£395 per set, ex VAT · Alcove or Suite</p>
+        <p>£395 per set, ex VAT · Alcove or Suite · Bespoke from £895</p>
         <p>First deliveries from early December 2026</p>
         <p>Replies come from the Screenery team in London.</p>
       </div>
