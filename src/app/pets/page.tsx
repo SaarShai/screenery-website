@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BespokeLink, QuoteForm, StickyBar, Styles } from "./pets-client";
+import { BespokeLink, EnquiryForm, StickyBar, Styles } from "./pets-client";
 import PetsHero from "./pets-hero";
 import logos from "@/data/hotel-logos.json";
 
@@ -31,7 +31,7 @@ export default function PetsPage() {
       <a href="#bespoke" className="hover:text-[#1b1915]">Bespoke</a>
       <a href="#questions" className="hover:text-[#1b1915]">Questions</a>
     </nav>
-    <a href="#enquire" className="inline-flex items-center min-h-[44px] text-[11px] md:text-[12px] tracking-[0.18em] uppercase border border-[#1b1915] px-4 md:px-5 py-2.5 hover:bg-[#1b1915] hover:text-[#f5f0e7] transition-colors whitespace-nowrap">Request a quote</a>
+    <a href="#enquire" className="inline-flex items-center min-h-[44px] text-[11px] md:text-[12px] tracking-[0.18em] uppercase border border-[#1b1915] px-4 md:px-5 py-2.5 hover:bg-[#1b1915] hover:text-[#f5f0e7] transition-colors whitespace-nowrap">Enquire</a>
   </div>
 </header>
 
@@ -58,7 +58,7 @@ export default function PetsPage() {
         </div>
         <p className="text-[14px] text-[#47423a] mt-3">First deliveries from early December.</p>
         <div className="grid grid-cols-2 gap-3 mt-5">
-          <a href="#enquire" className="text-center bg-[#1b1915] text-[#f5f0e7] text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 hover:bg-[#2f4170] transition-colors whitespace-nowrap">Request a quote</a>
+          <a href="#enquire" className="text-center bg-[#1b1915] text-[#f5f0e7] text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 hover:bg-[#2f4170] transition-colors whitespace-nowrap">Enquire</a>
           <a href="#collection" className="text-center text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 border border-[#1b1915]/40 hover:border-[#1b1915] transition-colors whitespace-nowrap">See the styles</a>
         </div>
       </div>
@@ -280,7 +280,7 @@ export default function PetsPage() {
     <div className="mt-12 border-t border-[#1b1915]/80">
       <details className="group border-b border-[#d8d0c1]" open>
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">When can we have it?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
-        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">From early December 2026. Your quote gives the date.</p>
+        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">From early December 2026. We confirm the date when you enquire.</p>
       </details>
       <details className="group border-b border-[#d8d0c1]">
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">Will it fit the beds we already use?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
@@ -296,7 +296,7 @@ export default function PetsPage() {
       </details>
       <details className="group border-b border-[#d8d0c1]">
         <summary className="list-none [&::-webkit-details-marker]:hidden flex justify-between items-center gap-6 py-6 cursor-pointer"><span className="font-display text-[19px] md:text-[22px]">Can it carry our hotel&apos;s name or building?</span><span className="group-open:rotate-45 text-[22px] transition-transform">+</span></summary>
-        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. Tell us what you have in mind and we quote for it.</p>
+        <p className="pb-6 text-[15px] leading-[1.8] text-[#47423a] max-w-2xl">Yes. Tell us what you have in mind when you enquire.</p>
       </details>
     </div>
   </div>
@@ -307,7 +307,7 @@ export default function PetsPage() {
   <h2 id="how" className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">How ordering works</h2>
   <ol className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 mt-8">
     <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">1</p><p className="mt-3 text-[15px] leading-[1.6]">Choose styles and models.</p></li>
-    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">2</p><p className="mt-3 text-[15px] leading-[1.6]">We send a quote and a delivery date.</p></li>
+    <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">2</p><p className="mt-3 text-[15px] leading-[1.6]">We confirm the price and a delivery date.</p></li>
     <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">3</p><p className="mt-3 text-[15px] leading-[1.6]">You confirm the order.</p></li>
     <li className="border-t border-[#1b1915] pt-4"><p className="font-display text-[34px] leading-none text-[#8b7355]">4</p><p className="mt-3 text-[15px] leading-[1.6]">Your sets arrive flat.</p></li>
   </ol>
@@ -316,15 +316,15 @@ export default function PetsPage() {
 <section id="enquire" className="bg-[#1a1714] text-[#f5f0e7]">
   <div className="mx-auto max-w-7xl px-4 md:px-12 py-20 md:py-28 grid md:grid-cols-12 gap-12">
     <div className="md:col-span-5">
-      <p className="text-[11px] tracking-[0.28em] uppercase text-[#c4a97d]">Request a quote</p>
+      <p className="text-[11px] tracking-[0.28em] uppercase text-[#c4a97d]">Enquire</p>
       <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5">Tell us about your pet&#8209;friendly rooms.</h2>
-      <p className="text-[16px] leading-[1.8] text-[#f5f0e7]/75 mt-6">We reply with a quote and a delivery date.</p>
+      <p className="text-[16px] leading-[1.8] text-[#f5f0e7]/75 mt-6">We reply with a delivery date.</p>
       <div className="mt-10 border-t border-[#f5f0e7]/15 pt-6 text-[13px] text-[#f5f0e7]/65 space-y-2">
         <p>£395 per set, ex VAT · Alcove or Suite · Bespoke from £895</p>
         <p>Replies come from the Screenery team in London.</p>
       </div>
     </div>
-    <QuoteForm />
+    <EnquiryForm />
   </div>
 </section>
 
@@ -342,7 +342,7 @@ export default function PetsPage() {
     </div>
     <div className="md:col-span-2">
       <p className="text-[11px] tracking-[0.2em] uppercase text-[#f5f0e7]/45 mb-4">This page</p>
-      <ul className="md:space-y-2"><li><a href="#collection" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">The Styles</a></li><li><a href="#models" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">Alcove &amp; Suite</a></li><li><a href="#enquire" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">Request a quote</a></li></ul>
+      <ul className="md:space-y-2"><li><a href="#collection" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">The Styles</a></li><li><a href="#models" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">Alcove &amp; Suite</a></li><li><a href="#enquire" className="inline-block py-3 md:py-0 hover:text-[#f5f0e7]">Enquire</a></li></ul>
     </div>
     <div className="md:col-span-4">
       <p className="text-[11px] tracking-[0.2em] uppercase text-[#f5f0e7]/45 mb-4">A note on images and prices</p>

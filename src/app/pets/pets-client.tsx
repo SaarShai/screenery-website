@@ -9,7 +9,7 @@ type Model = "alcove" | "suite";
 const LABEL = { alcove: "Alcove", suite: "Suite" } as const;
 const ROMAN = ["I", "II", "III", "IV", "V", "VI"];
 
-/** The five style cards and the bespoke card. Each card has its own Alcove / Suite switch; "Enquire" puts "<Style> — <Model>" in the quote form. */
+/** The five style cards and the bespoke card. Each card has its own Alcove / Suite switch; "Enquire" puts "<Style> — <Model>" in the enquiry form. */
 export function Styles() {
   const [models, setModels] = useState<Record<string, Model>>({});
   return (
@@ -76,8 +76,8 @@ export function BespokeLink({ className = "inline-block mt-5 py-3.5 text-[12px] 
 const label = "text-[11px] tracking-[0.2em] uppercase text-[#f5f0e7]/55";
 const input = "mt-2 w-full bg-transparent border-b border-[#f5f0e7]/30 focus:border-[#f5f0e7] outline-none py-3 text-[16px] placeholder:text-[#f5f0e7]/45";
 
-/** The quote form. It sends to /api/contact, as the home page form does. The API has no fields for rooms, model and date, so they go at the top of the message. */
-export function QuoteForm() {
+/** The enquiry form. It sends to /api/contact, as the home page form does. The API has no fields for rooms, model and date, so they go at the top of the message. */
+export function EnquiryForm() {
   const [designs, setDesigns] = useState<string[]>([]);
   const [fields, setFields] = useState<Record<string, string>>({});
   const [loaded, setLoaded] = useState(false);
@@ -188,7 +188,7 @@ export function QuoteForm() {
       <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <div className="flex flex-col sm:flex-row sm:items-center gap-5 pt-2">
         <button type="submit" disabled={sending} className="bg-[#f5f0e7] text-[#1b1915] text-[12px] tracking-[0.18em] uppercase px-8 py-4 hover:bg-[#c4a97d] transition-colors disabled:opacity-50">
-          {sending ? "Sending…" : "Request a quote"}
+          {sending ? "Sending…" : "Send enquiry"}
         </button>
         <p className="text-[12px] text-[#f5f0e7]/55">No obligation. We use your details only to reply.</p>
       </div>
@@ -198,7 +198,7 @@ export function QuoteForm() {
   );
 }
 
-/** Phone only: a slim bar with the price and the quote button. It hides while the form is on screen. */
+/** Phone only: a slim bar with the price and the enquire button. It hides while the form is on screen. */
 export function StickyBar() {
   const [hidden, setHidden] = useState(false);
   useEffect(() => {
@@ -215,7 +215,7 @@ export function StickyBar() {
         <p className="font-display text-[18px]">£395 <span className="font-sans text-[11px] text-[#716a5e]">per set, ex VAT</span></p>
         <p className="text-[11px] text-[#716a5e]">First deliveries from early December</p>
       </div>
-      <a href="#enquire" className="inline-flex items-center min-h-[44px] bg-[#1b1915] text-[#f5f0e7] text-[11px] tracking-[0.16em] uppercase px-5 py-3 whitespace-nowrap">Request a quote</a>
+      <a href="#enquire" className="inline-flex items-center min-h-[44px] bg-[#1b1915] text-[#f5f0e7] text-[11px] tracking-[0.16em] uppercase px-5 py-3 whitespace-nowrap">Enquire</a>
     </div>
   );
 }
