@@ -57,8 +57,8 @@ export default function PetsPage() {
           <p className="text-[11px] tracking-[0.2em] uppercase text-[#716a5e] text-right">Alcove or Suite · 5 designs</p>
         </div>
         <div className="grid grid-cols-2 gap-3 mt-5">
-          <a href="#enquire" className="text-center bg-[#1b1915] text-[#f5f0e7] text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 hover:bg-[#2f4170] transition-colors whitespace-nowrap">Enquire</a>
-          <a href="#collection" className="text-center text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 border border-[#1b1915]/40 hover:border-[#1b1915] transition-colors whitespace-nowrap">See the designs</a>
+          <a id="hero-enquire" href="#enquire" className="text-center bg-[#1b1915] text-[#f5f0e7] text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 hover:bg-[#2f4170] transition-colors whitespace-nowrap">Enquire</a>
+          <a href="#collection" className="text-center text-[11px] md:text-[12px] tracking-[0.16em] uppercase px-3 py-4 border border-[#1b1915]/40 hover:border-[#1b1915] transition-colors whitespace-nowrap">Designs</a>
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@ export default function PetsPage() {
   <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-end">
     <div className="md:col-span-7">
       <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">III · The Object</p>
-      <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5 tracking-[-0.01em]">Two layers of printed felt, folded at two corners.</h2>
+      <h2 className="font-display font-light text-[34px] md:text-[52px] leading-[1.05] mt-5 tracking-[-0.01em]">Two layers of printed felt, hinged at two corners.</h2>
     </div>
   </div>
 
@@ -128,8 +128,8 @@ export default function PetsPage() {
       <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e] flex justify-between gap-3"><span>The 24 mm wall</span></figcaption>
     </figure>
     <figure>
-      <Image src="/pets/hotel/detail-corner-toile.jpg" alt="Close-up of a grooved, rounded corner where the wall folds" width={1448} height={1086} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-square md:aspect-[4/5] object-cover" />
-      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">The folding corner</figcaption>
+      <Image src="/pets/hotel/detail-corner-toile.jpg" alt="Close-up of a grooved, rounded corner at the hinged corner" width={1448} height={1086} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-square md:aspect-[4/5] object-cover" />
+      <figcaption className="mt-3 text-[11px] tracking-[0.12em] uppercase text-[#716a5e]">The hinged corner</figcaption>
     </figure>
     <figure>
       <Image src="/pets/hotel/detail-toppers-toile.jpg" alt="Close-up of the toppers: one set on its slot on the top edge, two beside it" width={1448} height={1086} sizes="(min-width: 768px) 50vw, 100vw" className="w-full aspect-square md:aspect-[4/5] object-cover" />
@@ -145,8 +145,8 @@ export default function PetsPage() {
     </li>
     <li className="border-t border-[#1b1915] pt-5">
       <p className="font-display text-[15px] text-[#716a5e]">02</p>
-      <h3 className="font-display text-[23px] leading-tight mt-2">One piece that folds</h3>
-      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Folds at two corners. No tools.</p>
+      <h3 className="font-display text-[23px] leading-tight mt-2">One hinged piece</h3>
+      <p className="text-[14px] leading-[1.75] text-[#47423a] mt-3">Hinged at two corners. No tools.</p>
     </li>
     <li className="border-t border-[#1b1915] pt-5">
       <p className="font-display text-[15px] text-[#716a5e]">03</p>
@@ -233,7 +233,7 @@ export default function PetsPage() {
       <p className="text-[11px] tracking-[0.28em] uppercase text-[#2f4170]">For housekeeping</p>
       <h2 className="font-display font-light text-[30px] md:text-[44px] leading-[1.08] mt-4">Simple to live with.</h2>
       <ul className="mt-8 space-y-5 text-[15px] leading-[1.7] text-[#47423a]">
-        <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Unfold it and stand it. No tools.</li>
+        <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Stand it in place. No tools.</li>
         <li className="flex gap-4"><span className="font-display text-[#2f4170]">—</span>Lift it away to clean beneath.</li>
       </ul>
     </div>

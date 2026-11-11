@@ -8,7 +8,7 @@ import data from "@/data/pets-hotel.json";
 type Model = "alcove" | "suite";
 const LABEL = { alcove: "Alcove", suite: "Suite" } as const;
 
-/** The five design cards and the bespoke card. Each card has its own Alcove / Suite switch; "Enquire" puts "<Design> — <Model>" in the enquiry form. */
+/** The five design cards and the bespoke card. Each card has its own Alcove / Suite switch; "Enquire" puts "Pets — <Design> (<Model>)" in the enquiry form, so the email shows the page. */
 export function Designs() {
   const [models, setModels] = useState<Record<string, Model>>({});
   return (
@@ -39,7 +39,7 @@ export function Designs() {
                   £395 <span className="font-sans text-[11px] text-[#716a5e]">ex VAT</span>
                 </p>
               </div>
-              <button type="button" onClick={() => enquire(`${d.name} — ${LABEL[m]}`)}
+              <button type="button" onClick={() => enquire(`Pets — ${d.name} (${LABEL[m]})`)}
                 className="mt-1 py-3.5 text-[11px] tracking-[0.16em] uppercase underline decoration-[#1b1915] decoration-1 underline-offset-[6px] hover:text-[#2f4170] hover:decoration-[#2f4170]">
                 Enquire <span aria-hidden="true">›</span>
               </button>
@@ -66,7 +66,7 @@ export function Designs() {
 }
 
 export function BespokeLink({ className = "inline-block mt-5 py-3.5 text-[12px] tracking-[0.18em] uppercase underline decoration-[#1b1915] decoration-1 underline-offset-[6px] hover:text-[#2f4170] hover:decoration-[#2f4170]" }: { className?: string }) {
-  return <a href="#enquire" onClick={() => enquire("Bespoke")} className={className}>Enquire <span aria-hidden="true">›</span></a>;
+  return <a href="#enquire" onClick={() => enquire("Pets — Bespoke")} className={className}>Enquire <span aria-hidden="true">›</span></a>;
 }
 
 const label = "text-[11px] tracking-[0.2em] uppercase text-[#f5f0e7]/55";
@@ -106,7 +106,7 @@ export function EnquiryForm() {
 
   // The Model field follows the chosen cards (Alcove, Suite or Both); the visitor can change it.
   useEffect(() => {
-    const models = new Set(designs.map((l) => (l.endsWith("Suite") ? "Suite" : l.endsWith("Alcove") ? "Alcove" : "")).filter(Boolean));
+    const models = new Set(designs.map((l) => (l.endsWith("(Suite)") ? "Suite" : l.endsWith("(Alcove)") ? "Alcove" : "")).filter(Boolean));
     if (models.size) setFields((f) => ({ ...f, model: models.size > 1 ? "Both" : [...models][0] }));
   }, [designs]);
 
@@ -121,7 +121,8 @@ export function EnquiryForm() {
     setSending(true);
     setError("");
     const f = fields;
-    const extra = [f.rooms && `Number of rooms: ${f.rooms}`, f.model && f.model !== "Not sure yet" && `Model: ${f.model}`, f.needed_by && `Needed by: ${f.needed_by}`].filter(Boolean).join("\n");
+    // The shared API mails the design labels; with none, this line marks the email as from the pets page.
+    const extra = [!designs.length && "Page: Pets", f.rooms && `Number of rooms: ${f.rooms}`, f.model && f.model !== "Not sure yet" && `Model: ${f.model}`, f.needed_by && `Needed by: ${f.needed_by}`].filter(Boolean).join("\n");
     const body = {
       name: f.name ?? "",
       company: f.hotel ?? "",
@@ -194,15 +195,19 @@ export function EnquiryForm() {
   );
 }
 
-/** Phone only: a slim bar with the price and the enquire button. It hides while the form is on screen. */
+/** Phone only: a slim bar with the price and the enquire button. It shows after the hero Enquire button scrolls up out of view, and hides while the form is on screen. */
 export function StickyBar() {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState(true);
   useEffect(() => {
-    const el = document.getElementById("enquire");
-    if (!el) return;
-    const io = new IntersectionObserver(([en]) => setHidden(en.isIntersecting), { threshold: 0.15 });
-    io.observe(el);
-    return () => io.disconnect();
+    const btn = document.getElementById("hero-enquire"), el = document.getElementById("enquire");
+    if (!btn || !el) return;
+    // A scroll check, not an observer: an anchor jump moves the button from below to above the screen with no intersection change.
+    const on = () => {
+      const f = el.getBoundingClientRect();
+      setHidden(btn.getBoundingClientRect().bottom > 0 || (f.top < innerHeight * 0.85 && f.bottom > 0));
+    };
+    addEventListener("scroll", on, { passive: true });
+    return () => removeEventListener("scroll", on);
   }, []);
   return (
     <div style={hidden ? { transform: "translateY(110%)" } : undefined}
