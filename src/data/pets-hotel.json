@@ -4,31 +4,36 @@
       "id": "toile",
       "name": "Toile de Jouy",
       "text": "Blue on cream: a garden, a spaniel, cats at play.",
-      "toppers": "two songbirds, an urn of flowers"
+      "toppers": "two songbirds, an urn of flowers",
+      "suits": "Suits country-house and classic rooms."
     },
     {
       "id": "chinoiserie",
       "name": "Chinoiserie",
       "text": "Sage green: blossom, bamboo, a pug and a ginger cat.",
-      "toppers": "a bird, a peony, a butterfly"
+      "toppers": "a bird, a peony, a butterfly",
+      "suits": "Suits townhouse and eclectic rooms."
     },
     {
       "id": "botanical",
       "name": "Botanical",
       "text": "Ferns, hellebore and foxglove on cream.",
-      "toppers": "a leaf sprig, a fern, a small bird"
+      "toppers": "a leaf sprig, a fern, a small bird",
+      "suits": "Suits garden-view and nature-led rooms."
     },
     {
       "id": "woodblock",
       "name": "Woodblock",
       "text": "The great wave, Mount Fuji, a shiba and a cat.",
-      "toppers": "a crane, a pine, a red sun"
+      "toppers": "a crane, a pine, a red sun",
+      "suits": "Suits Japandi and pale timber rooms."
     },
     {
       "id": "travelposter",
       "name": "Grand Tour",
       "text": "A grand hotel on a lake, a terrier and a cat.",
-      "toppers": "a sun, a pine tree, a sailing boat"
+      "toppers": "a sun, a pine tree, a sailing boat",
+      "suits": "Suits heritage hotels and resorts."
     }
   ],
   "size": {

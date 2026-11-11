@@ -25,6 +25,7 @@ export function Styles() {
             <p className="mt-5 text-[10px] tracking-[0.22em] uppercase text-[#716a5e]">No. {ROMAN[i]}</p>
             <h3 className="font-display text-[25px] leading-[1.15] mt-1.5">{d.name}</h3>
             <p className="text-[14px] leading-[1.65] text-[#47423a] mt-2">{d.text}</p>
+            <p className="text-[14px] leading-[1.65] text-[#47423a]">{d.suits}</p>
             <p className="text-[13px] leading-[1.6] text-[#716a5e] mt-2"><span className="text-[#1b1915]">Toppers:</span> {d.toppers}</p>
             <div className="mt-auto pt-5">
               <div className="flex border border-[#d8d0c1]" role="group" aria-label={`Choose a model for ${d.name}`}>
